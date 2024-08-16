@@ -1,8 +1,7 @@
 const express = require("express");
 const reviewController = require("./../controllers/reviewController");
 
-const router = express.Router({ mergeParams: true });
-// allows routes to access params from the nested tour router
+const router = express.Router();
 
 // protection middleware
 

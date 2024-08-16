@@ -1,10 +1,18 @@
 for back
-  userSchema
-    must add validations later on the schema
+  schemas
     must add login/register logic -> might implement in the same time as googleAuth
-  
-  listingSchema
     could add dynamic price logic for listings, cancellation policy
     add cleaningFee, serviceFee, tax -> might be bad ux
+
+  controllers
+    add listing controller that gets all cabins in x radius (based on user location)
   
 for front
+
+
+libraries: 
+  mongoose, express
+
+  validator, 
+  multer (image handling), 
+  sharp (image manipulation: resizing, converting, metadata, etc)
