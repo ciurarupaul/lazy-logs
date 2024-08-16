@@ -1,7 +1,7 @@
 const express = require("express");
 
 const bookingRouter = require("./routes/bookingRoutes");
-const cabinRouter = require("./routes/cabinRoutes");
+const cabinRouter = require("./routes/listingRoutes");
 const reviewRouter = require("./routes/reviewRoutes");
 const userRouter = require("./routes/userRoutes");
 
