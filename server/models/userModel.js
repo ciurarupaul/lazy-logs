@@ -38,7 +38,7 @@ const userSchema = new mongoose.Schema(
 		timestamps: true, // add createdAt..
 		versionKey: false, // removes __v that mongodb adds
 		// toJSON or toObject, change behaviour depending on how they are sent from the db
-		collection: users,
+		collection: "users",
 		// capped -> set a limit, auto removes old entries (useful for logs)
 	}
 );

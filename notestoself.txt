@@ -1,0 +1,10 @@
+for back
+  userSchema
+    must add validations later on the schema
+    must add login/register logic -> might implement in the same time as googleAuth
+  
+  listingSchema
+    could add dynamic price logic for listings, cancellation policy
+    add cleaningFee, serviceFee, tax -> might be bad ux
+  
+for front
