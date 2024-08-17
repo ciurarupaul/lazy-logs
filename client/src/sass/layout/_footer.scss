@@ -5,7 +5,8 @@
 	justify-content: space-between;
 	padding: 1rem 3rem;
 	height: 6rem;
-	background-color: lightcyan;
+	background-color: var(--background);
+	border-top: 1px solid var(--background-200);
 
 	position: absolute;
 	bottom: 0;

@@ -8,7 +8,12 @@
 	height: 8rem;
 	width: 100%;
 
-	background-color: lightblue;
+	position: absolute;
+	left: 0;
+	top: 0;
+
+	background-color: var(--background);
+	border-bottom: 1px solid var(--background-200);
 
 	&__logo {
 		&-box {
@@ -30,13 +35,23 @@
 	&__user {
 		&-box {
 			@include mixins.flexCenter;
-			gap: 2rem;
+			gap: 1rem;
 		}
 
 		&-options,
 		&-menu {
 			width: 2.5rem;
 			height: 2.5rem;
+		}
+
+		&-options {
+			box-sizing: content-box;
+			padding: 1.2rem;
+			border-radius: 100rem;
+
+			&:hover {
+				background-color: var(--background-200);
+			}
 		}
 
 		&-button {

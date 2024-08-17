@@ -1,0 +1,40 @@
+$themes: (
+	// cool accents #40C9A2 #E637BF #F865B0 #FCBA04 #21fa90
+	"dark-theme":
+		(
+			"background": #141204,
+			"background-100": #1e1e1e,
+			"background-200": #2b2b2b,
+			"primary": #e9ecf5,
+			"primary-100": #d2d4dd,
+			"primary-200": #75767b,
+			"error": #f50000,
+			"success": #1cc819,
+		),
+
+	"light-theme": (
+		"background": #f8f9fa,
+		"background-100": #f1f3f5,
+		"background-200": #e9ecef,
+		"primary": #212529,
+		"primary-100": #343a40,
+		"primary-200": #4d5154,
+		"error": #f50000,
+		"success": #1cc819,
+	)
+);
+
+// Mixin to apply a theme by generating CSS variables
+@mixin apply-theme($theme-name) {
+	// Check if the theme exists
+	@if map-has-key($themes, $theme-name) {
+		$theme: map-get($themes, $theme-name);
+
+		// Iterate over the theme map and create CSS variables
+		@each $key, $value in $theme {
+			--#{$key}: #{$value};
+		}
+	} @else {
+		@warn "Theme '#{$theme-name}' does not exist.";
+	}
+}

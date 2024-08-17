@@ -1,5 +1,6 @@
 @use "../abstracts";
 @use "./normalize";
+@use "../themes/palettes";
 
 *,
 *::after,
@@ -18,4 +19,5 @@ body {
 	box-sizing: border-box;
 	position: relative;
 	height: 100vh;
+	@include palettes.apply-theme("dark-theme");
 }
