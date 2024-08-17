@@ -77,11 +77,12 @@ examples
 
 
 libraries: 
-  mongoose, express
+  mongoose, express, dotenv
 
   validator, 
   multer (image handling), 
   sharp (image manipulation: resizing, converting, metadata, etc)
+  react-icons
 
 
 routes structure

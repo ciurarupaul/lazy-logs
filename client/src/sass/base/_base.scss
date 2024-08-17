@@ -1,1 +1,21 @@
 @use "../abstracts";
+@use "./normalize";
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+html {
+	font-size: 62.5%;
+	height: 100%;
+}
+
+body {
+	box-sizing: border-box;
+	position: relative;
+	height: 100vh;
+}
