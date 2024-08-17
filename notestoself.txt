@@ -28,6 +28,53 @@ for front
   Background Updates: 
   Use React Query to keep data fresh by refetching it in the background. This ensures that the user always sees the most up-to-date information.
 
+sass 
+  cool resources i used here: 
+    https://sass-guidelin.es/ -> about everything
+    https://github.com/KittyGiraudel/sass-boilerplate/tree/master -> sass boilerplate
+    https://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/ -> bem
+    https://sass-lang.com/documentation/
+  
+
+  keep it simple. don't repeat yourself
+
+  focus on @use and @forward
+    @use 'abstracts/fonts'; body {fot-size: fonts.$font-size} -> new way, safer
+    no longer accessible to children, import in every file
+    @forward -> bring into file to forward (to another file - main.scss)
+    @use -> bring into file to use
+
+    create _index.scss in evey folder, import in main with @use '../abstracts' (with @forward in index)
+
+  set guidelines
+    add @charset 'utf-8'; to the main file
+    constants always in caps
+    @extends -> dont forget 
+    @includes is deprecated
+
+    BEM
+      .block {}
+      .block__element {}
+      .block--modifier {}
+
+  themes
+    define pallettes -> create mixin
+
+
+
+examples
+    @mixin prefix($property, $value, $prefixes: ()) {
+      @each $prefix in $prefixes {
+        -#{$prefix}-#{$property}: $value;
+      }
+
+      #{$property}: $value;
+    }
+
+    .foo {
+       @include prefix(transform, rotate(90deg), ('webkit', 'ms'));
+    }
+
 
 libraries: 
   mongoose, express
