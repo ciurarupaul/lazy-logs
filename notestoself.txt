@@ -16,3 +16,23 @@ libraries:
   validator, 
   multer (image handling), 
   sharp (image manipulation: resizing, converting, metadata, etc)
+
+
+routes structure
+  must have
+    / -> home, displays the properties
+
+    /account -> user's personal control panel
+
+    /bookings -> displays a user's bookings
+    /bookings/:bookingId
+
+    /wishlist
+
+    /listings/:listingId -> display a single cabin
+
+    /pagenotfound -> error page
+
+  might add later
+    /registerProperty -> allows users to add their own locations
+    /hosts/:hostid -> see a host's profile
