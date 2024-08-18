@@ -5,8 +5,12 @@
 @use "base/helpers";
 @use "base/typography";
 
+@use "components/index" as components;
+
 @use "layout/footer";
 @use "layout/header";
+
+@use "pages/index" as pages;
 
 // @use "components/";
 

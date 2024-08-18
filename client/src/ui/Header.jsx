@@ -1,7 +1,5 @@
 import { GiCampfire } from "react-icons/gi";
-import { HiBars3 } from "react-icons/hi2";
-import { HiUserCircle } from "react-icons/hi2";
-import { HiOutlineGlobeAlt } from "react-icons/hi2";
+import { HiBars3, HiUserCircle, HiOutlineGlobeAlt } from "react-icons/hi2";
 
 function Header() {
 	return (
