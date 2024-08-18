@@ -23,18 +23,3 @@ $themes: (
 		"success": #1cc819,
 	)
 );
-
-// Mixin to apply a theme by generating CSS variables
-@mixin apply-theme($theme-name) {
-	// Check if the theme exists
-	@if map-has-key($themes, $theme-name) {
-		$theme: map-get($themes, $theme-name);
-
-		// Iterate over the theme map and create CSS variables
-		@each $key, $value in $theme {
-			--#{$key}: #{$value};
-		}
-	} @else {
-		@warn "Theme '#{$theme-name}' does not exist.";
-	}
-}

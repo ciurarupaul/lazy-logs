@@ -6,6 +6,7 @@
 	border-radius: 6px;
 	overflow: hidden;
 	width: 20rem;
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 3px 8px;
 }
 
 .menu__item {
@@ -25,12 +26,6 @@
 	gap: 1.6rem;
 
 	&:hover {
-		background-color: var(--background-200);
-	}
-
-	svg {
-		width: 2.5rem;
-		height: 2.5rem;
-		color: var(--primary-200);
+		background-color: var(--background-100);
 	}
 }

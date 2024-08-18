@@ -1,8 +1,25 @@
 import { GiCampfire } from "react-icons/gi";
 import { HiBars3, HiUserCircle } from "react-icons/hi2";
 import Menus from "../ui/Menus";
+import ThemeButton from "./ThemeButton";
+import { useEffect, useState } from "react";
 
 function Header() {
+	const [theme, setTheme] = useState(
+		localStorage.getItem("theme") || "dark-theme"
+	);
+
+	useEffect(() => {
+		document.documentElement.className = theme;
+		localStorage.setItem("theme", theme);
+	}, [theme]);
+
+	const toggleTheme = () => {
+		setTheme((prevTheme) =>
+			prevTheme === "dark-theme" ? "light-theme" : "dark-theme"
+		);
+	};
+
 	return (
 		<header className="header container">
 			<div className="header__logo-box">
@@ -12,15 +29,15 @@ function Header() {
 
 			<Menus>
 				<Menus.Menu>
-					<Menus.Toggle id="main-menu">
-						<div className="header__user-box">
-							<button>theme</button>
+					<div className="header__user-box">
+						<ThemeButton onClick={toggleTheme} />
+						<Menus.Toggle id="main-menu">
 							<button className="header__user-button">
 								<HiBars3 className="header__user-menu" />{" "}
 								<HiUserCircle className="header__user-account" />
 							</button>
-						</div>
-					</Menus.Toggle>
+						</Menus.Toggle>
+					</div>
 					<Menus.List id="main-menu">
 						<div className="small-margin" />
 

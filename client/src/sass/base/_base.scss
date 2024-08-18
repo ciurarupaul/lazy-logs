@@ -10,17 +10,65 @@
 	box-sizing: inherit;
 }
 
+:root {
+	--background: #141204;
+	--background-100: #1e1e1e;
+	--background-200: #2b2b2b;
+	--primary: #e9ecf5;
+	--primary-100: #d2d4dd;
+	--primary-200: #75767b;
+	--error: #f50000;
+	--success: #1cc819;
+}
+
+.dark-theme {
+	--background: #141204;
+	--background-100: #1e1e1e;
+	--background-200: #2b2b2b;
+	--primary: #e9ecf5;
+	--primary-100: #d2d4dd;
+	--primary-200: #75767b;
+	--error: #f50000;
+	--success: #1cc819;
+}
+
+// .light-theme {
+// 	--background: #f8f9fa;
+// 	--background-100: #f1f3f5;
+// 	--background-200: #e9ecef;
+// 	--primary: #212529;
+// 	--primary-100: #343a40;
+// 	--primary-200: #4d5154;
+// 	--error: #f50000;
+// 	--success: #1cc819;
+// }
+
+.light-theme {
+	--background: #e9ecf5;
+	--background-100: #d2d4dd;
+	--background-200: #75767b;
+	--primary: #141204;
+	--primary-100: #1e1e1e;
+	--primary-200: #2b2b2b;
+	--error: #f50000;
+	--success: #1cc819;
+}
+
 html {
 	font-size: 62.5%;
 	height: 100%;
+}
+
+header,
+footer,
+body {
+	transition: background-color 0.5s;
 }
 
 body {
 	box-sizing: border-box;
 	position: relative;
 	min-height: fit-content;
-	@include palettes.apply-theme("dark-theme");
-	transition: all 0.2s;
 }
 
 .container {

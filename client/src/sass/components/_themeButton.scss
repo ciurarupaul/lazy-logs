@@ -1,0 +1,49 @@
+@use "../abstracts/mixins";
+
+.theme {
+	width: 100%;
+	@include mixins.flexCenter;
+
+	&-toggle {
+		display: inline-block;
+		position: relative;
+
+		&-checkbox {
+			display: none;
+		}
+
+		&-label {
+			display: inline-flex;
+			align-items: center;
+			cursor: pointer;
+			width: 50px;
+			height: 25px;
+			background: var(--primary);
+			border-radius: 15px;
+			position: relative;
+			transition: background-color 0.3s;
+		}
+
+		&-button {
+			display: block;
+			width: 20px;
+			height: 20px;
+			background: var(--background);
+			border-radius: 50%;
+			position: absolute;
+			top: 2.5px;
+			left: 4px;
+			transition: transform 0.3s;
+			border: none;
+		}
+	}
+
+	.theme-toggle-checkbox:checked + .theme-toggle-label {
+		background: var(--primary);
+	}
+
+	.theme-toggle-checkbox:checked + .theme-toggle-label .theme-toggle-button {
+		transform: translateX(22.5px);
+		background-color: var(--background);
+	}
+}
