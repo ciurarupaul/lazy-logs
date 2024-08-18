@@ -1,1 +1,11 @@
 @use "../abstracts";
+
+.line {
+	height: 1px;
+	width: 100%;
+	background-color: var(--background-200);
+}
+
+.small-margin {
+	height: abstracts.$small-margin;
+}

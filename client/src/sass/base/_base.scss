@@ -20,6 +20,7 @@ body {
 	position: relative;
 	min-height: fit-content;
 	@include palettes.apply-theme("dark-theme");
+	transition: all 0.2s;
 }
 
 .container {
