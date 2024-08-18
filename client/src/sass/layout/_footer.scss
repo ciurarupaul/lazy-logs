@@ -8,11 +8,6 @@
 	background-color: var(--background);
 	border-top: 1px solid var(--background-200);
 
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-
 	&__socials {
 		@include mixins.flexCenter;
 		gap: 1rem;

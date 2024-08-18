@@ -18,6 +18,17 @@ html {
 body {
 	box-sizing: border-box;
 	position: relative;
-	height: 100vh;
+	min-height: fit-content;
 	@include palettes.apply-theme("dark-theme");
+}
+
+.container {
+	min-width: fit-content;
+	max-width: 180rem; //might increase later
+	margin: 0 auto;
+}
+
+.page {
+	display: flex;
+	height: calc(100vh - 8rem - 6rem);
 }
