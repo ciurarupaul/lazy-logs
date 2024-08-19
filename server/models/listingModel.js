@@ -1,19 +1,6 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
 
-const bedTypes = [
-	"Single",
-	"Double",
-	"Queen",
-	"King",
-	"Super King",
-	"Bunk",
-	"Sofa Bed",
-	"Futon",
-	"Rollaway",
-	"Air Mattress",
-];
-
 const listingSchema = new mongoose.Schema(
 	{
 		host: {
@@ -26,13 +13,14 @@ const listingSchema = new mongoose.Schema(
 				type: String,
 				required: [true, "County is required"],
 			},
+			city: {
+				type: String,
+			},
 			commune: {
 				type: String,
-				required: [true, "Commune is required"],
 			},
 			village: {
 				type: String,
-				required: [true, "Village is required"],
 			},
 			zipcode: {
 				type: String,
@@ -87,7 +75,6 @@ const listingSchema = new mongoose.Schema(
 			},
 			beds: {
 				type: Number,
-				enum: bedTypes,
 				required: [true, "Number of beds is required"],
 				min: [0, "Number of beds cannot be negative"],
 			},
