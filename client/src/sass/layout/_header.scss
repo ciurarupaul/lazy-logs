@@ -1,6 +1,9 @@
 @use "../abstracts";
 
 .header {
+	grid-column: page-start / page-end;
+	grid-row: header-start/header-end;
+
 	@include abstracts.flexCenter;
 	justify-content: space-between;
 	padding: 1rem 4rem;

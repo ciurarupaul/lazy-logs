@@ -4,11 +4,11 @@ import Footer from "./Footer";
 
 function AppLayout() {
 	return (
-		<>
+		<div className="grid-container">
 			<Header />
 			<Outlet />
 			<Footer />
-		</>
+		</div>
 	);
 }
 

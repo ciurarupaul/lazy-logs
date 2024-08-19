@@ -1,0 +1,28 @@
+@use "../abstracts/mixins";
+
+.listings {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+	gap: 2rem;
+
+	list-style: none;
+	padding: 4rem 8rem;
+	background-color: var(--background);
+
+	&__cell {
+		@include mixins.flexCenter;
+	}
+}
+
+.listing {
+	background-color: var(--background);
+	overflow: hidden;
+	width: 100%;
+	max-width: 30rem;
+
+	&__photo {
+		object-fit: cover;
+		width: 100%;
+		border-radius: 14px;
+	}
+}

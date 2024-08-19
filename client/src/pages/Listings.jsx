@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { getListings } from "../services/apiListings";
+import { useState, useEffect } from "react";
+import ListingCard from "../ui/ListingCard";
 
 function Listings() {
 	const [listings, setListings] = useState([]);
@@ -6,37 +8,30 @@ function Listings() {
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
-		fetch("http://localhost:3000/api/listings")
-			.then((response) => {
-				if (!response.ok) {
-					throw new Error(`HTTP error! Status: ${response.status}`);
-				}
-				return response.json();
-			})
-			.then((data) => {
+		const fetchData = async () => {
+			try {
+				const data = await getListings();
 				setListings(data.data.data);
 				setLoading(false);
-			})
-			.catch((err) => {
+			} catch (err) {
 				setError(err.message);
 				setLoading(false);
-			});
+			}
+		};
+
+		fetchData();
 	}, []);
 
 	if (loading) return <p>Loading...</p>;
 	if (error) return <p>Error: {error}</p>;
 
 	return (
-		<div>
-			<h1>Listings</h1>
-			<ul>
-				{Array.isArray(listings) && listings.length > 0 ? (
+		<div className="page-container">
+			<ul className="listings">
+				{listings.length > 0 ? (
 					listings.map((listing) => (
-						<li key={listing._id}>
-							<h2>{listing.location.city}</h2>
-							<p>{listing.description}</p>
-							<p>Price: {listing.pricePerNight} RON</p>
-							<img src={listing.photos[0]} />
+						<li key={listing._id} className="listings__cell">
+							<ListingCard listing={listing} />
 						</li>
 					))
 				) : (

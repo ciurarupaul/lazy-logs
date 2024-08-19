@@ -32,17 +32,6 @@
 	--success: #1cc819;
 }
 
-// .light-theme {
-// 	--background: #f8f9fa;
-// 	--background-100: #f1f3f5;
-// 	--background-200: #e9ecef;
-// 	--primary: #212529;
-// 	--primary-100: #343a40;
-// 	--primary-200: #4d5154;
-// 	--error: #f50000;
-// 	--success: #1cc819;
-// }
-
 .light-theme {
 	--background: #e9ecf5;
 	--background-100: #d2d4dd;
@@ -71,13 +60,24 @@ body {
 	min-height: fit-content;
 }
 
-.container {
-	min-width: fit-content;
-	max-width: 180rem; //might increase later
-	margin: 0 auto;
+.grid-container {
+	min-height: 100vh;
+	max-height: fit-content;
+	display: grid;
+	grid-template-rows:
+		[header-start] 8rem [header-end page-start] 1fr
+		[page-end footer-start] 6rem [footer-end];
+	grid-template-columns:
+		1fr [page-start] repeat(
+			12,
+			[col-start] minmax(min-content, 15rem) [col-end]
+		)
+		[page-end]
+		1fr;
+	// change 10 to 15, if max width of container is 180rem (now 120)
 }
 
-.page {
-	display: flex;
-	height: calc(100vh - 8rem - 6rem);
+.page-container {
+	grid-column: page-start / page-end;
+	grid-row: page-start/page-end;
 }

@@ -21,7 +21,7 @@ function Header() {
 	};
 
 	return (
-		<header className="header container">
+		<header className="header">
 			<div className="header__logo-box">
 				<GiCampfire className="header__logo-icon" />
 				<p className="header__logo-text">lazy-logs</p>
