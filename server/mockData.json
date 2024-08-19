@@ -36,10 +36,10 @@
 			"discount": 15,
 			"currency": "RON",
 			"photos": [
-				"/server/public/img/listings/cabin-main.jpg",
-				"/server/public/img/listings/cabin-02.jpg",
-				"/server/public/img/listings/cabin-03.jpg",
-				"/server/public/img/listings/cabin-04.jpg"
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
 			],
 			"amenities": ["WiFi", "Wood Stove", "Mountain View"],
 			"houseRules": ["No pets", "Quiet hours after 10 PM"],
@@ -68,10 +68,10 @@
 			"discount": 10,
 			"currency": "RON",
 			"photos": [
-				"/server/public/img/listings/cabin-main.jpg",
-				"/server/public/img/listings/cabin-02.jpg",
-				"/server/public/img/listings/cabin-03.jpg",
-				"/server/public/img/listings/cabin-04.jpg"
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
 			],
 			"amenities": ["Hot Tub", "Fireplace", "Forest Access"],
 			"houseRules": ["No smoking inside", "Respect nature"],
@@ -100,10 +100,10 @@
 			"discount": 20,
 			"currency": "RON",
 			"photos": [
-				"/server/public/img/listings/cabin-main.jpg",
-				"/server/public/img/listings/cabin-02.jpg",
-				"/server/public/img/listings/cabin-03.jpg",
-				"/server/public/img/listings/cabin-04.jpg"
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
 			],
 			"amenities": ["Cable TV", "BBQ Grill", "Ski Access"],
 			"houseRules": ["No parties", "Keep noise levels down"],
@@ -132,10 +132,10 @@
 			"discount": 5,
 			"currency": "RON",
 			"photos": [
-				"/server/public/img/listings/cabin-main.jpg",
-				"/server/public/img/listings/cabin-02.jpg",
-				"/server/public/img/listings/cabin-03.jpg",
-				"/server/public/img/listings/cabin-04.jpg"
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
 			],
 			"amenities": ["Fireplace", "Mountain View"],
 			"houseRules": ["No pets", "No loud music"],
@@ -164,10 +164,10 @@
 			"discount": null,
 			"currency": "RON",
 			"photos": [
-				"/server/public/img/listings/cabin-main.jpg",
-				"/server/public/img/listings/cabin-02.jpg",
-				"/server/public/img/listings/cabin-03.jpg",
-				"/server/public/img/listings/cabin-04.jpg"
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
 			],
 			"amenities": ["Wood Stove", "Hiking Trails"],
 			"houseRules": ["No smoking", "Clean after use"],
@@ -196,10 +196,10 @@
 			"discount": 10,
 			"currency": "RON",
 			"photos": [
-				"/server/public/img/listings/cabin-main.jpg",
-				"/server/public/img/listings/cabin-02.jpg",
-				"/server/public/img/listings/cabin-03.jpg",
-				"/server/public/img/listings/cabin-04.jpg"
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
 			],
 			"amenities": ["Heating", "Outdoor Fireplace"],
 			"houseRules": ["Respect the property", "No loud noises"],
@@ -228,10 +228,10 @@
 			"discount": 8,
 			"currency": "RON",
 			"photos": [
-				"/server/public/img/listings/cabin-main.jpg",
-				"/server/public/img/listings/cabin-02.jpg",
-				"/server/public/img/listings/cabin-03.jpg",
-				"/server/public/img/listings/cabin-04.jpg"
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
 			],
 			"amenities": ["BBQ Grill", "Garden"],
 			"houseRules": ["No loud parties"],

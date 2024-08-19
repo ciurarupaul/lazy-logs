@@ -77,7 +77,7 @@ examples
 
 
 libraries: 
-  mongoose, express, dotenv
+  mongoose, express, dotenv, cors (connect different ports), path
 
   validator, 
   multer (image handling), 
