@@ -15,20 +15,12 @@
 }
 
 .listing {
-	// background-color: var(--background);
 	overflow: hidden;
 	width: 100%;
 	max-width: 30rem;
 
 	&__photo {
 		position: relative;
-
-		&-picture {
-			object-fit: cover;
-			width: 100%;
-			aspect-ratio: 4 / 3;
-			border-radius: 8px;
-		}
 
 		&-heart {
 			position: absolute;
@@ -41,14 +33,14 @@
 
 			&--empty {
 				fill: none;
-				stroke: #d2d4dd;
-				stroke-width: 7.5px;
+				stroke: var(--error);
+				stroke-width: 10px;
 			}
 
 			&--full {
 				fill: var(--error);
 				stroke: var(--error);
-				stroke-width: 7.5px;
+				stroke-width: 10px;
 			}
 		}
 	}
@@ -56,9 +48,7 @@
 	&__details {
 		color: var(--primary);
 		font-size: 1.2rem;
-		display: flex;
-		flex-direction: column;
-		gap: 0.3rem;
+		margin-top: 0.3rem;
 
 		&-header {
 			@include mixins.flexCenter;

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { PiHeartStraightFill } from "react-icons/pi";
 import { AiFillStar } from "react-icons/ai";
+import Carousel from "./Carousel";
 
 // ---------------------------
 // UPDATE WISHLIST STATE
@@ -12,11 +13,7 @@ function ListingCard({ listing }) {
 	return (
 		<div className="listing">
 			<div className="listing__photo">
-				<img
-					src={listing.photos[0]}
-					alt="listing presentation photo"
-					className="listing__photo-picture"
-				/>
+				<Carousel images={listing.photos} />
 
 				<PiHeartStraightFill
 					className={`listing__photo-heart ${
