@@ -2,6 +2,7 @@ import { useState } from "react";
 import { PiHeartStraightFill } from "react-icons/pi";
 import { AiFillStar } from "react-icons/ai";
 import Carousel from "./Carousel";
+import { Link } from "react-router-dom";
 
 // ---------------------------
 // UPDATE WISHLIST STATE
@@ -11,7 +12,7 @@ function ListingCard({ listing }) {
 	const [isStarred, setIsStarred] = useState(false);
 
 	return (
-		<div className="listing">
+		<Link to={`bookings/${listing._id}`} className="listing">
 			<div className="listing__photo">
 				<Carousel images={listing.photos} />
 
@@ -21,7 +22,11 @@ function ListingCard({ listing }) {
 							? "listing__photo-heart--full"
 							: "listing__photo-heart--empty"
 					}`}
-					onClick={() => setIsStarred(!isStarred)}
+					onClick={(event) => {
+						event.stopPropagation();
+						event.preventDefault();
+						setIsStarred(!isStarred);
+					}}
 				/>
 			</div>
 
@@ -59,7 +64,7 @@ function ListingCard({ listing }) {
 					</span>
 				</div>
 			</div>
-		</div>
+		</Link>
 	);
 }
 

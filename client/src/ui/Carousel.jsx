@@ -17,9 +17,13 @@ function Carousel({ images }) {
 
 	return (
 		<div className="carousel">
-			{activeIndex > 1 ? (
+			{activeIndex > 0 ? (
 				<button
-					onClick={prevSlide}
+					onClick={(event) => {
+						event.stopPropagation();
+						event.preventDefault();
+						prevSlide();
+					}}
 					className="carousel__btn carousel__btn--prev"
 				>
 					<HiChevronLeft className="carousel__btn-icon" />
@@ -32,7 +36,11 @@ function Carousel({ images }) {
 			/>
 			{activeIndex < images.length - 1 ? (
 				<button
-					onClick={nextSlide}
+					onClick={(event) => {
+						event.stopPropagation();
+						event.preventDefault();
+						nextSlide();
+					}}
 					className="carousel__btn carousel__btn--next"
 				>
 					<HiChevronRight className="carousel__btn-icon" />
