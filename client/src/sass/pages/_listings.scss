@@ -3,11 +3,11 @@
 .listings {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-	gap: 2rem;
+	column-gap: 2rem;
+	row-gap: 4rem;
 
 	list-style: none;
 	padding: 4rem 8rem;
-	background-color: var(--background);
 
 	&__cell {
 		@include mixins.flexCenter;
@@ -15,14 +15,88 @@
 }
 
 .listing {
-	background-color: var(--background);
+	// background-color: var(--background);
 	overflow: hidden;
 	width: 100%;
 	max-width: 30rem;
 
 	&__photo {
-		object-fit: cover;
-		width: 100%;
-		border-radius: 14px;
+		position: relative;
+
+		&-picture {
+			object-fit: cover;
+			width: 100%;
+			aspect-ratio: 4 / 3;
+			border-radius: 8px;
+		}
+
+		&-heart {
+			position: absolute;
+			z-index: 5;
+			top: 7.5px;
+			right: 10px;
+
+			width: 2.2rem;
+			height: 2.2rem;
+
+			&--empty {
+				fill: none;
+				stroke: #d2d4dd;
+				stroke-width: 7.5px;
+			}
+
+			&--full {
+				fill: var(--error);
+				stroke: var(--error);
+				stroke-width: 7.5px;
+			}
+		}
+	}
+
+	&__details {
+		color: var(--primary);
+		font-size: 1.2rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.3rem;
+
+		&-header {
+			@include mixins.flexCenter;
+			justify-content: space-between;
+			font-size: 1.4rem;
+		}
+
+		&-location {
+			font-weight: 600;
+		}
+
+		&-rating {
+			@include mixins.flexCenter;
+			gap: 0.25rem;
+			&-icon {
+				height: 1.25rem;
+				width: 1.25rem;
+			}
+		}
+
+		&-availability {
+			color: var(--primary-100);
+		}
+
+		&-price {
+			margin-top: 1rem;
+
+			@include mixins.flexEnd;
+			gap: 0.7rem;
+
+			&-start {
+				color: var(--primary-100);
+			}
+
+			&-value {
+				font-size: 1.4rem;
+				font-weight: 600;
+			}
+		}
 	}
 }

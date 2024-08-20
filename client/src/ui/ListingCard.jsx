@@ -1,30 +1,66 @@
+import { useState } from "react";
+import { PiHeartStraightFill } from "react-icons/pi";
+import { AiFillStar } from "react-icons/ai";
+
+// ---------------------------
+// UPDATE WISHLIST STATE
+// ---------------------------
+
 function ListingCard({ listing }) {
+	const [isStarred, setIsStarred] = useState(false);
+
 	return (
 		<div className="listing">
-			<img
-				src={listing.photos[0]}
-				alt="listing presentation photo"
-				className="listing__photo"
-			/>
-			<div>
-				{listing.location.village ? (
-					<p>
-						{listing.location.county}, {listing.location.village}
-					</p>
-				) : (
-					<p>
-						{listing.location.county}, {listing.location.city}
-					</p>
-				)}
+			<div className="listing__photo">
+				<img
+					src={listing.photos[0]}
+					alt="listing presentation photo"
+					className="listing__photo-picture"
+				/>
 
-				<p>
-					{listing.ratingsAverage} &#x2022; {listing.ratingsQuantity}{" "}
-					reviews
+				<PiHeartStraightFill
+					className={`listing__photo-heart ${
+						isStarred
+							? "listing__photo-heart--full"
+							: "listing__photo-heart--empty"
+					}`}
+					onClick={() => setIsStarred(!isStarred)}
+				/>
+			</div>
+
+			<div className="listing__details">
+				<div className="listing__details-header">
+					{listing.location.village ? (
+						<p className="listing__details-location">
+							{listing.location.village},{" "}
+							{listing.location.county}
+						</p>
+					) : (
+						<p>
+							{listing.location.city}, {listing.location.county}
+						</p>
+					)}
+
+					<p className="listing__details-rating">
+						<AiFillStar className="listing__details-rating-icon" />
+						{listing.ratingsAverage}
+					</p>
+				</div>
+
+				<p className="listing__details-availability">
+					Available as soon as **DATE**
 				</p>
-				<p>
-					{listing.pricePerNight} {listing.currency}/night
-				</p>
-				<p>available as soon as DATE</p>
+
+				<div className="small-margin" />
+
+				<div className="listing__details-price">
+					<p className="listing__details-price-start">
+						Starting from
+					</p>
+					<span className="listing__details-price-value">
+						{listing.pricePerNight} {listing.currency}
+					</span>
+				</div>
 			</div>
 		</div>
 	);
