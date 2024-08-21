@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import { createPortal } from "react-dom";
-import { useOutsideClick } from "../hooks/useOutsideClick";
+import { useOutsideClick } from "../../hooks/useOutsideClick";
 
 const MenusContext = createContext();
 
@@ -20,6 +20,27 @@ function Menus({ children }) {
 	);
 }
 
+function getScrollbarWidth() {
+	// Create a temporary div to measure scrollbar width
+	const outer = document.createElement("div");
+	outer.style.visibility = "hidden";
+	outer.style.overflow = "scroll"; // Force scrollbar to appear
+	outer.style.width = "50px";
+	outer.style.height = "50px";
+	document.body.appendChild(outer);
+
+	// Create an inner div to calculate the width difference
+	const inner = document.createElement("div");
+	outer.appendChild(inner);
+
+	const scrollbarWidth = outer.offsetWidth - inner.offsetWidth;
+
+	// Remove the temporary elements
+	document.body.removeChild(outer);
+
+	return scrollbarWidth;
+}
+
 function Toggle({ id, children }) {
 	const { openId, close, open, setPosition } = useContext(MenusContext);
 
@@ -27,10 +48,16 @@ function Toggle({ id, children }) {
 		e.stopPropagation();
 
 		const rect = e.target.closest("button").getBoundingClientRect();
-		setPosition({
-			x: window.innerWidth - rect.width - rect.x,
-			y: rect.y + rect.height + 8,
-		});
+		const scrollbarWidth = getScrollbarWidth();
+
+		let x = window.innerWidth - rect.width - rect.x;
+		let y = rect.y + rect.height + 8;
+
+		if (window.innerWidth > document.documentElement.clientWidth) {
+			x -= scrollbarWidth;
+		}
+
+		setPosition({ x, y });
 
 		openId === "" || openId !== id ? open(id) : close();
 	}

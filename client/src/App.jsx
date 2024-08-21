@@ -7,8 +7,8 @@ import Listing from "./pages/Listing";
 import Listings from "./pages/Listings";
 import PageNotFound from "./pages/PageNotFound";
 import YourListings from "./pages/YourListings";
-import AccountLayout from "./ui/AccountLayout";
-import AppLayout from "./ui/AppLayout";
+import AccountLayout from "./ui/layout/AccountLayout";
+import AppLayout from "./ui/layout/AppLayout";
 import Wishlist from "./pages/Wishlist";
 
 function App() {

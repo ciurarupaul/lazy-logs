@@ -1,6 +1,6 @@
 import { getListings } from "../services/apiListings";
 import { useState, useEffect } from "react";
-import ListingCard from "../ui/ListingCard";
+import ListingCard from "../ui/components/ListingCard";
 
 function Listings() {
 	const [listings, setListings] = useState([]);
