@@ -74,10 +74,23 @@ body {
 		)
 		[page-end]
 		1fr;
-	// change 10 to 15, if max width of container is 180rem (now 120)
+}
+
+.account-grid-container {
+	min-height: calc(100vh - 8rem - 6rem);
+	max-height: fit-content;
+
+	display: grid;
+	grid-template-columns: [sidebar-start] minmax(min-content, 20%) [sidebar-end content-start] 1fr [content-end];
+
+	grid-column: 2 / -2;
 }
 
 .page-container {
 	grid-column: page-start / page-end;
 	grid-row: page-start/page-end;
+}
+
+.user-page {
+	padding: 1rem 4rem;
 }

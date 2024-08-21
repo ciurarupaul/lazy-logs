@@ -3,6 +3,7 @@ import { HiBars3, HiUserCircle } from "react-icons/hi2";
 import Menus from "../ui/Menus";
 import ThemeButton from "./ThemeButton";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
 	const [theme, setTheme] = useState(
@@ -23,7 +24,9 @@ function Header() {
 	return (
 		<header className="header">
 			<div className="header__logo-box">
-				<GiCampfire className="header__logo-icon" />
+				<Link to="/">
+					<GiCampfire className="header__logo-icon" />
+				</Link>
 				<p className="header__logo-text">lazy-logs</p>
 			</div>
 
@@ -41,9 +44,21 @@ function Header() {
 					<Menus.List id="main-menu">
 						<div className="small-margin" />
 
-						<Menus.Button>Account</Menus.Button>
-						<Menus.Button>Bookings</Menus.Button>
-						<Menus.Button>Wishlist</Menus.Button>
+						<Link to="/users/1asfd3282jkdf" className="link">
+							<Menus.Button>Account</Menus.Button>
+						</Link>
+						<Link
+							to="/users/1asfd3282jkdf/bookings"
+							className="link"
+						>
+							<Menus.Button>Bookings</Menus.Button>
+						</Link>
+						<Link
+							to="/users/1asfd3282jkdf/wishlist"
+							className="link"
+						>
+							<Menus.Button>Wishlist</Menus.Button>
+						</Link>
 
 						<div className="line" />
 

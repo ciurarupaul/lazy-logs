@@ -1,12 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AppLayout from "./ui/AppLayout";
-import PageNotFound from "./pages/PageNotFound";
+import Account from "./pages/Account";
+import Booking from "./pages/Booking";
+import Bookings from "./pages/Bookings";
 import ErrorPage from "./pages/ErrorPage";
 import Listing from "./pages/Listing";
 import Listings from "./pages/Listings";
-import Account from "./pages/Account";
-import Bookings from "./pages/Bookings";
-import Booking from "./pages/Booking";
+import PageNotFound from "./pages/PageNotFound";
+import YourListings from "./pages/YourListings";
+import AccountLayout from "./ui/AccountLayout";
+import AppLayout from "./ui/AppLayout";
+import Wishlist from "./pages/Wishlist";
 
 function App() {
 	return (
@@ -24,13 +27,20 @@ function App() {
 							<Route path=":listingId" element={<Listing />} />
 						</Route>
 
-						<Route path="users/:userId" element={<Account />}>
-							<Route path="bookings" element={<Bookings />}>
+						<Route path="users/:userId" element={<AccountLayout />}>
+							<Route index element={<Account />} />
+							<Route path="bookings">
+								<Route index element={<Bookings />} />
 								<Route
 									path=":bookingId"
 									element={<Booking />}
 								/>
 							</Route>
+							<Route path="wishlist" element={<Wishlist />} />
+							<Route
+								path="your-listings"
+								element={<YourListings />}
+							/>
 						</Route>
 					</Route>
 				</Route>
