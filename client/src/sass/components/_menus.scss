@@ -1,18 +1,19 @@
+@use "../base/typography";
+
 .menu__list {
 	list-style: none;
 	position: fixed;
 	background-color: var(--background);
-	border: 1px solid var(--background-200);
+	border: 1px solid var(--background-light);
 	border-radius: 6px;
 	overflow: hidden;
-	width: 20rem;
-	box-shadow: rgba(0, 0, 0, 0.12) 0px 3px 8px;
+	min-width: fit-content;
 	z-index: 5;
 }
 
 .menu__item {
 	border: none;
-	// reset preview styles
+	// reset previous styles
 	border-radius: 0;
 
 	width: 100%;
@@ -27,6 +28,10 @@
 	gap: 1.6rem;
 
 	&:hover {
-		background-color: var(--background-100);
+		background-color: var(--background-hover);
 	}
+}
+
+.user-menu {
+	width: 20rem;
 }

@@ -5,11 +5,12 @@ import Bookings from "./pages/Bookings";
 import ErrorPage from "./pages/ErrorPage";
 import Listing from "./pages/Listing";
 import Listings from "./pages/Listings";
+import Login from "./pages/Login";
 import PageNotFound from "./pages/PageNotFound";
+import Wishlist from "./pages/Wishlist";
 import YourListings from "./pages/YourListings";
 import AccountLayout from "./ui/layout/AccountLayout";
 import AppLayout from "./ui/layout/AppLayout";
-import Wishlist from "./pages/Wishlist";
 
 function App() {
 	return (
@@ -44,6 +45,12 @@ function App() {
 						</Route>
 					</Route>
 				</Route>
+
+				<Route
+					path="/login"
+					errorElement={<ErrorPage />}
+					element={<Login />}
+				/>
 
 				<Route path="*" element={<PageNotFound />} />
 			</Routes>

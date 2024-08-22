@@ -8,7 +8,7 @@ function Footer() {
 			<div className="footer__copyright">
 				<FaRegCopyright className="footer__copyright-icon" />
 				<p className="footer__copyright-text">
-					Built by <strong>Ciuraru Paul</strong>
+					Built by <span>Ciuraru Paul</span>
 				</p>
 			</div>
 

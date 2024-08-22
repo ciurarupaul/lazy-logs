@@ -1,0 +1,9 @@
+.login-button {
+	border: 1px solid var(--background-light);
+	border-radius: 100rem;
+	padding: 0.5rem 1rem;
+
+	&:hover {
+		background-color: var(--background-hover);
+	}
+}

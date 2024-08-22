@@ -7,7 +7,7 @@
 	row-gap: 1rem;
 
 	background-color: var(--background);
-	border-right: 1px solid var(--primary-200);
+	border-right: 1px solid var(--background-light);
 	padding: 1rem 3rem;
 
 	&__user {
@@ -48,7 +48,7 @@
 
 			&:hover,
 			&--active {
-				background-color: var(--background-100);
+				background-color: var(--background-hover);
 			}
 		}
 	}

@@ -35,13 +35,13 @@
 
 			&--empty {
 				fill: none;
-				stroke: var(--error);
+				stroke: var(--red);
 				stroke-width: 10px;
 			}
 
 			&--full {
-				fill: var(--error);
-				stroke: var(--error);
+				fill: var(--red);
+				stroke: var(--red);
 				stroke-width: 10px;
 			}
 		}
@@ -65,6 +65,8 @@
 		&-rating {
 			@include mixins.flexCenter;
 			gap: 0.25rem;
+			font-weight: 500;
+
 			&-icon {
 				height: 1.25rem;
 				width: 1.25rem;
@@ -72,7 +74,7 @@
 		}
 
 		&-availability {
-			color: var(--primary-100);
+			color: var(--primary-details);
 		}
 
 		&-price {
@@ -82,7 +84,7 @@
 			gap: 0.7rem;
 
 			&-start {
-				color: var(--primary-100);
+				color: var(--primary-details);
 			}
 
 			&-value {

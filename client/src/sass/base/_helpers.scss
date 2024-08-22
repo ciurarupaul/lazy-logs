@@ -1,9 +1,10 @@
 @use "../abstracts";
 
 .line {
-	height: 1px;
+	height: 0.75px;
+	// 1px is bugged for some reason
 	width: 100%;
-	background-color: var(--background-200);
+	background-color: var(--background-light);
 }
 
 .small-margin {

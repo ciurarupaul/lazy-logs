@@ -1,6 +1,5 @@
 @use "../abstracts";
 @use "./normalize";
-@use "../themes/palettes";
 
 *,
 *::after,
@@ -11,36 +10,46 @@
 }
 
 :root {
-	--background: #141204;
-	--background-100: #1e1e1e;
-	--background-200: #2b2b2b;
-	--primary: #e9ecf5;
-	--primary-100: #d2d4dd;
-	--primary-200: #75767b;
-	--error: #f50000;
-	--success: #1cc819;
+	--background: #111315; // main background
+	--background-hover: #212529; // hovering elements
+	--background-light: #4d5154; // elements that have to be hightlighted, but are not active, or hairlines / separating lines
+
+	--primary-important: #f8f9fa; // important bold text
+	--primary: #e9ecf5; // normal text
+	--primary-details: #d2d4dd; // details, unimportant text
+
+	// toasts and others -> must update
+	--red: #f50000;
+	--yellow: #fbbd00;
+	--green: #1cc819;
 }
 
 .dark-theme {
-	--background: #141204;
-	--background-100: #1e1e1e;
-	--background-200: #2b2b2b;
+	--background: #111315;
+	--background-hover: #212529;
+	--background-light: #4d5154;
+
+	--primary-important: #f8f9fa;
 	--primary: #e9ecf5;
-	--primary-100: #d2d4dd;
-	--primary-200: #75767b;
-	--error: #f50000;
-	--success: #1cc819;
+	--primary-details: #d2d4dd;
+
+	--red: #f50000;
+	--yellow: #fbbd00;
+	--green: #1cc819;
 }
 
 .light-theme {
-	--background: #e9ecf5;
-	--background-100: #d2d4dd;
-	--background-200: #75767b;
-	--primary: #141204;
-	--primary-100: #1e1e1e;
-	--primary-200: #2b2b2b;
-	--error: #f50000;
-	--success: #1cc819;
+	--background: #f8f9fa;
+	--background-hover: #e4e5e5;
+	--background-light: #848586;
+
+	--primary-important: #111315;
+	--primary: #1a1e21;
+	--primary-details: #373b3e;
+
+	--red: #f50000;
+	--yellow: #fbbd00;
+	--green: #1cc819;
 }
 
 html {
@@ -81,7 +90,7 @@ body {
 	max-height: fit-content;
 
 	display: grid;
-	grid-template-columns: [sidebar-start] minmax(min-content, 20%) [sidebar-end content-start] 1fr [content-end];
+	grid-template-columns: [sidebar-start] minmax(min-content, 25%) [sidebar-end content-start] 1fr [content-end];
 
 	grid-column: 2 / -2;
 }

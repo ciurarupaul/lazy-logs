@@ -9,7 +9,7 @@ svg {
 }
 
 button {
-	border: 1px solid var(--background-200);
+	border: 1px solid var(--background-light);
 	border-radius: 100rem;
 	padding: 0.5rem 1rem;
 	cursor: pointer;
@@ -17,7 +17,7 @@ button {
 	color: var(--primary);
 
 	&:hover {
-		background-color: var(--background-100);
+		background-color: var(--background-hover);
 	}
 }
 

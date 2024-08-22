@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { GiCampfire } from "react-icons/gi";
 import { Link } from "react-router-dom";
-import LoginMenu from "../components/LoginMenu";
 import UserMenu from "../components/UserMenu";
+import LoginButton from "../components/LoginButton";
 
 function Header() {
 	const [theme, setTheme] = useState(
@@ -34,7 +34,7 @@ function Header() {
 			{user === true ? (
 				<UserMenu toggleTheme={toggleTheme} />
 			) : (
-				<LoginMenu toggleTheme={toggleTheme} />
+				<LoginButton toggleTheme={toggleTheme} />
 			)}
 		</header>
 	);
