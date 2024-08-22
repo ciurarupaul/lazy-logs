@@ -30,7 +30,7 @@ function EmailPanel({ onClick }) {
 				</form>
 			</div>
 
-			<button className="login__next" onClick={onClick}>
+			<button className="login__buttons-next" onClick={onClick}>
 				Next
 			</button>
 
@@ -41,7 +41,11 @@ function EmailPanel({ onClick }) {
 
 			<div className="line login-line" />
 
-			<button className="login-google">google auth</button>
+			<p className="login-text-or">log in with:</p>
+
+			<p className="floating-or">or</p>
+
+			<button className="login__buttons-google">google auth</button>
 		</div>
 	);
 }

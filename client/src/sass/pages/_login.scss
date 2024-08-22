@@ -15,30 +15,95 @@
 	@include mixins.flexCenter;
 	flex-direction: column;
 
-	&-button {
-		border: 1px solid var(--background-lines);
-		border-radius: 100rem;
-		padding: 0.5rem 1rem;
+	overflow: hidden;
 
-		&:hover {
-			background-color: var(--background-hover);
+	&__password {
+		&-greet {
+			margin-bottom: 4rem;
+		}
+
+		&-back {
+			@include mixins.flexCenter;
+			gap: 0.35rem;
+
+			width: fit-content;
+			padding: 1rem;
+
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-radius: 0;
+			border-bottom-right-radius: 8px;
+			border: none;
+
+			color: var(--primary);
+			font-size: typography.$fontsize-medium;
+
+			&-icon {
+				height: 1.5rem;
+				width: 1.5rem;
+				stroke: var(--primary);
+				stroke-width: 2px;
+			}
+		}
+
+		&-options {
+			width: 100%;
+			margin-top: 8rem;
+
+			@include mixins.flexCenter;
+			justify-content: space-between;
+
+			&-rememberme {
+				@include mixins.flexCenter;
+				gap: 0.5rem;
+			}
+
+			&-forgotpassword {
+				border: none;
+
+				&:hover {
+					background-color: var(--background);
+				}
+			}
 		}
 	}
 
-	&-line {
-		margin: 3rem 0;
-	}
+	&__buttons {
+		&-button {
+			border: 1px solid var(--background-lines);
+			border-radius: 100rem;
+			padding: 0.5rem 1rem;
 
-	&-text {
-		margin-top: 6rem;
-		color: var(--primary-details);
-		font-size: typography.$fontsize-small;
-	}
+			&:hover {
+				background-color: var(--background-hover);
+			}
+		}
 
-	&-google {
-		margin: 0 auto;
-		padding: 1rem 2rem;
-		width: 80%;
+		&-google {
+			margin: 0 auto;
+			padding: 1.25rem 2rem;
+			width: 100%;
+			font-size: typography.$fontsize-medium;
+		}
+
+		&-next {
+			position: absolute;
+			top: 22.5rem;
+			right: 4rem;
+
+			border-radius: 8px;
+			padding: 0.75rem 1.5rem;
+		}
+
+		&-continue-pass {
+			padding: 1rem;
+			border-radius: 8px;
+
+			position: absolute;
+			top: 28.5rem;
+			left: 28.35rem;
+		}
 	}
 
 	&__logo {
@@ -58,12 +123,30 @@
 		}
 	}
 
-	&__next {
-		position: absolute;
-		top: 22.5rem;
-		right: 4rem;
-
-		border-radius: 6px;
-		padding: 0.75rem 1.5rem;
+	&-line {
+		margin: 3rem 0 0.5rem 0;
 	}
+
+	&-text {
+		margin-top: 6rem;
+		color: var(--primary-details);
+		font-size: typography.$fontsize-small;
+
+		&-or {
+			color: var(--primary-details);
+			font-size: typography.$fontsize-small;
+			margin-bottom: 3rem;
+			margin-top: 0.5rem;
+		}
+	}
+}
+
+.floating-or {
+	position: absolute;
+	background-color: var(--background);
+	color: var(--primary-details);
+	font-size: typography.$fontsize-small;
+	padding: 0 1rem;
+
+	top: 33.1rem;
 }
