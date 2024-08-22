@@ -12,7 +12,7 @@ function ListingCard({ listing }) {
 	const [isStarred, setIsStarred] = useState(false);
 
 	return (
-		<Link to={`bookings/${listing._id}`} className="listing">
+		<Link to={`listings/${listing._id}`} className="listing">
 			<div className="listing__photo">
 				<Carousel images={listing.photos} />
 

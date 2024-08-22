@@ -1,5 +1,5 @@
 function Listing() {
-	return <div>details about a property</div>;
+	return <div className="page-container">details about a property</div>;
 }
 
 export default Listing;

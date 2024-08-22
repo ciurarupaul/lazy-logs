@@ -1,6 +1,6 @@
 import { HiBars3, HiUserCircle } from "react-icons/hi2";
 import { Link } from "react-router-dom";
-import ThemeButton from "../utils/ThemeButton";
+import ThemeButton from "../../utils/ThemeButton";
 
 function LoginButton({ toggleTheme }) {
 	return (

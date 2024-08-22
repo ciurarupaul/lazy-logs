@@ -1,12 +1,70 @@
 @use "../abstracts";
+@use "../base/typography";
 
 .line {
 	height: 0.75px;
 	// 1px is bugged for some reason
 	width: 100%;
-	background-color: var(--background-light);
+	background-color: var(--background-lines);
 }
 
 .small-margin {
 	height: abstracts.$small-margin;
+}
+
+.form {
+	position: relative;
+	width: 100%;
+
+	input {
+		width: 100%;
+		padding: 1rem 2rem;
+
+		color: var(--primary);
+		font-size: typography.$fontsize-medium;
+		font-weight: typography.$fontweight-medium;
+		font-family: inherit;
+
+		border: none;
+		border-radius: 4px;
+		background-color: var(--background-light);
+		border-bottom: 2px solid var(--background);
+		outline: none;
+
+		&:focus {
+			outline: none;
+			border-bottom: 2px solid var(--background);
+
+			&:invalid {
+				border-bottom: 2px solid var(--red);
+			}
+
+			&:valid {
+				border-bottom: 2px solid var(--green);
+			}
+		}
+
+		&::placeholder {
+			color: transparent;
+		}
+
+		&:focus + label,
+		&:not(:placeholder-shown) + label {
+			top: -30%;
+			left: 0;
+		}
+	}
+
+	label {
+		position: absolute;
+		top: 50%;
+		left: 2rem;
+		transform: translate(0, -50%);
+
+		color: var(--primary);
+		font-weight: typography.$fontweight-medium;
+		outline: none;
+		transition: all 0.3s;
+		pointer-events: none;
+	}
 }

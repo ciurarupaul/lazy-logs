@@ -1,9 +1,69 @@
-.login-button {
-	border: 1px solid var(--background-light);
-	border-radius: 100rem;
-	padding: 0.5rem 1rem;
+@use "../abstracts/mixins";
+@use "../base/typography";
 
-	&:hover {
-		background-color: var(--background-hover);
+.login {
+	width: 40rem;
+	margin: 0 auto;
+	margin-top: 5vh;
+	padding: 2rem 4rem;
+
+	background-color: var(--background);
+	border: 1px solid var(--background-lines);
+	border-radius: 8px;
+
+	position: relative;
+	@include mixins.flexCenter;
+	flex-direction: column;
+
+	&-button {
+		border: 1px solid var(--background-lines);
+		border-radius: 100rem;
+		padding: 0.5rem 1rem;
+
+		&:hover {
+			background-color: var(--background-hover);
+		}
+	}
+
+	&-line {
+		margin: 3rem 0;
+	}
+
+	&-text {
+		margin-top: 6rem;
+		color: var(--primary-details);
+		font-size: typography.$fontsize-small;
+	}
+
+	&-google {
+		margin: 0 auto;
+		padding: 1rem 2rem;
+		width: 80%;
+	}
+
+	&__logo {
+		@include mixins.flexCenter;
+		flex-direction: column;
+		color: var(--primary);
+		margin-bottom: 3rem;
+
+		&-icon {
+			width: 8rem;
+			height: 8rem;
+		}
+
+		&-text {
+			font-size: 2.4rem;
+			font-weight: 600;
+		}
+	}
+
+	&__next {
+		position: absolute;
+		top: 22.5rem;
+		right: 4rem;
+
+		border-radius: 6px;
+		padding: 0.75rem 1.5rem;
 	}
 }

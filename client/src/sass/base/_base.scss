@@ -1,4 +1,4 @@
-@use "../abstracts";
+@use "../abstracts/mixins";
 @use "./normalize";
 
 *,
@@ -28,6 +28,7 @@
 	--background: #111315;
 	--background-hover: #212529;
 	--background-light: #4d5154;
+	--background-lines: #7c7f83;
 
 	--primary-important: #f8f9fa;
 	--primary: #e9ecf5;
@@ -41,7 +42,8 @@
 .light-theme {
 	--background: #f8f9fa;
 	--background-hover: #e4e5e5;
-	--background-light: #848586;
+	--background-light: #e9ecef;
+	--background-lines: #868e96;
 
 	--primary-important: #111315;
 	--primary: #1a1e21;
@@ -98,6 +100,12 @@ body {
 .page-container {
 	grid-column: page-start / page-end;
 	grid-row: page-start/page-end;
+}
+
+.page-container--center {
+	grid-column: page-start / page-end;
+	grid-row: page-start/page-end;
+	@include mixins.flexCenter;
 }
 
 .user-page {

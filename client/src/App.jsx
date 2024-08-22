@@ -24,9 +24,11 @@ function App() {
 					<Route path="/" errorElement={<ErrorPage />}>
 						<Route index element={<Listings />} />
 
-						<Route path="listings" element={<Listings />}>
-							<Route path=":listingId" element={<Listing />} />
-						</Route>
+						<Route path="/listings" element={<Listings />} />
+						<Route
+							path="/listings/:listingId"
+							element={<Listing />}
+						/>
 
 						<Route path="users/:userId" element={<AccountLayout />}>
 							<Route index element={<Account />} />
