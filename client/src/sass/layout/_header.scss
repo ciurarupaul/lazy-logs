@@ -56,6 +56,9 @@
 		&-button {
 			@include abstracts.flexCenter;
 			gap: 1rem;
+			border: 1px solid var(--background-lines);
+			border-radius: 100rem;
+			padding: 0.5rem 1rem;
 		}
 
 		&-account {

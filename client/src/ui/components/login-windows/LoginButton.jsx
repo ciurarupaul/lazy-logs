@@ -7,10 +7,7 @@ function LoginButton({ toggleTheme }) {
 		<div className="header__user-box">
 			<ThemeButton onClick={toggleTheme} />
 
-			<Link
-				to="/login"
-				className="header__user-button login__buttons-button"
-			>
+			<Link to="/login" className="header__user-button">
 				<HiBars3 className="header__user-menu" />{" "}
 				<HiUserCircle className="header__user-account" />
 			</Link>

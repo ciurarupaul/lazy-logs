@@ -30,22 +30,22 @@ function EmailPanel({ onClick }) {
 				</form>
 			</div>
 
-			<button className="login__buttons-next" onClick={onClick}>
+			<button className="login__buttons-btn" onClick={onClick}>
 				Next
 			</button>
 
-			<p className="login-text">
+			<p className="login__email-text">
 				Don't have an account? Don't worry! You'll be able to create one
 				in the following step!
 			</p>
 
-			<div className="line login-line" />
+			<div className="line" />
 
-			<p className="login-text-or">log in with:</p>
+			<p className="login__email-text-or">log in with:</p>
 
-			<p className="floating-or">or</p>
+			<p className="login__email-floating-or">or</p>
 
-			<button className="login__buttons-google">google auth</button>
+			<button className="login__buttons-btn">google auth</button>
 		</div>
 	);
 }
