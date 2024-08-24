@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { GiCampfire } from "react-icons/gi";
+import FormCell from "../../utils/FormCell";
 
 function EmailPanel({ onClick }) {
 	return (
@@ -11,24 +12,7 @@ function EmailPanel({ onClick }) {
 				<p className="login__logo-text">lazy-logs</p>
 			</div>
 
-			<div className="form login__form">
-				<form
-					action="#"
-					className="form"
-					onSubmit={(e) => {
-						e.preventDefault();
-					}}
-				>
-					<input
-						type="email"
-						name="email"
-						id="email"
-						placeholder="Email"
-						required
-					/>
-					<label htmlFor="email">Email</label>
-				</form>
-			</div>
+			<FormCell type="email" fieldname="email" label="Email" required />
 
 			<button className="login__buttons-btn" onClick={onClick}>
 				Next

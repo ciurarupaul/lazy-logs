@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { GiCampfire } from "react-icons/gi";
 import { HiOutlineChevronLeft } from "react-icons/hi2";
+import FormCell from "../../utils/FormCell";
 
 function PasswordPanel({ setActivePanel, handleForgotPassword, onClick }) {
 	return (
@@ -11,27 +12,9 @@ function PasswordPanel({ setActivePanel, handleForgotPassword, onClick }) {
 				</Link>
 				<p className="login__logo-text">lazy-logs</p>
 			</div>
-
 			<p className="login__password-greet">Welcome back, **username**</p>
 
-			<div className="form login__form">
-				<form
-					action="#"
-					className="form"
-					onSubmit={(e) => {
-						e.preventDefault();
-					}}
-				>
-					<input
-						type="text"
-						name="password"
-						id="password"
-						placeholder="Password"
-						required
-					/>
-					<label htmlFor="password">Password</label>
-				</form>
-			</div>
+			<FormCell fieldname="password" label="Password" required />
 
 			<button
 				onClick={() => setActivePanel("email")}
@@ -40,12 +23,10 @@ function PasswordPanel({ setActivePanel, handleForgotPassword, onClick }) {
 				<HiOutlineChevronLeft className="login__password-back-icon" />
 				Go back
 			</button>
-
 			{/* HANDLE REMEMBER BE LOGIC WHEN SUBMITTING */}
 			<button className="login__buttons-btn" onClick={onClick}>
 				Continue
 			</button>
-
 			<div className="login__password-options">
 				<div className="login__password-options-rememberme">
 					<input type="checkbox" name="rememberMe" id="rememberMe" />

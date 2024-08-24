@@ -9,7 +9,7 @@ function Login() {
 	const [activePanel, setActivePanel] = useState("email");
 	const navigate = useNavigate();
 
-	const user = true;
+	const user = false;
 
 	const handleEmailSubmit = () => {
 		if (user) {

@@ -119,6 +119,13 @@
 		}
 	}
 
+	&__signup {
+		&-greet {
+			font-size: typography.$fontsize-small;
+			text-align: center;
+		}
+	}
+
 	&__buttons {
 		&-btn {
 			width: 100%;

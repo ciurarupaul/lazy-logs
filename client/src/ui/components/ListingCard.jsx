@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { PiHeartStraightFill } from "react-icons/pi";
 import { AiFillStar } from "react-icons/ai";
-import Carousel from "./Carousel";
+import Carousel from "../utils/Carousel";
 import { Link } from "react-router-dom";
 
 // ---------------------------
