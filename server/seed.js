@@ -1,10 +1,10 @@
-const mongoose = require("mongoose");
-const fs = require("fs");
-const path = require("path");
-const dotenv = require("dotenv");
+import dotenv from "dotenv";
+import fs from "fs";
+import mongoose from "mongoose";
+import path from "path";
 
-const User = require("./models/userModel");
-const Listing = require("./models/listingModel");
+import Listing from "./models/listingModel.js";
+import User from "./models/userModel.js";
 
 dotenv.config({ path: "./config.env" });
 

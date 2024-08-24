@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const bookingSchema = new mongoose.Schema(
 	{
@@ -69,4 +69,4 @@ bookingSchema.index({ startDate: 1 });
 bookingSchema.index({ endDate: 1 });
 
 const Booking = mongoose.model("Booking", bookingSchema);
-module.exports = Booking;
+export default Booking;

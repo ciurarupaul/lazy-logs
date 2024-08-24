@@ -1,15 +1,19 @@
-const Review = require("./../models/reviewModel");
-const factory = require("./handlerFactory");
+import Review from "./../models/reviewModel.js";
+import handlerFactory from "./handlerFactory.js";
 
-exports.setListingUserIds = (req, res, next) => {
-	if (!req.body.listing) req.body.listing = req.params.listingId;
-	if (!req.body.user) req.body.user = req.user.id;
+const reviewController = {
+	setListingUserIds: (req, res, next) => {
+		if (!req.body.listing) req.body.listing = req.params.listingId;
+		if (!req.body.user) req.body.user = req.user.id;
 
-	next();
+		next();
+	},
+
+	getAllReviews: handlerFactory.getAll(Review),
+	getReview: handlerFactory.getOne(Review),
+	createReview: handlerFactory.createOne(Review),
+	updateReview: handlerFactory.updateOne(Review),
+	deleteReview: handlerFactory.deleteOne(Review),
 };
 
-exports.getAllReviews = factory.getAll(Review);
-exports.getReview = factory.getOne(Review);
-exports.createReview = factory.createOne(Review);
-exports.updateReview = factory.updateOne(Review);
-exports.deleteReview = factory.deleteOne(Review);
+export default reviewController;

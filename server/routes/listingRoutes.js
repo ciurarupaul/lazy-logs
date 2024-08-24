@@ -1,6 +1,6 @@
-const express = require("express");
-const reviewRouter = require("../routes/reviewRoutes");
-const listingController = require("../controllers/listingController");
+import express from "express";
+import listingController from "../controllers/listingController.js";
+import reviewRouter from "../routes/reviewRoutes.js";
 
 const router = express.Router({ mergeParams: true });
 // allows routes to access params from the nested router
@@ -22,4 +22,4 @@ router
 	)
 	.delete(listingController.deleteListing);
 
-module.exports = router;
+export default router;

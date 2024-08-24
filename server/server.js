@@ -1,10 +1,9 @@
-const mongoose = require("mongoose");
-// ObjectDataModelling library for MongoDB and Node.js ; Helps with schema based data modelling
-const dotenv = require("dotenv");
+import mongoose from "mongoose"; // ObjectDataModelling library for MongoDB and Node.js ; Helps with schema based data modelling
+import dotenv from "dotenv";
 // used to load environmental variables (from .env files)
+import app from "./app.js";
 
 dotenv.config({ path: "./config.env" });
-const app = require("./app");
 
 // <--- connect to db ---> (after creating project + cluster on Atlas)
 

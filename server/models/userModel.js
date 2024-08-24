@@ -1,21 +1,15 @@
-const mongoose = require("mongoose");
-const validator = require("validator");
+import bcrypt from "bcrypt";
+import mongoose from "mongoose";
+import validator from "validator";
 
 const userSchema = new mongoose.Schema(
 	{
-		firstName: {
+		name: {
 			type: String,
-			required: [true, "First name is required"],
+			required: [true, "The name is required"],
 			trim: true,
-			minlength: [2, "First name must be at least 2 characters long"],
-			maxlength: [50, "First name must be less than 50 characters long"],
-		},
-		lastName: {
-			type: String,
-			required: [true, "Last name is required"],
-			trim: true,
-			minlength: [2, "Last name must be at least 2 characters long"],
-			maxlength: [50, "Last name must be less than 50 characters long"],
+			minlength: [2, "The name must be at least 2 characters long"],
+			maxlength: [50, "The name must be less than 50 characters long"],
 		},
 		email: {
 			type: String,
@@ -39,17 +33,6 @@ const userSchema = new mongoose.Schema(
 			type: String,
 			required: [true, "Password is required"],
 			select: false,
-			minlength: [8, "Password must be at least 8 characters long"],
-		},
-		passwordConfirm: {
-			type: String,
-			required: [true, "Password confirmation is required"],
-			validate: {
-				validator: function (v) {
-					return v === this.password;
-				},
-				message: "Passwords do not match",
-			},
 		},
 		role: {
 			type: String,
@@ -74,5 +57,22 @@ const userSchema = new mongoose.Schema(
 	}
 );
 
+// hashes password before saving into db
+userSchema.pre("save", async function (next) {
+	if (!this.isModified("password")) return next();
+
+	this.password = await bcrypt.hash(this.password, 12);
+
+	next();
+});
+
+// checks if the user inputed password is the same as the hashed one in the db
+userSchema.methods.correctPassword = async function (
+	candidatePassword,
+	userPassword
+) {
+	return await bcrypt.compare(candidatePassword, userPassword);
+};
+
 const User = mongoose.model("User", userSchema);
-module.exports = User;
+export default User;

@@ -1,5 +1,5 @@
-const express = require("express");
-const reviewController = require("./../controllers/reviewController");
+import express from "express";
+import reviewController from "../controllers/reviewController.js";
 
 const router = express.Router();
 
@@ -16,4 +16,4 @@ router
 	.patch(reviewController.updateReview)
 	.delete(reviewController.deleteReview);
 
-module.exports = router;
+export default router;
