@@ -13,18 +13,22 @@ router.post("/signup", authController.signup);
 router.post("/login", authController.login);
 router.get("/logout", authController.logout);
 
+router.post("/forgotPassword", authController.forgotPassword);
+router.patch("/resetPassword/:token", authController.resetPassword);
+
 // user must be logged in to interact with these
 router.use(authController.protect);
 
-// add password update route
 router.get("/me", userController.getMe, userController.getUser);
+router.patch("/updateMyPassword", authController.updatePassword);
 router.patch(
 	"/updateMe",
 	userController.uploadUserPhoto,
 	userController.resizeUserPhoto,
 	userController.updateMe
 );
-router.delete("/deleteMe", userController.deleteMe);
+
+// for testing
 
 router
 	.route("/")

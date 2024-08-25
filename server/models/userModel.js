@@ -1,4 +1,5 @@
 import bcrypt from "bcrypt";
+import crypto from "crypto";
 import mongoose from "mongoose";
 import validator from "validator";
 
@@ -34,6 +35,9 @@ const userSchema = new mongoose.Schema(
 			required: [true, "Password is required"],
 			select: false,
 		},
+		passwordChangedAt: Date,
+		passwordResetToken: String,
+		passwordResetExpires: Date,
 		role: {
 			type: String,
 			enum: ["user", "host"],
@@ -43,10 +47,7 @@ const userSchema = new mongoose.Schema(
 			type: String,
 			trim: true,
 		},
-		// for hosts
 		listings: [{ type: mongoose.Schema.ObjectId, ref: "Listing" }],
-
-		// add password reset - later with all login logic
 	},
 	{
 		timestamps: true, // add createdAt..
@@ -66,7 +67,7 @@ userSchema.pre("save", async function (next) {
 	next();
 });
 
-// checks if the user inputed password is the same as the hashed one in the db
+// compares stored password with inputed one
 userSchema.methods.correctPassword = async function (
 	candidatePassword,
 	userPassword
@@ -74,5 +75,35 @@ userSchema.methods.correctPassword = async function (
 	return await bcrypt.compare(candidatePassword, userPassword);
 };
 
+userSchema.methods.changedPasswordAfter = function (JWTTimestamp) {
+	if (this.passwordChangedAt) {
+		const changedTimestamp = parseInt(
+			this.passwordChangedAt.getTime() / 1000,
+			10
+		);
+
+		return JWTTimestamp < changedTimestamp;
+	}
+
+	// false means not changed
+	return false;
+};
+
+userSchema.methods.createPasswordResetToken = function () {
+	const resetToken = crypto.randomBytes(32).toString("hex");
+
+	this.passwordResetToken = crypto
+		.createHash("sha256")
+		.update(resetToken)
+		.digest("hex");
+
+	console.log({ resetToken }, this.passwordResetToken);
+
+	this.passwordResetExpires = Date.now() + 10 * 60 * 1000;
+
+	return resetToken;
+};
+
 const User = mongoose.model("User", userSchema);
+
 export default User;

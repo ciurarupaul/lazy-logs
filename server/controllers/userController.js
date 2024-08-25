@@ -47,9 +47,6 @@ const userController = {
 	},
 
 	updateMe: catchAsync(async (req, res, next) => {
-		console.log(req.file);
-		console.log(req.body);
-
 		// 1. Create an error if the user POSTs password data
 		if (req.body.password || req.body.passwordConfirm) {
 			return next(
@@ -78,15 +75,6 @@ const userController = {
 			data: {
 				user: updatedUser,
 			},
-		});
-	}),
-
-	deleteMe: catchAsync(async (req, res, next) => {
-		await User.findByIdAndUpdate(req.user.id, { active: false });
-
-		res.status(204).json({
-			status: "success",
-			data: null,
 		});
 	}),
 
