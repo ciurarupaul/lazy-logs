@@ -1,10 +1,8 @@
-function Loader({ resource }) {
+function Loader({ children }) {
 	return (
 		<div className="page-container--center loader">
 			<div className="loader-spinner" />
-			<div className="loader-text">
-				Loading {resource}, please wait ...
-			</div>
+			<div className="loader-text">{children}</div>
 		</div>
 	);
 }

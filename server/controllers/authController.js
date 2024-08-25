@@ -131,31 +131,34 @@ const authController = {
 	isLoggedIn: async (req, res, next) => {
 		if (req.cookies.jwt) {
 			try {
-				// 1) verify token
+				// Verify token
 				const decoded = await promisify(jwt.verify)(
 					req.cookies.jwt,
 					process.env.JWT_SECRET
 				);
 
-				// 2) Check if user still exists
+				// Check if user still exists
 				const currentUser = await User.findById(decoded.id);
 				if (!currentUser) {
-					return next();
+					return res.status(200).json({ loggedIn: false });
 				}
 
-				// 3) Check if user changed password after the token was issued
+				// Check if user changed password after the token was issued
 				if (currentUser.changedPasswordAfter(decoded.iat)) {
-					return next();
+					return res.status(200).json({ loggedIn: false });
 				}
 
-				// there is a logged in user
+				// There is a logged-in user
 				res.locals.user = currentUser;
-				return next();
+				return res
+					.status(200)
+					.json({ loggedIn: true, user: currentUser });
 			} catch (err) {
-				return next();
+				return res.status(200).json({ loggedIn: false });
 			}
+		} else {
+			return res.status(200).json({ loggedIn: false });
 		}
-		next();
 	},
 
 	forgotPassword: catchAsync(async (req, res, next) => {

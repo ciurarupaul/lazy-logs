@@ -1,21 +1,20 @@
 import { useState } from "react";
-import EmailWindow from "../ui/components/login-windows/EmailWindow";
-import PasswordWindow from "../ui/components/login-windows/PasswordWindow";
-import ForgotPasswordWindow from "../ui/components/login-windows/ForgotPasswordWindow";
-import SignUpWindow from "../ui/components/login-windows/SignUpWindow";
 import { useNavigate } from "react-router-dom";
+import EmailWindow from "../ui/components/login-windows/EmailWindow";
+import ForgotPasswordWindow from "../ui/components/login-windows/ForgotPasswordWindow";
+import PasswordWindow from "../ui/components/login-windows/PasswordWindow";
+import SignUpWindow from "../ui/components/login-windows/SignUpWindow";
 
 function Login() {
-	const [activePanel, setActivePanel] = useState("email");
-	const navigate = useNavigate();
+	const [activeWindow, setActiveWindow] = useState("email");
 
-	const user = false;
+	const navigate = useNavigate();
 
 	const handleEmailSubmit = () => {
 		if (user) {
-			setActivePanel("password");
+			setActiveWindow("password");
 		} else {
-			setActivePanel("signup");
+			setActiveWindow("signup");
 		}
 	};
 
@@ -24,18 +23,18 @@ function Login() {
 	};
 
 	const handleForgotPassword = () => {
-		setActivePanel("forgot");
+		setActiveWindow("forgot");
 	};
 
-	return activePanel === "email" ? (
+	return activeWindow === "email" ? (
 		<EmailWindow onClick={handleEmailSubmit} />
-	) : activePanel === "password" ? (
+	) : activeWindow === "password" ? (
 		<PasswordWindow
-			setActivePanel={setActivePanel}
+			setActiveWindow={setActiveWindow}
 			handleForgotPassword={handleForgotPassword}
 			onClick={handlePasswordSubmit}
 		/>
-	) : activePanel === "signup" ? (
+	) : activeWindow === "signup" ? (
 		<SignUpWindow />
 	) : (
 		<ForgotPasswordWindow />

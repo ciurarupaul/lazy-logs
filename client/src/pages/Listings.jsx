@@ -23,7 +23,7 @@ function Listings() {
 		fetchData();
 	}, []);
 
-	if (loading) return <Loader resource="properties" />;
+	if (loading) return <Loader>Loading properties, please wait...</Loader>;
 
 	return (
 		<div className="page-container">

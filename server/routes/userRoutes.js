@@ -9,6 +9,7 @@ const router = express.Router({ mergeParams: true });
 router.use("/:userId/bookings", bookingRouter);
 router.use("/:userId/listings", listingRouter);
 
+router.get("/isLoggedIn", authController.isLoggedIn);
 router.post("/signup", authController.signup);
 router.post("/login", authController.login);
 router.get("/logout", authController.logout);
@@ -17,7 +18,7 @@ router.post("/forgotPassword", authController.forgotPassword);
 router.patch("/resetPassword/:token", authController.resetPassword);
 
 // user must be logged in to interact with these
-router.use(authController.protect);
+// router.use(authController.protect);
 
 router.get("/me", userController.getMe, userController.getUser);
 router.patch("/updateMyPassword", authController.updatePassword);
