@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { AuthProvider } from "./context/authContext";
 import Account from "./pages/Account";
 import Booking from "./pages/Booking";
 import Bookings from "./pages/Bookings";
@@ -14,49 +15,54 @@ import AppLayout from "./ui/layout/AppLayout";
 
 function App() {
 	return (
-		<BrowserRouter>
-			<Routes>
-				<Route
-					path="/"
-					errorElement={<ErrorPage />}
-					element={<AppLayout />}
-				>
-					<Route path="/" errorElement={<ErrorPage />}>
-						<Route index element={<Listings />} />
+		<AuthProvider>
+			<BrowserRouter>
+				<Routes>
+					<Route
+						path="/"
+						errorElement={<ErrorPage />}
+						element={<AppLayout />}
+					>
+						<Route path="/" errorElement={<ErrorPage />}>
+							<Route index element={<Listings />} />
 
-						<Route path="/listings" element={<Listings />} />
-						<Route
-							path="/listings/:listingId"
-							element={<Listing />}
-						/>
+							<Route path="/listings" element={<Listings />} />
+							<Route
+								path="/listings/:listingId"
+								element={<Listing />}
+							/>
 
-						<Route path="users/:userId" element={<AccountLayout />}>
-							<Route index element={<Account />} />
-							<Route path="bookings">
-								<Route index element={<Bookings />} />
+							<Route
+								path="users/:userId"
+								element={<AccountLayout />}
+							>
+								<Route index element={<Account />} />
+								<Route path="bookings">
+									<Route index element={<Bookings />} />
+									<Route
+										path=":bookingId"
+										element={<Booking />}
+									/>
+								</Route>
+								<Route path="wishlist" element={<Wishlist />} />
 								<Route
-									path=":bookingId"
-									element={<Booking />}
+									path="your-listings"
+									element={<YourListings />}
 								/>
 							</Route>
-							<Route path="wishlist" element={<Wishlist />} />
-							<Route
-								path="your-listings"
-								element={<YourListings />}
-							/>
 						</Route>
 					</Route>
-				</Route>
 
-				<Route
-					path="/login"
-					errorElement={<ErrorPage />}
-					element={<Login />}
-				/>
+					<Route
+						path="/login"
+						errorElement={<ErrorPage />}
+						element={<Login />}
+					/>
 
-				<Route path="*" element={<PageNotFound />} />
-			</Routes>
-		</BrowserRouter>
+					<Route path="*" element={<PageNotFound />} />
+				</Routes>
+			</BrowserRouter>
+		</AuthProvider>
 	);
 }
 

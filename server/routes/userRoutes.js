@@ -17,10 +17,12 @@ router.get("/logout", authController.logout);
 router.post("/forgotPassword", authController.forgotPassword);
 router.patch("/resetPassword/:token", authController.resetPassword);
 
+// get the user based on inputed email, to check if they have an account
+router.get("/me", userController.getUserByEmail);
+
 // user must be logged in to interact with these
 // router.use(authController.protect);
 
-router.get("/me", userController.getMe, userController.getUser);
 router.patch("/updateMyPassword", authController.updatePassword);
 router.patch(
 	"/updateMe",

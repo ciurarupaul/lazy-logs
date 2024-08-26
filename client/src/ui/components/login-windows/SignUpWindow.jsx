@@ -1,9 +1,14 @@
 import { Link, useNavigate } from "react-router-dom";
 import { GiCampfire } from "react-icons/gi";
 import FormCell from "../../utils/FormCell";
+import { HiOutlineChevronLeft } from "react-icons/hi2";
 
 function SignUpPanel() {
 	const navigate = useNavigate();
+
+	// const handleGoBack = () => {
+	// 	setActiveWindow("email");
+	// };
 
 	return (
 		<div className="login">
@@ -26,6 +31,13 @@ function SignUpPanel() {
 				label="Confirm Password"
 				required
 			/>
+
+			<button
+				/* onClick={handleGoBack} |*/ className="login__password-back"
+			>
+				<HiOutlineChevronLeft className="login__password-back-icon" />
+				Go back
+			</button>
 
 			<button
 				className="login__buttons-btn"

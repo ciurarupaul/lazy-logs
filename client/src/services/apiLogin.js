@@ -19,6 +19,18 @@ export async function isLoggedIn() {
 	}
 }
 
+export async function getUserByEmail(email) {
+	try {
+		const response = await apiClient.get("/me", {
+			params: { email },
+		});
+		return response.data;
+	} catch (error) {
+		console.error("Error trying to find if user exists:", error);
+		throw error;
+	}
+}
+
 export async function signUpUser(userData) {
 	try {
 		const response = await apiClient.post("/signup", userData);

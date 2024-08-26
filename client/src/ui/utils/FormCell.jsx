@@ -1,4 +1,11 @@
-function FormCell({ type = "text", fieldname, label, required = false }) {
+function FormCell({
+	type = "text",
+	fieldname,
+	label,
+	onChange,
+	onSubmit,
+	required = false,
+}) {
 	return (
 		<div className="form">
 			<form
@@ -6,6 +13,7 @@ function FormCell({ type = "text", fieldname, label, required = false }) {
 				className="form"
 				onSubmit={(e) => {
 					e.preventDefault();
+					onSubmit(e.target[fieldname].value);
 				}}
 			>
 				<input
@@ -13,6 +21,8 @@ function FormCell({ type = "text", fieldname, label, required = false }) {
 					name={fieldname}
 					id={fieldname}
 					placeholder={label}
+					autoComplete="off"
+					onChange={onChange}
 					required={required}
 				/>
 				{label && <label htmlFor={fieldname}>{label}</label>}

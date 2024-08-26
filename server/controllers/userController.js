@@ -85,10 +85,18 @@ const userController = {
 		});
 	},
 
-	getMe: (req, res, next) => {
-		req.params.id = req.user.id;
-		next();
-	},
+	getUserByEmail: catchAsync(async (req, res, next) => {
+		let query = User.findOne({ email: req.query.email });
+		const document = await query;
+
+		res.status(200).json({
+			status: "success",
+			data: {
+				document,
+				userExists: !!document,
+			},
+		});
+	}),
 
 	getAllUsers: handlerFactory.getAll(User),
 	getUser: handlerFactory.getOne(User),
