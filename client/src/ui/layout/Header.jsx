@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { GiCampfire } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../../context/authContext";

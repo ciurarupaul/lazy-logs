@@ -8,6 +8,10 @@
 	background-color: var(--background-lines);
 }
 
+.border-bottom {
+	border-bottom: 1px solid var(--background-lines);
+}
+
 .small-margin {
 	height: abstracts.$small-margin;
 }

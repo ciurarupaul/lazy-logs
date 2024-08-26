@@ -12,24 +12,22 @@ const AuthProvider = ({ children }) => {
 	const [authState, setAuthState] = useState({
 		isAuthenticated: false,
 		user: null,
-		token: null,
 	});
 
 	useEffect(() => {
 		const checkAuthStatus = async () => {
 			try {
 				const response = await isLoggedIn();
-				if (response && response.loggedIn) {
+
+				if (response.loggedIn) {
 					setAuthState({
 						isAuthenticated: true,
 						user: response.user,
-						token: response.token,
 					});
 				} else {
 					setAuthState({
 						isAuthenticated: false,
 						user: null,
-						token: null,
 					});
 				}
 			} catch (err) {
@@ -37,13 +35,12 @@ const AuthProvider = ({ children }) => {
 				setAuthState({
 					isAuthenticated: false,
 					user: null,
-					token: null,
 				});
 			}
 		};
 
 		checkAuthStatus();
-	}, []);
+	}, []); //only run on mount
 
 	const login = async (email, password) => {
 		try {
@@ -64,12 +61,12 @@ const AuthProvider = ({ children }) => {
 	};
 
 	const logout = async () => {
+		console.log("Attempting to log out...");
 		try {
 			await logoutUser();
 			setAuthState({
 				isAuthenticated: false,
 				user: null,
-				token: null,
 			});
 		} catch (err) {
 			console.error("Error logging out:", err);
@@ -77,6 +74,7 @@ const AuthProvider = ({ children }) => {
 	};
 
 	const getUser = async (email) => {
+		console.log("Fetching user by email:", email);
 		try {
 			const response = await getUserByEmail(email);
 			return response.data;
@@ -96,7 +94,7 @@ const AuthProvider = ({ children }) => {
 function useAuthContext() {
 	const context = useContext(AuthContext);
 	if (context === undefined)
-		throw new Error("AuthContext was used outside of AuthProvider!");
+		throw new Error("useAuthContext must be used within an AuthProvider!");
 	return context;
 }
 

@@ -1,5 +1,7 @@
 import axios from "axios";
 
+axios.defaults.withCredentials = true; // send cookies with every request
+
 const apiClient = axios.create({
 	baseURL: "http://localhost:3000/api/users",
 	headers: {
