@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom";
 import { GiCampfire } from "react-icons/gi";
 import FormCell from "../../utils/FormCell";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
-function EmailPanel({ onSubmitEmail }) {
+function EmailWindow({ onSubmitEmail }) {
 	const [email, setEmail] = useState("");
+
+	const emailRef = useRef(null);
+
+	const validateEmail = (value) => {
+		const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+		return emailPattern.test(value.trim());
+	};
 
 	const handleInputChange = (e) => {
 		setEmail(e.target.value);
@@ -25,6 +32,9 @@ function EmailPanel({ onSubmitEmail }) {
 				label="Email"
 				onChange={handleInputChange}
 				onSubmit={onSubmitEmail}
+				validation={validateEmail}
+				autofocus={true}
+				ref={emailRef}
 				required
 			/>
 
@@ -48,4 +58,4 @@ function EmailPanel({ onSubmitEmail }) {
 	);
 }
 
-export default EmailPanel;
+export default EmailWindow;

@@ -58,8 +58,7 @@ export async function loginUser(email, password) {
 
 export async function logoutUser() {
 	try {
-		const response = await apiClient.get("/logout");
-		return response.data;
+		await apiClient.get("/logout");
 	} catch (error) {
 		console.error("Error logging out:", error);
 		throw error;

@@ -2,8 +2,7 @@
 	"users": [
 		{
 			"_id": "64a0c48d7b8e6c0021b8a000",
-			"firstName": "John",
-			"lastName": "Doe",
+			"name": "John Doe",
 			"email": "john.doe@example.com",
 			"phoneNumber": "0123456789",
 			"password": "pass1234",

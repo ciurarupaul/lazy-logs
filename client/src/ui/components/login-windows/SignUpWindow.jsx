@@ -1,14 +1,65 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useRef, useState } from "react";
 import { GiCampfire } from "react-icons/gi";
-import FormCell from "../../utils/FormCell";
 import { HiOutlineChevronLeft } from "react-icons/hi2";
+import { Link } from "react-router-dom";
+import validator from "validator";
+import FormCell from "../../utils/FormCell";
 
-function SignUpPanel() {
-	const navigate = useNavigate();
+const SignUpWindow = ({ setActiveWindow, setEmail, onSubmitData }) => {
+	const [name, setName] = useState("");
+	const [phone, setPhone] = useState("");
+	const [password, setPassword] = useState("");
 
-	// const handleGoBack = () => {
-	// 	setActiveWindow("email");
-	// };
+	const nameRef = useRef(null);
+	const phoneRef = useRef(null);
+	const passwordRef = useRef(null);
+
+	// Validation functions
+	const validateName = (value) => {
+		const namePattern = /^[a-zA-Z-\s]+$/;
+		return (
+			namePattern.test(value.trim()) &&
+			value.trim().length >= 2 &&
+			value.trim().length <= 50
+		);
+	};
+
+	const validatePhone = (value) => {
+		const phonePattern = /^\+?[0-9]{10,14}$/;
+		return phonePattern.test(value.trim());
+	};
+
+	const validatePassword = (value) => {
+		return value.trim().length > 0;
+	};
+
+	const handleSubmit = () => {
+		if (
+			validateName(name) &&
+			validatePhone(phone) &&
+			validatePassword(password)
+		) {
+			onSubmitData(name, phone, password);
+		} else {
+			// Validation failed: display message
+		}
+	};
+
+	const handleGoBack = () => {
+		setActiveWindow("email");
+		setEmail("");
+	};
+
+	const handleKeyDown = (e, ref) => {
+		if (e.key === "Enter") {
+			e.preventDefault();
+			if (ref && ref.current) {
+				ref.current.focus();
+			} else {
+				handleSubmit();
+			}
+		}
+	};
 
 	return (
 		<div className="login">
@@ -23,32 +74,54 @@ function SignUpPanel() {
 				Looks like you don't have an account. <br /> Let's create one!
 			</p>
 
-			<FormCell fieldname="name" label="Full name" required />
-
-			<FormCell fieldname="password" label="Password" required />
 			<FormCell
-				fieldname="confirmpassword"
-				label="Confirm Password"
+				fieldname="name"
+				label="First and last name"
+				value={name}
+				onChange={(e) => setName(e.target.value)}
+				onSubmit={handleSubmit}
+				onKeyDown={(e) => handleKeyDown(e, phoneRef)}
+				validation={validateName}
+				autofocus={true}
+				ref={nameRef}
 				required
 			/>
 
-			<button
-				/* onClick={handleGoBack} |*/ className="login__password-back"
-			>
+			<FormCell
+				type="tel"
+				fieldname="phone"
+				label="Phone number"
+				value={phone}
+				onChange={(e) => setPhone(e.target.value)}
+				onSubmit={handleSubmit}
+				onKeyDown={(e) => handleKeyDown(e, passwordRef)}
+				validation={validatePhone}
+				ref={phoneRef}
+				required
+			/>
+
+			<FormCell
+				fieldname="password"
+				label="Password"
+				value={password}
+				onChange={(e) => setPassword(e.target.value)}
+				onSubmit={handleSubmit}
+				onKeyDown={(e) => handleKeyDown(e, null)}
+				validation={validatePassword}
+				ref={passwordRef}
+				required
+			/>
+
+			<button onClick={handleGoBack} className="login__password-back">
 				<HiOutlineChevronLeft className="login__password-back-icon" />
 				Go back
 			</button>
 
-			<button
-				className="login__buttons-btn"
-				onClick={() => {
-					navigate("/");
-				}}
-			>
-				Continue {/* success toast here */}
+			<button className="login__buttons-btn" onClick={handleSubmit}>
+				Continue
 			</button>
 		</div>
 	);
-}
+};
 
-export default SignUpPanel;
+export default SignUpWindow;

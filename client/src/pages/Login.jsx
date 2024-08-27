@@ -13,7 +13,7 @@ function Login() {
 	const [user, setUser] = useState(null);
 	const navigate = useNavigate();
 
-	const { login, getUser } = useAuthContext();
+	const { login, getUser, signup } = useAuthContext();
 
 	const handleEmailSubmit = (submittedEmail) => {
 		setEmail(submittedEmail);
@@ -21,6 +21,22 @@ function Login() {
 
 	const handlePasswordSubmit = (submittedPassword) => {
 		setPassword(submittedPassword);
+	};
+
+	const handleUserDataSubmit = async (name, phone, password) => {
+		const userData = {
+			email,
+			name,
+			phone,
+			password,
+		};
+
+		try {
+			const result = await signup(userData);
+			navigate("/");
+		} catch (error) {
+			console.error("Error signing up:", error);
+		}
 	};
 
 	useEffect(() => {
@@ -74,7 +90,11 @@ function Login() {
 			user={user}
 		/>
 	) : activeWindow === "signup" ? (
-		<SignUpWindow />
+		<SignUpWindow
+			setActiveWindow={setActiveWindow}
+			setEmail={setEmail}
+			onSubmitData={handleUserDataSubmit}
+		/>
 	) : (
 		<ForgotPasswordWindow />
 	);

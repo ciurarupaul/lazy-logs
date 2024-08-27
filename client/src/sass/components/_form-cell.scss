@@ -16,21 +16,7 @@
 		border: none;
 		border-radius: 4px;
 		background-color: var(--background-light);
-		border-bottom: 2px solid var(--background);
 		outline: none;
-
-		&:focus {
-			outline: none;
-			border-bottom: 2px solid var(--background);
-
-			&:invalid {
-				border-bottom: 2px solid var(--red);
-			}
-
-			&:valid {
-				border-bottom: 2px solid var(--green);
-			}
-		}
 
 		&::placeholder {
 			color: transparent;

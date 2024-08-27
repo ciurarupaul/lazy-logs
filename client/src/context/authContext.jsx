@@ -4,6 +4,7 @@ import {
 	logoutUser,
 	isLoggedIn,
 	getUserByEmail,
+	signUpUser,
 } from "../services/apiLogin";
 
 const AuthContext = createContext();
@@ -47,7 +48,25 @@ const AuthProvider = ({ children }) => {
 			const response = await loginUser(email, password);
 			setAuthState({
 				isAuthenticated: true,
-				user: response.user,
+				user: response.data.user,
+				token: response.token,
+			});
+		} catch (err) {
+			console.error("Error logging in:", err);
+			setAuthState({
+				isAuthenticated: false,
+				user: null,
+				token: null,
+			});
+		}
+	};
+
+	const signup = async (userData) => {
+		try {
+			const response = await signUpUser(userData);
+			setAuthState({
+				isAuthenticated: true,
+				user: response.data.user,
 				token: response.token,
 			});
 		} catch (err) {
@@ -61,7 +80,7 @@ const AuthProvider = ({ children }) => {
 	};
 
 	const logout = async () => {
-		console.log("Attempting to log out...");
+		console.log("Logging out...");
 		try {
 			await logoutUser();
 			setAuthState({
@@ -74,7 +93,6 @@ const AuthProvider = ({ children }) => {
 	};
 
 	const getUser = async (email) => {
-		console.log("Fetching user by email:", email);
 		try {
 			const response = await getUserByEmail(email);
 			return response.data;
@@ -85,7 +103,9 @@ const AuthProvider = ({ children }) => {
 	};
 
 	return (
-		<AuthContext.Provider value={{ authState, login, logout, getUser }}>
+		<AuthContext.Provider
+			value={{ authState, login, signup, logout, getUser }}
+		>
 			{children}
 		</AuthContext.Provider>
 	);

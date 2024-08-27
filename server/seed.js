@@ -1,11 +1,13 @@
 import dotenv from "dotenv";
 import fs from "fs";
 import mongoose from "mongoose";
-import path from "path";
+import path, { dirname } from "path";
+import { fileURLToPath } from "url";
 
 import Listing from "./models/listingModel.js";
 import User from "./models/userModel.js";
 
+// Configure dotenv
 dotenv.config({ path: "./config.env" });
 
 const DB = process.env.DATABASE.replace(
@@ -13,12 +15,12 @@ const DB = process.env.DATABASE.replace(
 	process.env.DATABASE_PASSWORD
 );
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 async function connectToDatabase() {
 	try {
-		await mongoose.connect(DB, {
-			useNewUrlParser: true,
-			useUnifiedTopology: true,
-		});
+		await mongoose.connect(DB);
 		console.log("MongoDB connected");
 	} catch (err) {
 		console.error("MongoDB connection error:", err);

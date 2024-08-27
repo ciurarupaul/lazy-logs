@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { GiCampfire } from "react-icons/gi";
 import { HiOutlineChevronLeft } from "react-icons/hi2";
 import FormCell from "../../utils/FormCell";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 function PasswordPanel({
 	setActiveWindow,
@@ -12,6 +12,11 @@ function PasswordPanel({
 	user,
 }) {
 	const [password, setPassword] = useState("");
+	const passwordRef = useRef(null);
+
+	const validatePassword = (value) => {
+		return value.trim().length > 0;
+	};
 
 	const handleGoBack = () => {
 		setActiveWindow("email");
@@ -39,6 +44,9 @@ function PasswordPanel({
 				label="Password"
 				onChange={handleInputChange}
 				onSubmit={onSubmitPassword}
+				autofocus={true}
+				ref={passwordRef}
+				validation={validatePassword}
 				required
 			/>
 
