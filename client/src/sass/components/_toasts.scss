@@ -1,0 +1,29 @@
+@use "../base/typography";
+
+.toast {
+	background-color: var(--background-hover);
+	color: var(--primary);
+
+	border-radius: 8px;
+	padding: 1.5rem 3rem;
+	font-size: typography.$fontsize-medium;
+
+	width: 30rem;
+	height: auto;
+
+	&-success {
+		border: 1px solid var(--green);
+	}
+
+	&-error {
+		border: 1px solid var(--red);
+	}
+
+	&-small {
+		font-size: typography.$fontsize-small;
+	}
+
+	&-xsmall {
+		font-size: typography.$fontsize-xsmall;
+	}
+}

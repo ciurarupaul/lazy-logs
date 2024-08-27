@@ -5,6 +5,7 @@ import EmailWindow from "../ui/components/login-windows/EmailWindow";
 import ForgotPasswordWindow from "../ui/components/login-windows/ForgotPasswordWindow";
 import PasswordWindow from "../ui/components/login-windows/PasswordWindow";
 import SignUpWindow from "../ui/components/login-windows/SignUpWindow";
+import { toast } from "react-hot-toast";
 
 function Login() {
 	const [activeWindow, setActiveWindow] = useState("email");
@@ -32,7 +33,10 @@ function Login() {
 		};
 
 		try {
-			const result = await signup(userData);
+			await signup(userData);
+			toast.success("Successfully signed up!", {
+				className: "toast toast-success",
+			});
 			navigate("/");
 		} catch (error) {
 			console.error("Error signing up:", error);
@@ -65,6 +69,9 @@ function Login() {
 			if (password.trim() !== "") {
 				try {
 					await login(email, password);
+					toast.success("Successfully logged in!", {
+						className: "toast toast-success",
+					});
 					navigate("/");
 				} catch (err) {
 					console.error("Error logging user in:", err);

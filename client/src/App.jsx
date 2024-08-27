@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./context/authContext";
 import Account from "./pages/Account";
@@ -62,6 +63,20 @@ function App() {
 					<Route path="*" element={<PageNotFound />} />
 				</Routes>
 			</BrowserRouter>
+
+			<Toaster
+				position="top-center"
+				gutter={8}
+				containerClassName="toaster"
+				toastOptions={{
+					success: {
+						duration: 4000,
+					},
+					error: {
+						duration: 5000,
+					},
+				}}
+			/>
 		</AuthProvider>
 	);
 }

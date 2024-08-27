@@ -2,8 +2,8 @@ import { useRef, useState } from "react";
 import { GiCampfire } from "react-icons/gi";
 import { HiOutlineChevronLeft } from "react-icons/hi2";
 import { Link } from "react-router-dom";
-import validator from "validator";
 import FormCell from "../../utils/FormCell";
+import { toast } from "react-hot-toast";
 
 const SignUpWindow = ({ setActiveWindow, setEmail, onSubmitData }) => {
 	const [name, setName] = useState("");
@@ -41,7 +41,9 @@ const SignUpWindow = ({ setActiveWindow, setEmail, onSubmitData }) => {
 		) {
 			onSubmitData(name, phone, password);
 		} else {
-			// Validation failed: display message
+			toast.error("Please provide all requested information", {
+				className: "toast toast-error toast-xsmall",
+			});
 		}
 	};
 

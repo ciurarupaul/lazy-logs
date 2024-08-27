@@ -1,9 +1,9 @@
+import { toast } from "react-hot-toast";
 import { HiBars3, HiUserCircle } from "react-icons/hi2";
 import { Link } from "react-router-dom";
+import { useAuthContext } from "../../context/authContext";
 import Menus from "../utils/Menus";
 import ThemeButton from "../utils/ThemeButton";
-import { useAuthContext } from "../../context/authContext";
-import { useEffect, useState } from "react";
 
 function UserMenu({ toggleTheme }) {
 	const { logout } = useAuthContext();
@@ -12,6 +12,9 @@ function UserMenu({ toggleTheme }) {
 	const handleLogout = async () => {
 		try {
 			await logout();
+			toast.success("Successfully logged out!", {
+				className: "toast toast-success",
+			});
 		} catch (err) {
 			console.error("Error logging out:", err);
 		}
