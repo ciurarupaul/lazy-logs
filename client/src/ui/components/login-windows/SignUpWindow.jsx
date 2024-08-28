@@ -92,7 +92,7 @@ const SignUpWindow = ({ setActiveWindow, setEmail, onSubmitData }) => {
 			<FormCell
 				type="tel"
 				fieldname="phone"
-				label="Phone number"
+				label="Phone Number"
 				value={phone}
 				onChange={(e) => setPhone(e.target.value)}
 				onSubmit={handleSubmit}
