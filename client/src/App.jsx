@@ -70,7 +70,7 @@ function App() {
 				containerClassName="toaster"
 				toastOptions={{
 					success: {
-						duration: 4000,
+						duration: 3000,
 					},
 					error: {
 						duration: 5000,
