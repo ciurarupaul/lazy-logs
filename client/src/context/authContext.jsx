@@ -19,6 +19,7 @@ const AuthProvider = ({ children }) => {
 		const checkAuthStatus = async () => {
 			try {
 				const response = await isLoggedIn();
+				console.log("check if user is logged in", response);
 
 				if (response.loggedIn) {
 					setAuthState({

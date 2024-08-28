@@ -1,9 +1,9 @@
 @use "../abstracts/mixins";
-@use "../base//typography";
+@use "../base/typography";
 
 .sidebar {
 	display: grid;
-	grid-template-rows: minmax(min-content, 30%) 3fr;
+	grid-template-rows: minmax(min-content, 15%) 3fr;
 	row-gap: 1rem;
 
 	background-color: var(--background);
@@ -14,7 +14,7 @@
 		@include mixins.flexCenter;
 		flex-direction: column;
 		grid-row: 1;
-
+		padding: 4rem 0;
 		&-photo {
 			border-radius: 50rem;
 			height: 6rem;

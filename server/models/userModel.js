@@ -29,7 +29,10 @@ const userSchema = new mongoose.Schema(
 				message: "Invalid phone number",
 			},
 		},
-		photo: String,
+		photo: {
+			type: String,
+			default: "/users/default-user.jpg",
+		},
 		password: {
 			type: String,
 			required: [true, "Password is required"],

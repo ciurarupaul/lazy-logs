@@ -1,7 +1,7 @@
 import { getListings } from "../services/apiListings";
 import { useState, useEffect } from "react";
 import ListingCard from "../ui/components/ListingCard";
-import Loader from "../ui/utils/Loader";
+import { PageLoader as Loader } from "../ui/utils/Loader";
 
 function Listings() {
 	const [listings, setListings] = useState([]);
@@ -23,7 +23,7 @@ function Listings() {
 		fetchData();
 	}, []);
 
-	if (loading) return <Loader>Loading properties, please wait...</Loader>;
+	if (loading) return <Loader>properties</Loader>;
 
 	return (
 		<div className="page-container">

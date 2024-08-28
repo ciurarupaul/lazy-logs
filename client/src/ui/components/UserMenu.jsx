@@ -1,17 +1,19 @@
 import { toast } from "react-hot-toast";
 import { HiBars3, HiUserCircle } from "react-icons/hi2";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../context/authContext";
 import Menus from "../utils/Menus";
 import ThemeButton from "../utils/ThemeButton";
 
 function UserMenu({ toggleTheme }) {
-	const { logout } = useAuthContext();
+	const { logout, authState } = useAuthContext();
+	const navigate = useNavigate();
 
 	// add success toast
 	const handleLogout = async () => {
 		try {
 			await logout();
+			navigate("/");
 			toast.success("Successfully logged out!", {
 				className: "toast toast-success",
 			});
@@ -38,17 +40,20 @@ function UserMenu({ toggleTheme }) {
 						<div className="small-margin" />
 
 						<div className="border-bottom">
-							<Link to="/users/1asfd3282jkdf" className="link">
+							<Link
+								to={`users/${authState.user._id}`}
+								className="link"
+							>
 								<Menus.Button>Account</Menus.Button>
 							</Link>
 							<Link
-								to="/users/1asfd3282jkdf/bookings"
+								to={`users/${authState.user._id}/bookings`}
 								className="link"
 							>
 								<Menus.Button>Bookings</Menus.Button>
 							</Link>
 							<Link
-								to="/users/1asfd3282jkdf/wishlist"
+								to={`users/${authState.user._id}/wishlist`}
 								className="link"
 							>
 								<Menus.Button>Wishlist</Menus.Button>

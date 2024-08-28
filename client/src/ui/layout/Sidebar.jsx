@@ -1,21 +1,36 @@
 import { NavLink } from "react-router-dom";
+import { useAuthContext } from "../../context/authContext";
+import { useEffect, useState } from "react";
+import { Loader } from "../utils/Loader";
 
 function Sidebar() {
+	const { authState } = useAuthContext();
+	const [isLoading, setIsLoading] = useState(true);
+
+	useEffect(() => {
+		if (authState.user) {
+			setIsLoading(false);
+		}
+	}, [authState]);
+
+	if (isLoading) return <Loader>your data</Loader>;
+
 	return (
 		<aside className="sidebar">
 			<div className="sidebar__user">
 				<img
-					src="/users/default-user.jpg"
+					src={authState.user.photo}
 					alt="user pfp"
 					className="sidebar__user-photo"
 				/>
 				<p className="sidebar__user-text">
-					Hi, <span>Maria-Luisa-Alexandra</span>
+					Welcome back,{" "}
+					<span>{authState.user.name.split(" ")[0]}</span>
 				</p>
 			</div>
 			<div className="sidebar__buttons">
 				<NavLink
-					to="/users/1asfd3282jkdf"
+					to={`/users/${authState.user._id}`}
 					end // only active if it matches the full path
 					className={({ isActive }) =>
 						`${
@@ -28,7 +43,7 @@ function Sidebar() {
 					Account
 				</NavLink>
 				<NavLink
-					to="/users/1asfd3282jkdf/bookings"
+					to={`/users/${authState.user._id}/bookings`}
 					end
 					className={({ isActive }) =>
 						`${
@@ -41,7 +56,7 @@ function Sidebar() {
 					Bookings
 				</NavLink>
 				<NavLink
-					to="/users/1asfd3282jkdf/wishlist"
+					to={`/users/${authState.user._id}/wishlist`}
 					end
 					className={({ isActive }) =>
 						`${
@@ -53,7 +68,7 @@ function Sidebar() {
 				>
 					Wishlist
 				</NavLink>
-				<NavLink
+				{/* <NavLink
 					to="/users/1asfd3282jkdf/your-listings"
 					end
 					className={({ isActive }) =>
@@ -65,7 +80,7 @@ function Sidebar() {
 					}
 				>
 					Your listings
-				</NavLink>
+				</NavLink> */}
 			</div>
 		</aside>
 	);

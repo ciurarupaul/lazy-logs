@@ -7,7 +7,6 @@
 
 @use "components/index" as components;
 
-@use "layout/footer";
-@use "layout/header";
+@use "layout/index" as layout;
 
 @use "pages/index" as pages;
