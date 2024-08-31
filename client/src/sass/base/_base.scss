@@ -82,7 +82,7 @@ body {
 	grid-template-columns:
 		1fr [page-start] repeat(
 			12,
-			[col-start] minmax(min-content, 15rem) [col-end]
+			[col-start] minmax(min-content, 12rem) [col-end]
 		)
 		[page-end]
 		1fr;

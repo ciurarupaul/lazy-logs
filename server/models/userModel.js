@@ -46,7 +46,7 @@ const userSchema = new mongoose.Schema(
 			enum: ["user", "host"],
 			default: "user",
 		},
-		nationality: {
+		countryCode: {
 			type: String,
 			trim: true,
 		},

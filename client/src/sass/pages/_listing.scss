@@ -1,0 +1,159 @@
+@use "../abstracts/mixins";
+@use "../base/typography";
+
+.listing {
+	&__grid {
+		display: grid;
+		grid-template-rows: min-content repeat(3, min-content);
+		// grid-template-columns: minmax(min-content, 4fr) minmax(min-content, 3fr);
+		margin: 4rem;
+		padding: 0 4rem;
+	}
+
+	&__title {
+		font-size: typography.$fontsize-large;
+		margin-top: 6rem;
+		margin-bottom: 2rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	&__carousel {
+		&-photo {
+			border-radius: 12px;
+			aspect-ratio: 2 / 1;
+			object-position: center;
+		}
+	}
+
+	&__presentation {
+		display: flex;
+		justify-content: space-between;
+		align-items: start;
+		margin-top: 2rem;
+
+		&__details {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+			width: 70%;
+
+			&-location {
+				p {
+					font-size: typography.$fontsize-xxlarge;
+					font-weight: 500;
+
+					span {
+						font-weight: 300;
+					}
+				}
+			}
+
+			&-capacity {
+				font-size: typography.$fontsize-medium;
+			}
+
+			&-description {
+				font-size: typography.$fontsize-small;
+				color: var(--primary-details);
+				margin-top: 2rem;
+			}
+		}
+
+		&__host {
+			display: flex;
+			gap: 2rem;
+
+			&-pfp {
+				height: 5rem;
+				border-radius: 100rem;
+			}
+
+			&-text {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: end;
+
+				p {
+					font-size: typography.$fontsize-small;
+					color: var(--primary-details);
+				}
+			}
+
+			&-flag {
+				height: 1.8rem;
+			}
+		}
+	}
+
+	&__amenities {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+
+		&-list {
+			display: flex;
+			gap: 1rem;
+
+			&-btn {
+				border: 1px solid var(--background-lines);
+				padding: 1rem 1.5rem;
+				border-radius: 6px;
+			}
+		}
+	}
+
+	&__map {
+		height: 50rem;
+		width: 100%;
+		background-color: lightgrey;
+	}
+
+	&__reviews {
+		&-header {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+
+			&-score {
+				@include mixins.flexCenter;
+
+				span {
+					color: var(--primary-details);
+					font-size: typography.$fontsize-small;
+				}
+			}
+
+			&-icon {
+				height: 2.25rem;
+			}
+		}
+	}
+
+	&__info {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+
+		&__card {
+			padding: 0 2rem;
+
+			&-title {
+				font-size: typography.$fontsize-medium;
+				margin-bottom: 1em;
+				font-weight: 500;
+			}
+
+			&-entries {
+				list-style: none;
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem;
+
+				color: var(--primary-details);
+			}
+		}
+	}
+}

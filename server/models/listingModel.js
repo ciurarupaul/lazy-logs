@@ -48,14 +48,11 @@ const listingSchema = new mongoose.Schema(
 				message: "Discount must be less than the price per night",
 			},
 		},
-		currency: {
-			type: String,
-			default: "RON",
-			enum: ["RON", "EUR", "USD", "GBP"],
-		},
 		photos: [String],
 		amenities: [String],
-		houseRules: [String],
+		rules: [String],
+		security: [String],
+		info: [String],
 		description: {
 			type: String,
 			required: [true, "Description is required"],

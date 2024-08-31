@@ -63,8 +63,11 @@ const listingController = {
 	}),
 
 	getAllListings: handlerFactory.getAll(Listing),
-	getListing: handlerFactory.getOne(Listing, { path: "reviews" }),
-	// also populate the reviews when getting a Listing
+	getListing: handlerFactory.getOne(Listing, [
+		{ path: "host" },
+		{ path: "reviews" },
+	]),
+	// also populate the host and reviews when getting a Listing
 
 	createListing: handlerFactory.createOne(Listing),
 	updateListing: handlerFactory.updateOne(Listing),

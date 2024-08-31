@@ -3,7 +3,7 @@
 
 .listings {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
 	column-gap: 2rem;
 	row-gap: 4rem;
 
@@ -49,13 +49,13 @@
 
 	&__details {
 		color: var(--primary);
-		font-size: typography.$fontsize-small;
+		font-size: typography.$fontsize-xsmall;
 		margin-top: 0.3rem;
 
 		&-header {
 			@include mixins.flexCenter;
 			justify-content: space-between;
-			font-size: typography.$fontsize-medium;
+			font-size: typography.$fontsize-small;
 		}
 
 		&-location {
@@ -88,7 +88,7 @@
 			}
 
 			&-value {
-				font-size: typography.$fontsize-medium;
+				font-size: typography.$fontsize-small;
 				font-weight: 600;
 			}
 		}

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { HiChevronRight } from "react-icons/hi";
 import { HiChevronLeft } from "react-icons/hi";
 
-function Carousel({ images }) {
+function Carousel({ images, photosClass }) {
 	const [activeIndex, setActiveIndex] = useState(0);
 	const nextSlide = () => {
 		setActiveIndex((prevIndex) =>
@@ -32,7 +32,7 @@ function Carousel({ images }) {
 			<img
 				src={images[activeIndex]}
 				alt={`Slide ${activeIndex}`}
-				className="carousel__photo"
+				className={`carousel__photo ${photosClass}`}
 			/>
 			{activeIndex < images.length - 1 ? (
 				<button

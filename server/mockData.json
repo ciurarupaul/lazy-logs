@@ -5,10 +5,9 @@
 			"name": "John Doe",
 			"email": "john.doe@example.com",
 			"phoneNumber": "0123456789",
-			"password": "pass1234",
-			"passwordConfirm": "pass1234",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
 			"role": "host",
-			"nationality": "Romanian",
+			"countryCode": "Romanian",
 			"listings": [
 				"64a0c48d7b8e6c0021b8a7d1",
 				"64a0c48d7b8e6c0021b8a7d2",
@@ -20,7 +19,6 @@
 			]
 		}
 	],
-
 	"listings": [
 		{
 			"_id": "64a0c48d7b8e6c0021b8a7d1",
@@ -41,7 +39,17 @@
 				"/listings/cabin-04.jpg"
 			],
 			"amenities": ["WiFi", "Wood Stove", "Mountain View"],
-			"houseRules": ["No pets", "Quiet hours after 10 PM"],
+			"rules": ["No pets", "Quiet hours after 10 PM", "No shoes inside"],
+			"security": [
+				"Fire extinguisher in the kitchen",
+				"First aid kit in the bathroom",
+				"Lockable windows"
+			],
+			"info": [
+				"Check-in time is 3 PM",
+				"Check-out time is 11 AM",
+				"Free parking available"
+			],
 			"description": "A cozy cabin in the mountains of Cluj with a beautiful view and wood stove.",
 			"listingDetails": {
 				"bedrooms": 2,
@@ -73,7 +81,21 @@
 				"/listings/cabin-04.jpg"
 			],
 			"amenities": ["Hot Tub", "Fireplace", "Forest Access"],
-			"houseRules": ["No smoking inside", "Respect nature"],
+			"rules": [
+				"No smoking inside",
+				"Respect nature",
+				"No outdoor fires"
+			],
+			"security": [
+				"Smoke detectors in all rooms",
+				"Emergency contact numbers provided",
+				"Secure entry system"
+			],
+			"info": [
+				"Hot tub available year-round",
+				"Firewood provided for fireplace",
+				"Local hiking maps available"
+			],
 			"description": "Luxury cabin with a hot tub and fireplace, situated in a serene forest area.",
 			"listingDetails": {
 				"bedrooms": 3,
@@ -105,7 +127,21 @@
 				"/listings/cabin-04.jpg"
 			],
 			"amenities": ["Cable TV", "BBQ Grill", "Ski Access"],
-			"houseRules": ["No parties", "Keep noise levels down"],
+			"rules": [
+				"No parties",
+				"Keep noise levels down",
+				"No ski boots inside"
+			],
+			"security": [
+				"Fire escape plan in place",
+				"Security cameras on the premises",
+				"Secure ski storage"
+			],
+			"info": [
+				"Ski lift tickets available for purchase",
+				"BBQ grill available year-round",
+				"Ski rental discounts nearby"
+			],
 			"description": "Charming remote cabin with ski access and a BBQ grill for summer evenings.",
 			"listingDetails": {
 				"bedrooms": 2,
@@ -117,134 +153,6 @@
 			"reviews": ["64a0c48d7b8e6c0021b8a7d6"],
 			"ratingsAverage": 4.4,
 			"ratingsQuantity": 10
-		},
-		{
-			"_id": "64a0c48d7b8e6c0021b8a7d4",
-			"host": "64a0c48d7b8e6c0021b8a000",
-			"location": {
-				"county": "Maramureș",
-				"city": "Baia Mare",
-				"village": "Ieud",
-				"zipcode": "430000"
-			},
-			"pricePerNight": 85,
-			"discount": 5,
-			"currency": "RON",
-			"photos": [
-				"/listings/cabin-main.jpg",
-				"/listings/cabin-02.jpg",
-				"/listings/cabin-03.jpg",
-				"/listings/cabin-04.jpg"
-			],
-			"amenities": ["Fireplace", "Mountain View"],
-			"houseRules": ["No pets", "No loud music"],
-			"description": "Traditional wooden cabin with a fireplace and stunning mountain views.",
-			"listingDetails": {
-				"bedrooms": 1,
-				"bathrooms": 1,
-				"beds": 2,
-				"maxGuests": 2
-			},
-			"blockedDates": ["2024-09-10", "2024-09-15"],
-			"reviews": ["64a0c48d7b8e6c0021b8a7d8"],
-			"ratingsAverage": 4.6,
-			"ratingsQuantity": 6
-		},
-		{
-			"_id": "64a0c48d7b8e6c0021b8a7d5",
-			"host": "64a0c48d7b8e6c0021b8a000",
-			"location": {
-				"county": "Gorj",
-				"city": "Târgu Jiu",
-				"village": "Rânca",
-				"zipcode": "215300"
-			},
-			"pricePerNight": 110,
-			"discount": null,
-			"currency": "RON",
-			"photos": [
-				"/listings/cabin-main.jpg",
-				"/listings/cabin-02.jpg",
-				"/listings/cabin-03.jpg",
-				"/listings/cabin-04.jpg"
-			],
-			"amenities": ["Wood Stove", "Hiking Trails"],
-			"houseRules": ["No smoking", "Clean after use"],
-			"description": "Rustic cabin with access to hiking trails and a wood stove for warmth.",
-			"listingDetails": {
-				"bedrooms": 2,
-				"bathrooms": 1,
-				"beds": 3,
-				"maxGuests": 4
-			},
-			"blockedDates": ["2024-10-15", "2024-10-20"],
-			"reviews": ["64a0c48d7b8e6c0021b8a7da"],
-			"ratingsAverage": 4.5,
-			"ratingsQuantity": 9
-		},
-		{
-			"_id": "64a0c48d7b8e6c0021b8a7d6",
-			"host": "64a0c48d7b8e6c0021b8a000",
-			"location": {
-				"county": "Bistrița-Năsăud",
-				"city": "Bistrița",
-				"village": "Runcu Salvei",
-				"zipcode": "425300"
-			},
-			"pricePerNight": 95,
-			"discount": 10,
-			"currency": "RON",
-			"photos": [
-				"/listings/cabin-main.jpg",
-				"/listings/cabin-02.jpg",
-				"/listings/cabin-03.jpg",
-				"/listings/cabin-04.jpg"
-			],
-			"amenities": ["Heating", "Outdoor Fireplace"],
-			"houseRules": ["Respect the property", "No loud noises"],
-			"description": "Comfortable cabin with outdoor fireplace, perfect for a tranquil retreat.",
-			"listingDetails": {
-				"bedrooms": 1,
-				"bathrooms": 1,
-				"beds": 1,
-				"maxGuests": 2
-			},
-			"blockedDates": ["2024-11-05", "2024-11-10"],
-			"reviews": ["64a0c48d7b8e6c0021b8a7dc"],
-			"ratingsAverage": 4.3,
-			"ratingsQuantity": 7
-		},
-		{
-			"_id": "64a0c48d7b8e6c0021b8a7d7",
-			"host": "64a0c48d7b8e6c0021b8a000",
-			"location": {
-				"county": "Dolj",
-				"city": "Craiova",
-				"village": "Măciuca",
-				"zipcode": "200000"
-			},
-			"pricePerNight": 70,
-			"discount": 8,
-			"currency": "RON",
-			"photos": [
-				"/listings/cabin-main.jpg",
-				"/listings/cabin-02.jpg",
-				"/listings/cabin-03.jpg",
-				"/listings/cabin-04.jpg"
-			],
-			"amenities": ["BBQ Grill", "Garden"],
-			"houseRules": ["No loud parties"],
-			"description": "Simple and charming cabin with a garden and BBQ grill, ideal for a quiet escape.",
-			"listingDetails": {
-				"bedrooms": 1,
-				"bathrooms": 1,
-				"beds": 2,
-				"maxGuests": 3
-			},
-			"blockedDates": ["2024-10-01", "2024-10-10"],
-			"reviews": ["64a0c48d7b8e6c0021b8a7de"],
-			"ratingsAverage": 4.1,
-			"ratingsQuantity": 5
 		}
 	]
 }
