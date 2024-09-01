@@ -60,7 +60,7 @@ function ListingCard({ listing }) {
 						Starting from
 					</p>
 					<span className="listing__details-price-value">
-						{listing.pricePerNight} {listing.currency}
+						{listing.pricePerNight} RON
 					</span>
 				</div>
 			</div>

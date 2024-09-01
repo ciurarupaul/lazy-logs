@@ -153,6 +153,140 @@
 			"reviews": ["64a0c48d7b8e6c0021b8a7d6"],
 			"ratingsAverage": 4.4,
 			"ratingsQuantity": 10
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7d4",
+			"host": "64a0c48d7b8e6c0021b8a000",
+			"location": {
+				"county": "Cluj",
+				"city": "Cluj-Napoca",
+				"village": "Feleacu",
+				"zipcode": "400000"
+			},
+			"pricePerNight": 120,
+			"discount": 15,
+			"currency": "RON",
+			"photos": [
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
+			],
+			"amenities": ["WiFi", "Wood Stove", "Mountain View"],
+			"rules": ["No pets", "Quiet hours after 10 PM", "No shoes inside"],
+			"security": [
+				"Fire extinguisher in the kitchen",
+				"First aid kit in the bathroom",
+				"Lockable windows"
+			],
+			"info": [
+				"Check-in time is 3 PM",
+				"Check-out time is 11 AM",
+				"Free parking available"
+			],
+			"description": "A cozy cabin in the mountains of Cluj with a beautiful view and wood stove.",
+			"listingDetails": {
+				"bedrooms": 2,
+				"bathrooms": 1,
+				"beds": 3,
+				"maxGuests": 4
+			},
+			"blockedDates": ["2024-09-15", "2024-09-20"],
+			"reviews": ["64a0c48d7b8e6c0021b8a7d2"],
+			"ratingsAverage": 4.7,
+			"ratingsQuantity": 12
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7d5",
+			"host": "64a0c48d7b8e6c0021b8a000",
+			"location": {
+				"county": "Sibiu",
+				"city": "Sibiu",
+				"village": "Păltiniș",
+				"zipcode": "550000"
+			},
+			"pricePerNight": 150,
+			"discount": 10,
+			"currency": "RON",
+			"photos": [
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
+			],
+			"amenities": ["Hot Tub", "Fireplace", "Forest Access"],
+			"rules": [
+				"No smoking inside",
+				"Respect nature",
+				"No outdoor fires"
+			],
+			"security": [
+				"Smoke detectors in all rooms",
+				"Emergency contact numbers provided",
+				"Secure entry system"
+			],
+			"info": [
+				"Hot tub available year-round",
+				"Firewood provided for fireplace",
+				"Local hiking maps available"
+			],
+			"description": "Luxury cabin with a hot tub and fireplace, situated in a serene forest area.",
+			"listingDetails": {
+				"bedrooms": 3,
+				"bathrooms": 2,
+				"beds": 4,
+				"maxGuests": 6
+			},
+			"blockedDates": ["2024-10-05", "2024-10-10"],
+			"reviews": ["64a0c48d7b8e6c0021b8a7d4"],
+			"ratingsAverage": 4.9,
+			"ratingsQuantity": 8
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7d6",
+			"host": "64a0c48d7b8e6c0021b8a000",
+			"location": {
+				"county": "Brașov",
+				"city": "Brașov",
+				"village": "Poiana Brașov",
+				"zipcode": "500000"
+			},
+			"pricePerNight": 100,
+			"discount": 20,
+			"currency": "RON",
+			"photos": [
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
+			],
+			"amenities": ["Cable TV", "BBQ Grill", "Ski Access"],
+			"rules": [
+				"No parties",
+				"Keep noise levels down",
+				"No ski boots inside"
+			],
+			"security": [
+				"Fire escape plan in place",
+				"Security cameras on the premises",
+				"Secure ski storage"
+			],
+			"info": [
+				"Ski lift tickets available for purchase",
+				"BBQ grill available year-round",
+				"Ski rental discounts nearby"
+			],
+			"description": "Charming remote cabin with ski access and a BBQ grill for summer evenings.",
+			"listingDetails": {
+				"bedrooms": 2,
+				"bathrooms": 1,
+				"beds": 3,
+				"maxGuests": 4
+			},
+			"blockedDates": ["2024-11-01", "2024-11-15"],
+			"reviews": ["64a0c48d7b8e6c0021b8a7d6"],
+			"ratingsAverage": 4.4,
+			"ratingsQuantity": 10
 		}
 	]
 }

@@ -1,21 +1,19 @@
-@use "../abstracts";
+@use "../abstracts/mixins";
 
 .header {
 	grid-column: page-start / page-end;
 	grid-row: header-start/header-end;
 
-	@include abstracts.flexCenter;
+	@include mixins.flexCenter;
 	justify-content: space-between;
 	padding: 1rem 4rem;
 
-	height: 8rem;
 	width: 100%;
-
 	background-color: var(--background);
 
 	&__logo {
 		&-box {
-			@include abstracts.flexCenter;
+			@include mixins.flexCenter;
 			gap: 1rem;
 		}
 
@@ -33,7 +31,7 @@
 	&__user {
 		&-box {
 			position: relative;
-			@include abstracts.flexCenter;
+			@include mixins.flexCenter;
 			gap: 1rem;
 		}
 
@@ -54,7 +52,7 @@
 		}
 
 		&-button {
-			@include abstracts.flexCenter;
+			@include mixins.flexCenter;
 			gap: 1rem;
 			border: 1px solid var(--background-lines);
 			border-radius: 100rem;

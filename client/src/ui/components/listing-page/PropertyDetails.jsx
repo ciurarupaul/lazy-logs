@@ -21,7 +21,7 @@ function PropertyDetails({ listing }) {
 	return (
 		<>
 			{listing.rules || listing.security || listing.info ? (
-				<div className="listing__info">
+				<div className="listing__info-grid">
 					<ListingField title="House rules" entries={listing.rules} />
 					<ListingField title="Security" entries={listing.security} />
 					<ListingField
