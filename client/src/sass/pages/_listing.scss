@@ -25,14 +25,24 @@
 				);
 		}
 
-		&-mid {
+		&-right {
 			grid-column: listing-start / listing-end;
-			grid-row: 2 / 3;
 
 			display: grid;
 			grid-template-columns: minmax(min-content, 3fr) minmax(
 					min-content,
 					4fr
+				);
+			column-gap: 3rem;
+		}
+
+		&-left {
+			grid-column: listing-start / listing-end;
+
+			display: grid;
+			grid-template-columns: minmax(min-content, 4fr) minmax(
+					min-content,
+					3fr
 				);
 			column-gap: 3rem;
 		}
@@ -189,5 +199,9 @@
 				color: var(--primary-details);
 			}
 		}
+	}
+
+	&__book {
+		grid-column: listing-start / listing-end;
 	}
 }

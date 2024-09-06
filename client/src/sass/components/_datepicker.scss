@@ -1,0 +1,109 @@
+@use "../base/typography";
+@use "../abstracts/mixins";
+@import "~react-datepicker/dist/react-datepicker.css";
+
+.react-datepicker {
+	margin: 0 auto;
+	border: 1px solid var(--background-lines);
+	background-color: var(--background);
+}
+
+.react-datepicker__header {
+	background-color: var(--background);
+	padding: 0;
+	height: 6rem;
+	@include mixins.flexCenter;
+}
+
+.react-datepicker__navigation {
+	&--next {
+		top: 0;
+		right: 6px;
+		transform: translate(-25%, 35%);
+	}
+
+	.react-datepicker__navigation-icon--next::before {
+		left: -4px;
+		top: 7.5px;
+	}
+
+	&--previous {
+		top: 0;
+		left: 15px;
+		transform: translate(-10%, 35%);
+	}
+
+	.react-datepicker__navigation-icon--previous::before {
+		left: -5px;
+		top: 8px;
+	}
+
+	.react-datepicker__navigation-icon--next::before {
+		left: -4px;
+		top: 7.5px;
+	}
+}
+
+.react-datepicker__current-month {
+	color: var(--primary-details);
+	font-size: typography.$fontsize-medium;
+	font-weight: 500;
+}
+
+.react-datepicker__month {
+	background-color: var(--background);
+	padding: 1rem;
+
+	&-container {
+		background-color: var(--background);
+	}
+}
+
+.react-datepicker__day {
+	height: 4rem;
+	width: 5rem;
+	line-height: 3;
+
+	font-family: inherit;
+	font-size: typography.$fontsize-small;
+	font-weight: 500;
+	color: var(--primary-details);
+
+	&-name {
+		display: none;
+	}
+
+	&:hover {
+		background-color: var(--background-hover);
+	}
+
+	&--selected,
+	&--in-range {
+		background-color: var(--background-light);
+	}
+
+	&--start,
+	&--end {
+		background-color: var(--background-hover);
+	}
+
+	&--disabled,
+	&--outside-month {
+		color: var(--primary-disabled);
+	}
+}
+
+// change the color of the dates when choosing end date / during selection (blue be default)
+
+.react-datepicker__day--keyboard-selected {
+	background-color: var(--background-light);
+}
+
+.react-datepicker__day--in-selecting-range:not(
+		.react-datepicker__day--in-range,
+		.react-datepicker__month-text--in-range,
+		.react-datepicker__quarter-text--in-range,
+		.react-datepicker__year-text--in-range
+	) {
+	background-color: var(--background-hover);
+}

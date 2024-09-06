@@ -6,6 +6,7 @@ import Carousel from "../ui/utils/Carousel";
 import { AiFillStar } from "react-icons/ai";
 import { FlagIcon } from "react-flag-kit";
 import PropertyDetails from "../ui/components/listing-page/PropertyDetails";
+import BookingSection from "../ui/components/listing-page/BookingSection";
 
 function Listing() {
 	const [listing, setListing] = useState(null);
@@ -135,7 +136,7 @@ function Listing() {
 				</div>
 			</div>
 
-			<div className="listing__grid-mid">
+			<div className="listing__grid-right">
 				<div className="listing__reviews">
 					<div className="listing__title">
 						<div className="listing__reviews-header">
@@ -173,6 +174,17 @@ function Listing() {
 				</div>
 
 				<PropertyDetails listing={listing} />
+			</div>
+
+			<div className="listing__book">
+				<div className="listing__title">
+					<p>Book your stay</p>
+					<div className="line" />
+				</div>
+
+				<div className="listing__grid-left">
+					<BookingSection />
+				</div>
 			</div>
 		</div>
 	);
