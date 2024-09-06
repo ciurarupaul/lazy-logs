@@ -6,104 +6,103 @@
 	margin: 0 auto;
 	border: 1px solid var(--background-lines);
 	background-color: var(--background);
-}
-
-.react-datepicker__header {
-	background-color: var(--background);
-	padding: 0;
-	height: 6rem;
-	@include mixins.flexCenter;
-}
-
-.react-datepicker__navigation {
-	&--next {
-		top: 0;
-		right: 6px;
-		transform: translate(-25%, 35%);
-	}
-
-	.react-datepicker__navigation-icon--next::before {
-		left: -4px;
-		top: 7.5px;
-	}
-
-	&--previous {
-		top: 0;
-		left: 15px;
-		transform: translate(-10%, 35%);
-	}
-
-	.react-datepicker__navigation-icon--previous::before {
-		left: -5px;
-		top: 8px;
-	}
-
-	.react-datepicker__navigation-icon--next::before {
-		left: -4px;
-		top: 7.5px;
-	}
-}
-
-.react-datepicker__current-month {
-	color: var(--primary-details);
-	font-size: typography.$fontsize-medium;
-	font-weight: 500;
-}
-
-.react-datepicker__month {
-	background-color: var(--background);
-	padding: 1rem;
-
-	&-container {
-		background-color: var(--background);
-	}
-}
-
-.react-datepicker__day {
-	height: 4rem;
-	width: 5rem;
-	line-height: 3;
-
 	font-family: inherit;
-	font-size: typography.$fontsize-small;
-	font-weight: 500;
-	color: var(--primary-details);
 
-	&-name {
-		display: none;
+	/* Header */
+	&__header {
+		background-color: var(--background);
+		padding: 0;
+		height: 6rem;
+		@include mixins.flexCenter();
 	}
 
-	&:hover {
-		background-color: var(--background-hover);
+	&__navigation {
+		color: var(--primary);
+		&--next {
+			top: 0;
+			right: 6px;
+			transform: translate(-25%, 35%);
+		}
+
+		&--previous {
+			top: 0;
+			left: 15px;
+			transform: translate(-10%, 35%);
+		}
+
+		&-icon {
+			color: var(--primary);
+
+			&--next::before,
+			&--previous::before {
+				left: -5px;
+				top: 7.5px;
+
+				&:hover {
+					color: var(--primary);
+				}
+			}
+		}
 	}
 
-	&--selected,
-	&--in-range {
-		background-color: var(--background-light);
+	&__current-month {
+		color: var(--primary);
+		font-size: typography.$fontsize-medium;
+		font-weight: 500;
 	}
 
-	&--start,
-	&--end {
-		background-color: var(--background-hover);
+	&__month {
+		background-color: var(--background);
+		padding: 1rem;
+
+		&-container {
+			background-color: var(--background);
+		}
 	}
 
-	&--disabled,
-	&--outside-month {
-		color: var(--primary-disabled);
+	&__day {
+		height: 4rem;
+		width: 5rem;
+		line-height: 3;
+		font-family: inherit;
+		font-size: typography.$fontsize-small;
+		font-weight: 400;
+		color: var(--primary);
+
+		&:hover {
+			background-color: var(--background-hover);
+		}
+
+		&--selected,
+		&--in-range {
+			background-color: var(--background-light);
+		}
+
+		&--start,
+		&--end {
+			background-color: var(--background-hover);
+		}
+
+		&--disabled,
+		&--outside-month {
+			color: var(--primary-disabled);
+		}
+
+		&--keyboard-selected {
+			background-color: var(--background-light);
+		}
+
+		&-name {
+			display: none;
+		}
+
+		&--in-selecting-range:not(
+				&--in-range,
+				.react-datepicker__month-text--in-range,
+				.react-datepicker__quarter-text--in-range,
+				.react-datepicker__year-text--in-range
+			) {
+			background-color: var(--background-hover);
+		}
 	}
-}
-
-// change the color of the dates when choosing end date / during selection (blue be default)
-
-.react-datepicker__day--keyboard-selected {
-	background-color: var(--background-light);
-}
-
-.react-datepicker__day--in-selecting-range:not(
-		.react-datepicker__day--in-range,
-		.react-datepicker__month-text--in-range,
-		.react-datepicker__quarter-text--in-range,
-		.react-datepicker__year-text--in-range
-	) {
-	background-color: var(--background-hover);
 }
