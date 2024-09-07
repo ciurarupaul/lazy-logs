@@ -30,6 +30,7 @@
 				"zipcode": "400000"
 			},
 			"pricePerNight": 120,
+			"fees": 30,
 			"discount": 15,
 			"currency": "RON",
 			"photos": [
@@ -57,7 +58,13 @@
 				"beds": 3,
 				"maxGuests": 4
 			},
-			"blockedDates": ["2024-09-15", "2024-09-20"],
+			"blockedDates": [
+				{ "startDate": "2024-09-15", "endDate": "2024-09-20" },
+				{ "startDate": "2024-10-01", "endDate": "2024-10-05" },
+				{ "startDate": "2024-12-24", "endDate": "2024-12-27" },
+				{ "startDate": "2025-01-10", "endDate": "2025-01-15" },
+				{ "startDate": "2025-02-05", "endDate": "2025-02-10" }
+			],
 			"reviews": ["64a0c48d7b8e6c0021b8a7d2"],
 			"ratingsAverage": 4.7,
 			"ratingsQuantity": 12
@@ -73,6 +80,7 @@
 			},
 			"pricePerNight": 150,
 			"discount": 10,
+			"fees": 40,
 			"currency": "RON",
 			"photos": [
 				"/listings/cabin-main.jpg",
@@ -103,7 +111,13 @@
 				"beds": 4,
 				"maxGuests": 6
 			},
-			"blockedDates": ["2024-10-05", "2024-10-10"],
+			"blockedDates": [
+				{ "startDate": "2024-09-15", "endDate": "2024-09-20" },
+				{ "startDate": "2024-10-01", "endDate": "2024-10-05" },
+				{ "startDate": "2024-12-24", "endDate": "2024-12-27" },
+				{ "startDate": "2025-01-10", "endDate": "2025-01-15" },
+				{ "startDate": "2025-02-05", "endDate": "2025-02-10" }
+			],
 			"reviews": ["64a0c48d7b8e6c0021b8a7d4"],
 			"ratingsAverage": 4.9,
 			"ratingsQuantity": 8
@@ -119,6 +133,7 @@
 			},
 			"pricePerNight": 100,
 			"discount": 20,
+			"fees": 40,
 			"currency": "RON",
 			"photos": [
 				"/listings/cabin-main.jpg",
@@ -149,7 +164,13 @@
 				"beds": 3,
 				"maxGuests": 4
 			},
-			"blockedDates": ["2024-11-01", "2024-11-15"],
+			"blockedDates": [
+				{ "startDate": "2024-09-15", "endDate": "2024-09-20" },
+				{ "startDate": "2024-10-01", "endDate": "2024-10-05" },
+				{ "startDate": "2024-12-24", "endDate": "2024-12-27" },
+				{ "startDate": "2025-01-10", "endDate": "2025-01-15" },
+				{ "startDate": "2025-02-05", "endDate": "2025-02-10" }
+			],
 			"reviews": ["64a0c48d7b8e6c0021b8a7d6"],
 			"ratingsAverage": 4.4,
 			"ratingsQuantity": 10
@@ -165,6 +186,7 @@
 			},
 			"pricePerNight": 120,
 			"discount": 15,
+			"fees": 40,
 			"currency": "RON",
 			"photos": [
 				"/listings/cabin-main.jpg",
@@ -191,7 +213,13 @@
 				"beds": 3,
 				"maxGuests": 4
 			},
-			"blockedDates": ["2024-09-15", "2024-09-20"],
+			"blockedDates": [
+				{ "startDate": "2024-09-15", "endDate": "2024-09-20" },
+				{ "startDate": "2024-10-01", "endDate": "2024-10-05" },
+				{ "startDate": "2024-12-24", "endDate": "2024-12-27" },
+				{ "startDate": "2025-01-10", "endDate": "2025-01-15" },
+				{ "startDate": "2025-02-05", "endDate": "2025-02-10" }
+			],
 			"reviews": ["64a0c48d7b8e6c0021b8a7d2"],
 			"ratingsAverage": 4.7,
 			"ratingsQuantity": 12
@@ -207,6 +235,7 @@
 			},
 			"pricePerNight": 150,
 			"discount": 10,
+			"fees": 40,
 			"currency": "RON",
 			"photos": [
 				"/listings/cabin-main.jpg",
@@ -237,7 +266,13 @@
 				"beds": 4,
 				"maxGuests": 6
 			},
-			"blockedDates": ["2024-10-05", "2024-10-10"],
+			"blockedDates": [
+				{ "startDate": "2024-09-15", "endDate": "2024-09-20" },
+				{ "startDate": "2024-10-01", "endDate": "2024-10-05" },
+				{ "startDate": "2024-12-24", "endDate": "2024-12-27" },
+				{ "startDate": "2025-01-10", "endDate": "2025-01-15" },
+				{ "startDate": "2025-02-05", "endDate": "2025-02-10" }
+			],
 			"reviews": ["64a0c48d7b8e6c0021b8a7d4"],
 			"ratingsAverage": 4.9,
 			"ratingsQuantity": 8
@@ -253,6 +288,7 @@
 			},
 			"pricePerNight": 100,
 			"discount": 20,
+			"fees": 40,
 			"currency": "RON",
 			"photos": [
 				"/listings/cabin-main.jpg",
@@ -283,7 +319,13 @@
 				"beds": 3,
 				"maxGuests": 4
 			},
-			"blockedDates": ["2024-11-01", "2024-11-15"],
+			"blockedDates": [
+				{ "startDate": "2024-09-15", "endDate": "2024-09-20" },
+				{ "startDate": "2024-10-01", "endDate": "2024-10-05" },
+				{ "startDate": "2024-12-24", "endDate": "2024-12-27" },
+				{ "startDate": "2025-01-10", "endDate": "2025-01-15" },
+				{ "startDate": "2025-02-05", "endDate": "2025-02-10" }
+			],
 			"reviews": ["64a0c48d7b8e6c0021b8a7d6"],
 			"ratingsAverage": 4.4,
 			"ratingsQuantity": 10

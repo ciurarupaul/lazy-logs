@@ -1,41 +1,107 @@
+import {
+	eachDayOfInterval,
+	isPast,
+	isSameDay,
+	isWithinInterval,
+	parseISO,
+	differenceInCalendarDays,
+} from "date-fns";
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { isSameDay, isPast, addDays } from "date-fns"; // Assume you're using date-fns for these utilities
+import { Link } from "react-router-dom";
+import { useAuthContext } from "../../../context/authContext";
+import BookingPrice from "./BookingPrice";
 
-const bookedDates = [
-	new Date(2024, 8, 12), // September 12, 2024
-	new Date(2024, 8, 14), // September 14, 2024
-	new Date(2024, 8, 20), // September 20, 2024
-	new Date(2024, 8, 25), // September 25, 2024
-];
+const getBlockedDates = (blockedDates) => {
+	let dates = [];
+	blockedDates.forEach((interval) => {
+		const start = parseISO(interval.startDate);
+		const end = parseISO(interval.endDate);
+		const days = eachDayOfInterval({ start, end });
+		dates = dates.concat(days);
+	});
+	return dates;
+};
 
-const minBookingLength = 2; // Minimum 2 days
-const maxBookingLength = 14; // Maximum 14 days
+const isDateInBlockedRange = (start, end, blockedDates) => {
+	return blockedDates.some((blockedDate) =>
+		isWithinInterval(blockedDate, { start, end })
+	);
+};
 
-const BookingDatePicker = ({}) => {
+const BookingDatePicker = ({ listing }) => {
+	const { authState } = useAuthContext();
+	const { isAuthenticated } = authState;
 	const [range, setRange] = useState([null, null]);
 	const [startDate, endDate] = range;
+	const blockedDates = listing.blockedDates;
+	const blockedDatesArray = getBlockedDates(blockedDates);
+
+	const filteredDates = (date) => {
+		return (
+			!isPast(date) &&
+			!blockedDatesArray.some((blockedDate) =>
+				isSameDay(blockedDate, date)
+			)
+		);
+	};
+
+	const handleDateSelection = (dates) => {
+		const [start, end] = dates;
+
+		if (start && end) {
+			if (isDateInBlockedRange(start, end, blockedDatesArray)) {
+				setRange([null, null]);
+			} else {
+				setRange(dates);
+			}
+		} else {
+			setRange(dates);
+		}
+	};
+
+	const renderText = () => {
+		if (!isAuthenticated) {
+			return (
+				<p className="listing__booking-text">
+					Please{" "}
+					<Link to="/login" className="listing__booking-text-link">
+						login
+					</Link>{" "}
+					to book this property
+				</p>
+			);
+		} else if (!startDate || !endDate) {
+			return (
+				<p className="listing__booking-text">
+					Please select the dates you want to book!
+				</p>
+			);
+		} else if (isAuthenticated && startDate && endDate) {
+			return (
+				<BookingPrice
+					listing={listing}
+					nights={differenceInCalendarDays(endDate, startDate)}
+				/>
+			);
+		}
+	};
 
 	return (
-		<DatePicker
-			selectsRange
-			startDate={startDate}
-			endDate={endDate}
-			onChange={(dates) => setRange(dates)}
-			minDate={new Date()}
-			// maxDate={addDays(new Date(), maxBookingLength)}
-			// monthsShown={2}
-			inline
-			filterDate={(date) => {
-				return (
-					!isPast(date) &&
-					!bookedDates.some((bookedDate) =>
-						isSameDay(bookedDate, date)
-					)
-				);
-			}}
-		/>
+		<div className="listing__booking-container">
+			<div className="listing__booking-text">{renderText()}</div>
+			<DatePicker
+				selectsRange
+				startDate={startDate}
+				endDate={endDate}
+				onChange={handleDateSelection}
+				minDate={new Date()}
+				monthsShown={2}
+				inline
+				filterDate={filteredDates}
+			/>
+		</div>
 	);
 };
 

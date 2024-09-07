@@ -39,6 +39,9 @@ const listingSchema = new mongoose.Schema(
 			required: [true, "Price per night is required"],
 			min: [0, "Price per night must be a positive number"],
 		},
+		fees: {
+			type: Number,
+		},
 		discount: {
 			type: Number,
 			validate: {
@@ -80,9 +83,16 @@ const listingSchema = new mongoose.Schema(
 				min: [1, "Maximum number of guests must be at least 1"],
 			},
 		},
-		blockedDates: [Date],
+		blockedDates: [
+			{
+				_id: false,
+				startDate: { type: Date, required: true },
+				endDate: { type: Date, required: true },
+			},
+		],
 		reviews: [
 			{
+				_id: false,
 				type: mongoose.Schema.ObjectId,
 				ref: "Review",
 			},

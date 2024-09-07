@@ -201,7 +201,57 @@
 		}
 	}
 
-	&__book {
-		grid-column: listing-start / listing-end;
+	&__booking {
+		grid-column: 1 / -1;
+
+		&-container {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-around;
+			align-items: start;
+		}
+
+		&-text {
+			@include mixins.flexCenter();
+			font-size: typography.$fontsize-large;
+			color: var(--primary);
+
+			&-link {
+				color: var(--primary-important);
+				margin: 0 0.5rem;
+			}
+		}
+
+		&__summary {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+
+			min-width: max-content;
+			width: 40rem;
+			border: 1px solid var(--background-lines);
+			border-radius: 3px;
+			padding: 4rem;
+
+			font-size: typography.$fontsize-medium;
+
+			&-header {
+				font-size: typography.$fontsize-large;
+				font-weight: 500;
+				margin-bottom: 2rem;
+			}
+
+			&-btn {
+				font-size: typography.$fontsize-large;
+				font-weight: 500;
+				margin-top: 2rem;
+				padding: 1rem;
+			}
+
+			&-row {
+				display: flex;
+				justify-content: space-between;
+			}
+		}
 	}
 }

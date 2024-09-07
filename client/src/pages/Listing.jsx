@@ -21,7 +21,6 @@ function Listing() {
 		const fetchData = async () => {
 			try {
 				const data = await getListing(listingId);
-				console.log(data);
 				setListing(data);
 				setIsLoading(false);
 			} catch (err) {
@@ -176,15 +175,13 @@ function Listing() {
 				<PropertyDetails listing={listing} />
 			</div>
 
-			<div className="listing__book">
+			<div className="listing__booking">
 				<div className="listing__title">
 					<p>Book your stay</p>
 					<div className="line" />
 				</div>
 
-				<div className="listing__grid-left">
-					<BookingSection />
-				</div>
+				<BookingSection listing={listing} />
 			</div>
 		</div>
 	);
