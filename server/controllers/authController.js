@@ -2,8 +2,8 @@ import crypto from "crypto";
 import jwt from "jsonwebtoken";
 import { promisify } from "util";
 import User from "../models/userModel.js";
-import AppError from "./../utils/appError.js";
-import catchAsync from "./../utils/catchAsync.js";
+import AppError from "../utils/appError.js";
+import catchAsync from "../utils/catchAsync.js";
 
 const signToken = (id) => {
 	return jwt.sign({ id }, process.env.JWT_SECRET, {

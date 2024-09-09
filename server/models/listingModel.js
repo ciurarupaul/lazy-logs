@@ -29,10 +29,10 @@ const listingSchema = new mongoose.Schema(
 					message: "Invalid Romanian zipcode format",
 				},
 			},
-			// coordinates: {
-			// 	type: [Number],
-			// 	index: "2dsphere",
-			// },
+			coordinates: {
+				type: [Number],
+				index: "2dsphere",
+			},
 		},
 		pricePerNight: {
 			type: Number,

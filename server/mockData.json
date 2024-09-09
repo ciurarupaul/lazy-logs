@@ -51,7 +51,8 @@
 				"county": "Cluj",
 				"city": "Cluj-Napoca",
 				"village": "Feleacu",
-				"zipcode": "400000"
+				"zipcode": "400000",
+				"coordinates": [23.5844, 46.7661]
 			},
 			"pricePerNight": 120,
 			"fees": 30,
@@ -111,7 +112,8 @@
 				"county": "Sibiu",
 				"city": "Sibiu",
 				"village": "Păltiniș",
-				"zipcode": "550000"
+				"zipcode": "550000",
+				"coordinates": [24.1466, 45.7984]
 			},
 			"pricePerNight": 150,
 			"discount": 10,
@@ -163,7 +165,8 @@
 				"county": "Brașov",
 				"city": "Brașov",
 				"village": "Poiana Brașov",
-				"zipcode": "500000"
+				"zipcode": "500000",
+				"coordinates": [25.3233, 45.6401]
 			},
 			"pricePerNight": 100,
 			"discount": 20,
@@ -215,7 +218,8 @@
 				"county": "Cluj",
 				"city": "Cluj-Napoca",
 				"village": "Feleacu",
-				"zipcode": "400000"
+				"zipcode": "400000",
+				"coordinates": [23.5844, 46.7661]
 			},
 			"pricePerNight": 120,
 			"discount": 15,
@@ -263,7 +267,8 @@
 				"county": "Sibiu",
 				"city": "Sibiu",
 				"village": "Păltiniș",
-				"zipcode": "550000"
+				"zipcode": "550000",
+				"coordinates": [24.1466, 45.7984]
 			},
 			"pricePerNight": 150,
 			"discount": 10,
@@ -315,7 +320,8 @@
 				"county": "Brașov",
 				"city": "Brașov",
 				"village": "Poiana Brașov",
-				"zipcode": "500000"
+				"zipcode": "500000",
+				"coordinates": [25.3233, 45.6401]
 			},
 			"pricePerNight": 100,
 			"discount": 20,
