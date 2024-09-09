@@ -6,6 +6,7 @@ import { fileURLToPath } from "url";
 
 import Listing from "./models/listingModel.js";
 import User from "./models/userModel.js";
+import Review from "./models/reviewModel.js";
 
 // Configure dotenv
 dotenv.config({ path: "./config.env" });
@@ -36,9 +37,11 @@ async function seedDatabase() {
 
 		await User.deleteMany({});
 		await Listing.deleteMany({});
+		await Review.deleteMany({});
 
 		await User.insertMany(data.users);
 		await Listing.insertMany(data.listings);
+		await Review.insertMany(data.reviews);
 
 		console.log("Database seeding completed");
 	} catch (error) {

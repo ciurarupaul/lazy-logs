@@ -4,6 +4,8 @@
 
 .react-datepicker {
 	border: 1px solid var(--background-lines);
+	border-radius: 4px;
+	overflow: hidden;
 	background-color: var(--background);
 	font-family: inherit;
 	height: max-content;

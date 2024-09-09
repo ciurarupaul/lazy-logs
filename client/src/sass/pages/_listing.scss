@@ -24,28 +24,6 @@
 					3fr
 				);
 		}
-
-		&-right {
-			grid-column: listing-start / listing-end;
-
-			display: grid;
-			grid-template-columns: minmax(min-content, 3fr) minmax(
-					min-content,
-					4fr
-				);
-			column-gap: 3rem;
-		}
-
-		&-left {
-			grid-column: listing-start / listing-end;
-
-			display: grid;
-			grid-template-columns: minmax(min-content, 4fr) minmax(
-					min-content,
-					3fr
-				);
-			column-gap: 3rem;
-		}
 	}
 
 	&__title {
@@ -146,12 +124,18 @@
 	}
 
 	&__map {
-		height: 50rem;
-		width: 100%;
-		background-color: lightgrey;
+		grid-column: 1 / -1;
+
+		&-container {
+			height: 50rem;
+			width: 100%;
+			background-color: lightgrey;
+		}
 	}
 
 	&__reviews {
+		grid-column: 1 / -1;
+
 		&-header {
 			display: flex;
 			flex-direction: row;
@@ -170,6 +154,15 @@
 			&-icon {
 				height: 2.25rem;
 			}
+		}
+
+		// might be broken design, somehow the cards stretch the grid/container and fuck up the styles... might fix with responsive design or separate page
+		&-container {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+			overflow: auto;
+			column-gap: 3rem;
+			white-space: no-wrap;
 		}
 	}
 

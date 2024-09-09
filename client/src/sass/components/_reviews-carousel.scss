@@ -1,0 +1,44 @@
+@use "../abstracts/mixins";
+
+.reviews-carousel {
+	display: flex;
+	position: relative;
+
+	&__content {
+		display: flex;
+		gap: 2rem;
+		margin: 0 6rem;
+	}
+
+	&__btn {
+		padding: 0.5rem;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+
+		background-color: var(--background-lines);
+
+		border: none;
+		z-index: 2;
+
+		@include mixins.flexCenter;
+
+		&--prev {
+			left: 0;
+		}
+
+		&--next {
+			right: 0;
+		}
+
+		&-icon {
+			height: 3rem;
+			width: 3rem;
+			color: var(--background);
+		}
+
+		&:hover {
+			background-color: var(--background-lines);
+		}
+	}
+}

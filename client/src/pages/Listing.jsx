@@ -1,12 +1,13 @@
-import { getListing } from "../services/apiListings";
 import { useEffect, useState } from "react";
-import { PageLoader as Loader } from "../ui/utils/Loader";
-import { useParams } from "react-router-dom";
-import Carousel from "../ui/utils/Carousel";
-import { AiFillStar } from "react-icons/ai";
 import { FlagIcon } from "react-flag-kit";
-import PropertyDetails from "../ui/components/listing-page/PropertyDetails";
+import { AiFillStar } from "react-icons/ai";
+import { useParams } from "react-router-dom";
+import { getListing } from "../services/apiListings";
 import BookingSection from "../ui/components/listing-page/BookingSection";
+import PropertyDetails from "../ui/components/listing-page/PropertyDetails";
+import Carousel from "../ui/utils/Carousel";
+import { PageLoader as Loader } from "../ui/utils/Loader";
+import ReviewsCarousel from "../ui/utils/ReviewsCarousel";
 
 function Listing() {
 	const [listing, setListing] = useState(null);
@@ -22,6 +23,7 @@ function Listing() {
 			try {
 				const data = await getListing(listingId);
 				setListing(data);
+				console.log(data);
 				setIsLoading(false);
 			} catch (err) {
 				setIsLoading(false);
@@ -36,6 +38,8 @@ function Listing() {
 	// too many grids?? once the google maps api is implemented, might allow all (except header with carousel and details) to fit on the whole width to simplify this..
 
 	// must improve typography later !!! (and visual hierarchy, - lacks in some places)
+
+	// improve cta text placement
 
 	return (
 		<div className="page-container listing__grid">
@@ -135,34 +139,34 @@ function Listing() {
 				</div>
 			</div>
 
-			<div className="listing__grid-right">
-				<div className="listing__reviews">
-					<div className="listing__title">
-						<div className="listing__reviews-header">
-							<p>Reviews</p>
-
-							<div className="listing__reviews-header-score">
-								<p>{listing.ratingsAverage}</p>
-								<AiFillStar className="listing__reviews-header-icon" />
-								<span>
-									&bull; {listing.ratingsQuantity} reviews
-								</span>
-							</div>
-						</div>
-
-						<div className="line" />
-
-						<p>**insert review card slider here**</p>
-					</div>
+			<div className="listing__map">
+				<div className="listing__title">
+					<p>Location</p>
+					<div className="line" />
 				</div>
 
-				<div>
-					<div className="listing__title">
-						<p>Location</p>
-						<div className="line" />
+				<div className="listing__map-container"></div>
+			</div>
+
+			<div className="listing__reviews">
+				<div className="listing__title">
+					<div className="listing__reviews-header">
+						<p>Reviews</p>
+
+						<div className="listing__reviews-header-score">
+							<p>{listing.ratingsAverage}</p>
+							<AiFillStar className="listing__reviews-header-icon" />
+							<span>
+								&bull; {listing.ratingsQuantity} reviews
+							</span>
+						</div>
 					</div>
 
-					<div className="listing__map"></div>
+					<div className="line" />
+				</div>
+
+				<div className="listing__reviews-container">
+					<ReviewsCarousel reviews={listing.reviews} />
 				</div>
 			</div>
 

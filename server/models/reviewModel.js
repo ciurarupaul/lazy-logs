@@ -22,9 +22,9 @@ const reviewSchema = new mongoose.Schema(
 			type: String,
 			validate: {
 				validator: function (value) {
-					return !value || value.length <= 250;
+					return !value || value.length <= 500;
 				},
-				message: "Comment must be 250 characters or less",
+				message: "Comment must be 500 characters or less",
 			},
 		},
 	},

@@ -1,0 +1,51 @@
+@use "../base/typography";
+@use "../abstracts/mixins";
+
+.review-card {
+	padding: 2rem 3rem;
+	border: 1px solid var(--background-lines);
+	border-radius: 4px;
+	min-width: 36rem;
+	overflow: hidden;
+
+	&-star {
+		height: 2rem;
+		width: 2rem;
+	}
+
+	&__header {
+		display: flex;
+		gap: 1rem;
+
+		&-container {
+			display: flex;
+			flex-direction: column;
+		}
+
+		&-name {
+			font-size: typography.$fontsize-medium;
+			font-weight: 500;
+		}
+
+		&-text {
+			display: flex;
+			gap: 0.5rem;
+		}
+
+		&-pfp {
+			height: 5rem;
+			width: 5rem;
+			border-radius: 100rem;
+		}
+
+		&-stars {
+			display: flex;
+			margin-right: -0.2rem; // correct extra exmpty space taken by svg
+		}
+	}
+
+	&-comment {
+		color: var(--primary-details);
+		margin-top: 2rem;
+	}
+}

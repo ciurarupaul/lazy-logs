@@ -92,7 +92,6 @@ const listingSchema = new mongoose.Schema(
 		],
 		reviews: [
 			{
-				_id: false,
 				type: mongoose.Schema.ObjectId,
 				ref: "Review",
 			},

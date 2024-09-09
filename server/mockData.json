@@ -7,7 +7,8 @@
 			"phoneNumber": "0123456789",
 			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
 			"role": "host",
-			"countryCode": "Romanian",
+			"country": "Romania",
+			"countryCode": "RO",
 			"listings": [
 				"64a0c48d7b8e6c0021b8a7d1",
 				"64a0c48d7b8e6c0021b8a7d2",
@@ -17,8 +18,31 @@
 				"64a0c48d7b8e6c0021b8a7d6",
 				"64a0c48d7b8e6c0021b8a7d7"
 			]
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b001",
+			"name": "Jane Smith",
+			"email": "jane.smith@example.com",
+			"phoneNumber": "0987654321",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"role": "user",
+			"country": "United States",
+			"countryCode": "US",
+			"listings": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b002",
+			"name": "Carlos Fernández",
+			"email": "carlos.fernandez@example.com",
+			"phoneNumber": "0987651234",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"role": "user",
+			"country": "Spain",
+			"countryCode": "ES",
+			"listings": []
 		}
 	],
+
 	"listings": [
 		{
 			"_id": "64a0c48d7b8e6c0021b8a7d1",
@@ -65,7 +89,18 @@
 				{ "startDate": "2025-01-10", "endDate": "2025-01-15" },
 				{ "startDate": "2025-02-05", "endDate": "2025-02-10" }
 			],
-			"reviews": ["64a0c48d7b8e6c0021b8a7d2"],
+			"reviews": [
+				"64a0c48d7b8e6c0021b8a7f1",
+				"64a0c48d7b8e6c0021b8a7f2",
+				"64a0c48d7b8e6c0021b8a7f3",
+				"64a0c48d7b8e6c0021b8a7f4",
+				"64a0c48d7b8e6c0021b8a7f5",
+				"64a0c48d7b8e6c0021b8a7f6",
+				"64a0c48d7b8e6c0021b8a7f7",
+				"64a0c48d7b8e6c0021b8a7f8",
+				"64a0c48d7b8e6c0021b8a7f9",
+				"64a0c48d7b8e6c0021b8a7fa"
+			],
 			"ratingsAverage": 4.7,
 			"ratingsQuantity": 12
 		},
@@ -118,7 +153,6 @@
 				{ "startDate": "2025-01-10", "endDate": "2025-01-15" },
 				{ "startDate": "2025-02-05", "endDate": "2025-02-10" }
 			],
-			"reviews": ["64a0c48d7b8e6c0021b8a7d4"],
 			"ratingsAverage": 4.9,
 			"ratingsQuantity": 8
 		},
@@ -171,7 +205,6 @@
 				{ "startDate": "2025-01-10", "endDate": "2025-01-15" },
 				{ "startDate": "2025-02-05", "endDate": "2025-02-10" }
 			],
-			"reviews": ["64a0c48d7b8e6c0021b8a7d6"],
 			"ratingsAverage": 4.4,
 			"ratingsQuantity": 10
 		},
@@ -220,7 +253,6 @@
 				{ "startDate": "2025-01-10", "endDate": "2025-01-15" },
 				{ "startDate": "2025-02-05", "endDate": "2025-02-10" }
 			],
-			"reviews": ["64a0c48d7b8e6c0021b8a7d2"],
 			"ratingsAverage": 4.7,
 			"ratingsQuantity": 12
 		},
@@ -273,7 +305,6 @@
 				{ "startDate": "2025-01-10", "endDate": "2025-01-15" },
 				{ "startDate": "2025-02-05", "endDate": "2025-02-10" }
 			],
-			"reviews": ["64a0c48d7b8e6c0021b8a7d4"],
 			"ratingsAverage": 4.9,
 			"ratingsQuantity": 8
 		},
@@ -326,9 +357,81 @@
 				{ "startDate": "2025-01-10", "endDate": "2025-01-15" },
 				{ "startDate": "2025-02-05", "endDate": "2025-02-10" }
 			],
-			"reviews": ["64a0c48d7b8e6c0021b8a7d6"],
 			"ratingsAverage": 4.4,
 			"ratingsQuantity": 10
+		}
+	],
+
+	"reviews": [
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7f1",
+			"listing": "64a0c48d7b8e6c0021b8a7d1",
+			"user": "64a0c48d7b8e6c0021b8b001",
+			"rating": 5,
+			"comment": "Fantastic stay! Everything was perfect from start to finish."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7f2",
+			"listing": "64a0c48d7b8e6c0021b8a7d1",
+			"user": "64a0c48d7b8e6c0021b8b002",
+			"rating": 4,
+			"comment": "I had a very pleasant stay here. The property was clean and well-maintained, and the location was ideal for exploring the surrounding area. Although there were a few minor issues, such as the Wi-Fi being a bit slow and the noise from the street at night, these did not significantly impact my overall enjoyment. I would definitely consider staying here again in the future."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7f3",
+			"listing": "64a0c48d7b8e6c0021b8a7d1",
+			"user": "64a0c48d7b8e6c0021b8b001",
+			"rating": 5,
+			"comment": "My experience here was generally positive. The property had a charming decor and the staff were very friendly. However, there were a few inconveniences, such as a noisy air conditioner and limited parking space."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7f4",
+			"listing": "64a0c48d7b8e6c0021b8a7d1",
+			"user": "64a0c48d7b8e6c0021b8b002",
+			"rating": 3,
+			"comment": "Great location and friendly staff. The room was clean and comfortable, though the Wi-Fi was slow."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7f5",
+			"listing": "64a0c48d7b8e6c0021b8a7d1",
+			"user": "64a0c48d7b8e6c0021b8b001",
+			"rating": 4,
+			"comment": "Overall, I had a good experience, but there were several areas for improvement. The location was excellent, and the room was comfortable with a lovely view. However, the amenities fell short of expectations, particularly the outdated bathroom fixtures and occasional disturbances from neighboring rooms. Despite these issues, the host's hospitality made the stay pleasant."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7f6",
+			"listing": "64a0c48d7b8e6c0021b8a7d1",
+			"user": "64a0c48d7b8e6c0021b8b002",
+			"rating": 5,
+			"comment": "I had a pleasant stay overall. The room was clean and well-maintained, but there were a few issues with the heating system and the shower was not as hot as I would have liked."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7f7",
+			"listing": "64a0c48d7b8e6c0021b8a7d1",
+			"user": "64a0c48d7b8e6c0021b8b001",
+			"rating": 4,
+			"comment": "The property was lovely, with a cozy atmosphere and great amenities. However, the noise from the street was a bit disruptive at night."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7f8",
+			"listing": "64a0c48d7b8e6c0021b8a7d1",
+			"user": "64a0c48d7b8e6c0021b8b002",
+			"rating": 3,
+			"comment": "The stay was average. While the location was decent and the staff was friendly, the overall experience left much to be desired. The room was not as clean as I would have liked, and the amenities were below my expectations. It served its purpose for a short stay, but I would likely look for other options in the future."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7f9",
+			"listing": "64a0c48d7b8e6c0021b8a7d1",
+			"user": "64a0c48d7b8e6c0021b8b001",
+			"rating": 5,
+			"comment": "This was a great place for a weekend getaway. The host was incredibly welcoming and the room was beautifully decorated. The location was ideal for exploring the city. There were minor issues with the Wi-Fi and some noise from the hallway, but they were manageable."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7fa",
+			"listing": "64a0c48d7b8e6c0021b8a7d1",
+			"user": "64a0c48d7b8e6c0021b8b002",
+			"rating": 4,
+			"comment": "Overall, my stay was very enjoyable. The property was well-maintained, and the amenities provided were satisfactory. The host was friendly and accommodating, and the location was convenient. There were a few minor issues, such as the noise from neighboring rooms, but these did not overshadow the positive aspects of the stay. I would definitely stay here again and recommend it to others."
 		}
 	]
 }
