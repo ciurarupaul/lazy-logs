@@ -8,6 +8,7 @@ import PropertyDetails from "../ui/components/listing-page/PropertyDetails";
 import Carousel from "../ui/utils/Carousel";
 import { PageLoader as Loader } from "../ui/utils/Loader";
 import ReviewsCarousel from "../ui/utils/ReviewsCarousel";
+import PropertyMap from "../ui/components/listing-page/PropertyMap";
 
 function Listing() {
 	const [listing, setListing] = useState(null);
@@ -23,7 +24,6 @@ function Listing() {
 			try {
 				const data = await getListing(listingId);
 				setListing(data);
-				console.log(data);
 				setIsLoading(false);
 			} catch (err) {
 				setIsLoading(false);
@@ -145,7 +145,10 @@ function Listing() {
 					<div className="line" />
 				</div>
 
-				<div className="listing__map-container"></div>
+				<PropertyMap
+					lat={listing.location.coordinates[1]}
+					lng={listing.location.coordinates[0]}
+				/>
 			</div>
 
 			<div className="listing__reviews">

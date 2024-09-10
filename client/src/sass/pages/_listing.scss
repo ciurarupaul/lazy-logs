@@ -127,9 +127,10 @@
 		grid-column: 1 / -1;
 
 		&-container {
-			height: 50rem;
-			width: 100%;
-			background-color: lightgrey;
+			height: 60rem;
+			margin: 0 auto;
+			border-radius: 12px;
+			overflow: hidden;
 		}
 	}
 
@@ -247,4 +248,9 @@
 			}
 		}
 	}
+}
+
+// for maps dialogue / info modal
+.transit-container {
+	color: var(--background);
 }
