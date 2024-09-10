@@ -4,7 +4,7 @@
 .review-card {
 	padding: 2rem 3rem;
 	border: 1px solid var(--background-lines);
-	border-radius: 4px;
+	border-radius: 6px;
 	min-width: 36rem;
 	overflow: hidden;
 
@@ -30,6 +30,7 @@
 		&-text {
 			display: flex;
 			gap: 0.5rem;
+			font-size: typography.$fontsize-small;
 		}
 
 		&-pfp {
@@ -46,6 +47,7 @@
 
 	&-comment {
 		color: var(--primary-details);
+		font-size: typography.$fontsize-small;
 		margin-top: 2rem;
 	}
 }

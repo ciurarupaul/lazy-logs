@@ -50,9 +50,18 @@
 			"location": {
 				"county": "Cluj",
 				"city": "Cluj-Napoca",
+				"commune": "Some Commune",
 				"village": "Feleacu",
 				"zipcode": "400000",
-				"coordinates": [23.5844, 46.7661]
+				"coordinates": [23.5844, 46.7661],
+				"address": "123 Mountain Road, Feleacu",
+				"nearbyAttractions": [
+					"Hoia Forest",
+					"Cluj-Napoca Botanical Garden",
+					"Romania’s National Museum of Transylvanian History",
+					"Transylvanian History Museum",
+					"Turda Salt Mine"
+				]
 			},
 			"pricePerNight": 120,
 			"fees": 30,
@@ -64,31 +73,88 @@
 				"/listings/cabin-03.jpg",
 				"/listings/cabin-04.jpg"
 			],
-			"amenities": ["WiFi", "Wood Stove", "Mountain View"],
-			"rules": ["No pets", "Quiet hours after 10 PM", "No shoes inside"],
+			"amenities": [
+				"WiFi",
+				"Wood Stove",
+				"Mountain View",
+				"Hot Tub",
+				"Swimming Pool",
+				"BBQ Grill",
+				"Fully Equipped Kitchen",
+				"Washer/Dryer",
+				"Air Conditioning",
+				"Heating",
+				"Free Parking",
+				"Outdoor Dining Area",
+				"Garden",
+				"Fireplace",
+				"Smart TV",
+				"Coffee Maker",
+				"Dishwasher",
+				"Iron and Ironing Board"
+			],
+			"rules": [
+				"No pets allowed",
+				"Quiet hours from 10 PM to 7 AM",
+				"No smoking inside the property",
+				"No parties or events",
+				"Check-in time: 3 PM",
+				"Check-out time: 11 AM",
+				"Guests must be registered",
+				"Do not disturb the neighbors",
+				"Use outdoor grill responsibly",
+				"Remove trash and recycling before departure",
+				"No shoes on the furniture"
+			],
 			"security": [
 				"Fire extinguisher in the kitchen",
 				"First aid kit in the bathroom",
-				"Lockable windows"
+				"Lockable windows",
+				"Safe for valuables",
+				"Outdoor lighting",
+				"Smoke detectors",
+				"Carbon monoxide detectors",
+				"Emergency contact information provided"
 			],
 			"info": [
-				"Check-in time is 3 PM",
-				"Check-out time is 11 AM",
-				"Free parking available"
+				"Check-in time is 3 PM. Early check-in may be available upon request.",
+				"Check-out time is 11 AM. Late check-out may be arranged if available.",
+				"Free parking is available on the premises.",
+				"Local transportation info is available upon request.",
+				"Welcome pack includes local maps, guides, and a list of recommended restaurants.",
+				"The property is equipped with a local guidebook and emergency numbers."
 			],
-			"description": "A cozy cabin in the mountains of Cluj with a beautiful view and wood stove.",
+			"description": "Experience a cozy cabin nestled in the beautiful mountains of Cluj. Enjoy breathtaking views, a relaxing hot tub, and modern amenities. Ideal for a tranquil getaway or an adventurous escape. The cabin features a fully equipped kitchen, spacious living areas, and easy access to nearby attractions.",
 			"listingDetails": {
 				"bedrooms": 2,
 				"bathrooms": 1,
 				"beds": 3,
-				"maxGuests": 4
+				"maxGuests": 4,
+				"bedTypes": ["1 King Bed", "1 Queen Bed", "1 Sofa Bed"],
+				"checkInInstructions": "Self-check-in with keypad. Instructions and code will be provided upon booking.",
+				"wheelchairAccessible": false
 			},
 			"blockedDates": [
-				{ "startDate": "2024-09-15", "endDate": "2024-09-20" },
-				{ "startDate": "2024-10-01", "endDate": "2024-10-05" },
-				{ "startDate": "2024-12-24", "endDate": "2024-12-27" },
-				{ "startDate": "2025-01-10", "endDate": "2025-01-15" },
-				{ "startDate": "2025-02-05", "endDate": "2025-02-10" }
+				{ "startDate": "2024-09-10", "endDate": "2024-09-12" },
+				{ "startDate": "2024-09-20", "endDate": "2024-09-25" },
+				{ "startDate": "2024-10-01", "endDate": "2024-10-04" },
+				{ "startDate": "2024-10-10", "endDate": "2024-10-12" },
+				{ "startDate": "2024-10-18", "endDate": "2024-10-22" },
+				{ "startDate": "2024-11-01", "endDate": "2024-11-05" },
+				{ "startDate": "2024-11-15", "endDate": "2024-11-18" },
+				{ "startDate": "2024-12-01", "endDate": "2024-12-05" },
+				{ "startDate": "2024-12-10", "endDate": "2024-12-12" },
+				{ "startDate": "2024-12-20", "endDate": "2024-12-28" },
+				{ "startDate": "2025-01-05", "endDate": "2025-01-10" },
+				{ "startDate": "2025-01-15", "endDate": "2025-01-20" },
+				{ "startDate": "2025-02-01", "endDate": "2025-02-03" },
+				{ "startDate": "2025-02-10", "endDate": "2025-02-15" },
+				{ "startDate": "2025-03-01", "endDate": "2025-03-05" },
+				{ "startDate": "2025-03-10", "endDate": "2025-03-15" },
+				{ "startDate": "2025-04-01", "endDate": "2025-04-07" },
+				{ "startDate": "2025-04-15", "endDate": "2025-04-20" },
+				{ "startDate": "2025-05-01", "endDate": "2025-05-10" },
+				{ "startDate": "2025-05-15", "endDate": "2025-05-20" }
 			],
 			"reviews": [
 				"64a0c48d7b8e6c0021b8a7f1",
@@ -104,270 +170,8 @@
 			],
 			"ratingsAverage": 4.7,
 			"ratingsQuantity": 12
-		},
-		{
-			"_id": "64a0c48d7b8e6c0021b8a7d2",
-			"host": "64a0c48d7b8e6c0021b8a000",
-			"location": {
-				"county": "Sibiu",
-				"city": "Sibiu",
-				"village": "Păltiniș",
-				"zipcode": "550000",
-				"coordinates": [24.1466, 45.7984]
-			},
-			"pricePerNight": 150,
-			"discount": 10,
-			"fees": 40,
-			"currency": "RON",
-			"photos": [
-				"/listings/cabin-main.jpg",
-				"/listings/cabin-02.jpg",
-				"/listings/cabin-03.jpg",
-				"/listings/cabin-04.jpg"
-			],
-			"amenities": ["Hot Tub", "Fireplace", "Forest Access"],
-			"rules": [
-				"No smoking inside",
-				"Respect nature",
-				"No outdoor fires"
-			],
-			"security": [
-				"Smoke detectors in all rooms",
-				"Emergency contact numbers provided",
-				"Secure entry system"
-			],
-			"info": [
-				"Hot tub available year-round",
-				"Firewood provided for fireplace",
-				"Local hiking maps available"
-			],
-			"description": "Luxury cabin with a hot tub and fireplace, situated in a serene forest area.",
-			"listingDetails": {
-				"bedrooms": 3,
-				"bathrooms": 2,
-				"beds": 4,
-				"maxGuests": 6
-			},
-			"blockedDates": [
-				{ "startDate": "2024-09-15", "endDate": "2024-09-20" },
-				{ "startDate": "2024-10-01", "endDate": "2024-10-05" },
-				{ "startDate": "2024-12-24", "endDate": "2024-12-27" },
-				{ "startDate": "2025-01-10", "endDate": "2025-01-15" },
-				{ "startDate": "2025-02-05", "endDate": "2025-02-10" }
-			],
-			"ratingsAverage": 4.9,
-			"ratingsQuantity": 8
-		},
-		{
-			"_id": "64a0c48d7b8e6c0021b8a7d3",
-			"host": "64a0c48d7b8e6c0021b8a000",
-			"location": {
-				"county": "Brașov",
-				"city": "Brașov",
-				"village": "Poiana Brașov",
-				"zipcode": "500000",
-				"coordinates": [25.3233, 45.6401]
-			},
-			"pricePerNight": 100,
-			"discount": 20,
-			"fees": 40,
-			"currency": "RON",
-			"photos": [
-				"/listings/cabin-main.jpg",
-				"/listings/cabin-02.jpg",
-				"/listings/cabin-03.jpg",
-				"/listings/cabin-04.jpg"
-			],
-			"amenities": ["Cable TV", "BBQ Grill", "Ski Access"],
-			"rules": [
-				"No parties",
-				"Keep noise levels down",
-				"No ski boots inside"
-			],
-			"security": [
-				"Fire escape plan in place",
-				"Security cameras on the premises",
-				"Secure ski storage"
-			],
-			"info": [
-				"Ski lift tickets available for purchase",
-				"BBQ grill available year-round",
-				"Ski rental discounts nearby"
-			],
-			"description": "Charming remote cabin with ski access and a BBQ grill for summer evenings.",
-			"listingDetails": {
-				"bedrooms": 2,
-				"bathrooms": 1,
-				"beds": 3,
-				"maxGuests": 4
-			},
-			"blockedDates": [
-				{ "startDate": "2024-09-15", "endDate": "2024-09-20" },
-				{ "startDate": "2024-10-01", "endDate": "2024-10-05" },
-				{ "startDate": "2024-12-24", "endDate": "2024-12-27" },
-				{ "startDate": "2025-01-10", "endDate": "2025-01-15" },
-				{ "startDate": "2025-02-05", "endDate": "2025-02-10" }
-			],
-			"ratingsAverage": 4.4,
-			"ratingsQuantity": 10
-		},
-		{
-			"_id": "64a0c48d7b8e6c0021b8a7d4",
-			"host": "64a0c48d7b8e6c0021b8a000",
-			"location": {
-				"county": "Cluj",
-				"city": "Cluj-Napoca",
-				"village": "Feleacu",
-				"zipcode": "400000",
-				"coordinates": [23.5844, 46.7661]
-			},
-			"pricePerNight": 120,
-			"discount": 15,
-			"fees": 40,
-			"currency": "RON",
-			"photos": [
-				"/listings/cabin-main.jpg",
-				"/listings/cabin-02.jpg",
-				"/listings/cabin-03.jpg",
-				"/listings/cabin-04.jpg"
-			],
-			"amenities": ["WiFi", "Wood Stove", "Mountain View"],
-			"rules": ["No pets", "Quiet hours after 10 PM", "No shoes inside"],
-			"security": [
-				"Fire extinguisher in the kitchen",
-				"First aid kit in the bathroom",
-				"Lockable windows"
-			],
-			"info": [
-				"Check-in time is 3 PM",
-				"Check-out time is 11 AM",
-				"Free parking available"
-			],
-			"description": "A cozy cabin in the mountains of Cluj with a beautiful view and wood stove.",
-			"listingDetails": {
-				"bedrooms": 2,
-				"bathrooms": 1,
-				"beds": 3,
-				"maxGuests": 4
-			},
-			"blockedDates": [
-				{ "startDate": "2024-09-15", "endDate": "2024-09-20" },
-				{ "startDate": "2024-10-01", "endDate": "2024-10-05" },
-				{ "startDate": "2024-12-24", "endDate": "2024-12-27" },
-				{ "startDate": "2025-01-10", "endDate": "2025-01-15" },
-				{ "startDate": "2025-02-05", "endDate": "2025-02-10" }
-			],
-			"ratingsAverage": 4.7,
-			"ratingsQuantity": 12
-		},
-		{
-			"_id": "64a0c48d7b8e6c0021b8a7d5",
-			"host": "64a0c48d7b8e6c0021b8a000",
-			"location": {
-				"county": "Sibiu",
-				"city": "Sibiu",
-				"village": "Păltiniș",
-				"zipcode": "550000",
-				"coordinates": [24.1466, 45.7984]
-			},
-			"pricePerNight": 150,
-			"discount": 10,
-			"fees": 40,
-			"currency": "RON",
-			"photos": [
-				"/listings/cabin-main.jpg",
-				"/listings/cabin-02.jpg",
-				"/listings/cabin-03.jpg",
-				"/listings/cabin-04.jpg"
-			],
-			"amenities": ["Hot Tub", "Fireplace", "Forest Access"],
-			"rules": [
-				"No smoking inside",
-				"Respect nature",
-				"No outdoor fires"
-			],
-			"security": [
-				"Smoke detectors in all rooms",
-				"Emergency contact numbers provided",
-				"Secure entry system"
-			],
-			"info": [
-				"Hot tub available year-round",
-				"Firewood provided for fireplace",
-				"Local hiking maps available"
-			],
-			"description": "Luxury cabin with a hot tub and fireplace, situated in a serene forest area.",
-			"listingDetails": {
-				"bedrooms": 3,
-				"bathrooms": 2,
-				"beds": 4,
-				"maxGuests": 6
-			},
-			"blockedDates": [
-				{ "startDate": "2024-09-15", "endDate": "2024-09-20" },
-				{ "startDate": "2024-10-01", "endDate": "2024-10-05" },
-				{ "startDate": "2024-12-24", "endDate": "2024-12-27" },
-				{ "startDate": "2025-01-10", "endDate": "2025-01-15" },
-				{ "startDate": "2025-02-05", "endDate": "2025-02-10" }
-			],
-			"ratingsAverage": 4.9,
-			"ratingsQuantity": 8
-		},
-		{
-			"_id": "64a0c48d7b8e6c0021b8a7d6",
-			"host": "64a0c48d7b8e6c0021b8a000",
-			"location": {
-				"county": "Brașov",
-				"city": "Brașov",
-				"village": "Poiana Brașov",
-				"zipcode": "500000",
-				"coordinates": [25.3233, 45.6401]
-			},
-			"pricePerNight": 100,
-			"discount": 20,
-			"fees": 40,
-			"currency": "RON",
-			"photos": [
-				"/listings/cabin-main.jpg",
-				"/listings/cabin-02.jpg",
-				"/listings/cabin-03.jpg",
-				"/listings/cabin-04.jpg"
-			],
-			"amenities": ["Cable TV", "BBQ Grill", "Ski Access"],
-			"rules": [
-				"No parties",
-				"Keep noise levels down",
-				"No ski boots inside"
-			],
-			"security": [
-				"Fire escape plan in place",
-				"Security cameras on the premises",
-				"Secure ski storage"
-			],
-			"info": [
-				"Ski lift tickets available for purchase",
-				"BBQ grill available year-round",
-				"Ski rental discounts nearby"
-			],
-			"description": "Charming remote cabin with ski access and a BBQ grill for summer evenings.",
-			"listingDetails": {
-				"bedrooms": 2,
-				"bathrooms": 1,
-				"beds": 3,
-				"maxGuests": 4
-			},
-			"blockedDates": [
-				{ "startDate": "2024-09-15", "endDate": "2024-09-20" },
-				{ "startDate": "2024-10-01", "endDate": "2024-10-05" },
-				{ "startDate": "2024-12-24", "endDate": "2024-12-27" },
-				{ "startDate": "2025-01-10", "endDate": "2025-01-15" },
-				{ "startDate": "2025-02-05", "endDate": "2025-02-10" }
-			],
-			"ratingsAverage": 4.4,
-			"ratingsQuantity": 10
 		}
 	],
-
 	"reviews": [
 		{
 			"_id": "64a0c48d7b8e6c0021b8a7f1",

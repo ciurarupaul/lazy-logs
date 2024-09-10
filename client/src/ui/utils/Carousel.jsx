@@ -2,7 +2,7 @@ import { useState } from "react";
 import { HiChevronRight } from "react-icons/hi";
 import { HiChevronLeft } from "react-icons/hi";
 
-function Carousel({ images, photosClass }) {
+function Carousel({ images, photosClass, iconClass }) {
 	const [activeIndex, setActiveIndex] = useState(0);
 	const nextSlide = () => {
 		setActiveIndex((prevIndex) =>
@@ -26,7 +26,9 @@ function Carousel({ images, photosClass }) {
 					}}
 					className="carousel__btn carousel__btn--prev"
 				>
-					<HiChevronLeft className="carousel__btn-icon" />
+					<HiChevronLeft
+						className={`carousel__btn-icon ${iconClass}`}
+					/>
 				</button>
 			) : null}
 			<img
@@ -43,7 +45,9 @@ function Carousel({ images, photosClass }) {
 					}}
 					className="carousel__btn carousel__btn--next"
 				>
-					<HiChevronRight className="carousel__btn-icon" />
+					<HiChevronRight
+						className={`carousel__btn-icon ${iconClass}`}
+					/>
 				</button>
 			) : null}
 		</div>

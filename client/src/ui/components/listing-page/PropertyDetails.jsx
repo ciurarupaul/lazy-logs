@@ -5,14 +5,16 @@ const ListingField = React.memo(({ title, entries }) => {
 
 	return (
 		<div className="listing__info__card">
-			<p className="listing__info__card-title">{title}</p>
-			<ul className="listing__info__card-entries">
-				{entries.map((entry, index) => (
-					<li key={index} className="listing__info-card-entry">
-						{entry}
-					</li>
-				))}
-			</ul>
+			<div className="listing__info__card-container">
+				<p className="listing__info__card-title">{title}</p>
+				<ul className="listing__info__card-entries">
+					{entries.map((entry, index) => (
+						<li key={index} className="listing__info-card-entry">
+							{entry}
+						</li>
+					))}
+				</ul>
+			</div>
 		</div>
 	);
 });
@@ -20,16 +22,20 @@ const ListingField = React.memo(({ title, entries }) => {
 function PropertyDetails({ listing }) {
 	return (
 		<>
-			{listing.rules || listing.security || listing.info ? (
-				<div className="listing__info-grid">
+			<div className="listing__info-grid">
+				{listing.rules ? (
 					<ListingField title="House rules" entries={listing.rules} />
+				) : null}
+				{listing.security ? (
 					<ListingField title="Security" entries={listing.security} />
+				) : null}
+				{listing.info ? (
 					<ListingField
 						title="Additional info"
 						entries={listing.info}
 					/>
-				</div>
-			) : null}
+				) : null}
+			</div>
 		</>
 	);
 }

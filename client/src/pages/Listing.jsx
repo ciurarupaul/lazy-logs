@@ -35,18 +35,14 @@ function Listing() {
 
 	if (isLoading) return <Loader>property data</Loader>;
 
-	// too many grids?? once the google maps api is implemented, might allow all (except header with carousel and details) to fit on the whole width to simplify this..
-
-	// must improve typography later !!! (and visual hierarchy, - lacks in some places)
-
-	// improve cta text placement
-
 	return (
 		<div className="page-container listing__grid">
 			<div className="listing__grid-header">
 				<Carousel
 					images={listing.photos}
 					photosClass="listing__carousel-photo"
+					btnsClass="listing-btns"
+					iconClass="listing-icon"
 				/>
 
 				<div className="listing__presentation">
@@ -112,13 +108,13 @@ function Listing() {
 							{listing.description}
 						</div>
 
-						<ul className="listing__presentation__amenities">
+						<div className="listing__presentation__amenities">
 							<div className="listing__title listing__presentation__amenities-title">
 								<p>Amenities</p>
 								<div className="line" />
 							</div>
 
-							<div className="listing__presentation__amenities-list">
+							<ul className="listing__presentation__amenities-list">
 								{listing.amenities.length > 0 ? (
 									listing.amenities.map((amenity, index) => (
 										<li
@@ -133,8 +129,8 @@ function Listing() {
 										The host didn't specify any amenities
 									</li>
 								)}
-							</div>
-						</ul>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -168,19 +164,19 @@ function Listing() {
 					<div className="line" />
 				</div>
 
-				<div className="listing__reviews-container">
-					<ReviewsCarousel reviews={listing.reviews} />
-				</div>
+				<ReviewsCarousel reviews={listing.reviews} />
 			</div>
 
-			<div className="listing__info">
-				<div className="listing__title">
-					<p>You should know</p>
-					<div className="line" />
-				</div>
+			{listing.rules || listing.security || listing.info ? (
+				<div className="listing__info">
+					<div className="listing__title">
+						<p>You should know</p>
+						<div className="line" />
+					</div>
 
-				<PropertyDetails listing={listing} />
-			</div>
+					<PropertyDetails listing={listing} />
+				</div>
+			) : null}
 
 			<div className="listing__booking">
 				<div className="listing__title">

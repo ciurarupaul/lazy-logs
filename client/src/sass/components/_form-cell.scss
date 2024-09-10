@@ -10,7 +10,7 @@
 
 		color: var(--primary);
 		font-size: typography.$fontsize-medium;
-		font-weight: typography.$fontweight-medium;
+		font-weight: 500;
 		font-family: inherit;
 
 		border: none;
@@ -36,7 +36,7 @@
 		transform: translate(0, -50%);
 
 		color: var(--primary-details);
-		font-weight: typography.$fontweight-medium;
+		font-weight: 400;
 		font-size: typography.$fontsize-small;
 		outline: none;
 		transition: all 0.3s;

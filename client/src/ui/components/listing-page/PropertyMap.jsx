@@ -68,28 +68,11 @@ function PropertyMap({ lat, lng }) {
 					},
 				],
 			},
-
-			{
-				featureType: "water",
-				stylers: [
-					{
-						color: "#71c8d4",
-					},
-				],
-			},
 			{
 				featureType: "landscape",
 				stylers: [
 					{
 						color: "#e5e8e7",
-					},
-				],
-			},
-			{
-				featureType: "poi.park",
-				stylers: [
-					{
-						color: "#8ba129",
 					},
 				],
 			},
@@ -126,17 +109,29 @@ function PropertyMap({ lat, lng }) {
 				stylers: [
 					{
 						color: "#91b65d",
+						gamma: 1.51,
 					},
 				],
 			},
 			{
 				featureType: "poi.park",
+				elementType: "labels.text.fill",
 				stylers: [
 					{
-						gamma: 1.51,
+						color: "#8ba129",
 					},
 				],
 			},
+			{
+				featureType: "poi.park",
+				elementType: "labels.text.stroke",
+				stylers: [
+					{
+						color: "#ffffff",
+					},
+				],
+			},
+
 			{
 				featureType: "road.local",
 				stylers: [

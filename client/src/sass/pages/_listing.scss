@@ -28,6 +28,7 @@
 
 	&__title {
 		font-size: typography.$fontsize-large;
+		font-weight: 500;
 		margin-top: 6rem;
 		margin-bottom: 2rem;
 		display: flex;
@@ -55,8 +56,8 @@
 
 			&-location {
 				p {
-					font-size: typography.$fontsize-xxlarge;
-					font-weight: 500;
+					font-size: typography.$fontsize-xlarge;
+					font-weight: 600;
 
 					span {
 						font-weight: 300;
@@ -65,7 +66,7 @@
 			}
 
 			&-capacity {
-				font-size: typography.$fontsize-medium;
+				font-size: typography.$fontsize-large;
 			}
 
 			&-description {
@@ -91,18 +92,17 @@
 				align-items: start;
 
 				p {
-					font-size: typography.$fontsize-small;
+					font-size: typography.$fontsize-medium;
 					color: var(--primary-details);
 				}
 			}
 
 			&-flag {
-				height: 1.8rem;
+				height: 1.6rem;
 			}
 		}
 
 		&__amenities {
-			list-style: none;
 			display: flex;
 			flex-direction: column;
 
@@ -112,12 +112,16 @@
 
 			&-list {
 				display: flex;
+				flex-wrap: wrap;
 				gap: 1rem;
+				list-style: none;
+				font-size: typography.$fontsize-small;
 
 				&-btn {
 					border: 1px solid var(--background-lines);
 					padding: 1rem 1.5rem;
 					border-radius: 6px;
+					width: max-content;
 				}
 			}
 		}
@@ -145,10 +149,11 @@
 
 			&-score {
 				@include mixins.flexCenter;
+				font-size: typography.$fontsize-large;
 
 				span {
 					color: var(--primary-details);
-					font-size: typography.$fontsize-small;
+					font-size: typography.$fontsize-medium;
 				}
 			}
 
@@ -156,35 +161,32 @@
 				height: 2.25rem;
 			}
 		}
-
-		// might be broken design, somehow the cards stretch the grid/container and fuck up the styles... might fix with responsive design or separate page
-		&-container {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
-			overflow: auto;
-			column-gap: 3rem;
-			white-space: no-wrap;
-		}
 	}
 
 	&__info {
 		grid-column: listing-start / listing-end;
 
 		&-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+			display: flex;
+			justify-content: space-between;
 		}
 
 		&__card {
 			padding: 0 2rem;
 
+			&-container {
+				width: fit-content;
+				text-wrap: wrap;
+			}
+
 			&-title {
 				font-size: typography.$fontsize-medium;
-				margin-bottom: 1em;
 				font-weight: 500;
+				margin-bottom: 0.5rem;
 			}
 
 			&-entries {
+				font-size: typography.$fontsize-small;
 				list-style: none;
 				display: flex;
 				flex-direction: column;
@@ -200,15 +202,18 @@
 
 		&-container {
 			display: flex;
-			flex-direction: row;
 			justify-content: space-around;
-			align-items: start;
+			height: max-content;
+			align-items: flex-start;
+			margin-top: 4rem;
 		}
 
 		&-text {
-			@include mixins.flexCenter();
+			height: 30.6rem;
 			font-size: typography.$fontsize-large;
+			@include mixins.flexCenter();
 			color: var(--primary);
+			text-wrap: wrap;
 
 			&-link {
 				color: var(--primary-important);
@@ -222,12 +227,16 @@
 			gap: 1rem;
 
 			min-width: max-content;
-			width: 40rem;
+			width: 36rem;
 			border: 1px solid var(--background-lines);
 			border-radius: 3px;
-			padding: 4rem;
+			padding: 2rem 4rem;
 
 			font-size: typography.$fontsize-medium;
+
+			&-line {
+				margin-top: 1rem;
+			}
 
 			&-header {
 				font-size: typography.$fontsize-large;
@@ -236,10 +245,15 @@
 			}
 
 			&-btn {
-				font-size: typography.$fontsize-large;
+				font-size: typography.$fontsize-medium;
 				font-weight: 500;
 				margin-top: 2rem;
 				padding: 1rem;
+			}
+
+			&-total {
+				font-size: typography.$fontsize-medium;
+				font-weight: 500;
 			}
 
 			&-row {

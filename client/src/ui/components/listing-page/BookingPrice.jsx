@@ -22,9 +22,9 @@ function BookingPrice({ listing, nights }) {
 				<p>{listing.fees}&euro;</p>
 			</div>
 
-			<div className="line" />
+			<div className="line listing__booking__summary-line" />
 
-			<div className="listing__booking__summary-row">
+			<div className="listing__booking__summary-row listing__booking__summary-total">
 				<p>Total</p>
 				<p>{total}&euro;</p>
 			</div>

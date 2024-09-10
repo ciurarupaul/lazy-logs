@@ -64,20 +64,16 @@ const BookingDatePicker = ({ listing }) => {
 	const renderText = () => {
 		if (!isAuthenticated) {
 			return (
-				<p className="listing__booking-text">
+				<>
 					Please{" "}
 					<Link to="/login" className="listing__booking-text-link">
 						login
 					</Link>{" "}
 					to book this property
-				</p>
+				</>
 			);
 		} else if (!startDate || !endDate) {
-			return (
-				<p className="listing__booking-text">
-					Please select the dates you want to book!
-				</p>
-			);
+			return <>Please select the dates you want to book!</>;
 		} else if (isAuthenticated && startDate && endDate) {
 			return (
 				<BookingPrice
