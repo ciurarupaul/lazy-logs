@@ -31,7 +31,7 @@ app.use(express.urlencoded({ extended: true })); // For parsing application/x-ww
 app.use(cookieParser()); // For parsing cookies
 
 // Routes
-app.use("/api/booking", bookingRouter);
+app.use("/api/bookings", bookingRouter);
 app.use("/api/listings", listingRouter);
 app.use("/api/reviews", reviewRouter);
 app.use("/api/users", userRouter);

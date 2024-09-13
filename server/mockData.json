@@ -172,6 +172,7 @@
 			"ratingsQuantity": 12
 		}
 	],
+
 	"reviews": [
 		{
 			"_id": "64a0c48d7b8e6c0021b8a7f1",
@@ -242,6 +243,49 @@
 			"user": "64a0c48d7b8e6c0021b8b002",
 			"rating": 4,
 			"comment": "Overall, my stay was very enjoyable. The property was well-maintained, and the amenities provided were satisfactory. The host was friendly and accommodating, and the location was convenient. There were a few minor issues, such as the noise from neighboring rooms, but these did not overshadow the positive aspects of the stay. I would definitely stay here again and recommend it to others."
+		}
+	],
+
+	"bookings": [
+		{
+			"_id": "64b3c8f9d0a7b58d1f27a001",
+			"user": "64a0c48d7b8e6c0021b8a000",
+			"listing": "64a0c48d7b8e6c0021b8a7d1",
+			"startDate": "2024-09-15T00:00:00.000Z",
+			"endDate": "2024-09-20T00:00:00.000Z",
+			"totalPrice": 600
+		},
+		{
+			"_id": "64b3c8f9d0a7b58d1f27a002",
+			"user": "64a0c48d7b8e6c0021b8a000",
+			"listing": "64a0c48d7b8e6c0021b8a7d1",
+			"startDate": "2024-10-05T00:00:00.000Z",
+			"endDate": "2024-10-10T00:00:00.000Z",
+			"totalPrice": 700
+		},
+		{
+			"_id": "64b3c8f9d0a7b58d1f27a003",
+			"user": "64a0c48d7b8e6c0021b8a000",
+			"listing": "64a0c48d7b8e6c0021b8a7d1",
+			"startDate": "2024-12-24T00:00:00.000Z",
+			"endDate": "2024-12-27T00:00:00.000Z",
+			"totalPrice": 400
+		},
+		{
+			"_id": "64b3c8f9d0a7b58d1f27a004",
+			"user": "64a0c48d7b8e6c0021b8a000",
+			"listing": "64a0c48d7b8e6c0021b8a7d1",
+			"startDate": "2025-01-10T00:00:00.000Z",
+			"endDate": "2025-01-15T00:00:00.000Z",
+			"totalPrice": 550
+		},
+		{
+			"_id": "64b3c8f9d0a7b58d1f27a005",
+			"user": "64a0c48d7b8e6c0021b8a000",
+			"listing": "64a0c48d7b8e6c0021b8a7d1",
+			"startDate": "2025-03-05T00:00:00.000Z",
+			"endDate": "2025-03-10T00:00:00.000Z",
+			"totalPrice": 750
 		}
 	]
 }

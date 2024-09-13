@@ -8,12 +8,14 @@ const router = express.Router();
 router
 	.route("/")
 	.get(bookingController.getAllBookings)
-	.post(bookingController.setListingUserIds, bookingController.createBooking);
+	.post(bookingController.createBooking);
 
 router
 	.route("/:id")
 	.get(bookingController.getBooking)
 	.patch(bookingController.updateBooking)
 	.delete(bookingController.deleteBooking);
+
+router.route("/user/:userId").get(bookingController.getBookingsForUser);
 
 export default router;

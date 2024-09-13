@@ -202,9 +202,10 @@
 
 		&-container {
 			display: flex;
-			justify-content: space-around;
+			justify-content: space-between;
 			height: max-content;
 			align-items: flex-start;
+			padding: 0 10rem;
 			margin-top: 4rem;
 		}
 

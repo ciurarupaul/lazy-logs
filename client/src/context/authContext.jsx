@@ -13,6 +13,9 @@ const AuthProvider = ({ children }) => {
 	const [authState, setAuthState] = useState({
 		isAuthenticated: false,
 		user: null,
+		token: null,
+		loading: true,
+		// add this so nothing is rendered until this context is ready
 	});
 
 	useEffect(() => {
@@ -24,11 +27,13 @@ const AuthProvider = ({ children }) => {
 					setAuthState({
 						isAuthenticated: true,
 						user: response.user,
+						loading: false,
 					});
 				} else {
 					setAuthState({
 						isAuthenticated: false,
 						user: null,
+						loading: false,
 					});
 				}
 			} catch (err) {
@@ -36,6 +41,7 @@ const AuthProvider = ({ children }) => {
 				setAuthState({
 					isAuthenticated: false,
 					user: null,
+					loading: false,
 				});
 			}
 		};
@@ -50,6 +56,7 @@ const AuthProvider = ({ children }) => {
 				isAuthenticated: true,
 				user: response.data.user,
 				token: response.token,
+				loading: false,
 			});
 		} catch (err) {
 			console.error("Error logging in:", err);
@@ -57,6 +64,7 @@ const AuthProvider = ({ children }) => {
 				isAuthenticated: false,
 				user: null,
 				token: null,
+				loading: false,
 			});
 		}
 	};
@@ -68,6 +76,7 @@ const AuthProvider = ({ children }) => {
 				isAuthenticated: true,
 				user: response.data.user,
 				token: response.token,
+				loading: false,
 			});
 		} catch (err) {
 			console.error("Error logging in:", err);
@@ -75,6 +84,7 @@ const AuthProvider = ({ children }) => {
 				isAuthenticated: false,
 				user: null,
 				token: null,
+				loading: false,
 			});
 		}
 	};
@@ -86,6 +96,7 @@ const AuthProvider = ({ children }) => {
 			setAuthState({
 				isAuthenticated: false,
 				user: null,
+				loading: false,
 			});
 		} catch (err) {
 			console.error("Error logging out:", err);

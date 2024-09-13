@@ -5,10 +5,10 @@ import { useParams } from "react-router-dom";
 import { getListing } from "../services/apiListings";
 import BookingSection from "../ui/components/listing-page/BookingSection";
 import PropertyDetails from "../ui/components/listing-page/PropertyDetails";
+import PropertyMap from "../ui/components/listing-page/PropertyMap";
 import Carousel from "../ui/utils/Carousel";
 import { PageLoader as Loader } from "../ui/utils/Loader";
 import ReviewsCarousel from "../ui/utils/ReviewsCarousel";
-import PropertyMap from "../ui/components/listing-page/PropertyMap";
 
 function Listing() {
 	const [listing, setListing] = useState(null);
