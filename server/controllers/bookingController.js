@@ -4,15 +4,6 @@ import catchAsync from "../utils/catchAsync.js";
 import AppError from "../utils/appError.js";
 
 const bookingController = {
-	// setListingUserIds: (req, res, next) => {
-	// 	if (!req.body.listing) req.body.listing = req.params.listingId;
-	// 	if (!req.body.user) req.body.user = req.user.id;
-
-	// 	next();
-	// },
-
-	//might be useless
-
 	createBooking: handlerFactory.createOne(Booking),
 	getAllBookings: handlerFactory.getAll(Booking),
 	getBooking: handlerFactory.getOne(Booking),
@@ -26,7 +17,12 @@ const bookingController = {
 			return next(new AppError("User ID is required", 400));
 		}
 
-		const bookings = await Booking.find({ user: userId });
+		const bookings = await Booking.find({ user: userId }).populate({
+			path: "listing",
+			populate: { path: "host" },
+			// host is nested under listing, like this you can also populate those fields
+			// populate listing -> populate host, nested under listing
+		});
 
 		if (bookings.length === 0) {
 			return next(new AppError("No bookings found for this user", 404));

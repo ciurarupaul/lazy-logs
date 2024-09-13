@@ -1,0 +1,115 @@
+@use "../base/typography";
+@use "../abstracts/mixins";
+
+.bookings__card-text-container {
+	width: 100%;
+}
+
+.bookings__card-summary {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	width: max-content;
+	margin: auto 2rem;
+}
+
+.bookings__card-extra {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+.bookings {
+	margin: 2rem;
+
+	span {
+		font-weight: 600;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+
+		&-item {
+			list-style: none;
+		}
+	}
+
+	&__card {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		font-size: typography.$fontsize-medium;
+		position: relative;
+
+		border: 1px solid var(--background-lines);
+		border-radius: 6px;
+		overflow: hidden;
+
+		&-time {
+			padding: 1.5rem 2rem;
+			font-size: typography.$fontsize-small;
+			width: 12rem;
+			height: 18rem;
+			text-align: end;
+
+			&--past {
+				color: var(--primary-details);
+			}
+		}
+
+		&-dates {
+			display: flex;
+			gap: 1rem;
+
+			&-icon {
+				height: 2.5rem;
+				color: var(--primary);
+
+				&:hover {
+					cursor: default;
+				}
+			}
+		}
+
+		&-photo {
+			object-fit: cover;
+			height: 18rem;
+			@include mixins.flexCenter;
+		}
+
+		&-booking {
+			margin-bottom: 1rem;
+		}
+
+		&-pay {
+			display: flex;
+			align-items: center;
+
+			p {
+				margin-left: 0.5rem;
+				font-weight: 600;
+			}
+
+			&-icon {
+				height: 2.5rem;
+				margin-right: 1rem;
+				color: var(--primary);
+
+				&:hover {
+					cursor: default;
+				}
+			}
+		}
+
+		&-extra {
+			@include mixins.flexCenter();
+
+			&-btn {
+				font-size: typography.$fontsize-medium;
+				padding: 1rem 3rem;
+			}
+		}
+	}
+}

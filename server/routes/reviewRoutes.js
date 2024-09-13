@@ -8,7 +8,7 @@ const router = express.Router();
 router
 	.route("/")
 	.get(reviewController.getAllReviews)
-	.post(reviewController.setListingUserIds, reviewController.createReview);
+	.post(reviewController.createReview);
 
 router
 	.route("/:id")

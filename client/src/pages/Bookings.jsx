@@ -35,14 +35,11 @@ function Bookings() {
 
 	return (
 		<div className="bookings">
-			<ul className="bookings__booking">
+			<ul className="bookings__list">
 				{bookings ? (
 					bookings.map((booking) => (
-						<li
-							key={booking._id}
-							className="bookings__booking-card"
-						>
-							<BookingCard />
+						<li key={booking._id} className="bookings__list-item">
+							<BookingCard booking={booking} />
 						</li>
 					))
 				) : (
