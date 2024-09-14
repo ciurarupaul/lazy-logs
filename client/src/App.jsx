@@ -2,7 +2,6 @@ import { Toaster } from "react-hot-toast";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./context/authContext";
 import Account from "./pages/Account";
-import Booking from "./pages/Booking";
 import Bookings from "./pages/Bookings";
 import ErrorPage from "./pages/ErrorPage";
 import Listing from "./pages/Listing";
@@ -10,7 +9,6 @@ import Listings from "./pages/Listings";
 import Login from "./pages/Login";
 import PageNotFound from "./pages/PageNotFound";
 import Wishlist from "./pages/Wishlist";
-import YourListings from "./pages/YourListings";
 import AccountLayout from "./ui/layout/AccountLayout";
 import AppLayout from "./ui/layout/AppLayout";
 
@@ -38,18 +36,12 @@ function App() {
 								element={<AccountLayout />}
 							>
 								<Route index element={<Account />} />
-								<Route path="bookings">
-									<Route index element={<Bookings />} />
-									<Route
-										path=":bookingId"
-										element={<Booking />}
-									/>
-								</Route>
-								<Route path="wishlist" element={<Wishlist />} />
 								<Route
-									path="your-listings"
-									element={<YourListings />}
-								/>
+									path="bookings"
+									index
+									element={<Bookings />}
+								></Route>
+								<Route path="wishlist" element={<Wishlist />} />
 							</Route>
 						</Route>
 					</Route>

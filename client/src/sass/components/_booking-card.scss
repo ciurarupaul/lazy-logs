@@ -1,22 +1,9 @@
 @use "../base/typography";
 @use "../abstracts/mixins";
 
-.bookings__card-text-container {
+.bookings__card-content {
 	width: 100%;
-}
-
-.bookings__card-summary {
 	display: flex;
-	flex-direction: column;
-	gap: 0.75rem;
-	width: max-content;
-	margin: auto 2rem;
-}
-
-.bookings__card-extra {
-	display: flex;
-	flex-direction: column;
-	flex-grow: 1;
 }
 
 .bookings {
@@ -47,12 +34,20 @@
 		border-radius: 6px;
 		overflow: hidden;
 
-		&-time {
+		&-summary {
+			display: flex;
+			flex-direction: column;
+			gap: 0.75rem;
+			width: max-content;
+			margin: auto 2rem;
+		}
+
+		&-label {
+			text-align: end;
 			padding: 1.5rem 2rem;
+			margin-top: -2rem;
 			font-size: typography.$fontsize-small;
 			width: 12rem;
-			height: 18rem;
-			text-align: end;
 
 			&--past {
 				color: var(--primary-details);
@@ -104,7 +99,10 @@
 		}
 
 		&-extra {
-			@include mixins.flexCenter();
+			display: flex;
+			flex-grow: 1;
+			align-items: center;
+			justify-content: center;
 
 			&-btn {
 				font-size: typography.$fontsize-medium;

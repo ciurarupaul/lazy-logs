@@ -32,52 +32,56 @@ function BookingCard({ booking }) {
 				alt="property photo"
 				className="bookings__card-photo"
 			/>
-			<div className="bookings__card-summary">
-				<div className="bookings__card-booking">
-					Booking no. <span>#{booking._id}</span>
-				</div>
+			<div className="bookings__card-content">
+				<div className="bookings__card-summary">
+					<div className="bookings__card-booking">
+						Booking no. <span>#{booking._id}</span>
+					</div>
 
-				<div className="bookings__card-dates">
-					<IoCalendar className="bookings__card-dates-icon" />
-					<div className="bookings__card-dates-date">
-						<span>Check-in</span>:{" "}
-						{format(booking.startDate, "dd.MM.yyyy")}
+					<div className="bookings__card-dates">
+						<IoCalendar className="bookings__card-dates-icon" />
+						<div className="bookings__card-dates-date">
+							<span>Check-in</span>:{" "}
+							{format(booking.startDate, "dd.MM.yyyy")}
+						</div>
+					</div>
+
+					<div className="bookings__card-dates">
+						<IoCalendar className="bookings__card-dates-icon" />
+						<div className="bookings__card-dates-date">
+							{" "}
+							<span>Check-out</span>:{" "}
+							{format(booking.endDate, "dd.MM.yyyy")}
+						</div>
+					</div>
+
+					<div className="bookings__card-pay">
+						<TbMoneybag className="bookings__card-pay-icon" />
+						Pay at location: <p>{booking.totalPrice}&euro;</p>
 					</div>
 				</div>
 
-				<div className="bookings__card-dates">
-					<IoCalendar className="bookings__card-dates-icon" />
-					<div className="bookings__card-dates-date">
-						{" "}
-						<span>Check-out</span>:{" "}
-						{format(booking.endDate, "dd.MM.yyyy")}
-					</div>
+				<div className="bookings__card-extra">
+					{time === "past" ? (
+						<button className="bookings__card-extra-btn">
+							Leave a review
+						</button>
+					) : time === "future" ? (
+						<button className="bookings__card-extra-btn">
+							Add a request
+						</button>
+					) : null}
 				</div>
 
-				<div className="bookings__card-pay">
-					<TbMoneybag className="bookings__card-pay-icon" />
-					Pay at location: <p>{booking.totalPrice}&euro;</p>
+				<div>
+					{time === "past" ? (
+						<div className="bookings__card-label bookings__card-label--past">
+							Past
+						</div>
+					) : time === "future" ? (
+						<div className="bookings__card-label">Upcoming</div>
+					) : null}{" "}
 				</div>
-			</div>
-			<div className="bookings__card-extra">
-				{time === "past" ? (
-					<button className="bookings__card-extra-btn">
-						Leave a review
-					</button>
-				) : time === "future" ? (
-					<button className="bookings__card-extra-btn">
-						Add a request
-					</button>
-				) : null}
-			</div>
-			<div>
-				{time === "past" ? (
-					<div className="bookings__card-time bookings__card-time--past">
-						Past
-					</div>
-				) : time === "future" ? (
-					<div className="bookings__card-time">Upcoming</div>
-				) : null}{" "}
 			</div>
 		</div>
 	);

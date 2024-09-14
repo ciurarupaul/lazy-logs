@@ -60,13 +60,7 @@ function UserMenu({ toggleTheme }) {
 							</Link>
 						</div>
 
-						<div className="border-bottom">
-							<Menus.Button>Language</Menus.Button>
-							<Menus.Button>Currency</Menus.Button>
-						</div>
-
 						<div>
-							<Menus.Button>Contact Us</Menus.Button>
 							<Menus.Button onClick={handleLogout}>
 								Log out
 							</Menus.Button>
