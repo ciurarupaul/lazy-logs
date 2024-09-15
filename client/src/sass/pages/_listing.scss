@@ -4,7 +4,7 @@
 .listing {
 	&__grid {
 		display: grid;
-		grid-template-rows: repeat(3, min-content);
+		grid-template-rows: repeat(5, min-content);
 		grid-template-columns:
 			[listing-start] repeat(
 				11,
