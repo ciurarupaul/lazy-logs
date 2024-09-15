@@ -1,72 +1,338 @@
 {
 	"users": [
 		{
-			"_id": "64a0c48d7b8e6c0021b8a000",
-			"name": "John Doe",
-			"email": "john.doe@example.com",
-			"phoneNumber": "0123456789",
+			"_id": "64a0c48d7b8e6c0021b8a7d0",
+			"name": "User Test",
+			"email": "test@email.com",
+			"phoneNumber": "+40741234569",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"countryCode": "RO"
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7d1",
+			"name": "Radu Petrescu",
+			"email": "radu.petrescu@example.ro",
+			"phoneNumber": "+40741234568",
 			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
 			"role": "host",
-			"country": "Romania",
 			"countryCode": "RO",
-			"listings": [
-				"64a0c48d7b8e6c0021b8a7d1",
-				"64a0c48d7b8e6c0021b8a7d2",
-				"64a0c48d7b8e6c0021b8a7d3",
-				"64a0c48d7b8e6c0021b8a7d4",
-				"64a0c48d7b8e6c0021b8a7d5",
-				"64a0c48d7b8e6c0021b8a7d6",
-				"64a0c48d7b8e6c0021b8a7d7"
-			]
+			"listings": ["64a0c48d7b8e6c0021b8a8f1"]
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7d2",
+			"name": "Elena Stan",
+			"email": "elena.stan@example.ro",
+			"phoneNumber": "+40761234568",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"role": "host",
+			"countryCode": "RO",
+			"listings": ["64a0c48d7b8e6c0021b8a8f2"]
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7d3",
+			"name": "Mihai Dumitrescu",
+			"email": "mihai.dumitrescu@example.ro",
+			"phoneNumber": "+40781234568",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"role": "host",
+			"countryCode": "RO",
+			"listings": ["64a0c48d7b8e6c0021b8a8f3"]
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7d4",
+			"name": "Ana Georgescu",
+			"email": "ana.georgescu@example.ro",
+			"phoneNumber": "+40791234568",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"role": "host",
+			"countryCode": "RO",
+			"listings": ["64a0c48d7b8e6c0021b8a8f4"]
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7d5",
+			"name": "Vlad Iancu",
+			"email": "vlad.iancu@example.ro",
+			"phoneNumber": "+40701234568",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"role": "host",
+			"countryCode": "RO",
+			"listings": ["64a0c48d7b8e6c0021b8a8f5"]
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7d6",
+			"name": "Ioana Tudor",
+			"email": "ioana.tudor@example.ro",
+			"phoneNumber": "+40711234568",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"role": "host",
+			"countryCode": "RO",
+			"listings": ["64a0c48d7b8e6c0021b8a8f6"]
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7d7",
+			"name": "George Vasilescu",
+			"email": "george.vasilescu@example.ro",
+			"phoneNumber": "+40721234568",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"role": "host",
+			"countryCode": "RO",
+			"listings": ["64a0c48d7b8e6c0021b8a8f7"]
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7d8",
+			"name": "Roxana Matei",
+			"email": "roxana.matei@example.ro",
+			"phoneNumber": "+40731234568",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"role": "host",
+			"countryCode": "RO",
+			"listings": ["64a0c48d7b8e6c0021b8a8f8"]
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7d9",
+			"name": "Cătălin Barbu",
+			"email": "catalin.barbu@example.ro",
+			"phoneNumber": "+40741234569",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"role": "host",
+			"countryCode": "RO",
+			"listings": ["64a0c48d7b8e6c0021b8a8f9"]
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7da",
+			"name": "Sorin Iliescu",
+			"email": "sorin.iliescu@example.ro",
+			"phoneNumber": "+40751234569",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"role": "host",
+			"countryCode": "RO",
+			"listings": ["64a0c48d7b8e6c0021b8a8fa"]
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7db",
+			"name": "Paul Popa",
+			"email": "paul.popa@example.ro",
+			"phoneNumber": "+40761234569",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"role": "host",
+			"countryCode": "RO",
+			"listings": ["64a0c48d7b8e6c0021b8a8fb"]
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7dc",
+			"name": "Diana Andrei",
+			"email": "diana.andrei@example.ro",
+			"phoneNumber": "+40771234569",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"role": "host",
+			"countryCode": "RO",
+			"listings": ["64a0c48d7b8e6c0021b8a8fc"]
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7dd",
+			"name": "Florin Mănescu",
+			"email": "florin.manescu@example.ro",
+			"phoneNumber": "+40781234569",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"role": "host",
+			"countryCode": "RO",
+			"listings": ["64a0c48d7b8e6c0021b8a8fd"]
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7de",
+			"name": "Gabriela Munteanu",
+			"email": "gabriela.munteanu@example.ro",
+			"phoneNumber": "+40791234569",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"role": "host",
+			"countryCode": "RO",
+			"listings": ["64a0c48d7b8e6c0021b8a8fe"]
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7df",
+			"name": "Nicu Tudor",
+			"email": "nicu.tudor@example.ro",
+			"phoneNumber": "+40711234569",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"role": "host",
+			"countryCode": "RO",
+			"listings": ["64a0c48d7b8e6c0021b8a8ff"]
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7e0",
+			"name": "Irina Dumitru",
+			"email": "irina.dumitru@example.ro",
+			"phoneNumber": "+40721234569",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"role": "host",
+			"countryCode": "RO",
+			"listings": ["64a0c48d7b8e6c0021b8a900"]
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7e1",
+			"name": "Alina Rădulescu",
+			"email": "alina.radulescu@example.ro",
+			"phoneNumber": "+40731234569",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"role": "host",
+			"countryCode": "RO",
+			"listings": ["64a0c48d7b8e6c0021b8a901"]
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7e2",
+			"name": "Cornel Săftoiu",
+			"email": "cornel.saftoiu@example.ro",
+			"phoneNumber": "+40741234570",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"role": "host",
+			"countryCode": "RO",
+			"listings": ["64a0c48d7b8e6c0021b8a902"]
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7e3",
+			"name": "Laura Preda",
+			"email": "laura.preda@example.ro",
+			"phoneNumber": "+40751234570",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"role": "host",
+			"countryCode": "RO",
+			"listings": ["64a0c48d7b8e6c0021b8a903"]
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a7e4",
+			"name": "Daniela Stoica",
+			"email": "daniela.stoica@example.ro",
+			"phoneNumber": "+40761234570",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"role": "host",
+			"countryCode": "RO",
+			"listings": ["64a0c48d7b8e6c0021b8a917"]
 		},
 		{
 			"_id": "64a0c48d7b8e6c0021b8b001",
-			"name": "Jane Smith",
-			"email": "jane.smith@example.com",
-			"phoneNumber": "0987654321",
+			"name": "Andrei Popescu",
+			"email": "andrei.popescu@example.ro",
+			"phoneNumber": "+40741234567",
 			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
-			"role": "user",
-			"country": "United States",
-			"countryCode": "US",
+			"countryCode": "RO",
 			"listings": []
 		},
 		{
 			"_id": "64a0c48d7b8e6c0021b8b002",
-			"name": "Carlos Fernández",
-			"email": "carlos.fernandez@example.com",
-			"phoneNumber": "0987651234",
+			"name": "Jane Smith",
+			"email": "janesmith@example.com",
+			"phoneNumber": "+447700900001",
 			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
-			"role": "user",
-			"country": "Spain",
+			"countryCode": "UK",
+			"listings": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b003",
+			"name": "Michael Brown",
+			"email": "michaelbrown@example.com",
+			"phoneNumber": "+61400123456",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"countryCode": "AU",
+			"listings": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b004",
+			"name": "Émilie Dupont",
+			"email": "emilie.dupont@example.fr",
+			"phoneNumber": "+33612345678",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"countryCode": "FR",
+			"listings": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b005",
+			"name": "David Lee",
+			"email": "davidlee@example.com",
+			"phoneNumber": "+85251234567",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"countryCode": "HK",
+			"listings": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b006",
+			"name": "Mara Ionescu",
+			"email": "mara.ionescu@example.ro",
+			"phoneNumber": "+40761234567",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"countryCode": "RO",
+			"listings": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b007",
+			"name": "Carlos García",
+			"email": "carlos.garcia@example.es",
+			"phoneNumber": "+34678912345",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
 			"countryCode": "ES",
+			"listings": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b008",
+			"name": "Sakura Tanaka",
+			"email": "sakura.tanaka@example.jp",
+			"phoneNumber": "+81312345678",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"countryCode": "JP",
+			"listings": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b009",
+			"name": "Luca Rossi",
+			"email": "luca.rossi@example.it",
+			"phoneNumber": "+393471234567",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"countryCode": "IT",
+			"listings": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b010",
+			"name": "Fatima Khan",
+			"email": "fatima.khan@example.in",
+			"phoneNumber": "+919876543210",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"countryCode": "IN",
+			"listings": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b011",
+			"name": "Ahmed Youssef",
+			"email": "ahmed.youssef@example.eg",
+			"phoneNumber": "+201234567890",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"countryCode": "EG",
+			"listings": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b012",
+			"name": "Anna Müller",
+			"email": "anna.mueller@example.de",
+			"phoneNumber": "+4915123456789",
+			"password": "$2b$12$WivEpVM3bQSCcCVQa6VzjOlpTbNhxZzytECo2Lnto8xCC/sTpDCya",
+			"countryCode": "DE",
 			"listings": []
 		}
 	],
 
 	"listings": [
 		{
-			"_id": "64a0c48d7b8e6c0021b8a7d1",
-			"host": "64a0c48d7b8e6c0021b8a000",
+			"_id": "64a0c48d7b8e6c0021b8a8f1",
+			"host": "64a0c48d7b8e6c0021b8a7d1",
 			"location": {
-				"county": "Cluj",
-				"city": "Cluj-Napoca",
-				"commune": "Some Commune",
-				"village": "Feleacu",
-				"zipcode": "400000",
-				"coordinates": [23.5844, 46.7661],
-				"address": "123 Mountain Road, Feleacu",
-				"nearbyAttractions": [
-					"Hoia Forest",
-					"Cluj-Napoca Botanical Garden",
-					"Romania’s National Museum of Transylvanian History",
-					"Transylvanian History Museum",
-					"Turda Salt Mine"
-				]
+				"county": "Brașov",
+				"city": "Brașov",
+				"commune": "Sânpetru",
+				"village": "Sânpetru",
+				"zipcode": "507190",
+				"coordinates": [25.6076, 45.7069],
+				"address": "456 Forest Trail, Sânpetru"
 			},
-			"pricePerNight": 120,
-			"fees": 30,
-			"discount": 15,
-			"currency": "RON",
+			"pricePerNight": 125,
+			"fees": 29.99,
 			"photos": [
 				"/listings/cabin-main.jpg",
 				"/listings/cabin-02.jpg",
@@ -77,8 +343,7 @@
 				"WiFi",
 				"Wood Stove",
 				"Mountain View",
-				"Hot Tub",
-				"Swimming Pool",
+				"Outdoor Hot Tub",
 				"BBQ Grill",
 				"Fully Equipped Kitchen",
 				"Washer/Dryer",
@@ -86,20 +351,20 @@
 				"Heating",
 				"Free Parking",
 				"Outdoor Dining Area",
-				"Garden",
 				"Fireplace",
 				"Smart TV",
 				"Coffee Maker",
 				"Dishwasher",
-				"Iron and Ironing Board"
+				"Basic Toiletries",
+				"Hair Dryer",
+				"Outdoor Fire Pit",
+				"Board Games"
 			],
 			"rules": [
 				"No pets allowed",
 				"Quiet hours from 10 PM to 7 AM",
 				"No smoking inside the property",
 				"No parties or events",
-				"Check-in time: 3 PM",
-				"Check-out time: 11 AM",
 				"Guests must be registered",
 				"Do not disturb the neighbors",
 				"Use outdoor grill responsibly",
@@ -124,15 +389,12 @@
 				"Welcome pack includes local maps, guides, and a list of recommended restaurants.",
 				"The property is equipped with a local guidebook and emergency numbers."
 			],
-			"description": "Experience a cozy cabin nestled in the beautiful mountains of Cluj. Enjoy breathtaking views, a relaxing hot tub, and modern amenities. Ideal for a tranquil getaway or an adventurous escape. The cabin features a fully equipped kitchen, spacious living areas, and easy access to nearby attractions.",
+			"description": "Nestled in the tranquil village of Sânpetru near Brașov, this charming cabin offers a perfect mix of rustic charm and modern convenience. Featuring an outdoor hot tub with mountain views, a cozy wood stove, and a BBQ grill, this retreat is ideal for family getaways or couples seeking a peaceful escape.",
 			"listingDetails": {
 				"bedrooms": 2,
 				"bathrooms": 1,
 				"beds": 3,
-				"maxGuests": 4,
-				"bedTypes": ["1 King Bed", "1 Queen Bed", "1 Sofa Bed"],
-				"checkInInstructions": "Self-check-in with keypad. Instructions and code will be provided upon booking.",
-				"wheelchairAccessible": false
+				"maxGuests": 4
 			},
 			"blockedDates": [
 				{ "startDate": "2024-09-10", "endDate": "2024-09-12" },
@@ -156,136 +418,2337 @@
 				{ "startDate": "2025-05-01", "endDate": "2025-05-10" },
 				{ "startDate": "2025-05-15", "endDate": "2025-05-20" }
 			],
-			"reviews": [
-				"64a0c48d7b8e6c0021b8a7f1",
-				"64a0c48d7b8e6c0021b8a7f2",
-				"64a0c48d7b8e6c0021b8a7f3",
-				"64a0c48d7b8e6c0021b8a7f4",
-				"64a0c48d7b8e6c0021b8a7f5",
-				"64a0c48d7b8e6c0021b8a7f6",
-				"64a0c48d7b8e6c0021b8a7f7",
-				"64a0c48d7b8e6c0021b8a7f8",
-				"64a0c48d7b8e6c0021b8a7f9",
-				"64a0c48d7b8e6c0021b8a7fa"
+			"reviews": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a8f2",
+			"host": "64a0c48d7b8e6c0021b8a7d2",
+			"location": {
+				"county": "Sibiu",
+				"city": "Sibiu",
+				"commune": "Rășinari",
+				"village": "Rășinari",
+				"zipcode": "557225",
+				"coordinates": [24.1362, 45.6723],
+				"address": "789 Mountain Road, Rășinari"
+			},
+			"pricePerNight": 98.5,
+			"fees": 35.0,
+			"photos": [
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
 			],
-			"ratingsAverage": 4.7,
-			"ratingsQuantity": 12
+			"amenities": [
+				"WiFi",
+				"Fireplace",
+				"Mountain View",
+				"Hot Tub",
+				"BBQ Grill",
+				"Fully Equipped Kitchen",
+				"Washer/Dryer",
+				"Heating",
+				"Free Parking",
+				"Outdoor Dining Area",
+				"Coffee Maker",
+				"Dishwasher",
+				"Basic Toiletries",
+				"Hair Dryer",
+				"Outdoor Fire Pit",
+				"Board Games"
+			],
+			"rules": [
+				"No pets allowed",
+				"Quiet hours from 10 PM to 7 AM",
+				"No smoking inside the property",
+				"Parties or events are not allowed",
+				"Guests must be registered",
+				"Use the outdoor grill responsibly",
+				"Dispose of trash and recycling properly",
+				"No shoes on the furniture"
+			],
+			"security": [
+				"Fire extinguisher in the kitchen",
+				"First aid kit in the bathroom",
+				"Lockable windows",
+				"Safe for valuables",
+				"Outdoor lighting",
+				"Smoke detectors",
+				"Carbon monoxide detectors",
+				"Emergency contact information provided"
+			],
+			"info": [
+				"Check-in time is 4 PM. Early check-in may be possible upon request.",
+				"Check-out time is 10 AM. Late check-out may be arranged if available.",
+				"Free parking is available on-site.",
+				"Local transportation info is available upon request.",
+				"Welcome pack includes local maps and a list of recommended attractions.",
+				"The property is equipped with a local guidebook and emergency contacts."
+			],
+			"description": "Located in the picturesque village of Rășinari, this cozy cabin offers stunning mountain views and a relaxing retreat. With a hot tub, outdoor fire pit, and BBQ grill, it’s perfect for a serene getaway or a family vacation.",
+			"listingDetails": {
+				"bedrooms": 3,
+				"bathrooms": 2,
+				"beds": 4,
+				"maxGuests": 6
+			},
+			"blockedDates": [
+				{ "startDate": "2024-09-15", "endDate": "2024-09-20" },
+				{ "startDate": "2024-10-05", "endDate": "2024-10-10" },
+				{ "startDate": "2024-11-01", "endDate": "2024-11-07" },
+				{ "startDate": "2024-11-20", "endDate": "2024-11-25" },
+				{ "startDate": "2024-12-01", "endDate": "2024-12-10" },
+				{ "startDate": "2024-12-15", "endDate": "2024-12-20" },
+				{ "startDate": "2025-01-05", "endDate": "2025-01-10" },
+				{ "startDate": "2025-02-01", "endDate": "2025-02-05" },
+				{ "startDate": "2025-03-01", "endDate": "2025-03-10" },
+				{ "startDate": "2025-04-01", "endDate": "2025-04-10" },
+				{ "startDate": "2025-05-01", "endDate": "2025-05-07" },
+				{ "startDate": "2025-05-15", "endDate": "2025-05-20" },
+				{ "startDate": "2025-06-01", "endDate": "2025-06-10" },
+				{ "startDate": "2025-06-20", "endDate": "2025-06-30" },
+				{ "startDate": "2025-07-01", "endDate": "2025-07-05" },
+				{ "startDate": "2025-07-15", "endDate": "2025-07-25" },
+				{ "startDate": "2025-08-01", "endDate": "2025-08-10" },
+				{ "startDate": "2025-09-01", "endDate": "2025-09-10" },
+				{ "startDate": "2025-10-01", "endDate": "2025-10-10" },
+				{ "startDate": "2025-10-20", "endDate": "2025-10-25" }
+			],
+			"reviews": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a8f3",
+			"host": "64a0c48d7b8e6c0021b8a7d3",
+			"location": {
+				"county": "Sibiu",
+				"city": "Sibiu",
+				"commune": "Rășinari",
+				"village": "Rășinari",
+				"zipcode": "557200",
+				"coordinates": [24.1817, 45.6604],
+				"address": "456 Mountain View Rd, Rășinari"
+			},
+			"pricePerNight": 210,
+			"fees": 45.5,
+			"photos": [
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
+			],
+			"amenities": [
+				"WiFi",
+				"Air Conditioning",
+				"Mountain View",
+				"Outdoor Pool",
+				"BBQ Grill",
+				"Fully Equipped Kitchen",
+				"Washer/Dryer",
+				"Heating",
+				"Free Parking",
+				"Outdoor Dining Area",
+				"Fireplace",
+				"Smart TV",
+				"Coffee Maker",
+				"Dishwasher",
+				"Basic Toiletries",
+				"Hair Dryer",
+				"Outdoor Fire Pit",
+				"Jacuzzi"
+			],
+			"rules": [
+				"No pets allowed",
+				"Quiet hours from 10 PM to 7 AM",
+				"No smoking inside the property",
+				"No parties or events",
+				"Guests must be registered",
+				"Do not disturb the neighbors",
+				"Use outdoor grill responsibly",
+				"Remove trash and recycling before departure",
+				"No shoes on the furniture",
+				"No loud music after 10 PM"
+			],
+			"security": [
+				"Fire extinguisher in the kitchen",
+				"First aid kit in the bathroom",
+				"Lockable windows",
+				"Safe for valuables",
+				"Outdoor lighting",
+				"Smoke detectors",
+				"Carbon monoxide detectors",
+				"Emergency contact information provided",
+				"CCTV cameras in common areas"
+			],
+			"info": [
+				"Check-in time is 4 PM. Early check-in may be available upon request.",
+				"Check-out time is 10 AM. Late check-out may be arranged if available.",
+				"Free parking is available on the premises.",
+				"Local transportation info is available upon request.",
+				"Welcome pack includes local maps, guides, and a list of recommended restaurants.",
+				"The property is equipped with a local guidebook and emergency numbers.",
+				"Hiking trails and mountain activities are accessible directly from the property."
+			],
+			"description": "This luxurious mountain-side villa in Rășinari offers breathtaking views and top-notch amenities. Enjoy an outdoor pool, jacuzzi, and nearby hiking trails. Perfect for large groups or family reunions, this property combines comfort with a scenic location.",
+			"listingDetails": {
+				"bedrooms": 10,
+				"bathrooms": 8,
+				"beds": 10,
+				"maxGuests": 20
+			},
+			"blockedDates": [
+				{ "startDate": "2024-09-05", "endDate": "2024-09-08" },
+				{ "startDate": "2024-09-15", "endDate": "2024-09-20" },
+				{ "startDate": "2024-10-01", "endDate": "2024-10-10" },
+				{ "startDate": "2024-10-18", "endDate": "2024-10-25" },
+				{ "startDate": "2024-11-01", "endDate": "2024-11-07" },
+				{ "startDate": "2024-11-15", "endDate": "2024-11-22" },
+				{ "startDate": "2024-12-01", "endDate": "2024-12-05" },
+				{ "startDate": "2024-12-15", "endDate": "2024-12-20" },
+				{ "startDate": "2025-01-05", "endDate": "2025-01-10" },
+				{ "startDate": "2025-01-20", "endDate": "2025-01-25" },
+				{ "startDate": "2025-02-01", "endDate": "2025-02-10" },
+				{ "startDate": "2025-03-01", "endDate": "2025-03-05" },
+				{ "startDate": "2025-03-15", "endDate": "2025-03-20" },
+				{ "startDate": "2025-04-01", "endDate": "2025-04-10" },
+				{ "startDate": "2025-04-20", "endDate": "2025-04-30" },
+				{ "startDate": "2025-05-10", "endDate": "2025-05-15" }
+			],
+			"reviews": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a8f4",
+			"host": "64a0c48d7b8e6c0021b8a7d4",
+			"location": {
+				"county": "Brașov",
+				"city": "Bran",
+				"commune": "Bran",
+				"village": "Măgura",
+				"zipcode": "507135",
+				"coordinates": [25.3815, 45.4363],
+				"address": "101 Mountain Peak Road, Măgura"
+			},
+			"pricePerNight": 875.0,
+			"fees": 85.5,
+			"photos": [
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
+			],
+			"amenities": [
+				"WiFi",
+				"Wood Stove",
+				"Mountain View",
+				"Outdoor Hot Tub",
+				"BBQ Grill",
+				"Fully Equipped Kitchen",
+				"Washer/Dryer",
+				"Air Conditioning",
+				"Heating",
+				"Free Parking",
+				"Outdoor Dining Area",
+				"Fireplace",
+				"Smart TV",
+				"Coffee Maker",
+				"Dishwasher",
+				"Basic Toiletries",
+				"Hair Dryer",
+				"Outdoor Fire Pit",
+				"Board Games"
+			],
+			"rules": [
+				"No pets allowed",
+				"Quiet hours from 10 PM to 7 AM",
+				"No smoking inside the property",
+				"No parties or events",
+				"Guests must be registered",
+				"Do not disturb the neighbors",
+				"Use outdoor grill responsibly",
+				"Remove trash and recycling before departure",
+				"No shoes on the furniture"
+			],
+			"security": [
+				"Fire extinguisher in the kitchen",
+				"First aid kit in the bathroom",
+				"Lockable windows",
+				"Safe for valuables",
+				"Outdoor lighting",
+				"Smoke detectors",
+				"Carbon monoxide detectors",
+				"Emergency contact information provided"
+			],
+			"info": [
+				"Check-in time is 3 PM. Early check-in may be available upon request.",
+				"Check-out time is 11 AM. Late check-out may be arranged if available.",
+				"Free parking is available on the premises.",
+				"Local transportation info is available upon request.",
+				"Welcome pack includes local maps, guides, and a list of recommended restaurants.",
+				"The property is equipped with a local guidebook and emergency numbers."
+			],
+			"description": "Set in the picturesque village of Măgura near Bran, this expansive cabin offers breathtaking mountain views and plenty of space for large gatherings. Enjoy the outdoor hot tub, cozy wood stove, and modern amenities for a perfect mountain retreat.",
+			"listingDetails": {
+				"bedrooms": 7,
+				"bathrooms": 5,
+				"beds": 14,
+				"maxGuests": 20
+			},
+			"blockedDates": [
+				{ "startDate": "2024-09-15", "endDate": "2024-09-20" },
+				{ "startDate": "2024-10-01", "endDate": "2024-10-05" },
+				{ "startDate": "2024-10-15", "endDate": "2024-10-18" },
+				{ "startDate": "2024-11-01", "endDate": "2024-11-07" },
+				{ "startDate": "2024-11-20", "endDate": "2024-11-25" },
+				{ "startDate": "2024-12-10", "endDate": "2024-12-15" },
+				{ "startDate": "2025-01-01", "endDate": "2025-01-07" },
+				{ "startDate": "2025-02-10", "endDate": "2025-02-15" },
+				{ "startDate": "2025-03-01", "endDate": "2025-03-10" },
+				{ "startDate": "2025-04-01", "endDate": "2025-04-07" },
+				{ "startDate": "2025-05-15", "endDate": "2025-05-20" },
+				{ "startDate": "2025-06-01", "endDate": "2025-06-05" }
+			],
+			"reviews": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a8f5",
+			"host": "64a0c48d7b8e6c0021b8a7d5",
+			"location": {
+				"county": "Hunedoara",
+				"city": "Găbud",
+				"commune": "Găbud",
+				"village": "Găbud",
+				"zipcode": "337231",
+				"coordinates": [22.7352, 45.8271],
+				"address": "150 Mountain View Road, Găbud"
+			},
+			"pricePerNight": 500.0,
+			"fees": 40.0,
+			"photos": [
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
+			],
+			"amenities": [
+				"WiFi",
+				"Wood Stove",
+				"Mountain View",
+				"Outdoor Hot Tub",
+				"BBQ Grill",
+				"Fully Equipped Kitchen",
+				"Washer/Dryer",
+				"Air Conditioning",
+				"Heating",
+				"Free Parking",
+				"Outdoor Dining Area",
+				"Fireplace",
+				"Smart TV",
+				"Coffee Maker",
+				"Dishwasher",
+				"Basic Toiletries",
+				"Hair Dryer",
+				"Outdoor Fire Pit",
+				"Board Games"
+			],
+			"rules": [
+				"No pets allowed",
+				"Quiet hours from 10 PM to 7 AM",
+				"No smoking inside the property",
+				"No parties or events",
+				"Guests must be registered",
+				"Do not disturb the neighbors",
+				"Use outdoor grill responsibly",
+				"Remove trash and recycling before departure",
+				"No shoes on the furniture"
+			],
+			"security": [
+				"Fire extinguisher in the kitchen",
+				"First aid kit in the bathroom",
+				"Lockable windows",
+				"Safe for valuables",
+				"Outdoor lighting",
+				"Smoke detectors",
+				"Carbon monoxide detectors",
+				"Emergency contact information provided"
+			],
+			"info": [
+				"Check-in time is 3 PM. Early check-in may be available upon request.",
+				"Check-out time is 11 AM. Late check-out may be arranged if available.",
+				"Free parking is available on the premises.",
+				"Local transportation info is available upon request.",
+				"Welcome pack includes local maps, guides, and a list of recommended restaurants.",
+				"The property is equipped with a local guidebook and emergency numbers."
+			],
+			"description": "Set amidst the scenic mountains of Găbud, this spacious cabin provides an excellent retreat with breathtaking views. Featuring a large outdoor hot tub, a cozy wood stove, and ample space for gatherings, it’s perfect for large groups seeking a serene escape.",
+			"listingDetails": {
+				"bedrooms": 4,
+				"bathrooms": 4,
+				"beds": 6,
+				"maxGuests": 8
+			},
+			"blockedDates": [
+				{ "startDate": "2024-09-01", "endDate": "2024-09-10" },
+				{ "startDate": "2024-09-15", "endDate": "2024-09-20" },
+				{ "startDate": "2024-10-05", "endDate": "2024-10-12" },
+				{ "startDate": "2024-10-18", "endDate": "2024-10-25" },
+				{ "startDate": "2024-11-01", "endDate": "2024-11-10" },
+				{ "startDate": "2024-11-15", "endDate": "2024-11-25" },
+				{ "startDate": "2024-12-01", "endDate": "2024-12-10" },
+				{ "startDate": "2024-12-20", "endDate": "2024-12-30" },
+				{ "startDate": "2025-01-05", "endDate": "2025-01-15" },
+				{ "startDate": "2025-02-01", "endDate": "2025-02-10" },
+				{ "startDate": "2025-03-01", "endDate": "2025-03-10" },
+				{ "startDate": "2025-04-01", "endDate": "2025-04-10" },
+				{ "startDate": "2025-05-01", "endDate": "2025-05-10" },
+				{ "startDate": "2025-06-01", "endDate": "2025-06-10" }
+			],
+			"reviews": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a8f6",
+			"host": "64a0c48d7b8e6c0021b8a7d6",
+			"location": {
+				"county": "Sibiu",
+				"city": "Păltiniș",
+				"commune": "Păltiniș",
+				"village": "Păltiniș",
+				"zipcode": "555300",
+				"coordinates": [23.8353, 45.6614],
+				"address": "27 Alpine Road, Păltiniș"
+			},
+			"pricePerNight": 200.0,
+			"fees": 25.0,
+			"photos": [
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
+			],
+			"amenities": [
+				"WiFi",
+				"Wood Stove",
+				"Mountain View",
+				"Outdoor Hot Tub",
+				"BBQ Grill",
+				"Fully Equipped Kitchen",
+				"Washer/Dryer",
+				"Heating",
+				"Free Parking",
+				"Outdoor Dining Area",
+				"Fireplace",
+				"Smart TV",
+				"Coffee Maker",
+				"Dishwasher",
+				"Basic Toiletries",
+				"Hair Dryer",
+				"Outdoor Fire Pit",
+				"Board Games"
+			],
+			"rules": [
+				"No pets allowed",
+				"Quiet hours from 10 PM to 7 AM",
+				"No smoking inside the property",
+				"No parties or events",
+				"Guests must be registered",
+				"Do not disturb the neighbors",
+				"Use outdoor grill responsibly",
+				"Remove trash and recycling before departure",
+				"No shoes on the furniture"
+			],
+			"security": [
+				"Fire extinguisher in the kitchen",
+				"First aid kit in the bathroom",
+				"Lockable windows",
+				"Safe for valuables",
+				"Outdoor lighting",
+				"Smoke detectors",
+				"Carbon monoxide detectors",
+				"Emergency contact information provided"
+			],
+			"info": [
+				"Check-in time is 3 PM. Early check-in may be available upon request.",
+				"Check-out time is 11 AM. Late check-out may be arranged if available.",
+				"Free parking is available on the premises.",
+				"Local transportation info is available upon request.",
+				"Welcome pack includes local maps, guides, and a list of recommended restaurants.",
+				"The property is equipped with a local guidebook and emergency numbers."
+			],
+			"description": "Nestled in the charming village of Păltiniș, this cozy cabin offers a perfect retreat with stunning mountain views. Ideal for a smaller group, it features a warm wood stove, an outdoor hot tub, and a comfortable living space for a relaxing stay.",
+			"listingDetails": {
+				"bedrooms": 3,
+				"bathrooms": 2,
+				"beds": 5,
+				"maxGuests": 10
+			},
+			"blockedDates": [
+				{ "startDate": "2024-09-01", "endDate": "2024-09-05" },
+				{ "startDate": "2024-09-15", "endDate": "2024-09-20" },
+				{ "startDate": "2024-10-01", "endDate": "2024-10-07" },
+				{ "startDate": "2024-10-15", "endDate": "2024-10-20" },
+				{ "startDate": "2024-11-01", "endDate": "2024-11-05" },
+				{ "startDate": "2024-11-15", "endDate": "2024-11-20" },
+				{ "startDate": "2024-12-01", "endDate": "2024-12-07" },
+				{ "startDate": "2024-12-15", "endDate": "2024-12-20" },
+				{ "startDate": "2025-01-05", "endDate": "2025-01-10" },
+				{ "startDate": "2025-02-01", "endDate": "2025-02-07" },
+				{ "startDate": "2025-03-01", "endDate": "2025-03-05" }
+			],
+			"reviews": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a8f7",
+			"host": "64a0c48d7b8e6c0021b8a7d7",
+			"location": {
+				"county": "Neamț",
+				"city": "Durău",
+				"commune": "Durău",
+				"village": "Durău",
+				"zipcode": "617130",
+				"coordinates": [26.3731, 46.9633],
+				"address": "7 Pinewood Street, Durău"
+			},
+			"pricePerNight": 275.0,
+			"fees": 35.0,
+			"photos": [
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
+			],
+			"amenities": [
+				"WiFi",
+				"Wood Stove",
+				"Mountain View",
+				"Outdoor Hot Tub",
+				"BBQ Grill",
+				"Fully Equipped Kitchen",
+				"Washer/Dryer",
+				"Heating",
+				"Free Parking",
+				"Outdoor Dining Area",
+				"Fireplace",
+				"Smart TV",
+				"Coffee Maker",
+				"Dishwasher",
+				"Basic Toiletries",
+				"Hair Dryer",
+				"Outdoor Fire Pit"
+			],
+			"rules": [
+				"No pets allowed",
+				"Quiet hours from 10 PM to 7 AM",
+				"No smoking inside the property",
+				"No parties or events",
+				"Guests must be registered",
+				"Do not disturb the neighbors",
+				"Use outdoor grill responsibly",
+				"Remove trash and recycling before departure",
+				"No shoes on the furniture"
+			],
+			"security": [
+				"Fire extinguisher in the kitchen",
+				"First aid kit in the bathroom",
+				"Lockable windows",
+				"Safe for valuables",
+				"Outdoor lighting",
+				"Smoke detectors",
+				"Carbon monoxide detectors",
+				"Emergency contact information provided"
+			],
+			"info": [
+				"Check-in time is 3 PM. Early check-in may be available upon request.",
+				"Check-out time is 11 AM. Late check-out may be arranged if available.",
+				"Free parking is available on the premises.",
+				"Local transportation info is available upon request.",
+				"Welcome pack includes local maps, guides, and a list of recommended restaurants.",
+				"The property is equipped with a local guidebook and emergency numbers."
+			],
+			"description": "Located in the serene mountain town of Durău, this spacious cabin offers breathtaking views and luxurious amenities. Perfect for large groups looking to enjoy a relaxing retreat with modern comforts.",
+			"listingDetails": {
+				"bedrooms": 6,
+				"bathrooms": 4,
+				"beds": 12,
+				"maxGuests": 20
+			},
+			"blockedDates": [
+				{ "startDate": "2024-09-01", "endDate": "2024-09-10" },
+				{ "startDate": "2024-09-20", "endDate": "2024-09-25" },
+				{ "startDate": "2024-10-10", "endDate": "2024-10-15" },
+				{ "startDate": "2024-11-01", "endDate": "2024-11-05" },
+				{ "startDate": "2024-12-10", "endDate": "2024-12-15" },
+				{ "startDate": "2025-01-10", "endDate": "2025-01-20" },
+				{ "startDate": "2025-02-01", "endDate": "2025-02-10" },
+				{ "startDate": "2025-03-15", "endDate": "2025-03-20" }
+			],
+			"reviews": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a8f8",
+			"host": "64a0c48d7b8e6c0021b8a7d8",
+			"location": {
+				"county": "Maramureș",
+				"city": "Borsa",
+				"commune": "Borsa",
+				"village": "Borsa",
+				"zipcode": "435200",
+				"coordinates": [24.6894, 47.6841],
+				"address": "9 Snow Peak Road, Borsa"
+			},
+			"pricePerNight": 450.0,
+			"fees": 50.0,
+			"photos": [
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
+			],
+			"amenities": [
+				"WiFi",
+				"Wood Stove",
+				"Mountain View",
+				"Outdoor Hot Tub",
+				"BBQ Grill",
+				"Fully Equipped Kitchen",
+				"Washer/Dryer",
+				"Heating",
+				"Free Parking",
+				"Outdoor Dining Area",
+				"Fireplace",
+				"Smart TV",
+				"Coffee Maker",
+				"Dishwasher",
+				"Basic Toiletries",
+				"Hair Dryer",
+				"Outdoor Fire Pit",
+				"Board Games"
+			],
+			"rules": [
+				"No pets allowed",
+				"Quiet hours from 10 PM to 7 AM",
+				"No smoking inside the property",
+				"No parties or events",
+				"Guests must be registered",
+				"Do not disturb the neighbors",
+				"Use outdoor grill responsibly",
+				"Remove trash and recycling before departure",
+				"No shoes on the furniture"
+			],
+			"security": [
+				"Fire extinguisher in the kitchen",
+				"First aid kit in the bathroom",
+				"Lockable windows",
+				"Safe for valuables",
+				"Outdoor lighting",
+				"Smoke detectors",
+				"Carbon monoxide detectors",
+				"Emergency contact information provided"
+			],
+			"info": [
+				"Check-in time is 3 PM. Early check-in may be available upon request.",
+				"Check-out time is 11 AM. Late check-out may be arranged if available.",
+				"Free parking is available on the premises.",
+				"Local transportation info is available upon request.",
+				"Welcome pack includes local maps, guides, and a list of recommended restaurants.",
+				"The property is equipped with a local guidebook and emergency numbers."
+			],
+			"description": "This luxurious cabin in Borsa is ideal for large groups and offers panoramic mountain views and upscale amenities. Enjoy a cozy retreat with ample space for everyone to unwind.",
+			"listingDetails": {
+				"bedrooms": 8,
+				"bathrooms": 6,
+				"beds": 16,
+				"maxGuests": 30
+			},
+			"blockedDates": [
+				{ "startDate": "2024-09-05", "endDate": "2024-09-12" },
+				{ "startDate": "2024-10-01", "endDate": "2024-10-10" },
+				{ "startDate": "2024-11-10", "endDate": "2024-11-15" },
+				{ "startDate": "2024-12-05", "endDate": "2024-12-10" },
+				{ "startDate": "2025-01-01", "endDate": "2025-01-07" },
+				{ "startDate": "2025-02-10", "endDate": "2025-02-15" },
+				{ "startDate": "2025-03-20", "endDate": "2025-03-25" },
+				{ "startDate": "2025-04-10", "endDate": "2025-04-15" }
+			],
+			"reviews": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a8f9",
+			"host": "64a0c48d7b8e6c0021b8a7d9",
+			"location": {
+				"county": "Alba",
+				"city": "Arieșeni",
+				"commune": "Arieșeni",
+				"village": "Arieșeni",
+				"zipcode": "517040",
+				"coordinates": [22.749, 46.4164],
+				"address": "22 Alpine Drive, Arieșeni"
+			},
+			"pricePerNight": 320.0,
+			"fees": 45.0,
+			"photos": [
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
+			],
+			"amenities": [
+				"WiFi",
+				"Wood Stove",
+				"Mountain View",
+				"Outdoor Hot Tub",
+				"BBQ Grill",
+				"Fully Equipped Kitchen",
+				"Washer/Dryer",
+				"Heating",
+				"Free Parking",
+				"Outdoor Dining Area",
+				"Fireplace",
+				"Smart TV",
+				"Coffee Maker",
+				"Dishwasher",
+				"Basic Toiletries",
+				"Hair Dryer",
+				"Outdoor Fire Pit"
+			],
+			"rules": [
+				"No pets allowed",
+				"Quiet hours from 10 PM to 7 AM",
+				"No smoking inside the property",
+				"No parties or events",
+				"Guests must be registered",
+				"Do not disturb the neighbors",
+				"Use outdoor grill responsibly",
+				"Remove trash and recycling before departure",
+				"No shoes on the furniture"
+			],
+			"security": [
+				"Fire extinguisher in the kitchen",
+				"First aid kit in the bathroom",
+				"Lockable windows",
+				"Safe for valuables",
+				"Outdoor lighting",
+				"Smoke detectors",
+				"Carbon monoxide detectors",
+				"Emergency contact information provided"
+			],
+			"info": [
+				"Check-in time is 3 PM. Early check-in may be available upon request.",
+				"Check-out time is 11 AM. Late check-out may be arranged if available.",
+				"Free parking is available on the premises.",
+				"Local transportation info is available upon request.",
+				"Welcome pack includes local maps, guides, and a list of recommended restaurants.",
+				"The property is equipped with a local guidebook and emergency numbers."
+			],
+			"description": "Experience the beauty of Arieșeni in this charming cabin, ideal for families and groups. The property offers modern amenities and stunning views, perfect for a mountain retreat.",
+			"listingDetails": {
+				"bedrooms": 4,
+				"bathrooms": 3,
+				"beds": 8,
+				"maxGuests": 16
+			},
+			"blockedDates": [
+				{ "startDate": "2024-09-01", "endDate": "2024-09-07" },
+				{ "startDate": "2024-09-15", "endDate": "2024-09-25" },
+				{ "startDate": "2024-10-10", "endDate": "2024-10-20" },
+				{ "startDate": "2024-11-01", "endDate": "2024-11-10" },
+				{ "startDate": "2024-11-20", "endDate": "2024-11-30" },
+				{ "startDate": "2024-12-05", "endDate": "2024-12-15" },
+				{ "startDate": "2024-12-20", "endDate": "2025-01-05" },
+				{ "startDate": "2025-01-10", "endDate": "2025-01-15" },
+				{ "startDate": "2025-02-01", "endDate": "2025-02-10" },
+				{ "startDate": "2025-03-01", "endDate": "2025-03-10" },
+				{ "startDate": "2025-04-01", "endDate": "2025-04-15" }
+			],
+			"reviews": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a8fa",
+			"host": "64a0c48d7b8e6c0021b8a7da",
+			"location": {
+				"county": "Sibiu",
+				"city": "Păltiniș",
+				"commune": "Păltiniș",
+				"village": "Păltiniș",
+				"zipcode": "555200",
+				"coordinates": [23.4346, 45.71],
+				"address": "33 Summit Road, Păltiniș"
+			},
+			"pricePerNight": 500.0,
+			"fees": 55.0,
+			"photos": [
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
+			],
+			"amenities": [
+				"WiFi",
+				"Wood Stove",
+				"Mountain View",
+				"Outdoor Hot Tub",
+				"BBQ Grill",
+				"Fully Equipped Kitchen",
+				"Washer/Dryer",
+				"Heating",
+				"Free Parking",
+				"Outdoor Dining Area",
+				"Fireplace",
+				"Smart TV",
+				"Coffee Maker",
+				"Dishwasher",
+				"Basic Toiletries",
+				"Hair Dryer",
+				"Outdoor Fire Pit",
+				"Board Games"
+			],
+			"rules": [
+				"No pets allowed",
+				"Quiet hours from 10 PM to 7 AM",
+				"No smoking inside the property",
+				"No parties or events",
+				"Guests must be registered",
+				"Do not disturb the neighbors",
+				"Use outdoor grill responsibly",
+				"Remove trash and recycling before departure",
+				"No shoes on the furniture"
+			],
+			"security": [
+				"Fire extinguisher in the kitchen",
+				"First aid kit in the bathroom",
+				"Lockable windows",
+				"Safe for valuables",
+				"Outdoor lighting",
+				"Smoke detectors",
+				"Carbon monoxide detectors",
+				"Emergency contact information provided"
+			],
+			"info": [
+				"Check-in time is 3 PM. Early check-in may be available upon request.",
+				"Check-out time is 11 AM. Late check-out may be arranged if available.",
+				"Free parking is available on the premises.",
+				"Local transportation info is available upon request.",
+				"Welcome pack includes local maps, guides, and a list of recommended restaurants.",
+				"The property is equipped with a local guidebook and emergency numbers."
+			],
+			"description": "Situated in the picturesque Păltiniș area, this elegant cabin is perfect for large groups. Enjoy the peaceful mountain environment and upscale amenities.",
+			"listingDetails": {
+				"bedrooms": 7,
+				"bathrooms": 5,
+				"beds": 14,
+				"maxGuests": 25
+			},
+			"blockedDates": [
+				{ "startDate": "2024-09-15", "endDate": "2024-09-20" },
+				{ "startDate": "2024-10-10", "endDate": "2024-10-15" },
+				{ "startDate": "2024-11-01", "endDate": "2024-11-05" },
+				{ "startDate": "2024-12-10", "endDate": "2024-12-15" },
+				{ "startDate": "2025-01-20", "endDate": "2025-01-25" },
+				{ "startDate": "2025-02-15", "endDate": "2025-02-20" },
+				{ "startDate": "2025-03-05", "endDate": "2025-03-10" },
+				{ "startDate": "2025-04-01", "endDate": "2025-04-07" }
+			],
+			"reviews": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a8fb",
+			"host": "64a0c48d7b8e6c0021b8a7db",
+			"location": {
+				"county": "Vâlcea",
+				"city": "Voineasa",
+				"commune": "Voineasa",
+				"village": "Voineasa",
+				"zipcode": "247748",
+				"coordinates": [24.0794, 45.2569],
+				"address": "3 High Hill Road, Voineasa"
+			},
+			"pricePerNight": 400.0,
+			"fees": 45.0,
+			"photos": [
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
+			],
+			"amenities": [
+				"WiFi",
+				"Wood Stove",
+				"Mountain View",
+				"Outdoor Hot Tub",
+				"BBQ Grill",
+				"Fully Equipped Kitchen",
+				"Washer/Dryer",
+				"Heating",
+				"Free Parking",
+				"Outdoor Dining Area",
+				"Fireplace",
+				"Smart TV",
+				"Coffee Maker",
+				"Dishwasher",
+				"Basic Toiletries",
+				"Hair Dryer",
+				"Outdoor Fire Pit",
+				"Board Games"
+			],
+			"rules": [
+				"No pets allowed",
+				"Quiet hours from 10 PM to 7 AM",
+				"No smoking inside the property",
+				"No parties or events",
+				"Guests must be registered",
+				"Do not disturb the neighbors",
+				"Use outdoor grill responsibly",
+				"Remove trash and recycling before departure",
+				"No shoes on the furniture"
+			],
+			"security": [
+				"Fire extinguisher in the kitchen",
+				"First aid kit in the bathroom",
+				"Lockable windows",
+				"Safe for valuables",
+				"Outdoor lighting",
+				"Smoke detectors",
+				"Carbon monoxide detectors",
+				"Emergency contact information provided"
+			],
+			"info": [
+				"Check-in time is 3 PM. Early check-in may be available upon request.",
+				"Check-out time is 11 AM. Late check-out may be arranged if available.",
+				"Free parking is available on the premises.",
+				"Local transportation info is available upon request.",
+				"Welcome pack includes local maps, guides, and a list of recommended restaurants.",
+				"The property is equipped with a local guidebook and emergency numbers."
+			],
+			"description": "Set in the tranquil Voineasa area, this spacious cabin provides a perfect escape with top-notch amenities and stunning mountain views.",
+			"listingDetails": {
+				"bedrooms": 5,
+				"bathrooms": 4,
+				"beds": 10,
+				"maxGuests": 20
+			},
+			"blockedDates": [
+				{ "startDate": "2024-09-10", "endDate": "2024-09-15" },
+				{ "startDate": "2024-10-01", "endDate": "2024-10-07" },
+				{ "startDate": "2024-11-05", "endDate": "2024-11-12" },
+				{ "startDate": "2024-12-01", "endDate": "2024-12-05" },
+				{ "startDate": "2025-01-15", "endDate": "2025-01-20" },
+				{ "startDate": "2025-02-01", "endDate": "2025-02-07" },
+				{ "startDate": "2025-03-10", "endDate": "2025-03-15" },
+				{ "startDate": "2025-04-05", "endDate": "2025-04-10" }
+			],
+			"reviews": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a8fc",
+			"host": "64a0c48d7b8e6c0021b8a7dc",
+			"location": {
+				"county": "Argeș",
+				"city": "Cumpăna",
+				"commune": "Cumpăna",
+				"village": "Cumpăna",
+				"zipcode": "117400",
+				"coordinates": [24.8063, 45.1001],
+				"address": "87 Pine View Lane, Cumpăna"
+			},
+			"pricePerNight": 320,
+			"fees": 80,
+			"photos": [
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
+			],
+			"amenities": [
+				"WiFi",
+				"Wood Stove",
+				"Mountain View",
+				"Outdoor Hot Tub",
+				"BBQ Grill",
+				"Fully Equipped Kitchen",
+				"Washer/Dryer",
+				"Air Conditioning",
+				"Heating",
+				"Free Parking",
+				"Outdoor Dining Area",
+				"Fireplace",
+				"Smart TV",
+				"Coffee Maker",
+				"Dishwasher",
+				"Basic Toiletries",
+				"Hair Dryer",
+				"Outdoor Fire Pit",
+				"Board Games"
+			],
+			"rules": [
+				"No pets allowed",
+				"Quiet hours from 10 PM to 7 AM",
+				"No smoking inside the property",
+				"No parties or events",
+				"Guests must be registered",
+				"Do not disturb the neighbors",
+				"Use outdoor grill responsibly",
+				"Remove trash and recycling before departure",
+				"No shoes on the furniture"
+			],
+			"security": [
+				"Fire extinguisher in the kitchen",
+				"First aid kit in the bathroom",
+				"Lockable windows",
+				"Safe for valuables",
+				"Outdoor lighting",
+				"Smoke detectors",
+				"Carbon monoxide detectors",
+				"Emergency contact information provided"
+			],
+			"info": [
+				"Check-in time is 3 PM. Early check-in may be available upon request.",
+				"Check-out time is 11 AM. Late check-out may be arranged if available.",
+				"Free parking is available on the premises.",
+				"Local transportation info is available upon request.",
+				"Welcome pack includes local maps, guides, and a list of recommended restaurants.",
+				"The property is equipped with a local guidebook and emergency numbers."
+			],
+			"description": "Situated in the charming village of Cumpăna, this spacious cabin offers a luxurious escape with breathtaking mountain views. Enjoy the large outdoor hot tub, cozy wood stove, and ample space for large gatherings.",
+			"listingDetails": {
+				"bedrooms": 4,
+				"bathrooms": 3,
+				"beds": 8,
+				"maxGuests": 15
+			},
+			"blockedDates": [
+				{ "startDate": "2024-09-10", "endDate": "2024-09-12" },
+				{ "startDate": "2024-09-20", "endDate": "2024-09-30" },
+				{ "startDate": "2024-10-05", "endDate": "2024-10-12" },
+				{ "startDate": "2024-10-20", "endDate": "2024-10-25" },
+				{ "startDate": "2024-11-01", "endDate": "2024-11-10" },
+				{ "startDate": "2024-11-15", "endDate": "2024-11-20" },
+				{ "startDate": "2024-12-01", "endDate": "2024-12-05" },
+				{ "startDate": "2024-12-15", "endDate": "2024-12-22" },
+				{ "startDate": "2025-01-10", "endDate": "2025-01-15" },
+				{ "startDate": "2025-02-05", "endDate": "2025-02-12" },
+				{ "startDate": "2025-03-01", "endDate": "2025-03-10" },
+				{ "startDate": "2025-04-01", "endDate": "2025-04-10" },
+				{ "startDate": "2025-05-01", "endDate": "2025-05-15" }
+			],
+			"reviews": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a8fd",
+			"host": "64a0c48d7b8e6c0021b8a7dd",
+			"location": {
+				"county": "Vâlcea",
+				"city": "Râmnicu Vâlcea",
+				"commune": "Râmnicu Vâlcea",
+				"village": "Râmnicu Vâlcea",
+				"zipcode": "240000",
+				"coordinates": [24.369, 45.099],
+				"address": "456 Cedar Lane, Râmnicu Vâlcea"
+			},
+			"pricePerNight": 350,
+			"fees": 95,
+			"photos": [
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
+			],
+			"amenities": [
+				"WiFi",
+				"Wood Stove",
+				"Mountain View",
+				"Outdoor Hot Tub",
+				"BBQ Grill",
+				"Fully Equipped Kitchen",
+				"Washer/Dryer",
+				"Air Conditioning",
+				"Heating",
+				"Free Parking",
+				"Outdoor Dining Area",
+				"Fireplace",
+				"Smart TV",
+				"Coffee Maker",
+				"Dishwasher",
+				"Basic Toiletries",
+				"Hair Dryer",
+				"Outdoor Fire Pit",
+				"Board Games"
+			],
+			"rules": [
+				"No pets allowed",
+				"Quiet hours from 10 PM to 7 AM",
+				"No smoking inside the property",
+				"No parties or events",
+				"Guests must be registered",
+				"Do not disturb the neighbors",
+				"Use outdoor grill responsibly",
+				"Remove trash and recycling before departure",
+				"No shoes on the furniture"
+			],
+			"security": [
+				"Fire extinguisher in the kitchen",
+				"First aid kit in the bathroom",
+				"Lockable windows",
+				"Safe for valuables",
+				"Outdoor lighting",
+				"Smoke detectors",
+				"Carbon monoxide detectors",
+				"Emergency contact information provided"
+			],
+			"info": [
+				"Check-in time is 3 PM. Early check-in may be available upon request.",
+				"Check-out time is 11 AM. Late check-out may be arranged if available.",
+				"Free parking is available on the premises.",
+				"Local transportation info is available upon request.",
+				"Welcome pack includes local maps, guides, and a list of recommended restaurants.",
+				"The property is equipped with a local guidebook and emergency numbers."
+			],
+			"description": "Located in the scenic town of Râmnicu Vâlcea, this expansive cabin offers a luxurious stay with panoramic mountain views. Ideal for large groups or families, it features an outdoor hot tub, multiple living areas, and spacious bedrooms.",
+			"listingDetails": {
+				"bedrooms": 5,
+				"bathrooms": 4,
+				"beds": 10,
+				"maxGuests": 20
+			},
+			"blockedDates": [
+				{ "startDate": "2024-09-05", "endDate": "2024-09-10" },
+				{ "startDate": "2024-09-20", "endDate": "2024-09-30" },
+				{ "startDate": "2024-10-15", "endDate": "2024-10-20" },
+				{ "startDate": "2024-11-01", "endDate": "2024-11-10" },
+				{ "startDate": "2024-11-20", "endDate": "2024-11-25" },
+				{ "startDate": "2024-12-05", "endDate": "2024-12-15" },
+				{ "startDate": "2024-12-20", "endDate": "2025-01-05" },
+				{ "startDate": "2025-01-15", "endDate": "2025-01-20" },
+				{ "startDate": "2025-02-01", "endDate": "2025-02-10" },
+				{ "startDate": "2025-03-05", "endDate": "2025-03-15" },
+				{ "startDate": "2025-04-01", "endDate": "2025-04-10" }
+			],
+			"reviews": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a8fe",
+			"host": "64a0c48d7b8e6c0021b8a7de",
+			"location": {
+				"county": "Hunedoara",
+				"city": "Deva",
+				"commune": "Deva",
+				"village": "Deva",
+				"zipcode": "330000",
+				"coordinates": [22.9305, 45.8721],
+				"address": "321 Fir Lane, Deva"
+			},
+			"pricePerNight": 275,
+			"fees": 65,
+			"photos": [
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
+			],
+			"amenities": [
+				"WiFi",
+				"Wood Stove",
+				"Mountain View",
+				"Outdoor Hot Tub",
+				"BBQ Grill",
+				"Fully Equipped Kitchen",
+				"Washer/Dryer",
+				"Air Conditioning",
+				"Heating",
+				"Free Parking",
+				"Outdoor Dining Area",
+				"Fireplace",
+				"Smart TV",
+				"Coffee Maker",
+				"Dishwasher",
+				"Basic Toiletries",
+				"Hair Dryer",
+				"Outdoor Fire Pit",
+				"Board Games"
+			],
+			"rules": [
+				"No pets allowed",
+				"Quiet hours from 10 PM to 7 AM",
+				"No smoking inside the property",
+				"No parties or events",
+				"Guests must be registered",
+				"Do not disturb the neighbors",
+				"Use outdoor grill responsibly",
+				"Remove trash and recycling before departure",
+				"No shoes on the furniture"
+			],
+			"security": [
+				"Fire extinguisher in the kitchen",
+				"First aid kit in the bathroom",
+				"Lockable windows",
+				"Safe for valuables",
+				"Outdoor lighting",
+				"Smoke detectors",
+				"Carbon monoxide detectors",
+				"Emergency contact information provided"
+			],
+			"info": [
+				"Check-in time is 3 PM. Early check-in may be available upon request.",
+				"Check-out time is 11 AM. Late check-out may be arranged if available.",
+				"Free parking is available on the premises.",
+				"Local transportation info is available upon request.",
+				"Welcome pack includes local maps, guides, and a list of recommended restaurants.",
+				"The property is equipped with a local guidebook and emergency numbers."
+			],
+			"description": "Set in Deva, this rustic yet elegant cabin provides a serene mountain escape with modern comforts. Enjoy the spacious living areas, hot tub, and scenic views from this well-equipped retreat.",
+			"listingDetails": {
+				"bedrooms": 3,
+				"bathrooms": 2,
+				"beds": 6,
+				"maxGuests": 12
+			},
+			"blockedDates": [
+				{ "startDate": "2024-09-01", "endDate": "2024-09-05" },
+				{ "startDate": "2024-09-15", "endDate": "2024-09-25" },
+				{ "startDate": "2024-10-05", "endDate": "2024-10-10" },
+				{ "startDate": "2024-10-20", "endDate": "2024-10-30" },
+				{ "startDate": "2024-11-10", "endDate": "2024-11-15" },
+				{ "startDate": "2024-11-20", "endDate": "2024-11-30" },
+				{ "startDate": "2024-12-01", "endDate": "2024-12-10" },
+				{ "startDate": "2024-12-20", "endDate": "2024-12-30" },
+				{ "startDate": "2025-01-05", "endDate": "2025-01-10" },
+				{ "startDate": "2025-02-01", "endDate": "2025-02-07" },
+				{ "startDate": "2025-03-10", "endDate": "2025-03-15" }
+			],
+			"reviews": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a8ff",
+			"host": "64a0c48d7b8e6c0021b8a7df",
+			"location": {
+				"county": "Sibiu",
+				"city": "Sibiu",
+				"commune": "Sibiu",
+				"village": "Sibiu",
+				"zipcode": "550000",
+				"coordinates": [24.1473, 45.7984],
+				"address": "789 Aspen Street, Sibiu"
+			},
+			"pricePerNight": 310,
+			"fees": 85,
+			"photos": [
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
+			],
+			"amenities": [
+				"WiFi",
+				"Wood Stove",
+				"Mountain View",
+				"Outdoor Hot Tub",
+				"BBQ Grill",
+				"Fully Equipped Kitchen",
+				"Washer/Dryer",
+				"Air Conditioning",
+				"Heating",
+				"Free Parking",
+				"Outdoor Dining Area",
+				"Fireplace",
+				"Smart TV",
+				"Coffee Maker",
+				"Dishwasher",
+				"Basic Toiletries",
+				"Hair Dryer",
+				"Outdoor Fire Pit",
+				"Board Games"
+			],
+			"rules": [
+				"No pets allowed",
+				"Quiet hours from 10 PM to 7 AM",
+				"No smoking inside the property",
+				"No parties or events",
+				"Guests must be registered",
+				"Do not disturb the neighbors",
+				"Use outdoor grill responsibly",
+				"Remove trash and recycling before departure",
+				"No shoes on the furniture"
+			],
+			"security": [
+				"Fire extinguisher in the kitchen",
+				"First aid kit in the bathroom",
+				"Lockable windows",
+				"Safe for valuables",
+				"Outdoor lighting",
+				"Smoke detectors",
+				"Carbon monoxide detectors",
+				"Emergency contact information provided"
+			],
+			"info": [
+				"Check-in time is 3 PM. Early check-in may be available upon request.",
+				"Check-out time is 11 AM. Late check-out may be arranged if available.",
+				"Free parking is available on the premises.",
+				"Local transportation info is available upon request.",
+				"Welcome pack includes local maps, guides, and a list of recommended restaurants.",
+				"The property is equipped with a local guidebook and emergency numbers."
+			],
+			"description": "Located in the heart of Sibiu, this charming cabin offers a unique blend of rustic elegance and modern amenities. Enjoy a comfortable stay with stunning mountain views and plenty of space for relaxation and recreation.",
+			"listingDetails": {
+				"bedrooms": 6,
+				"bathrooms": 5,
+				"beds": 12,
+				"maxGuests": 22
+			},
+			"blockedDates": [
+				{ "startDate": "2024-09-01", "endDate": "2024-09-07" },
+				{ "startDate": "2024-09-15", "endDate": "2024-09-25" },
+				{ "startDate": "2024-10-10", "endDate": "2024-10-20" },
+				{ "startDate": "2024-11-01", "endDate": "2024-11-10" },
+				{ "startDate": "2024-11-20", "endDate": "2024-11-30" },
+				{ "startDate": "2024-12-05", "endDate": "2024-12-15" },
+				{ "startDate": "2024-12-20", "endDate": "2025-01-05" },
+				{ "startDate": "2025-01-10", "endDate": "2025-01-15" },
+				{ "startDate": "2025-02-01", "endDate": "2025-02-10" },
+				{ "startDate": "2025-03-01", "endDate": "2025-03-10" },
+				{ "startDate": "2025-04-01", "endDate": "2025-04-15" }
+			],
+			"reviews": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a900",
+			"host": "64a0c48d7b8e6c0021b8a7e0",
+			"location": {
+				"county": "Hunedoara",
+				"city": "Râu de Mori",
+				"commune": "Râu de Mori",
+				"village": "Râu de Mori",
+				"zipcode": "337465",
+				"coordinates": [22.892, 45.2973],
+				"address": "789 Mountain View Road, Râu de Mori"
+			},
+			"pricePerNight": 230,
+			"fees": 45.0,
+			"photos": [
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
+			],
+			"amenities": [
+				"WiFi",
+				"Wood Stove",
+				"Mountain View",
+				"Outdoor Hot Tub",
+				"BBQ Grill",
+				"Fully Equipped Kitchen",
+				"Washer/Dryer",
+				"Air Conditioning",
+				"Heating",
+				"Free Parking",
+				"Outdoor Dining Area",
+				"Fireplace",
+				"Smart TV",
+				"Coffee Maker",
+				"Dishwasher",
+				"Basic Toiletries",
+				"Hair Dryer",
+				"Outdoor Fire Pit",
+				"Board Games"
+			],
+			"rules": [
+				"No pets allowed",
+				"Quiet hours from 10 PM to 7 AM",
+				"No smoking inside the property",
+				"No parties or events",
+				"Guests must be registered",
+				"Do not disturb the neighbors",
+				"Use outdoor grill responsibly",
+				"Remove trash and recycling before departure",
+				"No shoes on the furniture"
+			],
+			"security": [
+				"Fire extinguisher in the kitchen",
+				"First aid kit in the bathroom",
+				"Lockable windows",
+				"Safe for valuables",
+				"Outdoor lighting",
+				"Smoke detectors",
+				"Carbon monoxide detectors",
+				"Emergency contact information provided"
+			],
+			"info": [
+				"Check-in time is 3 PM. Early check-in may be available upon request.",
+				"Check-out time is 11 AM. Late check-out may be arranged if available.",
+				"Free parking is available on the premises.",
+				"Local transportation info is available upon request.",
+				"Welcome pack includes local maps, guides, and a list of recommended restaurants.",
+				"The property is equipped with a local guidebook and emergency numbers."
+			],
+			"description": "This beautiful cabin in Râu de Mori offers a serene mountain escape with stunning views and luxurious amenities. Ideal for large groups or family gatherings, it features an outdoor hot tub and a spacious interior.",
+			"listingDetails": {
+				"bedrooms": 6,
+				"bathrooms": 4,
+				"beds": 12,
+				"maxGuests": 20
+			},
+			"blockedDates": [
+				{ "startDate": "2024-09-15", "endDate": "2024-09-20" },
+				{ "startDate": "2024-10-01", "endDate": "2024-10-07" },
+				{ "startDate": "2024-11-10", "endDate": "2024-11-15" },
+				{ "startDate": "2024-12-05", "endDate": "2024-12-10" },
+				{ "startDate": "2025-01-10", "endDate": "2025-01-15" },
+				{ "startDate": "2025-02-05", "endDate": "2025-02-10" },
+				{ "startDate": "2025-03-01", "endDate": "2025-03-10" },
+				{ "startDate": "2025-04-01", "endDate": "2025-04-05" },
+				{ "startDate": "2025-05-15", "endDate": "2025-05-20" }
+			],
+			"reviews": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a901",
+			"host": "64a0c48d7b8e6c0021b8a7e1",
+			"location": {
+				"county": "Alba",
+				"city": "Arieșeni",
+				"commune": "Arieșeni",
+				"village": "Arieșeni",
+				"zipcode": "517060",
+				"coordinates": [22.6686, 45.5703],
+				"address": "456 Snowy Peak Road, Arieșeni"
+			},
+			"pricePerNight": 290,
+			"fees": 55.0,
+			"photos": [
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
+			],
+			"amenities": [
+				"WiFi",
+				"Wood Stove",
+				"Mountain View",
+				"Outdoor Hot Tub",
+				"BBQ Grill",
+				"Fully Equipped Kitchen",
+				"Washer/Dryer",
+				"Air Conditioning",
+				"Heating",
+				"Free Parking",
+				"Outdoor Dining Area",
+				"Fireplace",
+				"Smart TV",
+				"Coffee Maker",
+				"Dishwasher",
+				"Basic Toiletries",
+				"Hair Dryer",
+				"Outdoor Fire Pit",
+				"Board Games"
+			],
+			"rules": [
+				"No pets allowed",
+				"Quiet hours from 10 PM to 7 AM",
+				"No smoking inside the property",
+				"No parties or events",
+				"Guests must be registered",
+				"Do not disturb the neighbors",
+				"Use outdoor grill responsibly",
+				"Remove trash and recycling before departure",
+				"No shoes on the furniture"
+			],
+			"security": [
+				"Fire extinguisher in the kitchen",
+				"First aid kit in the bathroom",
+				"Lockable windows",
+				"Safe for valuables",
+				"Outdoor lighting",
+				"Smoke detectors",
+				"Carbon monoxide detectors",
+				"Emergency contact information provided"
+			],
+			"info": [
+				"Check-in time is 3 PM. Early check-in may be available upon request.",
+				"Check-out time is 11 AM. Late check-out may be arranged if available.",
+				"Free parking is available on the premises.",
+				"Local transportation info is available upon request.",
+				"Welcome pack includes local maps, guides, and a list of recommended restaurants.",
+				"The property is equipped with a local guidebook and emergency numbers."
+			],
+			"description": "This luxurious retreat in Arieșeni offers breathtaking views and ample space for large groups. Enjoy the spacious living areas, outdoor hot tub, and proximity to skiing and hiking trails.",
+			"listingDetails": {
+				"bedrooms": 7,
+				"bathrooms": 5,
+				"beds": 15,
+				"maxGuests": 30
+			},
+			"blockedDates": [
+				{ "startDate": "2024-09-20", "endDate": "2024-09-25" },
+				{ "startDate": "2024-10-10", "endDate": "2024-10-15" },
+				{ "startDate": "2024-11-01", "endDate": "2024-11-07" },
+				{ "startDate": "2024-12-10", "endDate": "2024-12-15" },
+				{ "startDate": "2025-01-05", "endDate": "2025-01-12" },
+				{ "startDate": "2025-02-15", "endDate": "2025-02-20" },
+				{ "startDate": "2025-03-10", "endDate": "2025-03-15" },
+				{ "startDate": "2025-04-01", "endDate": "2025-04-05" },
+				{ "startDate": "2025-05-01", "endDate": "2025-05-10" }
+			],
+			"reviews": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a902",
+			"host": "64a0c48d7b8e6c0021b8a7e2",
+			"location": {
+				"county": "Sibiu",
+				"city": "Păltiniș",
+				"commune": "Păltiniș",
+				"village": "Păltiniș",
+				"zipcode": "555200",
+				"coordinates": [23.47, 45.7],
+				"address": "123 Alpine Road, Păltiniș"
+			},
+			"pricePerNight": 310,
+			"fees": 60.0,
+			"photos": [
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
+			],
+			"amenities": [
+				"WiFi",
+				"Wood Stove",
+				"Mountain View",
+				"Outdoor Hot Tub",
+				"BBQ Grill",
+				"Fully Equipped Kitchen",
+				"Washer/Dryer",
+				"Air Conditioning",
+				"Heating",
+				"Free Parking",
+				"Outdoor Dining Area",
+				"Fireplace",
+				"Smart TV",
+				"Coffee Maker",
+				"Dishwasher",
+				"Basic Toiletries",
+				"Hair Dryer",
+				"Outdoor Fire Pit",
+				"Board Games"
+			],
+			"rules": [
+				"No pets allowed",
+				"Quiet hours from 10 PM to 7 AM",
+				"No smoking inside the property",
+				"No parties or events",
+				"Guests must be registered",
+				"Do not disturb the neighbors",
+				"Use outdoor grill responsibly",
+				"Remove trash and recycling before departure",
+				"No shoes on the furniture"
+			],
+			"security": [
+				"Fire extinguisher in the kitchen",
+				"First aid kit in the bathroom",
+				"Lockable windows",
+				"Safe for valuables",
+				"Outdoor lighting",
+				"Smoke detectors",
+				"Carbon monoxide detectors",
+				"Emergency contact information provided"
+			],
+			"info": [
+				"Check-in time is 3 PM. Early check-in may be available upon request.",
+				"Check-out time is 11 AM. Late check-out may be arranged if available.",
+				"Free parking is available on the premises.",
+				"Local transportation info is available upon request.",
+				"Welcome pack includes local maps, guides, and a list of recommended restaurants.",
+				"The property is equipped with a local guidebook and emergency numbers."
+			],
+			"description": "Experience luxury and comfort in this alpine cabin in Păltiniș, with stunning mountain views and a hot tub. Perfect for large groups looking for an upscale retreat in a premier ski location.",
+			"listingDetails": {
+				"bedrooms": 8,
+				"bathrooms": 6,
+				"beds": 18,
+				"maxGuests": 30
+			},
+			"blockedDates": [
+				{ "startDate": "2024-09-30", "endDate": "2024-10-05" },
+				{ "startDate": "2024-11-15", "endDate": "2024-11-20" },
+				{ "startDate": "2024-12-05", "endDate": "2024-12-12" },
+				{ "startDate": "2025-01-01", "endDate": "2025-01-07" },
+				{ "startDate": "2025-02-10", "endDate": "2025-02-15" },
+				{ "startDate": "2025-03-01", "endDate": "2025-03-07" },
+				{ "startDate": "2025-04-10", "endDate": "2025-04-15" },
+				{ "startDate": "2025-05-01", "endDate": "2025-05-05" }
+			],
+			"reviews": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a903",
+			"host": "64a0c48d7b8e6c0021b8a7e3",
+			"location": {
+				"county": "Vâlcea",
+				"city": "Voineasa",
+				"commune": "Voineasa",
+				"village": "Voineasa",
+				"zipcode": "247775",
+				"coordinates": [24.3545, 45.2356],
+				"address": "321 Forest Edge, Voineasa"
+			},
+			"pricePerNight": 340,
+			"fees": 65.0,
+			"photos": [
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
+			],
+			"amenities": [
+				"WiFi",
+				"Wood Stove",
+				"Mountain View",
+				"Outdoor Hot Tub",
+				"BBQ Grill",
+				"Fully Equipped Kitchen",
+				"Washer/Dryer",
+				"Air Conditioning",
+				"Heating",
+				"Free Parking",
+				"Outdoor Dining Area",
+				"Fireplace",
+				"Smart TV",
+				"Coffee Maker",
+				"Dishwasher",
+				"Basic Toiletries",
+				"Hair Dryer",
+				"Outdoor Fire Pit",
+				"Board Games"
+			],
+			"rules": [
+				"No pets allowed",
+				"Quiet hours from 10 PM to 7 AM",
+				"No smoking inside the property",
+				"No parties or events",
+				"Guests must be registered",
+				"Do not disturb the neighbors",
+				"Use outdoor grill responsibly",
+				"Remove trash and recycling before departure",
+				"No shoes on the furniture"
+			],
+			"security": [
+				"Fire extinguisher in the kitchen",
+				"First aid kit in the bathroom",
+				"Lockable windows",
+				"Safe for valuables",
+				"Outdoor lighting",
+				"Smoke detectors",
+				"Carbon monoxide detectors",
+				"Emergency contact information provided"
+			],
+			"info": [
+				"Check-in time is 3 PM. Early check-in may be available upon request.",
+				"Check-out time is 11 AM. Late check-out may be arranged if available.",
+				"Free parking is available on the premises.",
+				"Local transportation info is available upon request.",
+				"Welcome pack includes local maps, guides, and a list of recommended restaurants.",
+				"The property is equipped with a local guidebook and emergency numbers."
+			],
+			"description": "Located in Voineasa, this cabin provides a perfect escape with expansive views and a variety of amenities. Ideal for large groups, it features a hot tub and spacious living areas.",
+			"listingDetails": {
+				"bedrooms": 8,
+				"bathrooms": 5,
+				"beds": 16,
+				"maxGuests": 25
+			},
+			"blockedDates": [
+				{ "startDate": "2024-09-25", "endDate": "2024-09-30" },
+				{ "startDate": "2024-10-10", "endDate": "2024-10-15" },
+				{ "startDate": "2024-11-01", "endDate": "2024-11-07" },
+				{ "startDate": "2024-12-10", "endDate": "2024-12-15" },
+				{ "startDate": "2025-01-01", "endDate": "2025-01-07" },
+				{ "startDate": "2025-02-01", "endDate": "2025-02-07" },
+				{ "startDate": "2025-03-10", "endDate": "2025-03-15" },
+				{ "startDate": "2025-04-01", "endDate": "2025-04-07" },
+				{ "startDate": "2025-05-01", "endDate": "2025-05-05" }
+			],
+			"reviews": []
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a904",
+			"host": "64a0c48d7b8e6c0021b8a7e4",
+			"location": {
+				"county": "Gorj",
+				"city": "Rânca",
+				"commune": "Rânca",
+				"village": "Rânca",
+				"zipcode": "215300",
+				"coordinates": [23.7405, 45.3068],
+				"address": "654 Peak Road, Rânca"
+			},
+			"pricePerNight": 360,
+			"fees": 70.0,
+			"photos": [
+				"/listings/cabin-main.jpg",
+				"/listings/cabin-02.jpg",
+				"/listings/cabin-03.jpg",
+				"/listings/cabin-04.jpg"
+			],
+			"amenities": [
+				"WiFi",
+				"Wood Stove",
+				"Mountain View",
+				"Outdoor Hot Tub",
+				"BBQ Grill",
+				"Fully Equipped Kitchen",
+				"Washer/Dryer",
+				"Air Conditioning",
+				"Heating",
+				"Free Parking",
+				"Outdoor Dining Area",
+				"Fireplace",
+				"Smart TV",
+				"Coffee Maker",
+				"Dishwasher",
+				"Basic Toiletries",
+				"Hair Dryer",
+				"Outdoor Fire Pit",
+				"Board Games"
+			],
+			"rules": [
+				"No pets allowed",
+				"Quiet hours from 10 PM to 7 AM",
+				"No smoking inside the property",
+				"No parties or events",
+				"Guests must be registered",
+				"Do not disturb the neighbors",
+				"Use outdoor grill responsibly",
+				"Remove trash and recycling before departure",
+				"No shoes on the furniture"
+			],
+			"security": [
+				"Fire extinguisher in the kitchen",
+				"First aid kit in the bathroom",
+				"Lockable windows",
+				"Safe for valuables",
+				"Outdoor lighting",
+				"Smoke detectors",
+				"Carbon monoxide detectors",
+				"Emergency contact information provided"
+			],
+			"info": [
+				"Check-in time is 3 PM. Early check-in may be available upon request.",
+				"Check-out time is 11 AM. Late check-out may be arranged if available.",
+				"Free parking is available on the premises.",
+				"Local transportation info is available upon request.",
+				"Welcome pack includes local maps, guides, and a list of recommended restaurants.",
+				"The property is equipped with a local guidebook and emergency numbers."
+			],
+			"description": "This expansive cabin in Rânca offers incredible mountain views and a range of high-end amenities. Perfect for large groups seeking a luxurious mountain escape.",
+			"listingDetails": {
+				"bedrooms": 9,
+				"bathrooms": 6,
+				"beds": 20,
+				"maxGuests": 30
+			},
+			"blockedDates": [
+				{ "startDate": "2024-09-15", "endDate": "2024-09-22" },
+				{ "startDate": "2024-10-05", "endDate": "2024-10-12" },
+				{ "startDate": "2024-11-20", "endDate": "2024-11-30" },
+				{ "startDate": "2024-12-10", "endDate": "2024-12-17" },
+				{ "startDate": "2025-01-10", "endDate": "2025-01-17" },
+				{ "startDate": "2025-02-15", "endDate": "2025-02-22" },
+				{ "startDate": "2025-03-05", "endDate": "2025-03-10" },
+				{ "startDate": "2025-04-10", "endDate": "2025-04-15" },
+				{ "startDate": "2025-05-01", "endDate": "2025-05-05" }
+			],
+			"reviews": []
 		}
 	],
 
 	"reviews": [
 		{
-			"_id": "64a0c48d7b8e6c0021b8a7f1",
-			"listing": "64a0c48d7b8e6c0021b8a7d1",
+			"_id": "64a0c48d7b8e6c0021b8b101",
 			"user": "64a0c48d7b8e6c0021b8b001",
-			"rating": 5,
-			"comment": "Fantastic stay! Everything was perfect from start to finish."
+			"listing": "64a0c48d7b8e6c0021b8a8f1",
+			"rating": 1,
+			"comment": "I was highly disappointed with my stay. The cleanliness was terrible, and the pictures were misleading. The furniture was outdated, the bedding was uncomfortable, and there was a strange smell that lingered throughout the cabin. I was expecting a peaceful, relaxing vacation, but instead, I spent most of my time dealing with the inconveniences of the place. The water pressure was weak, making it difficult to shower, and there were plumbing issues. The remote location also meant that getting assistance was almost impossible. I reached out to the host multiple times, but communication was slow and unhelpful. This was not worth the money spent, and I wouldn't recommend it to anyone."
 		},
 		{
-			"_id": "64a0c48d7b8e6c0021b8a7f2",
-			"listing": "64a0c48d7b8e6c0021b8a7d1",
+			"_id": "64a0c48d7b8e6c0021b8b102",
 			"user": "64a0c48d7b8e6c0021b8b002",
-			"rating": 4,
-			"comment": "I had a very pleasant stay here. The property was clean and well-maintained, and the location was ideal for exploring the surrounding area. Although there were a few minor issues, such as the Wi-Fi being a bit slow and the noise from the street at night, these did not significantly impact my overall enjoyment. I would definitely consider staying here again in the future."
+			"listing": "64a0c48d7b8e6c0021b8a8f4",
+			"rating": 1,
+			"comment": "I was highly disappointed with my stay. The cleanliness was terrible, and the pictures were misleading. The furniture was outdated, the bedding was uncomfortable, and there was a strange smell that lingered throughout the cabin. I was expecting a peaceful, relaxing vacation, but instead, I spent most of my time dealing with the inconveniences of the place. The water pressure was weak, making it difficult to shower, and there were plumbing issues. The remote location also meant that getting assistance was almost impossible. I reached out to the host multiple times, but communication was slow and unhelpful. This was not worth the money spent, and I wouldn't recommend it to anyone."
 		},
 		{
-			"_id": "64a0c48d7b8e6c0021b8a7f3",
-			"listing": "64a0c48d7b8e6c0021b8a7d1",
+			"_id": "64a0c48d7b8e6c0021b8b103",
+			"user": "64a0c48d7b8e6c0021b8b003",
+			"listing": "64a0c48d7b8e6c0021b8a8f7",
+			"rating": 1,
+			"comment": "I was highly disappointed with my stay. The cleanliness was terrible, and the pictures were misleading. The furniture was outdated, the bedding was uncomfortable, and there was a strange smell that lingered throughout the cabin. I was expecting a peaceful, relaxing vacation, but instead, I spent most of my time dealing with the inconveniences of the place. The water pressure was weak, making it difficult to shower, and there were plumbing issues. The remote location also meant that getting assistance was almost impossible. I reached out to the host multiple times, but communication was slow and unhelpful. This was not worth the money spent, and I wouldn't recommend it to anyone."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b104",
+			"user": "64a0c48d7b8e6c0021b8b004",
+			"listing": "64a0c48d7b8e6c0021b8a8f2",
+			"rating": 1,
+			"comment": "Not worth the price. The location was remote and difficult to find, and the service was lacking. We had issues with the heating system, and the host wasn't available to assist. It felt like we were left on our own with no proper instructions or guidance on how to manage the place. The photos didn't reflect the reality of the cabin, which was quite rundown. We left earlier than planned because we couldn't enjoy the stay."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b105",
+			"user": "64a0c48d7b8e6c0021b8b005",
+			"listing": "64a0c48d7b8e6c0021b8a8f5",
+			"rating": 1,
+			"comment": "Not worth the price. The location was remote and difficult to find, and the service was lacking. We had issues with the heating system, and the host wasn't available to assist. It felt like we were left on our own with no proper instructions or guidance on how to manage the place. The photos didn't reflect the reality of the cabin, which was quite rundown. We left earlier than planned because we couldn't enjoy the stay."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b169",
+			"user": "64a0c48d7b8e6c0021b8b006",
+			"listing": "64a0c48d7b8e6c0021b8a8f9",
+			"rating": 1,
+			"comment": "Not worth the price. The location was remote and difficult to find, and the service was lacking. We had issues with the heating system, and the host wasn't available to assist. It felt like we were left on our own with no proper instructions or guidance on how to manage the place. The photos didn't reflect the reality of the cabin, which was quite rundown. We left earlier than planned because we couldn't enjoy the stay."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b106",
+			"user": "64a0c48d7b8e6c0021b8b007",
+			"listing": "64a0c48d7b8e6c0021b8a8f6",
+			"rating": 2,
+			"comment": "The amenities were below average, and the host wasn't very responsive to our concerns. The cabin lacked basic necessities like extra towels and kitchen supplies. Additionally, the Wi-Fi didn't work, which was a major inconvenience since we needed it for work. The cabin is in a beautiful location, but the lack of proper management made the stay uncomfortable. The place needs maintenance, and it was clear that it hadn't been cleaned properly before our arrival. I wouldn’t return unless some serious improvements were made."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b107",
+			"user": "64a0c48d7b8e6c0021b8b008",
+			"listing": "64a0c48d7b8e6c0021b8a8f8",
+			"rating": 2,
+			"comment": "The amenities were below average, and the host wasn't very responsive to our concerns. The cabin lacked basic necessities like extra towels and kitchen supplies. Additionally, the Wi-Fi didn't work, which was a major inconvenience since we needed it for work. The cabin is in a beautiful location, but the lack of proper management made the stay uncomfortable. The place needs maintenance, and it was clear that it hadn't been cleaned properly before our arrival. I wouldn’t return unless some serious improvements were made."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b170",
+			"user": "64a0c48d7b8e6c0021b8b009",
+			"listing": "64a0c48d7b8e6c0021b8a8f3",
+			"rating": 2,
+			"comment": "The amenities were below average, and the host wasn't very responsive to our concerns. The cabin lacked basic necessities like extra towels and kitchen supplies. Additionally, the Wi-Fi didn't work, which was a major inconvenience since we needed it for work. The cabin is in a beautiful location, but the lack of proper management made the stay uncomfortable. The place needs maintenance, and it was clear that it hadn't been cleaned properly before our arrival. I wouldn’t return unless some serious improvements were made."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b108",
+			"user": "64a0c48d7b8e6c0021b8b010",
+			"listing": "64a0c48d7b8e6c0021b8a8f7",
+			"rating": 2,
+			"comment": "While the surroundings were beautiful, the cabin itself needed maintenance. It was not clean enough, and some amenities were either broken or missing. The heater was malfunctioning during our stay, and we spent a couple of cold nights before it got fixed. The hot tub, which was one of the main reasons we chose this cabin, wasn't clean. It seemed like it hadn't been used in a while. We did manage to enjoy some parts of the trip, but overall, I can't recommend this place unless some improvements are made."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b109",
+			"user": "64a0c48d7b8e6c0021b8b011",
+			"listing": "64a0c48d7b8e6c0021b8a8f0",
+			"rating": 2,
+			"comment": "While the surroundings were beautiful, the cabin itself needed maintenance. It was not clean enough, and some amenities were either broken or missing. The heater was malfunctioning during our stay, and we spent a couple of cold nights before it got fixed. The hot tub, which was one of the main reasons we chose this cabin, wasn't clean. It seemed like it hadn't been used in a while. We did manage to enjoy some parts of the trip, but overall, I can't recommend this place unless some improvements are made."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b110",
+			"user": "64a0c48d7b8e6c0021b8b012",
+			"listing": "64a0c48d7b8e6c0021b8a8f4",
+			"rating": 2,
+			"comment": "While the surroundings were beautiful, the cabin itself needed maintenance. It was not clean enough, and some amenities were either broken or missing. The heater was malfunctioning during our stay, and we spent a couple of cold nights before it got fixed. The hot tub, which was one of the main reasons we chose this cabin, wasn't clean. It seemed like it hadn't been used in a while. We did manage to enjoy some parts of the trip, but overall, I can't recommend this place unless some improvements are made."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b111",
 			"user": "64a0c48d7b8e6c0021b8b001",
-			"rating": 5,
-			"comment": "My experience here was generally positive. The property had a charming decor and the staff were very friendly. However, there were a few inconveniences, such as a noisy air conditioner and limited parking space."
+			"listing": "64a0c48d7b8e6c0021b8a8f2",
+			"rating": 2,
+			"comment": "The location was picturesque, but the cabin wasn't as well-kept as expected. We faced several issues with cleanliness and the overall state of the cabin. The kitchen was poorly stocked, and the appliances were outdated. We found that some of the furniture was broken, and the bathroom needed some serious attention. The host was friendly, but there wasn't much they could do during our stay since it was peak season. We tried to make the best out of our vacation, but it didn’t meet our expectations."
 		},
 		{
-			"_id": "64a0c48d7b8e6c0021b8a7f4",
-			"listing": "64a0c48d7b8e6c0021b8a7d1",
+			"_id": "64a0c48d7b8e6c0021b8b112",
 			"user": "64a0c48d7b8e6c0021b8b002",
+			"listing": "64a0c48d7b8e6c0021b8a8f5",
+			"rating": 2,
+			"comment": "The location was picturesque, but the cabin wasn't as well-kept as expected. We faced several issues with cleanliness and the overall state of the cabin. The kitchen was poorly stocked, and the appliances were outdated. We found that some of the furniture was broken, and the bathroom needed some serious attention. The host was friendly, but there wasn't much they could do during our stay since it was peak season. We tried to make the best out of our vacation, but it didn’t meet our expectations."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b113",
+			"user": "64a0c48d7b8e6c0021b8b003",
+			"listing": "64a0c48d7b8e6c0021b8a8f9",
+			"rating": 2,
+			"comment": "The location was picturesque, but the cabin wasn't as well-kept as expected. We faced several issues with cleanliness and the overall state of the cabin. The kitchen was poorly stocked, and the appliances were outdated. We found that some of the furniture was broken, and the bathroom needed some serious attention. The host was friendly, but there wasn't much they could do during our stay since it was peak season. We tried to make the best out of our vacation, but it didn’t meet our expectations."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b114",
+			"user": "64a0c48d7b8e6c0021b8b004",
+			"listing": "64a0c48d7b8e6c0021b8a8f3",
 			"rating": 3,
-			"comment": "Great location and friendly staff. The room was clean and comfortable, though the Wi-Fi was slow."
+			"comment": "The place was decent, but we faced a few issues during our stay. The view was amazing, and we enjoyed the serene environment. However, the cabin itself needed a bit more care. The bed was not comfortable, and the kitchen lacked some essential utensils. There were also a few maintenance issues, like a leaky faucet and poor heating. The host was responsive and did their best to fix things, but it affected our experience. It’s a nice spot, but the management could improve the overall experience for guests."
 		},
 		{
-			"_id": "64a0c48d7b8e6c0021b8a7f5",
-			"listing": "64a0c48d7b8e6c0021b8a7d1",
-			"user": "64a0c48d7b8e6c0021b8b001",
-			"rating": 4,
-			"comment": "Overall, I had a good experience, but there were several areas for improvement. The location was excellent, and the room was comfortable with a lovely view. However, the amenities fell short of expectations, particularly the outdated bathroom fixtures and occasional disturbances from neighboring rooms. Despite these issues, the host's hospitality made the stay pleasant."
-		},
-		{
-			"_id": "64a0c48d7b8e6c0021b8a7f6",
-			"listing": "64a0c48d7b8e6c0021b8a7d1",
-			"user": "64a0c48d7b8e6c0021b8b002",
-			"rating": 5,
-			"comment": "I had a pleasant stay overall. The room was clean and well-maintained, but there were a few issues with the heating system and the shower was not as hot as I would have liked."
-		},
-		{
-			"_id": "64a0c48d7b8e6c0021b8a7f7",
-			"listing": "64a0c48d7b8e6c0021b8a7d1",
-			"user": "64a0c48d7b8e6c0021b8b001",
-			"rating": 4,
-			"comment": "The property was lovely, with a cozy atmosphere and great amenities. However, the noise from the street was a bit disruptive at night."
-		},
-		{
-			"_id": "64a0c48d7b8e6c0021b8a7f8",
-			"listing": "64a0c48d7b8e6c0021b8a7d1",
-			"user": "64a0c48d7b8e6c0021b8b002",
+			"_id": "64a0c48d7b8e6c0021b8b115",
+			"user": "64a0c48d7b8e6c0021b8b005",
+			"listing": "64a0c48d7b8e6c0021b8a8f1",
 			"rating": 3,
-			"comment": "The stay was average. While the location was decent and the staff was friendly, the overall experience left much to be desired. The room was not as clean as I would have liked, and the amenities were below my expectations. It served its purpose for a short stay, but I would likely look for other options in the future."
+			"comment": "The place was decent, but we faced a few issues during our stay. The view was amazing, and we enjoyed the serene environment. However, the cabin itself needed a bit more care. The bed was not comfortable, and the kitchen lacked some essential utensils. There were also a few maintenance issues, like a leaky faucet and poor heating. The host was responsive and did their best to fix things, but it affected our experience. It’s a nice spot, but the management could improve the overall experience for guests."
 		},
 		{
-			"_id": "64a0c48d7b8e6c0021b8a7f9",
-			"listing": "64a0c48d7b8e6c0021b8a7d1",
+			"_id": "64a0c48d7b8e6c0021b8b116",
+			"user": "64a0c48d7b8e6c0021b8b006",
+			"listing": "64a0c48d7b8e6c0021b8a8f6",
+			"rating": 3,
+			"comment": "The place was decent, but we faced a few issues during our stay. The view was amazing, and we enjoyed the serene environment. However, the cabin itself needed a bit more care. The bed was not comfortable, and the kitchen lacked some essential utensils. There were also a few maintenance issues, like a leaky faucet and poor heating. The host was responsive and did their best to fix things, but it affected our experience. It’s a nice spot, but the management could improve the overall experience for guests."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b117",
+			"user": "64a0c48d7b8e6c0021b8b007",
+			"listing": "64a0c48d7b8e6c0021b8a8f0",
+			"rating": 3,
+			"comment": "The cabin was comfortable enough, but it didn’t live up to the expectations set by the photos and description. It felt a bit outdated, and some areas were not as clean as they should have been. We also had an issue with the heating system, which took a while to be resolved. On the positive side, the surrounding nature was beautiful, and we enjoyed hiking in the area. I think with a little more effort from the host, this place could be great, but as it stands, it was just an average experience."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b118",
+			"user": "64a0c48d7b8e6c0021b8b008",
+			"listing": "64a0c48d7b8e6c0021b8a8f4",
+			"rating": 3,
+			"comment": "The cabin was comfortable enough, but it didn’t live up to the expectations set by the photos and description. It felt a bit outdated, and some areas were not as clean as they should have been. We also had an issue with the heating system, which took a while to be resolved. On the positive side, the surrounding nature was beautiful, and we enjoyed hiking in the area. I think with a little more effort from the host, this place could be great, but as it stands, it was just an average experience."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b119",
+			"user": "64a0c48d7b8e6c0021b8b009",
+			"listing": "64a0c48d7b8e6c0021b8a8f7",
+			"rating": 3,
+			"comment": "The cabin was comfortable enough, but it didn’t live up to the expectations set by the photos and description. It felt a bit outdated, and some areas were not as clean as they should have been. We also had an issue with the heating system, which took a while to be resolved. On the positive side, the surrounding nature was beautiful, and we enjoyed hiking in the area. I think with a little more effort from the host, this place could be great, but as it stands, it was just an average experience."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b120",
+			"user": "64a0c48d7b8e6c0021b8b010",
+			"listing": "64a0c48d7b8e6c0021b8a8f2",
+			"rating": 3,
+			"comment": "The cabin was okay, but not exceptional. The location was great for outdoor activities, but the interior of the cabin needed some updates. We found that the furniture was old, and the kitchen was poorly equipped. The cleanliness could have been better as well. However, the host was very responsive and friendly, which made our stay more pleasant. Overall, it wasn’t bad, but it could have been better."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b121",
+			"user": "64a0c48d7b8e6c0021b8b011",
+			"listing": "64a0c48d7b8e6c0021b8a8f5",
+			"rating": 3,
+			"comment": "The cabin was okay, but not exceptional. The location was great for outdoor activities, but the interior of the cabin needed some updates. We found that the furniture was old, and the kitchen was poorly equipped. The cleanliness could have been better as well. However, the host was very responsive and friendly, which made our stay more pleasant. Overall, it wasn’t bad, but it could have been better."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b122",
+			"user": "64a0c48d7b8e6c0021b8b012",
+			"listing": "64a0c48d7b8e6c0021b8a8f8",
+			"rating": 3,
+			"comment": "The cabin was okay, but not exceptional. The location was great for outdoor activities, but the interior of the cabin needed some updates. We found that the furniture was old, and the kitchen was poorly equipped. The cleanliness could have been better as well. However, the host was very responsive and friendly, which made our stay more pleasant. Overall, it wasn’t bad, but it could have been better."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b123",
 			"user": "64a0c48d7b8e6c0021b8b001",
-			"rating": 5,
-			"comment": "This was a great place for a weekend getaway. The host was incredibly welcoming and the room was beautifully decorated. The location was ideal for exploring the city. There were minor issues with the Wi-Fi and some noise from the hallway, but they were manageable."
+			"listing": "64a0c48d7b8e6c0021b8a8f9",
+			"rating": 3,
+			"comment": "Our stay was decent, but there were a few issues that held it back from being great. The cabin was cozy and the view was stunning, but the facilities were somewhat lacking. The bed was uncomfortable, and the bathroom could have been cleaner. We also had trouble with the Wi-Fi, which was frustrating as we needed it for work. The host was friendly and tried to help, but the experience fell short of what we were expecting."
 		},
 		{
-			"_id": "64a0c48d7b8e6c0021b8a7fa",
-			"listing": "64a0c48d7b8e6c0021b8a7d1",
+			"_id": "64a0c48d7b8e6c0021b8b124",
 			"user": "64a0c48d7b8e6c0021b8b002",
+			"listing": "64a0c48d7b8e6c0021b8a8f3",
+			"rating": 3,
+			"comment": "Our stay was decent, but there were a few issues that held it back from being great. The cabin was cozy and the view was stunning, but the facilities were somewhat lacking. The bed was uncomfortable, and the bathroom could have been cleaner. We also had trouble with the Wi-Fi, which was frustrating as we needed it for work. The host was friendly and tried to help, but the experience fell short of what we were expecting."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b125",
+			"user": "64a0c48d7b8e6c0021b8b003",
+			"listing": "64a0c48d7b8e6c0021b8a8f7",
+			"rating": 3,
+			"comment": "Our stay was decent, but there were a few issues that held it back from being great. The cabin was cozy and the view was stunning, but the facilities were somewhat lacking. The bed was uncomfortable, and the bathroom could have been cleaner. We also had trouble with the Wi-Fi, which was frustrating as we needed it for work. The host was friendly and tried to help, but the experience fell short of what we were expecting."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b126",
+			"user": "64a0c48d7b8e6c0021b8b004",
+			"listing": "64a0c48d7b8e6c0021b8a8f1",
+			"rating": 3,
+			"comment": "Overall, it was an okay stay. The location was ideal for hiking and exploring the outdoors, but the cabin itself was a bit run-down. The bed was not very comfortable, and we found a few maintenance issues like a leaky sink. The host was kind and responsive, but there’s definitely room for improvement. It wasn’t a bad experience, but it didn’t quite live up to our expectations."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b127",
+			"user": "64a0c48d7b8e6c0021b8b005",
+			"listing": "64a0c48d7b8e6c0021b8a8f0",
+			"rating": 3,
+			"comment": "Overall, it was an okay stay. The location was ideal for hiking and exploring the outdoors, but the cabin itself was a bit run-down. The bed was not very comfortable, and we found a few maintenance issues like a leaky sink. The host was kind and responsive, but there’s definitely room for improvement. It wasn’t a bad experience, but it didn’t quite live up to our expectations."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b128",
+			"user": "64a0c48d7b8e6c0021b8b006",
+			"listing": "64a0c48d7b8e6c0021b8a8f4",
+			"rating": 3,
+			"comment": "Overall, it was an okay stay. The location was ideal for hiking and exploring the outdoors, but the cabin itself was a bit run-down. The bed was not very comfortable, and we found a few maintenance issues like a leaky sink. The host was kind and responsive, but there’s definitely room for improvement. It wasn’t a bad experience, but it didn’t quite live up to our expectations."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b129",
+			"user": "64a0c48d7b8e6c0021b8b007",
+			"listing": "64a0c48d7b8e6c0021b8a8f6",
 			"rating": 4,
-			"comment": "Overall, my stay was very enjoyable. The property was well-maintained, and the amenities provided were satisfactory. The host was friendly and accommodating, and the location was convenient. There were a few minor issues, such as the noise from neighboring rooms, but these did not overshadow the positive aspects of the stay. I would definitely stay here again and recommend it to others."
+			"comment": "The cabin provided us with a cozy and comfortable experience. The views of the surrounding mountains were breathtaking, and the location was ideal for anyone looking to get away from the hustle and bustle of city life. The place was clean and had all the basic amenities we needed. There were a few small issues, like the Wi-Fi connection being spotty at times and the heating taking a little while to kick in. However, these were minor inconveniences in an otherwise pleasant stay. We especially enjoyed the firepit outside, where we spent our evenings. I would recommend this place for a peaceful and scenic retreat."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b130",
+			"user": "64a0c48d7b8e6c0021b8b008",
+			"listing": "64a0c48d7b8e6c0021b8a8f2",
+			"rating": 4,
+			"comment": "The cabin provided us with a cozy and comfortable experience. The views of the surrounding mountains were breathtaking, and the location was ideal for anyone looking to get away from the hustle and bustle of city life. The place was clean and had all the basic amenities we needed. There were a few small issues, like the Wi-Fi connection being spotty at times and the heating taking a little while to kick in. However, these were minor inconveniences in an otherwise pleasant stay. We especially enjoyed the firepit outside, where we spent our evenings. I would recommend this place for a peaceful and scenic retreat."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b131",
+			"user": "64a0c48d7b8e6c0021b8b009",
+			"listing": "64a0c48d7b8e6c0021b8a8f5",
+			"rating": 4,
+			"comment": "The cabin provided us with a cozy and comfortable experience. The views of the surrounding mountains were breathtaking, and the location was ideal for anyone looking to get away from the hustle and bustle of city life. The place was clean and had all the basic amenities we needed. There were a few small issues, like the Wi-Fi connection being spotty at times and the heating taking a little while to kick in. However, these were minor inconveniences in an otherwise pleasant stay. We especially enjoyed the firepit outside, where we spent our evenings. I would recommend this place for a peaceful and scenic retreat."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b132",
+			"user": "64a0c48d7b8e6c0021b8b010",
+			"listing": "64a0c48d7b8e6c0021b8a8f8",
+			"rating": 4,
+			"comment": "The cabin was very comfortable and well-suited for our group of friends. We spent a lot of time exploring the nearby trails and loved the natural beauty surrounding the property. Inside, the cabin was clean and cozy, though the kitchen could use a few more utensils and supplies. The fireplace was a nice touch, and we enjoyed gathering around it in the evenings. The Wi-Fi was a bit slow, but it wasn’t a major issue for us since we were there to disconnect and enjoy nature. Overall, it was a great experience, and we would come back."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b133",
+			"user": "64a0c48d7b8e6c0021b8b011",
+			"listing": "64a0c48d7b8e6c0021b8a8f9",
+			"rating": 4,
+			"comment": "The cabin was very comfortable and well-suited for our group of friends. We spent a lot of time exploring the nearby trails and loved the natural beauty surrounding the property. Inside, the cabin was clean and cozy, though the kitchen could use a few more utensils and supplies. The fireplace was a nice touch, and we enjoyed gathering around it in the evenings. The Wi-Fi was a bit slow, but it wasn’t a major issue for us since we were there to disconnect and enjoy nature. Overall, it was a great experience, and we would come back."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b134",
+			"user": "64a0c48d7b8e6c0021b8b012",
+			"listing": "64a0c48d7b8e6c0021b8a8f7",
+			"rating": 4,
+			"comment": "The cabin was very comfortable and well-suited for our group of friends. We spent a lot of time exploring the nearby trails and loved the natural beauty surrounding the property. Inside, the cabin was clean and cozy, though the kitchen could use a few more utensils and supplies. The fireplace was a nice touch, and we enjoyed gathering around it in the evenings. The Wi-Fi was a bit slow, but it wasn’t a major issue for us since we were there to disconnect and enjoy nature. Overall, it was a great experience, and we would come back."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b135",
+			"user": "64a0c48d7b8e6c0021b8b011",
+			"listing": "64a0c48d7b8e6c0021b8a8f3",
+			"rating": 4,
+			"comment": "We had a wonderful time at the cabin. The location was beautiful, with stunning views of the mountains and a peaceful, quiet atmosphere. The cabin itself was clean and well-kept, though we did encounter a few minor issues, such as the heating system taking some time to warm up. The host was responsive and helpful, quickly addressing any concerns we had. One of the highlights of our trip was using the hot tub, which was perfectly situated to take in the views. Overall, a great experience that we would definitely recommend to others."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b136",
+			"user": "64a0c48d7b8e6c0021b8b001",
+			"listing": "64a0c48d7b8e6c0021b8a8f1",
+			"rating": 4,
+			"comment": "We had a wonderful time at the cabin. The location was beautiful, with stunning views of the mountains and a peaceful, quiet atmosphere. The cabin itself was clean and well-kept, though we did encounter a few minor issues, such as the heating system taking some time to warm up. The host was responsive and helpful, quickly addressing any concerns we had. One of the highlights of our trip was using the hot tub, which was perfectly situated to take in the views. Overall, a great experience that we would definitely recommend to others."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b137",
+			"user": "64a0c48d7b8e6c0021b8b002",
+			"listing": "64a0c48d7b8e6c0021b8a8f4",
+			"rating": 4,
+			"comment": "We had a wonderful time at the cabin. The location was beautiful, with stunning views of the mountains and a peaceful, quiet atmosphere. The cabin itself was clean and well-kept, though we did encounter a few minor issues, such as the heating system taking some time to warm up. The host was responsive and helpful, quickly addressing any concerns we had. One of the highlights of our trip was using the hot tub, which was perfectly situated to take in the views. Overall, a great experience that we would definitely recommend to others."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b138",
+			"user": "64a0c48d7b8e6c0021b8b003",
+			"listing": "64a0c48d7b8e6c0021b8a8f6",
+			"rating": 4,
+			"comment": "The cabin was a wonderful place to escape for the weekend. We loved the rustic feel of the place, and it had everything we needed for a comfortable stay. The location was ideal for hiking and outdoor activities, and we were able to enjoy the beautiful scenery. The only downside was that the cabin could use a bit of updating, especially the kitchen appliances and the bathroom. But overall, we had a fantastic time and would consider coming back in the future."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b139",
+			"user": "64a0c48d7b8e6c0021b8b004",
+			"listing": "64a0c48d7b8e6c0021b8a8f2",
+			"rating": 4,
+			"comment": "We had a very pleasant stay at the cabin. The surroundings were stunning, and the cabin itself was well-furnished and cozy. The host was attentive and made sure that we had everything we needed. We spent a lot of time by the fireplace, which added to the cozy atmosphere. The kitchen was well-equipped, although we wished there were more pots and pans for cooking. The Wi-Fi wasn’t the best, but it didn’t matter too much because we spent most of our time outdoors. Overall, it was a great stay and we would definitely recommend it to others."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b140",
+			"user": "64a0c48d7b8e6c0021b8b005",
+			"listing": "64a0c48d7b8e6c0021b8a8f5",
+			"rating": 4,
+			"comment": "We had a very pleasant stay at the cabin. The surroundings were stunning, and the cabin itself was well-furnished and cozy. The host was attentive and made sure that we had everything we needed. We spent a lot of time by the fireplace, which added to the cozy atmosphere. The kitchen was well-equipped, although we wished there were more pots and pans for cooking. The Wi-Fi wasn’t the best, but it didn’t matter too much because we spent most of our time outdoors. Overall, it was a great stay and we would definitely recommend it to others."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b141",
+			"user": "64a0c48d7b8e6c0021b8b006",
+			"listing": "64a0c48d7b8e6c0021b8a8f9",
+			"rating": 4,
+			"comment": "We had a very pleasant stay at the cabin. The surroundings were stunning, and the cabin itself was well-furnished and cozy. The host was attentive and made sure that we had everything we needed. We spent a lot of time by the fireplace, which added to the cozy atmosphere. The kitchen was well-equipped, although we wished there were more pots and pans for cooking. The Wi-Fi wasn’t the best, but it didn’t matter too much because we spent most of our time outdoors. Overall, it was a great stay and we would definitely recommend it to others."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b142",
+			"user": "64a0c48d7b8e6c0021b8b007",
+			"listing": "64a0c48d7b8e6c0021b8a8f8",
+			"rating": 4,
+			"comment": "We really enjoyed our stay at the cabin. The place was clean and had a very cozy feel to it. The views from the porch were stunning, especially in the early mornings. The cabin was well-stocked with basic supplies, though we would have appreciated a few more kitchen tools for cooking. We did run into a small issue with the heating, but the host was quick to respond and had it fixed in no time. All in all, it was a great experience, and we’re already planning to come back next year."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b143",
+			"user": "64a0c48d7b8e6c0021b8b008",
+			"listing": "64a0c48d7b8e6c0021b8a8f3",
+			"rating": 4,
+			"comment": "We really enjoyed our stay at the cabin. The place was clean and had a very cozy feel to it. The views from the porch were stunning, especially in the early mornings. The cabin was well-stocked with basic supplies, though we would have appreciated a few more kitchen tools for cooking. We did run into a small issue with the heating, but the host was quick to respond and had it fixed in no time. All in all, it was a great experience, and we’re already planning to come back next year."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b144",
+			"user": "64a0c48d7b8e6c0021b8b009",
+			"listing": "64a0c48d7b8e6c0021b8a8f7",
+			"rating": 4,
+			"comment": "We really enjoyed our stay at the cabin. The place was clean and had a very cozy feel to it. The views from the porch were stunning, especially in the early mornings. The cabin was well-stocked with basic supplies, though we would have appreciated a few more kitchen tools for cooking. We did run into a small issue with the heating, but the host was quick to respond and had it fixed in no time. All in all, it was a great experience, and we’re already planning to come back next year."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b145",
+			"user": "64a0c48d7b8e6c0021b8b010",
+			"listing": "64a0c48d7b8e6c0021b8a8f1",
+			"rating": 4,
+			"comment": "We had a relaxing stay at this cabin. The location is excellent for those who love nature and want to spend some time away from the city. The cabin was clean and had all the basic amenities we needed. The Wi-Fi wasn’t the best, and the kitchen could use a bit of updating, but those were minor issues in an otherwise great experience. The host was very responsive and provided helpful suggestions for local activities. Overall, we had a wonderful time, and we would definitely recommend this place."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b146",
+			"user": "64a0c48d7b8e6c0021b8b011",
+			"listing": "64a0c48d7b8e6c0021b8a8f6",
+			"rating": 4,
+			"comment": "We had a relaxing stay at this cabin. The location is excellent for those who love nature and want to spend some time away from the city. The cabin was clean and had all the basic amenities we needed. The Wi-Fi wasn’t the best, and the kitchen could use a bit of updating, but those were minor issues in an otherwise great experience. The host was very responsive and provided helpful suggestions for local activities. Overall, we had a wonderful time, and we would definitely recommend this place."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b147",
+			"user": "64a0c48d7b8e6c0021b8b012",
+			"listing": "64a0c48d7b8e6c0021b8a8f2",
+			"rating": 4,
+			"comment": "We had a relaxing stay at this cabin. The location is excellent for those who love nature and want to spend some time away from the city. The cabin was clean and had all the basic amenities we needed. The Wi-Fi wasn’t the best, and the kitchen could use a bit of updating, but those were minor issues in an otherwise great experience. The host was very responsive and provided helpful suggestions for local activities. Overall, we had a wonderful time, and we would definitely recommend this place."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b148",
+			"user": "64a0c48d7b8e6c0021b8b001",
+			"listing": "64a0c48d7b8e6c0021b8a8f5",
+			"rating": 5,
+			"comment": "This cabin exceeded our expectations! From the moment we arrived, we were blown away by the views and the peaceful atmosphere. The cabin was incredibly clean and had everything we needed for a comfortable stay. The fireplace was a perfect touch, and we spent our evenings enjoying the warmth and coziness. The kitchen was well-stocked with all the basics, and we had no issues cooking our meals. The host was fantastic and provided us with great recommendations for local hikes and activities. We will definitely be returning!"
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b149",
+			"user": "64a0c48d7b8e6c0021b8b002",
+			"listing": "64a0c48d7b8e6c0021b8a8f9",
+			"rating": 5,
+			"comment": "This cabin exceeded our expectations! From the moment we arrived, we were blown away by the views and the peaceful atmosphere. The cabin was incredibly clean and had everything we needed for a comfortable stay. The fireplace was a perfect touch, and we spent our evenings enjoying the warmth and coziness. The kitchen was well-stocked with all the basics, and we had no issues cooking our meals. The host was fantastic and provided us with great recommendations for local hikes and activities. We will definitely be returning!"
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b150",
+			"user": "64a0c48d7b8e6c0021b8b003",
+			"listing": "64a0c48d7b8e6c0021b8a8f7",
+			"rating": 5,
+			"comment": "This cabin exceeded our expectations! From the moment we arrived, we were blown away by the views and the peaceful atmosphere. The cabin was incredibly clean and had everything we needed for a comfortable stay. The fireplace was a perfect touch, and we spent our evenings enjoying the warmth and coziness. The kitchen was well-stocked with all the basics, and we had no issues cooking our meals. The host was fantastic and provided us with great recommendations for local hikes and activities. We will definitely be returning!"
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b151",
+			"user": "64a0c48d7b8e6c0021b8b004",
+			"listing": "64a0c48d7b8e6c0021b8a8f3",
+			"rating": 5,
+			"comment": "What an amazing place! The cabin was cozy, clean, and perfectly situated to offer stunning views of the mountains. We loved the peaceful surroundings and spent most of our time exploring the nearby trails. Inside, the cabin had everything we needed, from a well-equipped kitchen to comfortable beds. The fireplace added a charming touch, and we enjoyed relaxing by it in the evenings. The host was incredibly accommodating and made sure we had everything we needed. We couldn’t have asked for a better stay."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b152",
+			"user": "64a0c48d7b8e6c0021b8b005",
+			"listing": "64a0c48d7b8e6c0021b8a8f4",
+			"rating": 5,
+			"comment": "What an amazing place! The cabin was cozy, clean, and perfectly situated to offer stunning views of the mountains. We loved the peaceful surroundings and spent most of our time exploring the nearby trails. Inside, the cabin had everything we needed, from a well-equipped kitchen to comfortable beds. The fireplace added a charming touch, and we enjoyed relaxing by it in the evenings. The host was incredibly accommodating and made sure we had everything we needed. We couldn’t have asked for a better stay."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b153",
+			"user": "64a0c48d7b8e6c0021b8b006",
+			"listing": "64a0c48d7b8e6c0021b8a8f0",
+			"rating": 5,
+			"comment": "What an amazing place! The cabin was cozy, clean, and perfectly situated to offer stunning views of the mountains. We loved the peaceful surroundings and spent most of our time exploring the nearby trails. Inside, the cabin had everything we needed, from a well-equipped kitchen to comfortable beds. The fireplace added a charming touch, and we enjoyed relaxing by it in the evenings. The host was incredibly accommodating and made sure we had everything we needed. We couldn’t have asked for a better stay."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b154",
+			"user": "64a0c48d7b8e6c0021b8b007",
+			"listing": "64a0c48d7b8e6c0021b8a8f2",
+			"rating": 5,
+			"comment": "This was one of the best getaways we’ve had in a long time. The cabin was in pristine condition, with beautiful wood accents and a cozy fireplace that made the evenings magical. We loved the secluded location, which offered stunning views of the surrounding forest and mountains. The cabin was also equipped with everything we needed, from comfortable beds to a fully stocked kitchen. The host went above and beyond to ensure that our stay was perfect. We highly recommend this place and can’t wait to return!"
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b155",
+			"user": "64a0c48d7b8e6c0021b8b008",
+			"listing": "64a0c48d7b8e6c0021b8a8f6",
+			"rating": 5,
+			"comment": "This was one of the best getaways we’ve had in a long time. The cabin was in pristine condition, with beautiful wood accents and a cozy fireplace that made the evenings magical. We loved the secluded location, which offered stunning views of the surrounding forest and mountains. The cabin was also equipped with everything we needed, from comfortable beds to a fully stocked kitchen. The host went above and beyond to ensure that our stay was perfect. We highly recommend this place and can’t wait to return!"
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b156",
+			"user": "64a0c48d7b8e6c0021b8b009",
+			"listing": "64a0c48d7b8e6c0021b8a8f1",
+			"rating": 5,
+			"comment": "This was one of the best getaways we’ve had in a long time. The cabin was in pristine condition, with beautiful wood accents and a cozy fireplace that made the evenings magical. We loved the secluded location, which offered stunning views of the surrounding forest and mountains. The cabin was also equipped with everything we needed, from comfortable beds to a fully stocked kitchen. The host went above and beyond to ensure that our stay was perfect. We highly recommend this place and can’t wait to return!"
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b157",
+			"user": "64a0c48d7b8e6c0021b8b010",
+			"listing": "64a0c48d7b8e6c0021b8a8f5",
+			"rating": 5,
+			"comment": "We had an unforgettable experience at this cabin. The place was spotless, cozy, and very well-appointed. The views from the cabin were breathtaking, especially in the mornings when the mist covered the mountains. The hot tub was a fantastic addition, and we spent a lot of time relaxing in it. The kitchen was well-stocked, making it easy for us to cook our meals. The host was wonderful and provided us with great recommendations for local activities. We will definitely be coming back!"
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b158",
+			"user": "64a0c48d7b8e6c0021b8b011",
+			"listing": "64a0c48d7b8e6c0021b8a8f9",
+			"rating": 5,
+			"comment": "We had an unforgettable experience at this cabin. The place was spotless, cozy, and very well-appointed. The views from the cabin were breathtaking, especially in the mornings when the mist covered the mountains. The hot tub was a fantastic addition, and we spent a lot of time relaxing in it. The kitchen was well-stocked, making it easy for us to cook our meals. The host was wonderful and provided us with great recommendations for local activities. We will definitely be coming back!"
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b159",
+			"user": "64a0c48d7b8e6c0021b8b012",
+			"listing": "64a0c48d7b8e6c0021b8a8f2",
+			"rating": 5,
+			"comment": "We had an unforgettable experience at this cabin. The place was spotless, cozy, and very well-appointed. The views from the cabin were breathtaking, especially in the mornings when the mist covered the mountains. The hot tub was a fantastic addition, and we spent a lot of time relaxing in it. The kitchen was well-stocked, making it easy for us to cook our meals. The host was wonderful and provided us with great recommendations for local activities. We will definitely be coming back!"
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b160",
+			"user": "64a0c48d7b8e6c0021b8b001",
+			"listing": "64a0c48d7b8e6c0021b8a8f7",
+			"rating": 5,
+			"comment": "An absolute gem! The cabin was perfectly located in a peaceful area with stunning views. We loved how cozy and welcoming it felt, with everything we needed for a relaxing stay. The beds were incredibly comfortable, and the fireplace added a nice touch of warmth. We also enjoyed the outdoor seating area, where we spent our mornings drinking coffee and taking in the view. The host was amazing, providing us with clear instructions and recommendations for things to do in the area. We couldn’t have asked for a better place to stay."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b161",
+			"user": "64a0c48d7b8e6c0021b8b002",
+			"listing": "64a0c48d7b8e6c0021b8a8f4",
+			"rating": 5,
+			"comment": "An absolute gem! The cabin was perfectly located in a peaceful area with stunning views. We loved how cozy and welcoming it felt, with everything we needed for a relaxing stay. The beds were incredibly comfortable, and the fireplace added a nice touch of warmth. We also enjoyed the outdoor seating area, where we spent our mornings drinking coffee and taking in the view. The host was amazing, providing us with clear instructions and recommendations for things to do in the area. We couldn’t have asked for a better place to stay."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b162",
+			"user": "64a0c48d7b8e6c0021b8b003",
+			"listing": "64a0c48d7b8e6c0021b8a8f6",
+			"rating": 5,
+			"comment": "An absolute gem! The cabin was perfectly located in a peaceful area with stunning views. We loved how cozy and welcoming it felt, with everything we needed for a relaxing stay. The beds were incredibly comfortable, and the fireplace added a nice touch of warmth. We also enjoyed the outdoor seating area, where we spent our mornings drinking coffee and taking in the view. The host was amazing, providing us with clear instructions and recommendations for things to do in the area. We couldn’t have asked for a better place to stay."
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b163",
+			"user": "64a0c48d7b8e6c0021b8b004",
+			"listing": "64a0c48d7b8e6c0021b8a8f2",
+			"rating": 5,
+			"comment": "What a fantastic stay! The cabin was beautiful and located in a perfect spot for hiking and exploring nature. We loved the peaceful atmosphere and the stunning views from the porch. The cabin was clean and had all the essentials we needed for a comfortable stay. The fireplace was a lovely addition, and we spent our evenings cozied up in front of it. The host was very helpful and made sure we had everything we needed for a great stay. We will definitely be coming back!"
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b164",
+			"user": "64a0c48d7b8e6c0021b8b005",
+			"listing": "64a0c48d7b8e6c0021b8a8f9",
+			"rating": 5,
+			"comment": "What a fantastic stay! The cabin was beautiful and located in a perfect spot for hiking and exploring nature. We loved the peaceful atmosphere and the stunning views from the porch. The cabin was clean and had all the essentials we needed for a comfortable stay. The fireplace was a lovely addition, and we spent our evenings cozied up in front of it. The host was very helpful and made sure we had everything we needed for a great stay. We will definitely be coming back!"
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b165",
+			"user": "64a0c48d7b8e6c0021b8b006",
+			"listing": "64a0c48d7b8e6c0021b8a8f5",
+			"rating": 5,
+			"comment": "What a fantastic stay! The cabin was beautiful and located in a perfect spot for hiking and exploring nature. We loved the peaceful atmosphere and the stunning views from the porch. The cabin was clean and had all the essentials we needed for a comfortable stay. The fireplace was a lovely addition, and we spent our evenings cozied up in front of it. The host was very helpful and made sure we had everything we needed for a great stay. We will definitely be coming back!"
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b166",
+			"user": "64a0c48d7b8e6c0021b8b007",
+			"listing": "64a0c48d7b8e6c0021b8a8f3",
+			"rating": 5,
+			"comment": "This cabin was absolutely perfect! We couldn’t have asked for a better place to relax and unwind. The location was quiet and secluded, offering beautiful views of the surrounding nature. The cabin itself was clean, cozy, and had everything we needed. The host was extremely friendly and made sure we were well taken care of. We loved spending our evenings by the fireplace and our mornings on the porch with a cup of coffee. We’re already planning our next trip back!"
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b167",
+			"user": "64a0c48d7b8e6c0021b8b008",
+			"listing": "64a0c48d7b8e6c0021b8a8f1",
+			"rating": 5,
+			"comment": "This cabin was absolutely perfect! We couldn’t have asked for a better place to relax and unwind. The location was quiet and secluded, offering beautiful views of the surrounding nature. The cabin itself was clean, cozy, and had everything we needed. The host was extremely friendly and made sure we were well taken care of. We loved spending our evenings by the fireplace and our mornings on the porch with a cup of coffee. We’re already planning our next trip back!"
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8b168",
+			"user": "64a0c48d7b8e6c0021b8b009",
+			"listing": "64a0c48d7b8e6c0021b8a8f7",
+			"rating": 5,
+			"comment": "This cabin was absolutely perfect! We couldn’t have asked for a better place to relax and unwind. The location was quiet and secluded, offering beautiful views of the surrounding nature. The cabin itself was clean, cozy, and had everything we needed. The host was extremely friendly and made sure we were well taken care of. We loved spending our evenings by the fireplace and our mornings on the porch with a cup of coffee. We’re already planning our next trip back!"
 		}
 	],
 
 	"bookings": [
 		{
-			"_id": "64b3c8f9d0a7b58d1f27a001",
-			"user": "64a0c48d7b8e6c0021b8a000",
-			"listing": "64a0c48d7b8e6c0021b8a7d1",
-			"startDate": "2024-09-15T00:00:00.000Z",
-			"endDate": "2024-09-20T00:00:00.000Z",
-			"totalPrice": 600
+			"_id": "64a0c48d7b8e6c0021b8a800",
+			"user": "64a0c48d7b8e6c0021b8a7d0",
+			"listing": "64a0c48d7b8e6c0021b8a8f1",
+			"startDate": "2024-10-01T00:00:00.000Z",
+			"endDate": "2024-10-07T00:00:00.000Z",
+			"totalPrice": 1450,
+			"specialRequests": "No special requests"
 		},
 		{
-			"_id": "64b3c8f9d0a7b58d1f27a002",
-			"user": "64a0c48d7b8e6c0021b8a000",
-			"listing": "64a0c48d7b8e6c0021b8a7d1",
-			"startDate": "2024-10-05T00:00:00.000Z",
-			"endDate": "2024-10-10T00:00:00.000Z",
-			"totalPrice": 700
+			"_id": "64a0c48d7b8e6c0021b8a801",
+			"user": "64a0c48d7b8e6c0021b8a7d0",
+			"listing": "64a0c48d7b8e6c0021b8a8f3",
+			"startDate": "2024-10-10T00:00:00.000Z",
+			"endDate": "2024-10-15T00:00:00.000Z",
+			"totalPrice": 800,
+			"specialRequests": "Early check-in requested"
 		},
 		{
-			"_id": "64b3c8f9d0a7b58d1f27a003",
-			"user": "64a0c48d7b8e6c0021b8a000",
-			"listing": "64a0c48d7b8e6c0021b8a7d1",
-			"startDate": "2024-12-24T00:00:00.000Z",
-			"endDate": "2024-12-27T00:00:00.000Z",
-			"totalPrice": 400
+			"_id": "64a0c48d7b8e6c0021b8a802",
+			"user": "64a0c48d7b8e6c0021b8a7d0",
+			"listing": "64a0c48d7b8e6c0021b8a8f4",
+			"startDate": "2024-11-01T00:00:00.000Z",
+			"endDate": "2024-11-05T00:00:00.000Z",
+			"totalPrice": 440,
+			"specialRequests": "Extra pillows needed"
 		},
 		{
-			"_id": "64b3c8f9d0a7b58d1f27a004",
-			"user": "64a0c48d7b8e6c0021b8a000",
-			"listing": "64a0c48d7b8e6c0021b8a7d1",
+			"_id": "64a0c48d7b8e6c0021b8a803",
+			"user": "64a0c48d7b8e6c0021b8a7d0",
+			"listing": "64a0c48d7b8e6c0021b8a8fb",
+			"startDate": "2024-11-10T00:00:00.000Z",
+			"endDate": "2024-11-12T00:00:00.000Z",
+			"totalPrice": 1240,
+			"specialRequests": "Late check-out requested"
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a804",
+			"user": "64a0c48d7b8e6c0021b8a7d0",
+			"listing": "64a0c48d7b8e6c0021b8a8fc",
+			"startDate": "2024-12-01T00:00:00.000Z",
+			"endDate": "2024-12-10T00:00:00.000Z",
+			"totalPrice": 760,
+			"specialRequests": "No smoking in the room"
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a805",
+			"user": "64a0c48d7b8e6c0021b8a7d0",
+			"listing": "64a0c48d7b8e6c0021b8a8f7",
+			"startDate": "2024-12-15T00:00:00.000Z",
+			"endDate": "2024-12-20T00:00:00.000Z",
+			"totalPrice": 530,
+			"specialRequests": "Allergy-friendly room"
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a806",
+			"user": "64a0c48d7b8e6c0021b8a7d0",
+			"listing": "64a0c48d7b8e6c0021b8a8f2",
+			"startDate": "2024-12-25T00:00:00.000Z",
+			"endDate": "2024-12-30T00:00:00.000Z",
+			"totalPrice": 700,
+			"specialRequests": "Champagne on arrival"
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a807",
+			"user": "64a0c48d7b8e6c0021b8a7d0",
+			"listing": "64a0c48d7b8e6c0021b8a8f8",
+			"startDate": "2024-12-31T00:00:00.000Z",
+			"endDate": "2025-01-02T00:00:00.000Z",
+			"totalPrice": 1420,
+			"specialRequests": "New Year's Eve package"
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a808",
+			"user": "64a0c48d7b8e6c0021b8a7d0",
+			"listing": "64a0c48d7b8e6c0021b8a8ff",
 			"startDate": "2025-01-10T00:00:00.000Z",
 			"endDate": "2025-01-15T00:00:00.000Z",
-			"totalPrice": 550
+			"totalPrice": 420,
+			"specialRequests": "Vegetarian meal options"
 		},
 		{
-			"_id": "64b3c8f9d0a7b58d1f27a005",
-			"user": "64a0c48d7b8e6c0021b8a000",
-			"listing": "64a0c48d7b8e6c0021b8a7d1",
-			"startDate": "2025-03-05T00:00:00.000Z",
-			"endDate": "2025-03-10T00:00:00.000Z",
-			"totalPrice": 750
+			"_id": "64a0c48d7b8e6c0021b8a809",
+			"user": "64a0c48d7b8e6c0021b8a7d0",
+			"listing": "64a0c48d7b8e6c0021b8a902",
+			"startDate": "2025-02-01T00:00:00.000Z",
+			"endDate": "2025-02-05T00:00:00.000Z",
+			"totalPrice": 320,
+			"specialRequests": "Pet-friendly room"
+		},
+		{
+			"_id": "64a0c48d7b8e6c0021b8a80a",
+			"user": "64a0c48d7b8e6c0021b8a7d0",
+			"listing": "64a0c48d7b8e6c0021b8a900",
+			"startDate": "2025-02-15T00:00:00.000Z",
+			"endDate": "2025-02-20T00:00:00.000Z",
+			"totalPrice": 380,
+			"specialRequests": "Room with a view"
 		}
 	]
 }

@@ -23,11 +23,11 @@ const userSchema = new mongoose.Schema(
 		},
 		phoneNumber: {
 			type: String,
-			validate: {
-				validator: (v) =>
-					validator.isMobilePhone(v, "any", { strictMode: false }),
-				message: "Invalid phone number",
-			},
+			// validate: {
+			// 	validator: (v) =>
+			// 		validator.isMobilePhone(v, "any", { strictMode: false }),
+			// 	message: "Invalid phone number",
+			// },
 		},
 		photo: {
 			type: String,

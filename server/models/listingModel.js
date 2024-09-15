@@ -42,15 +42,6 @@ const listingSchema = new mongoose.Schema(
 		fees: {
 			type: Number,
 		},
-		discount: {
-			type: Number,
-			validate: {
-				validator: function (value) {
-					return value == null || value < this.pricePerNight;
-				},
-				message: "Discount must be less than the price per night",
-			},
-		},
 		photos: [String],
 		amenities: [String],
 		rules: [String],
@@ -90,23 +81,7 @@ const listingSchema = new mongoose.Schema(
 				endDate: { type: Date, required: true },
 			},
 		],
-		reviews: [
-			{
-				type: mongoose.Schema.ObjectId,
-				ref: "Review",
-			},
-		],
-		ratingsAverage: {
-			type: Number,
-			default: 0,
-			min: [1, "Rating must be above 1"],
-			max: [5, "Rating must be below 5"],
-			set: (val) => Math.round(val * 10) / 10,
-		},
-		ratingsQuantity: {
-			type: Number,
-			default: 0,
-		},
+		reviews: [{ type: mongoose.Schema.ObjectId, ref: "Review" }],
 	},
 	{
 		timestamps: true,
