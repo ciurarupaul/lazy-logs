@@ -14,6 +14,7 @@ function Listings() {
 				const data = await getListings();
 				setListings(data.data.data);
 				setLoading(false);
+				console.log(listings);
 			} catch (err) {
 				setError(err.message);
 				setLoading(false);

@@ -1,8 +1,9 @@
+import mongoose from "mongoose";
 import multer from "multer";
 import sharp from "sharp";
-import Listing from "./../models/listingModel.js";
 import AppError from "../utils/appError.js";
 import catchAsync from "../utils/catchAsync.js";
+import Listing from "./../models/listingModel.js";
 import handlerFactory from "./handlerFactory.js";
 
 const multerStorage = multer.memoryStorage();
@@ -62,12 +63,96 @@ const listingController = {
 		next();
 	}),
 
-	getAllListings: handlerFactory.getAll(Listing),
-	getListing: handlerFactory.getOne(Listing, [
-		{ path: "host" },
-		{ path: "reviews", populate: { path: "user" } },
-	]),
-	// also populate the host and reviews when getting a Listing
+	getAllListings: catchAsync(async (req, res, next) => {
+		const listings = await Listing.aggregate([
+			{
+				$lookup: {
+					from: "reviews",
+					localField: "_id",
+					foreignField: "listing",
+					as: "reviews",
+				},
+			},
+		]);
+
+		res.status(200).json({
+			status: "succes",
+			results: listings.length,
+			data: {
+				data: listings,
+			},
+		});
+	}),
+
+	getListing: catchAsync(async (req, res, next) => {
+		const listingId = req.params.id;
+
+		const listing = await Listing.aggregate([
+			{ $match: { _id: new mongoose.Types.ObjectId(listingId) } },
+
+			// include both reviews and host details
+			{
+				$lookup: {
+					from: "reviews",
+					localField: "_id",
+					foreignField: "listing",
+					as: "reviews",
+				},
+			},
+			{
+				$lookup: {
+					from: "users",
+					localField: "host",
+					foreignField: "_id",
+					as: "host",
+				},
+			},
+
+			// host becomes a single object
+			{ $unwind: "$host" },
+
+			// vonverts the reviews array into individual documents. if there are no reviews, it preserves the empty array.
+			{ $unwind: { path: "$reviews", preserveNullAndEmptyArrays: true } },
+
+			// do the same for the reviews' users
+			{
+				$lookup: {
+					from: "users",
+					localField: "reviews.user",
+					foreignField: "_id",
+					as: "reviews.user",
+				},
+			},
+			{
+				$unwind: {
+					path: "$reviews.user",
+					preserveNullAndEmptyArrays: true,
+				},
+			},
+
+			// group back together
+			{
+				$group: {
+					_id: "$_id",
+					title: { $first: "$title" },
+					description: { $first: "$description" },
+					host: { $first: "$host" },
+					reviews: { $push: "$reviews" },
+				},
+			},
+		]);
+
+		if (!listing.length) {
+			return next(new AppError("No listing found with that ID", 404));
+		}
+
+		res.status(200).json({
+			status: "success",
+			data: {
+				data: listing[0],
+			},
+		});
+	}),
 
 	createListing: handlerFactory.createOne(Listing),
 	updateListing: handlerFactory.updateOne(Listing),

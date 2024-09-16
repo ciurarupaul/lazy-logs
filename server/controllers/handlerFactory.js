@@ -14,7 +14,7 @@ const handlerFactory = {
 			}
 
 			res.status(204).json({
-				status: "succes",
+				status: "success",
 				data: null,
 			});
 		}),
@@ -59,6 +59,7 @@ const handlerFactory = {
 	getOne: (Model, popOptions) =>
 		catchAsync(async (req, res, next) => {
 			let query = Model.findById(req.params.id);
+
 			if (popOptions) query = query.populate(popOptions);
 			const document = await query;
 
@@ -69,29 +70,22 @@ const handlerFactory = {
 			}
 
 			res.status(200).json({
-				status: "succes",
+				status: "success",
 				data: {
 					document,
 				},
 			});
 		}),
 
-	getAll: (Model) =>
+	getAll: (Model, popOptions) =>
 		catchAsync(async (req, res, next) => {
-			// to allow for nested GET reviews on tour
-			let filter = {};
-			if (req.params.tourId) filter = { tour: req.params.tourId };
+			let query = Model.find();
 
-			const features = new APIFeatures(Model.find(), req.query)
-				.filter()
-				.sort()
-				.limitFields()
-				.paginate();
-			const document = await features.query;
-			// const document = await features.query.explain();
+			if (popOptions) query = query.populate(popOptions);
+			const document = await query;
 
 			res.status(200).json({
-				status: "succes",
+				status: "success",
 				results: document.length,
 				data: {
 					data: document,
