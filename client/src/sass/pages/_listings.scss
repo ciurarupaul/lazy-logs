@@ -26,6 +26,11 @@
 
 		&-heart {
 			position: absolute;
+			background-color: var(--background);
+			box-sizing: content-box;
+			padding: 0.75rem;
+			border-radius: 100rem;
+
 			z-index: 2;
 			top: 7.5px;
 			right: 10px;
@@ -36,60 +41,77 @@
 			&--empty {
 				fill: none;
 				stroke: var(--red);
-				stroke-width: 10px;
+				stroke-width: 12px;
 			}
 
 			&--full {
 				fill: var(--red);
 				stroke: var(--red);
-				stroke-width: 10px;
+				stroke-width: 12px;
 			}
 		}
 	}
 
+	&__small-margin {
+		height: 0.75rem;
+	}
+
 	&__details {
 		color: var(--primary);
-		font-size: typography.$fontsize-xsmall;
+		font-size: typography.$fontsize-small;
 		margin-top: 0.3rem;
+		padding: 0 1rem;
 
 		&-header {
 			@include mixins.flexCenter;
 			justify-content: space-between;
-			font-size: typography.$fontsize-small;
 		}
 
 		&-location {
+			font-size: typography.$fontsize-medium;
 			font-weight: 600;
 		}
 
 		&-rating {
-			@include mixins.flexCenter;
+			@include mixins.flexEnd;
+			width: 50%;
 			gap: 0.25rem;
-			font-weight: 500;
 
 			&-icon {
-				height: 1.25rem;
-				width: 1.25rem;
+				height: 1.5rem;
+				width: 1.5rem;
+			}
+
+			span {
+				color: var(--primary-details);
+			}
+		}
+
+		&-capacity {
+			&-icon {
+				width: 1.5rem;
+				height: 1.5rem;
 			}
 		}
 
 		&-availability {
-			color: var(--primary-details);
+			span {
+				font-weight: 500;
+			}
 		}
 
 		&-price {
-			margin-top: 1rem;
-
 			@include mixins.flexEnd;
 			gap: 0.7rem;
 
-			&-start {
+			&-end {
+				margin-left: -0.5rem;
 				color: var(--primary-details);
 			}
 
 			&-value {
-				font-size: typography.$fontsize-small;
-				font-weight: 600;
+				font-weight: 500;
+				margin-left: -0.2rem;
 			}
 		}
 	}

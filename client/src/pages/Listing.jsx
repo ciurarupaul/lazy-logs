@@ -10,6 +10,16 @@ import Carousel from "../ui/utils/Carousel";
 import { PageLoader as Loader } from "../ui/utils/Loader";
 import ReviewsCarousel from "../ui/utils/ReviewsCarousel";
 
+function calculateReviewsAverage(reviews) {
+	if (!reviews) return 0;
+
+	const numberOfReviews = reviews.length;
+	const totalRating = reviews.reduce((sum, review) => sum + review.rating, 0);
+	const averageRating = totalRating / numberOfReviews;
+
+	return Math.floor(averageRating * 10) / 10;
+}
+
 function Listing() {
 	const [listing, setListing] = useState(null);
 	const [isLoading, setIsLoading] = useState(true);
@@ -156,11 +166,9 @@ function Listing() {
 						<p>Reviews</p>
 
 						<div className="listing__reviews-header-score">
-							<p>{listing.ratingsAverage}</p>
+							<p>{calculateReviewsAverage(listing.reviews)}</p>
 							<AiFillStar className="listing__reviews-header-icon" />
-							<span>
-								&bull; {listing.ratingsQuantity} reviews
-							</span>
+							<span>&bull; {listing.reviews.length} reviews</span>
 						</div>
 					</div>
 

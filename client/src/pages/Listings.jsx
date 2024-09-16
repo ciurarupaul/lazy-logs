@@ -20,7 +20,6 @@ function Listings() {
 			}
 		};
 
-		console.log(listings);
 		fetchData();
 	}, []);
 
