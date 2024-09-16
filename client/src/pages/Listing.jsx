@@ -24,6 +24,7 @@ function Listing() {
 			try {
 				const data = await getListing(listingId);
 				setListing(data);
+				console.log(listing);
 				setIsLoading(false);
 			} catch (err) {
 				setIsLoading(false);
@@ -34,6 +35,8 @@ function Listing() {
 	}, []);
 
 	if (isLoading) return <Loader>property data</Loader>;
+	if (!listing)
+		return <div className="page-container listing__grid">womp womp</div>;
 
 	return (
 		<div className="page-container listing__grid">

@@ -88,9 +88,11 @@ const listingController = {
 		const listingId = req.params.id;
 
 		const listing = await Listing.aggregate([
+			// find the listing and get the data
+			// although deprecated, .ObjectId is still recommended for querying mongoDb
 			{ $match: { _id: new mongoose.Types.ObjectId(listingId) } },
 
-			// include both reviews and host details
+			// find the associated host and reviews and add their data to the output/collection
 			{
 				$lookup: {
 					from: "reviews",
@@ -108,13 +110,14 @@ const listingController = {
 				},
 			},
 
-			// host becomes a single object
+			// host becomes a single object (from array of objs)
 			{ $unwind: "$host" },
 
-			// vonverts the reviews array into individual documents. if there are no reviews, it preserves the empty array.
+			// converts the reviews array into individual documents. if there are no reviews, it preserves the empty array.
+			// if this isnt done, only the OP is saved and populated for each review??? tf
 			{ $unwind: { path: "$reviews", preserveNullAndEmptyArrays: true } },
 
-			// do the same for the reviews' users
+			// do the same for the reviewers
 			{
 				$lookup: {
 					from: "users",
@@ -134,11 +137,21 @@ const listingController = {
 			{
 				$group: {
 					_id: "$_id",
-					title: { $first: "$title" },
-					description: { $first: "$description" },
-					host: { $first: "$host" },
+					listing: { $first: "$$ROOT" },
 					reviews: { $push: "$reviews" },
 				},
+			},
+
+			// add the reviews and host back to the listing
+			{
+				$addFields: {
+					"listing.reviews": "$reviews",
+				},
+			},
+
+			// replace the root with the listing
+			{
+				$replaceRoot: { newRoot: "$listing" },
 			},
 		]);
 
