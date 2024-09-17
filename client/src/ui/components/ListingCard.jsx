@@ -61,7 +61,6 @@ function findFirstFreeDate(blockedDates) {
 
 function ListingCard({ listing }) {
 	const [isStarred, setIsStarred] = useState(false);
-	console.log(listing);
 
 	return (
 		<Link to={`listings/${listing._id}`} className="listing">

@@ -14,20 +14,47 @@
 		@include mixins.flexStart;
 	}
 
+	&__header {
+		width: 100%;
+		padding: 2rem 4rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
 	&__filters {
 		display: flex;
-		padding: 2rem 4rem;
 		gap: 1rem;
 
 		&-button {
 			font-size: typography.$fontsize-medium;
 			padding: 1rem 2rem;
+			@include mixins.flexCenter();
+			gap: 1rem;
+
+			&-icon {
+				height: 2.5rem;
+				width: 2.5rem;
+				z-index: 2;
+
+				&-crowd {
+					margin-left: -1.3rem;
+					z-index: 1;
+					transform: scaleX(-1);
+				}
+			}
 
 			&:hover,
 			&--active {
 				background-color: var(--background-hover);
 			}
 		}
+	}
+
+	&__sorting {
+		@include mixins.flexCenter();
+		font-size: typography.$fontsize-medium;
+		gap: 2rem;
 	}
 }
 
@@ -79,8 +106,9 @@
 		padding: 0 1rem;
 
 		&-header {
-			@include mixins.flexCenter;
+			display: flex;
 			justify-content: space-between;
+			align-items: center;
 		}
 
 		&-location {
@@ -89,8 +117,10 @@
 		}
 
 		&-rating {
-			@include mixins.flexEnd;
-			width: 50%;
+			display: flex;
+			align-items: center;
+			justify-items: flex-end;
+			min-width: max-content;
 			gap: 0.25rem;
 
 			&-icon {
