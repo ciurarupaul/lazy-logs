@@ -20,7 +20,6 @@ export async function getListings() {
 export async function getListing(id) {
 	try {
 		const response = await apiClient.get(`/${id}`);
-		console.log(response.data.data.data);
 		return response.data.data.data;
 	} catch (error) {
 		console.error("Error fetching listing details:", error);

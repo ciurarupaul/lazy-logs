@@ -11,7 +11,23 @@
 	padding: 4rem 8rem;
 
 	&__cell {
-		@include mixins.flexCenter;
+		@include mixins.flexStart;
+	}
+
+	&__filters {
+		display: flex;
+		padding: 2rem 4rem;
+		gap: 1rem;
+
+		&-button {
+			font-size: typography.$fontsize-medium;
+			padding: 1rem 2rem;
+
+			&:hover,
+			&--active {
+				background-color: var(--background-hover);
+			}
+		}
 	}
 }
 
