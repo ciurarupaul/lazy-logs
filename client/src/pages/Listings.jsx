@@ -4,12 +4,18 @@ import { getListings } from "../services/apiListings";
 import ListingCard from "../ui/components/ListingCard";
 import FilterButton from "../ui/utils/FilterButton";
 import { PageLoader as Loader } from "../ui/utils/Loader";
+import {
+	MdOutlineKeyboardArrowLeft,
+	MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
+const ITEMS_PER_PAGE = 12;
 
 function Listings() {
 	const [listings, setListings] = useState([]);
 	const [filteredListings, setFilteredListings] = useState([]);
 	const [filters, setFilters] = useState({ guestRange: "all" });
 	const [sortOption, setSortOption] = useState("popular");
+	const [currentPage, setCurrentPage] = useState(1);
 	const [loading, setLoading] = useState(true);
 
 	const handleSortChange = (event) => {
@@ -52,6 +58,7 @@ function Listings() {
 
 	const applyFiltersAndSorting = () => {
 		let filtered = [...listings];
+		setCurrentPage(1);
 
 		// filter
 		if (filters.guestRange && filters.guestRange !== "all") {
@@ -97,6 +104,10 @@ function Listings() {
 
 		setFilteredListings(filtered);
 	};
+
+	const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+	const endIndex = startIndex + ITEMS_PER_PAGE;
+	const paginatedListings = filteredListings.slice(startIndex, endIndex);
 
 	if (loading) return <Loader>properties</Loader>;
 
@@ -156,19 +167,45 @@ function Listings() {
 						id="sort"
 						value={sortOption}
 						onChange={handleSortChange}
+						className="listings__sorting-select"
 					>
-						<option value="popular">Most Popular</option>
-						<option value="priceAsc">Price: Low to High</option>
-						<option value="priceDesc">Price: High to Low</option>
-						<option value="ratingAsc">Rating: Low to Hight</option>
-						<option value="ratingDesc">Rating: Hight to Low</option>
+						<option
+							value="popular"
+							className="listings__sorting-select-option"
+						>
+							Most Popular
+						</option>
+						<option
+							value="priceAsc"
+							className="listings__sorting-select-option"
+						>
+							Price: Low to High
+						</option>
+						<option
+							value="priceDesc"
+							className="listings__sorting-select-option"
+						>
+							Price: High to Low
+						</option>
+						<option
+							value="ratingAsc"
+							className="listings__sorting-select-option"
+						>
+							Rating: Low to High
+						</option>
+						<option
+							value="ratingDesc"
+							className="listings__sorting-select-option"
+						>
+							Rating: High to Low
+						</option>
 					</select>
 				</div>
 			</div>
 
 			<ul className="listings">
-				{filteredListings.length > 0 ? (
-					filteredListings.map((listing) => (
+				{paginatedListings.length > 0 ? (
+					paginatedListings.map((listing) => (
 						<li key={listing._id} className="listings__cell">
 							<ListingCard listing={listing} />
 						</li>
@@ -177,6 +214,37 @@ function Listings() {
 					<p>No listings available</p>
 				)}
 			</ul>
+
+			{filteredListings.length > ITEMS_PER_PAGE ? (
+				<div className="listings__pagination">
+					<button
+						onClick={() => setCurrentPage(currentPage - 1)}
+						className="listings__pagination-btn"
+						disabled={currentPage === 1}
+					>
+						<MdOutlineKeyboardArrowLeft className="listings__pagination-btn-icon" />
+						<p>Previous</p>
+					</button>
+
+					<p>
+						<span>
+							{endIndex > filteredListings.length
+								? filteredListings.length
+								: endIndex}
+						</span>{" "}
+						listings out of <span>{filteredListings.length}</span>
+					</p>
+
+					<button
+						onClick={() => setCurrentPage(currentPage + 1)}
+						className="listings__pagination-btn"
+						disabled={endIndex > filteredListings.length}
+					>
+						<p>Next</p>
+						<MdOutlineKeyboardArrowRight className="listings__pagination-btn-icon" />
+					</button>
+				</div>
+			) : null}
 		</div>
 	);
 }

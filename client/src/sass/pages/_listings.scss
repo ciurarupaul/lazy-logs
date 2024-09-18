@@ -55,6 +55,64 @@
 		@include mixins.flexCenter();
 		font-size: typography.$fontsize-medium;
 		gap: 2rem;
+
+		&-select {
+			background-color: var(--background);
+			outline: none;
+			font-family: inherit;
+			font-size: typography.$fontsize-medium;
+			color: var(--primary);
+			padding: 1rem;
+			border-radius: 6px;
+
+			&:hover {
+				cursor: pointer;
+			}
+		}
+	}
+
+	&__pagination {
+		padding: 0 4rem 4rem 4rem;
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+		justify-content: space-between;
+		font-size: typography.$fontsize-small;
+
+		span {
+			font-weight: 500;
+			font-size: typography.$fontsize-medium;
+		}
+
+		p {
+			@include mixins.flexCenter();
+			gap: 1rem;
+		}
+
+		&-btn {
+			border: none;
+			font-size: typography.$fontsize-small;
+			font-weight: 500;
+			padding: 0;
+			@include mixins.flexCenter();
+			color: var(--primary-important);
+
+			&:disabled {
+				color: var(--primary-details);
+			}
+
+			&:hover {
+				background-color: var(--background);
+			}
+
+			&-icon {
+				height: 2.5rem;
+				width: 2.5rem;
+				padding: 0;
+				margin: 0;
+				color: inherit;
+			}
+		}
 	}
 }
 
