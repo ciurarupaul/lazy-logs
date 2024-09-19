@@ -234,7 +234,7 @@ const authController = {
 		// 2) Check if POSTed current password is correct
 		if (
 			!(await user.correctPassword(
-				req.body.passwordCurrent,
+				req.body.currentPassword,
 				user.password
 			))
 		) {
@@ -242,12 +242,14 @@ const authController = {
 		}
 
 		// 3) If so, update password
-		user.password = req.body.password;
-		user.passwordConfirm = req.body.passwordConfirm;
+		user.password = req.body.newPassword;
 		await user.save();
 
-		// 4) Log user in, send JWT
-		createSendToken(user, 200, res);
+		// 4) Send success response
+		res.status(200).json({
+			status: "success",
+			message: "Password updated successfully",
+		});
 	}),
 };
 

@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/authContext";
-import EmailWindow from "../ui/components/login-windows/EmailWindow";
-import ForgotPasswordWindow from "../ui/components/login-windows/ForgotPasswordWindow";
-import PasswordWindow from "../ui/components/login-windows/PasswordWindow";
-import SignUpWindow from "../ui/components/login-windows/SignUpWindow";
+import EmailWindow from "../ui/components/login/EmailWindow";
+import ForgotPasswordWindow from "../ui/components/login/ForgotPasswordWindow";
+import PasswordWindow from "../ui/components/login/PasswordWindow";
+import SignUpWindow from "../ui/components/login/SignUpWindow";
 import { toast } from "react-hot-toast";
 
 function Login() {

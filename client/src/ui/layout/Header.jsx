@@ -3,7 +3,7 @@ import { GiCampfire } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../../context/authContext";
 import UserMenu from "../components/UserMenu";
-import LoginButton from "../components/login-windows/LoginButton";
+import LoginButton from "../components/login/LoginButton";
 
 function Header() {
 	// theme logic

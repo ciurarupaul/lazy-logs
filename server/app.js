@@ -1,11 +1,13 @@
+import cookieParser from "cookie-parser";
 import cors from "cors";
 import express from "express";
-import cookieParser from "cookie-parser";
 
 import bookingRouter from "./routes/bookingRoutes.js";
 import listingRouter from "./routes/listingRoutes.js";
 import reviewRouter from "./routes/reviewRoutes.js";
 import userRouter from "./routes/userRoutes.js";
+import AppError from "./utils/appError.js";
+import globalErrorHandler from "./controllers/errorController.js";
 
 const app = express();
 app.use(
@@ -36,7 +38,13 @@ app.use("/api/listings", listingRouter);
 app.use("/api/reviews", reviewRouter);
 app.use("/api/users", userRouter);
 
-//
+// Handle undefined routes
+app.all("*", (req, res, next) => {
+	next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
+});
+
+app.use(globalErrorHandler);
+
 app.use((err, req, res, next) => {
 	console.error(err.stack);
 	res.status(500).json({

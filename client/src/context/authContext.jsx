@@ -1,11 +1,11 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import {
+	isLoggedIn,
 	loginUser,
 	logoutUser,
-	isLoggedIn,
-	getUserByEmail,
 	signUpUser,
-} from "../services/apiLogin";
+} from "../services/apiAuth";
+import { getUserByEmail } from "../services/apiUser";
 
 const AuthContext = createContext();
 

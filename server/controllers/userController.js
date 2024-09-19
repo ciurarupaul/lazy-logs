@@ -48,7 +48,7 @@ const userController = {
 
 	updateMe: catchAsync(async (req, res, next) => {
 		// 1. Create an error if the user POSTs password data
-		if (req.body.password || req.body.passwordConfirm) {
+		if (req.body.password) {
 			return next(
 				new AppError(
 					"This route is not for password updated. Please use /updateMyPassword",
