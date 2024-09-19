@@ -14,7 +14,7 @@ router
 	.route("/:id")
 	.get(bookingController.getBooking)
 	.patch(bookingController.updateBooking)
-	.delete(bookingController.deleteBooking);
+	.delete(bookingController.cancelBooking);
 
 router.route("/user/:userId").get(bookingController.getBookingsForUser);
 

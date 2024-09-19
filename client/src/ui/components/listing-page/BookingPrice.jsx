@@ -1,4 +1,4 @@
-function BookingPrice({ listing, nights }) {
+function BookingPrice({ listing, nights, onClick }) {
 	const pricePerNight = listing.pricePerNight || 0;
 	const fees = listing.fees || 0;
 	const total = pricePerNight * nights + fees;
@@ -29,7 +29,9 @@ function BookingPrice({ listing, nights }) {
 				<p>{total}&euro;</p>
 			</div>
 
-			<button className="listing__booking__summary-btn">Book now</button>
+			<button className="listing__booking__summary-btn" onClick={onClick}>
+				Book now
+			</button>
 		</div>
 	);
 }

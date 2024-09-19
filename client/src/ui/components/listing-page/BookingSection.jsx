@@ -1,18 +1,19 @@
 import {
+	differenceInCalendarDays,
 	eachDayOfInterval,
 	isPast,
 	isSameDay,
 	isWithinInterval,
 	parseISO,
-	differenceInCalendarDays,
 } from "date-fns";
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { Link } from "react-router-dom";
+import { toast } from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../../context/authContext";
+import { createBooking } from "../../../services/apiBookings";
 import BookingPrice from "./BookingPrice";
-
 const getBlockedDates = (blockedDates) => {
 	let dates = [];
 	blockedDates.forEach((interval) => {
@@ -30,9 +31,10 @@ const isDateInBlockedRange = (start, end, blockedDates) => {
 	);
 };
 
-const BookingDatePicker = ({ listing }) => {
+function BookingSection({ listing }) {
 	const { authState } = useAuthContext();
 	const { isAuthenticated } = authState;
+	const navigate = useNavigate();
 	const [range, setRange] = useState([null, null]);
 	const [startDate, endDate] = range;
 	const blockedDates = listing.blockedDates;
@@ -79,8 +81,32 @@ const BookingDatePicker = ({ listing }) => {
 				<BookingPrice
 					listing={listing}
 					nights={differenceInCalendarDays(endDate, startDate)}
+					onClick={handleBooking}
 				/>
 			);
+		}
+	};
+
+	const handleBooking = async () => {
+		const bookingData = {
+			user: authState.user._id,
+			listing: listing._id,
+			startDate: startDate.toISOString(),
+			endDate: endDate.toISOString(),
+			totalPrice:
+				listing.pricePerNight *
+					differenceInCalendarDays(endDate, startDate) +
+				listing.fees,
+		};
+
+		try {
+			await createBooking(bookingData);
+			navigate(`/users/${authState.user._id}/bookings`);
+			toast.success("Booked!", {
+				className: "toast toast-success",
+			});
+		} catch (err) {
+			// handle error
 		}
 	};
 
@@ -99,6 +125,6 @@ const BookingDatePicker = ({ listing }) => {
 			/>
 		</div>
 	);
-};
+}
 
-export default BookingDatePicker;
+export default BookingSection;

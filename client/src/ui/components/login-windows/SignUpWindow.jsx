@@ -78,7 +78,7 @@ const SignUpWindow = ({ setActiveWindow, setEmail, onSubmitData }) => {
 
 			<FormCell
 				fieldname="name"
-				label="First and last name"
+				label="First and Last Name"
 				value={name}
 				onChange={(e) => setName(e.target.value)}
 				onSubmit={handleSubmit}

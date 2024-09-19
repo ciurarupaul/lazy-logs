@@ -16,3 +16,21 @@ export async function getBookingsForUser(id) {
 		throw error;
 	}
 }
+
+export async function createBooking(bookingData) {
+	try {
+		await apiClient.post("/", bookingData);
+	} catch (error) {
+		console.error("Error creating booking:", error);
+		throw error;
+	}
+}
+
+export async function cancelBooking(id) {
+	try {
+		await apiClient.delete(`/${id}`);
+	} catch (error) {
+		console.error("Error creating booking:", error);
+		throw error;
+	}
+}

@@ -1,13 +1,15 @@
 import { format, isAfter, isBefore } from "date-fns";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { IoCalendar } from "react-icons/io5";
 import { TbMoneybag } from "react-icons/tb";
+import { useNavigate } from "react-router-dom";
+import { cancelBooking } from "../../services/apiBookings";
 
 function BookingCard({ booking }) {
-	console.log(booking);
-
 	const [time, setTime] = useState("");
 	const today = new Date();
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		if (
@@ -62,25 +64,30 @@ function BookingCard({ booking }) {
 				</div>
 
 				<div className="bookings__card-extra">
-					{time === "past" ? (
-						<button className="bookings__card-extra-btn">
-							Leave a review
-						</button>
-					) : time === "future" ? (
-						<button className="bookings__card-extra-btn">
-							Add a request
-						</button>
-					) : null}
-				</div>
+					<button
+						className="bookings__card-extra-btn"
+						onClick={() => {
+							navigate(`/listings/${booking.listing._id}`);
+						}}
+					>
+						View property
+					</button>
 
-				<div>
-					{time === "past" ? (
-						<div className="bookings__card-label bookings__card-label--past">
-							Past
-						</div>
-					) : time === "future" ? (
-						<div className="bookings__card-label">Upcoming</div>
-					) : null}{" "}
+					<>
+						{time === "past" ? null : time === "future" ? ( // MIGHT do this later // </button> // 	Leave a review // <button className="bookings__card-extra-btn">
+							<button
+								className="bookings__card-extra-btn"
+								onClick={async () => {
+									cancelBooking(booking._id);
+									toast.success("Booking canceled!", {
+										className: "toast toast-success",
+									});
+								}}
+							>
+								Cancel booking
+							</button>
+						) : null}
+					</>
 				</div>
 			</div>
 		</div>

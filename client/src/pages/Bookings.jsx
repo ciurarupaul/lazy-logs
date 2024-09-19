@@ -29,7 +29,7 @@ function Bookings() {
 
 			fetchBookings();
 		}
-	}, [loading, id]);
+	}, [loading, id, bookings]);
 
 	if (loading || isLoading) return <Loader>bookings</Loader>;
 

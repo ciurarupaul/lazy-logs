@@ -50,10 +50,11 @@ function EmailWindow({ onSubmitEmail }) {
 				Don't have an account? Don't worry! You'll be able to create one
 				in the following step!
 			</p>
-			<div className="line" />
+			{/* use later to implement (if) googleAuth */}
+			{/* <div className="line" />
 			<p className="login__email-text-or">log in with:</p>
 			<p className="login__email-floating-or">or</p>
-			<button className="login__buttons-btn">google auth</button>
+			<button className="login__buttons-btn">google auth</button> */}
 		</div>
 	);
 }

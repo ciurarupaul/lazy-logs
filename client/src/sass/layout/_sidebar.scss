@@ -3,7 +3,7 @@
 
 .sidebar {
 	display: grid;
-	grid-template-rows: minmax(min-content, 15%) 3fr;
+	grid-template-rows: minmax(min-content, 30rem) 3fr;
 	row-gap: 1rem;
 
 	background-color: var(--background);
