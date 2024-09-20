@@ -36,21 +36,18 @@ function formReducer(state, action) {
 function Account() {
 	const [state, dispatch] = useReducer(formReducer, initialState);
 	const { authState } = useAuthContext();
-	const { loading } = { authState };
-	const [isLoading, setIsLoading] = useState(loading);
-
-	if (loading) setIsLoading(true);
+	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
 		const fetchUserData = async () => {
-			if (!authState.user) return;
+			if (authState.loading) return;
 
 			try {
 				const userData = await getUserById(authState.user._id);
 				dispatch({ type: "SET_USER_DATA", userData });
 			} catch (err) {
 				console.log(err.message);
-				toast.error("Failed to fetch user data. Please try again.", {
+				toast.error("Failed to fetch user data.", {
 					className: "toast toast-error",
 				});
 			} finally {
@@ -69,7 +66,7 @@ function Account() {
 		});
 	};
 
-	if (isLoading) return <Loader>your data</Loader>;
+	if (isLoading || authState.loading) return <Loader>your data</Loader>;
 
 	return (
 		<>

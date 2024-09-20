@@ -2,7 +2,7 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 
 const apiClient = axios.create({
-	baseURL: process.env.APP_URL || "http://localhost:3000/api",
+	baseURL: "http://localhost:3000/api",
 	headers: {
 		"Content-Type": "application/json",
 	},
@@ -26,7 +26,7 @@ apiClient.interceptors.response.use(
 				case 401:
 					// Unauthorized (JWT expired, etc.)
 					message = "Session expired. Please log in again.";
-					window.location.href = "/login";
+					// window.location.href = "/login";
 					break;
 				case 403:
 					// Forbidden (insufficient permissions)

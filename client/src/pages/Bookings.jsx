@@ -9,19 +9,18 @@ function Bookings() {
 	const [isLoading, setIsLoading] = useState(true);
 
 	const { authState } = useAuthContext([]);
-	const { user, loading } = authState;
-	const id = user ? user._id : null;
 
 	useEffect(() => {
-		if (!loading) {
+		if (!authState.loading) {
 			const fetchBookings = async () => {
 				try {
-					const data = await getBookingsForUser(id);
+					const data = await getBookingsForUser(authState.user._id);
 					setBookings(data);
-					setIsLoading(false);
 				} catch (err) {
-					setBookings([]);
-					console.log("Error fetching bookings: ", err);
+					console.log(err.message);
+					toast.error("Failed to fetch bookings.", {
+						className: "toast toast-error",
+					});
 				} finally {
 					setIsLoading(false);
 				}
@@ -29,9 +28,9 @@ function Bookings() {
 
 			fetchBookings();
 		}
-	}, [loading, id, bookings]);
+	}, [authState.loading, authState.user?._id, bookings]);
 
-	if (loading || isLoading) return <Loader>bookings</Loader>;
+	if (authState.loading || isLoading) return <Loader>bookings</Loader>;
 
 	return (
 		<div className="bookings">

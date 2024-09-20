@@ -9,6 +9,7 @@ import PropertyMap from "../ui/components/listing-page/PropertyMap";
 import Carousel from "../ui/utils/Carousel";
 import { PageLoader as Loader } from "../ui/utils/Loader";
 import ReviewsCarousel from "../ui/utils/ReviewsCarousel";
+import { useAuthContext } from "../context/authContext";
 
 function calculateReviewsAverage(reviews) {
 	if (!reviews) return 0;
@@ -24,6 +25,7 @@ function Listing() {
 	const [listing, setListing] = useState(null);
 	const [isLoading, setIsLoading] = useState(true);
 	const { listingId } = useParams();
+	const { authState } = useAuthContext();
 
 	function formatLabel(value, singular, plural) {
 		return value > 1 ? `${value} ${plural}` : `1 ${singular}`;
@@ -31,20 +33,26 @@ function Listing() {
 
 	useEffect(() => {
 		const fetchData = async () => {
+			if (authState.loading) return;
+
 			try {
 				const data = await getListing(listingId);
 				setListing(data);
-				console.log(listing);
-				setIsLoading(false);
 			} catch (err) {
+				console.log(err.message);
+				toast.error("Failed to fetch data.", {
+					className: "toast toast-error",
+				});
+			} finally {
 				setIsLoading(false);
 			}
 		};
 
 		fetchData();
-	}, []);
+	}, [listing]);
 
-	if (isLoading) return <Loader>property data</Loader>;
+	if (isLoading || authState.loading) return <Loader>property data</Loader>;
+
 	if (!listing)
 		return <div className="page-container listing__grid">womp womp</div>;
 

@@ -5,6 +5,7 @@ import Filters from "../ui/components/listings-page/Filters";
 import Pagination from "../ui/components/listings-page/Pagination";
 import Sorting from "../ui/components/listings-page/Sorting";
 import { PageLoader as Loader } from "../ui/utils/Loader";
+import { useAuthContext } from "../context/authContext";
 
 const ITEMS_PER_PAGE = 12;
 const MemoizedListingCard = memo(ListingCard);
@@ -13,12 +14,13 @@ function Listings() {
 	const [filters, setFilters] = useState({ guestRange: "all" });
 	const [sortOption, setSortOption] = useState("popular");
 	const [currentPage, setCurrentPage] = useState(1);
+	const { authState } = useAuthContext();
 
 	const handleSortChange = (event) => {
 		setSortOption(event.target.value);
 	};
 
-	const { filteredListings, loading } = useListings(filters, sortOption);
+	const { filteredListings, isLoading } = useListings(filters, sortOption);
 
 	useEffect(() => {
 		setCurrentPage(1);
@@ -28,7 +30,7 @@ function Listings() {
 	const endIndex = startIndex + ITEMS_PER_PAGE;
 	const paginatedListings = filteredListings.slice(startIndex, endIndex);
 
-	if (loading) return <Loader>properties</Loader>;
+	if (isLoading || authState.loading) return <Loader>properties</Loader>;
 
 	return (
 		<div className="page-container">

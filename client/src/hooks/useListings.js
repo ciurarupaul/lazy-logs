@@ -1,24 +1,31 @@
 import { useEffect, useMemo, useState } from "react";
 import { getListings } from "../services/apiListings";
+import { useAuthContext } from "../context/authContext";
 
 const useListings = (filters, sortOption) => {
 	const [listings, setListings] = useState([]);
-	const [loading, setLoading] = useState(true);
+	const [isLoading, setIsLoading] = useState(true);
+	const { authState } = useAuthContext();
 
 	useEffect(() => {
 		const fetchData = async () => {
+			if (authState.loading) return;
+
 			try {
 				const response = await getListings();
 				setListings(response.data.data);
 			} catch (err) {
-				// will deal with this later
+				console.log(err.message);
+				toast.error("Failed to fetch listings.", {
+					className: "toast toast-error",
+				});
 			} finally {
-				setLoading(false);
+				setIsLoading(false);
 			}
 		};
 
 		fetchData();
-	}, []);
+	}, [authState.loading]);
 
 	const calculateReviewsAverage = useMemo(
 		() => (reviews) => {
@@ -84,7 +91,7 @@ const useListings = (filters, sortOption) => {
 		return filtered;
 	}, [filters, sortOption, listings, calculateReviewsAverage]);
 
-	return { filteredListings, loading };
+	return { filteredListings, isLoading };
 };
 
 export default useListings;
