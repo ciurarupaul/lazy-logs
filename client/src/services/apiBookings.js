@@ -1,36 +1,16 @@
-import axios from "axios";
-
-const apiClient = axios.create({
-	baseURL: "http://localhost:3000/api/bookings",
-	headers: {
-		"Content-Type": "application/json",
-	},
-});
+import apiClient from "../utils/apiClient";
 
 export async function getBookingsForUser(id) {
-	try {
-		const response = await apiClient.get(`/user/${id}`);
-		return response.data.data.bookings;
-	} catch (error) {
-		console.error("Error fetching bookings:", error);
-		throw error;
-	}
+	const response = await apiClient.get(`/bookings/user/${id}`);
+	return response.data.data.bookings;
 }
 
 export async function createBooking(bookingData) {
-	try {
-		await apiClient.post("/", bookingData);
-	} catch (error) {
-		console.error("Error creating booking:", error);
-		throw error;
-	}
+	await apiClient.post("/bookings", bookingData);
 }
 
 export async function cancelBooking(id) {
-	try {
-		await apiClient.delete(`/${id}`);
-	} catch (error) {
-		console.error("Error creating booking:", error);
-		throw error;
-	}
+	await apiClient.delete(`/bookings/${id}`);
 }
+
+// the controllers return an success with null for data - will keep requests like this but continue to return the empty success for controllers in case of anything or for consistency

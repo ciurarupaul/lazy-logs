@@ -1,3 +1,4 @@
+import { ErrorBoundary } from "react-error-boundary";
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./context/authContext";
@@ -15,60 +16,68 @@ import AppLayout from "./ui/layout/AppLayout";
 function App() {
 	return (
 		<AuthProvider>
-			<BrowserRouter>
-				<Routes>
-					<Route
-						path="/"
-						errorElement={<ErrorPage />}
-						element={<AppLayout />}
-					>
-						<Route path="/" errorElement={<ErrorPage />}>
-							<Route index element={<Listings />} />
+			<ErrorBoundary fallback={ErrorPage}>
+				<BrowserRouter>
+					<Routes>
+						<Route
+							path="/"
+							errorElement={<ErrorPage />}
+							element={<AppLayout />}
+						>
+							<Route path="/" errorElement={<ErrorPage />}>
+								<Route index element={<Listings />} />
 
-							<Route path="/listings" element={<Listings />} />
-							<Route
-								path="/listings/:listingId"
-								element={<Listing />}
-							/>
-
-							<Route
-								path="users/:userId"
-								element={<AccountLayout />}
-							>
-								<Route index element={<Account />} />
 								<Route
-									path="bookings"
-									index
-									element={<Bookings />}
-								></Route>
-								<Route path="wishlist" element={<Wishlist />} />
+									path="/listings"
+									element={<Listings />}
+								/>
+								<Route
+									path="/listings/:listingId"
+									element={<Listing />}
+								/>
+
+								<Route
+									path="users/:userId"
+									element={<AccountLayout />}
+								>
+									<Route index element={<Account />} />
+									<Route
+										path="bookings"
+										index
+										element={<Bookings />}
+									></Route>
+									<Route
+										path="wishlist"
+										element={<Wishlist />}
+									/>
+								</Route>
 							</Route>
 						</Route>
-					</Route>
 
-					<Route
-						path="/login"
-						errorElement={<ErrorPage />}
-						element={<Login />}
-					/>
+						<Route
+							path="/login"
+							errorElement={<ErrorPage />}
+							element={<Login />}
+						/>
 
-					<Route path="*" element={<PageNotFound />} />
-				</Routes>
-			</BrowserRouter>
+						<Route path="*" element={<PageNotFound />} />
+					</Routes>
+				</BrowserRouter>
 
-			<Toaster
-				position="top-center"
-				gutter={8}
-				containerClassName="toaster"
-				toastOptions={{
-					success: {
-						duration: 3000,
-					},
-					error: {
-						duration: 5000,
-					},
-				}}
-			/>
+				<Toaster
+					position="top-center"
+					gutter={8}
+					containerClassName="toaster"
+					toastOptions={{
+						success: {
+							duration: 3000,
+						},
+						error: {
+							duration: 5000,
+						},
+					}}
+				/>
+			</ErrorBoundary>
 		</AuthProvider>
 	);
 }

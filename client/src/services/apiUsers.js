@@ -1,55 +1,30 @@
-import axios from "axios";
+import apiClient from "../utils/apiClient";
 
-axios.defaults.withCredentials = true; // send cookies with every request
-
-const apiClient = axios.create({
-	baseURL: "http://localhost:3000/api/users",
-	headers: {
-		"Content-Type": "application/json",
-	},
-});
+// if more complex, should also include data validation here, especially if the requests are reused
 
 export async function getUserByEmail(email) {
-	try {
-		const response = await apiClient.get("/me", {
-			params: { email },
-		});
-		return response.data;
-	} catch (error) {
-		console.error("Error trying to find if user exists:", error);
-		throw error;
-	}
+	const response = await apiClient.get("/users/me", {
+		params: { email },
+	});
+	return response.data;
 }
 
+// for updates, return result in case the call needs to see if the request was successful
+
 export async function updateMyPassword(currentPassword, newPassword) {
-	try {
-		const result = await apiClient.patch("/updateMyPassword", {
-			currentPassword,
-			newPassword,
-		});
-		return result;
-	} catch (error) {
-		console.error("Error updating password:", error);
-		throw error;
-	}
+	const response = await apiClient.patch("/users/updateMyPassword", {
+		currentPassword,
+		newPassword,
+	});
+	return response.data;
 }
 
 export async function updateUser(id, data) {
-	try {
-		const result = await apiClient.patch(`/${id}`, data);
-		return result;
-	} catch (error) {
-		console.error("Error updating user data:", error);
-		throw error;
-	}
+	const response = await apiClient.patch(`/users/${id}`, data);
+	return response.data;
 }
 
 export async function getUserById(id) {
-	try {
-		const result = await apiClient.get(`/${id}`);
-		return result.data.data.document;
-	} catch (error) {
-		console.error("Error getting user data:", error);
-		throw error;
-	}
+	const result = await apiClient.get(`/users/${id}`);
+	return result.data.data.document;
 }
