@@ -232,23 +232,27 @@ const authController = {
 		const user = await User.findById(req.user.id).select("+password");
 
 		// 2) Check if POSTed current password is correct
-		if (
-			!(await user.correctPassword(
-				req.body.currentPassword,
-				user.password
-			))
-		) {
-			return next(new AppError("Your current password is wrong.", 401));
+		const isCorrectPassword = await user.correctPassword(
+			req.body.currentPassword,
+			user.password
+		);
+
+		if (!isCorrectPassword) {
+			// Return a more detailed response for frontend handling
+			return res.status(401).json({
+				status: "fail",
+				message: "Your current password is incorrect.",
+			});
 		}
 
-		// 3) If so, update password
+		// 3) If so, update the password
 		user.password = req.body.newPassword;
 		await user.save();
 
 		// 4) Send success response
 		res.status(200).json({
 			status: "success",
-			message: "Password updated successfully",
+			message: "Password updated successfully.",
 		});
 	}),
 };

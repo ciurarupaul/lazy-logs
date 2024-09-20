@@ -46,8 +46,8 @@ export async function updateUser(id, data) {
 
 export async function getUserById(id) {
 	try {
-		const result = await apiClient.get("me", { id });
-		return result;
+		const result = await apiClient.get(`/${id}`);
+		return result.data.data.document;
 	} catch (error) {
 		console.error("Error getting user data:", error);
 		throw error;

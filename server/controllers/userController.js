@@ -99,7 +99,7 @@ const userController = {
 	}),
 
 	getAllUsers: handlerFactory.getAll(User),
-	getUser: handlerFactory.getOne(User),
+	getUserById: handlerFactory.getOne(User),
 
 	// Do NOT update passwords with this!
 	deleteUser: handlerFactory.deleteOne(User),

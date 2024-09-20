@@ -5,7 +5,7 @@ import {
 	logoutUser,
 	signUpUser,
 } from "../services/apiAuth";
-import { getUserByEmail } from "../services/apiUser";
+import { getUserByEmail } from "../services/apiUsers";
 
 const AuthContext = createContext();
 
