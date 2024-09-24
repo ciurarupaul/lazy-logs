@@ -8,6 +8,8 @@ const apiClient = axios.create({
 	},
 });
 
+axios.defaults.withCredentials = true; // send cookies with every request
+
 apiClient.interceptors.response.use(
 	(response) => response,
 	(error) => {

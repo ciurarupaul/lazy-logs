@@ -3,6 +3,7 @@ import { useAuthContext } from "../context/authContext";
 import { getBookingsForUser } from "../services/apiBookings";
 import { Loader } from "../ui/utils/Loader";
 import BookingCard from "../ui/components/BookingCard";
+import handleError from "../utils/handleError";
 
 function Bookings() {
 	const [bookings, setBookings] = useState([]);
@@ -10,25 +11,24 @@ function Bookings() {
 
 	const { authState } = useAuthContext([]);
 
-	useEffect(() => {
-		if (!authState.loading) {
-			const fetchBookings = async () => {
-				try {
-					const data = await getBookingsForUser(authState.user._id);
-					setBookings(data);
-				} catch (err) {
-					console.log(err.message);
-					toast.error("Failed to fetch bookings.", {
-						className: "toast toast-error",
-					});
-				} finally {
-					setIsLoading(false);
-				}
-			};
+	// will cache later
 
+	useEffect(() => {
+		const fetchBookings = async () => {
+			try {
+				const data = await getBookingsForUser(authState.user._id);
+				setBookings(data);
+			} catch (err) {
+				handleError(err, "Failed to fetch bookings");
+			} finally {
+				setIsLoading(false);
+			}
+		};
+
+		if (authState.user?._id) {
 			fetchBookings();
 		}
-	}, [authState.loading, authState.user?._id, bookings]);
+	}, [authState.user?._id]);
 
 	if (authState.loading || isLoading) return <Loader>bookings</Loader>;
 

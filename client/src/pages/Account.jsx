@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useReducer } from "react";
+import { useReducer, useCallback, useMemo } from "react";
 import toast from "react-hot-toast";
 import { useAuthContext } from "../context/authContext";
 import { handleUpdateInfo, handleUpdatePassword } from "../hooks/useAccount";
@@ -7,7 +7,9 @@ import { getUserById } from "../services/apiUsers";
 import NewPasswordForm from "../ui/components/account-page/NewPasswordForm";
 import UserInfoForm from "../ui/components/account-page/UserInfoForm";
 import { Loader } from "../ui/utils/Loader";
+import handleError from "../utils/handleError";
 
+// Initial state for the form reducer
 const initialState = {
 	firstName: "",
 	lastName: "",
@@ -17,6 +19,7 @@ const initialState = {
 	newPassword: "",
 };
 
+// Reducer function for form state management
 function formReducer(state, action) {
 	switch (action.type) {
 		case "SET_FIELD":
@@ -24,10 +27,10 @@ function formReducer(state, action) {
 		case "SET_USER_DATA":
 			return {
 				...state,
-				firstName: action.userData.name.split(" ")[0] || "",
-				lastName: action.userData.name.split(" ")[1] || "",
+				firstName: action.userData.firstName || "",
+				lastName: action.userData.lastName || "",
 				email: action.userData.email || "",
-				phone: action.userData.phoneNumber || "",
+				phone: action.userData.phone || "",
 			};
 		default:
 			return state;
@@ -38,48 +41,59 @@ function Account() {
 	const [state, dispatch] = useReducer(formReducer, initialState);
 	const { authState } = useAuthContext();
 
-	useQuery({
-		queryKey: ["userData", authState.user._id],
-		queryFn: () => getUserById(authState.user._id),
-		enabled: !!authState.user._id,
-		onSuccess: (data) => {
-			dispatch({ type: "SET_USER_DATA", userData: data });
-		},
-		onError: (err) => {
-			console.error(err.message);
-			toast.error("Failed to fetch user data.", {
-				className: "toast toast-error",
-			});
-		},
-	});
+	const userId = useMemo(() => authState.user?._id, [authState.user?._id]);
 
-	const handleChange = (e) => {
+	const { isLoading } = useQuery(
+		["userData", userId],
+		() => getUserById(userId),
+		{
+			enabled: !!userId,
+			onSuccess: (data) => {
+				dispatch({ type: "SET_USER_DATA", userData: data });
+			},
+			onError: (err) => {
+				handleError(err, "Failed to fetch your data");
+			},
+		}
+	);
+
+	const handleChange = useCallback((e) => {
 		dispatch({
 			type: "SET_FIELD",
 			field: e.target.name,
 			value: e.target.value,
 		});
-	};
+	}, []);
 
-	if (isLoading || authState.loading) return <Loader>your data</Loader>;
+	/* 
+	useMemo: Memorizes (caches) the result of a function (or computation) and reuses it when its dependencies haven't changed.
+	
+	useCallback: Memorizes (caches) the function itself and ensures the function is not recreated unless its dependencies change.
+	*/
+
+	const debouncedUpdateInfo = useCallback(() => {
+		handleUpdateInfo(state, authState.user._id);
+	}, [state, authState.user._id]);
+
+	const debouncedUpdatePassword = useCallback(() => {
+		handleUpdatePassword(state.currentPassword, state.newPassword);
+	}, [state.currentPassword, state.newPassword]);
+
+	if (isLoading || !authState.isAuthenticated || !userId) {
+		return <Loader>Your account data is being loaded...</Loader>;
+	}
 
 	return (
 		<>
 			<UserInfoForm
 				state={state}
 				handleChange={handleChange}
-				handleUpdateInfo={() =>
-					handleUpdateInfo(state, authState.user._id)
-				}
+				handleUpdateInfo={debouncedUpdateInfo}
 			/>
 			<NewPasswordForm
+				state={state}
 				handleChange={handleChange}
-				handleUpdatePassword={() =>
-					handleUpdatePassword(
-						state.currentPassword,
-						state.newPassword
-					)
-				}
+				handleUpdatePassword={debouncedUpdatePassword}
 			/>
 		</>
 	);

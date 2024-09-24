@@ -6,6 +6,7 @@ import ForgotPasswordWindow from "../ui/components/login/ForgotPasswordWindow";
 import PasswordWindow from "../ui/components/login/PasswordWindow";
 import SignUpWindow from "../ui/components/login/SignUpWindow";
 import { toast } from "react-hot-toast";
+import handleError from "../utils/handleError";
 
 function Login() {
 	const [activeWindow, setActiveWindow] = useState("email");
@@ -13,7 +14,7 @@ function Login() {
 	const [password, setPassword] = useState("");
 	const navigate = useNavigate();
 
-	const { login, getUser, signup } = useAuthContext();
+	const { login, getUserQuery, signup } = useAuthContext();
 
 	const handleEmailSubmit = (submittedEmail) => {
 		setEmail(submittedEmail);
@@ -42,7 +43,7 @@ function Login() {
 		}
 	};
 
-	const { data: user, isLoading } = getUser(email);
+	const { data: user, isLoading } = getUserQuery(email);
 
 	useEffect(() => {
 		if (email.trim() !== "" && user) {
@@ -64,7 +65,7 @@ function Login() {
 					});
 					navigate("/");
 				} catch (err) {
-					console.error("Error logging user in:", err);
+					handleError(err, "Error logging user in");
 				}
 			}
 		};

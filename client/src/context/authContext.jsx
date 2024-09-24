@@ -21,36 +21,29 @@ const AuthProvider = ({ children }) => {
 
 	const queryClient = useQueryClient();
 
-	// // Set loading state to true before the query is executed
-	// useEffect(() => {
-	// 	setAuthState((prevState) => ({
-	// 		...prevState,
-	// 		loading: true,
-	// 	}));
-	// }, []);
-
-	// Query for authentication status
-	const authQuery = useQuery({
+	const { data: authData, error: authError } = useQuery({
 		queryKey: ["authStatus"],
 		queryFn: isLoggedIn,
-		onSuccess: (response) => {
+	});
+
+	useEffect(() => {
+		if (authData) {
 			setAuthState({
-				isAuthenticated: response.loggedIn,
-				user: response.loggedIn ? response.user : null,
-				token: response.loggedIn ? response.token : null,
+				isAuthenticated: authData.loggedIn,
+				user: authData.loggedIn ? authData.user : null,
+				token: authData.loggedIn ? authData.token : null,
 				loading: false,
 			});
-		},
-		onError: (err) => {
-			handleError(err, "Error checking authentication status");
+		} else if (authError) {
+			handleError(authError, "Error checking authentication status");
 			setAuthState({
 				isAuthenticated: false,
 				user: null,
 				token: null,
 				loading: false,
 			});
-		},
-	});
+		}
+	}, [authData, authError]);
 
 	// Login mutation
 	const loginMutation = useMutation({
@@ -68,7 +61,6 @@ const AuthProvider = ({ children }) => {
 				token: response.token,
 				loading: false,
 			});
-			localStorage.setItem("authToken", response.token);
 			queryClient.invalidateQueries("authStatus");
 		},
 		onError: (err) => {
@@ -98,7 +90,6 @@ const AuthProvider = ({ children }) => {
 				token: response.token,
 				loading: false,
 			});
-			localStorage.setItem("authToken", response.token);
 			queryClient.invalidateQueries("authStatus");
 		},
 		onError: (err) => {
@@ -128,7 +119,6 @@ const AuthProvider = ({ children }) => {
 				token: null,
 				loading: false,
 			});
-			localStorage.removeItem("authToken");
 			queryClient.invalidateQueries("authStatus");
 		},
 		onError: (err) => {
@@ -140,6 +130,18 @@ const AuthProvider = ({ children }) => {
 		},
 	});
 
+	const login = async (email, password) => {
+		await loginMutation.mutateAsync({ email, password });
+	};
+
+	const signup = async (userData) => {
+		await signupMutation.mutateAsync(userData);
+	};
+
+	const logout = async () => {
+		await logoutMutation.mutateAsync();
+	};
+
 	// Here and not in apiUsers because is needed for the auth process
 	// Get user query
 	const getUserQuery = (email) => {
@@ -147,6 +149,7 @@ const AuthProvider = ({ children }) => {
 			queryKey: ["user", email],
 			queryFn: async () => {
 				const response = await getUserByEmail(email);
+				queryClient.invalidateQueries("user"); //maybe debounce later ???
 				return response.data;
 			},
 			enabled: !!email, // Only run if an email is provided
@@ -160,10 +163,9 @@ const AuthProvider = ({ children }) => {
 		<AuthContext.Provider
 			value={{
 				authState,
-				authQuery,
-				loginMutation,
-				signupMutation,
-				logoutMutation,
+				login,
+				signup,
+				logout,
 				getUserQuery,
 			}}
 		>

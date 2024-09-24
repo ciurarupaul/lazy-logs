@@ -1,25 +1,54 @@
-import apiClient from "../utils/apiClient";
+import axios from "axios";
+
+axios.defaults.withCredentials = true; // send cookies with every request
+
+const apiClient = axios.create({
+	baseURL: "http://localhost:3000/api/users",
+	headers: {
+		"Content-Type": "application/json",
+	},
+});
 
 export async function isLoggedIn() {
-	const response = await apiClient.get("/users/isLoggedIn", {
-		withCredentials: true,
-	});
-	return response.data;
+	try {
+		const response = await apiClient.get("/isLoggedIn", {
+			withCredentials: true,
+		});
+		return response.data;
+	} catch (error) {
+		console.error("Error trying to find if the user is logged in:", error);
+		throw error;
+	}
 }
 
 export async function signUpUser(userData) {
-	const response = await apiClient.post("/users/signup", userData);
-	return response.data;
+	try {
+		const response = await apiClient.post("/signup", userData);
+		return response.data;
+	} catch (error) {
+		console.error("Error signing up:", error);
+		throw error;
+	}
 }
 
 export async function loginUser(email, password) {
-	const response = await apiClient.post("/users/login", {
-		email,
-		password,
-	});
-	return response.data;
+	try {
+		const response = await apiClient.post("/login", {
+			email,
+			password,
+		});
+		return response.data;
+	} catch (error) {
+		console.error("Error logging in:", error);
+		throw error;
+	}
 }
 
 export async function logoutUser() {
-	await apiClient.get("/users/logout");
+	try {
+		await apiClient.get("/logout");
+	} catch (error) {
+		console.error("Error logging out:", error);
+		throw error;
+	}
 }
