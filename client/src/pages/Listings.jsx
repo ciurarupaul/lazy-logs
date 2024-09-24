@@ -1,11 +1,11 @@
 import { memo, useEffect, useState } from "react";
+import { useAuthContext } from "../context/authContext";
 import useListings from "../hooks/useListings";
 import ListingCard from "../ui/components/ListingCard";
 import Filters from "../ui/components/listings-page/Filters";
 import Pagination from "../ui/components/listings-page/Pagination";
 import Sorting from "../ui/components/listings-page/Sorting";
 import { PageLoader as Loader } from "../ui/utils/Loader";
-import { useAuthContext } from "../context/authContext";
 
 const ITEMS_PER_PAGE = 12;
 const MemoizedListingCard = memo(ListingCard);
@@ -20,15 +20,16 @@ function Listings() {
 		setSortOption(event.target.value);
 	};
 
-	const { filteredListings, isLoading } = useListings(filters, sortOption);
+	const { filteredListings, isLoading, totalFilteredListings } = useListings(
+		filters,
+		sortOption,
+		currentPage,
+		ITEMS_PER_PAGE
+	);
 
 	useEffect(() => {
 		setCurrentPage(1);
 	}, [filters, sortOption]);
-
-	const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-	const endIndex = startIndex + ITEMS_PER_PAGE;
-	const paginatedListings = filteredListings.slice(startIndex, endIndex);
 
 	if (isLoading || authState.loading) return <Loader>properties</Loader>;
 
@@ -43,8 +44,8 @@ function Listings() {
 			</div>
 
 			<ul className="listings">
-				{paginatedListings.length > 0 ? (
-					paginatedListings.map((listing) => (
+				{filteredListings.length > 0 ? (
+					filteredListings.map((listing) => (
 						<li key={listing._id} className="listings__cell">
 							<MemoizedListingCard listing={listing} />
 						</li>
@@ -54,12 +55,12 @@ function Listings() {
 				)}
 			</ul>
 
-			{filteredListings.length > ITEMS_PER_PAGE ? (
+			{totalFilteredListings > ITEMS_PER_PAGE ? (
 				<Pagination
 					currentPage={currentPage}
 					setCurrentPage={setCurrentPage}
-					filteredListings={filteredListings}
-					ITEMS_PER_PAGE={ITEMS_PER_PAGE}
+					totalItems={totalFilteredListings}
+					itemsPerPage={ITEMS_PER_PAGE}
 				/>
 			) : null}
 		</div>

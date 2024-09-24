@@ -11,7 +11,6 @@ function Login() {
 	const [activeWindow, setActiveWindow] = useState("email");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [user, setUser] = useState(null);
 	const navigate = useNavigate();
 
 	const { login, getUser, signup } = useAuthContext();
@@ -43,26 +42,17 @@ function Login() {
 		}
 	};
 
+	const { data: user, isLoading } = getUser(email);
+
 	useEffect(() => {
-		const checkIfUserExists = async () => {
-			if (email.trim() !== "") {
-				try {
-					const result = await getUser(email);
-					setUser(result.document);
-
-					if (result.userExists) {
-						setActiveWindow("password");
-					} else {
-						setActiveWindow("signup");
-					}
-				} catch (err) {
-					console.error("Error checking user status:", err);
-				}
+		if (email.trim() !== "" && user) {
+			if (user.userExists && !isLoading) {
+				setActiveWindow("password");
+			} else {
+				setActiveWindow("signup");
 			}
-		};
-
-		checkIfUserExists();
-	}, [email, getUser]);
+		}
+	}, [email, user]);
 
 	useEffect(() => {
 		const checkUserCredentials = async () => {
@@ -94,7 +84,7 @@ function Login() {
 			handleForgotPassword={handleForgotPassword}
 			onSubmitPassword={handlePasswordSubmit}
 			setEmail={setEmail}
-			user={user}
+			user={user.document}
 		/>
 	) : activeWindow === "signup" ? (
 		<SignUpWindow

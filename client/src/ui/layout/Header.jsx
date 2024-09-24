@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useAuthContext } from "../../context/authContext";
 import UserMenu from "../components/UserMenu";
 import LoginButton from "../components/login/LoginButton";
+import { Loader } from "../utils/Loader";
+import handleError from "../../utils/handleError";
 
 function Header() {
 	// theme logic
@@ -24,7 +26,13 @@ function Header() {
 
 	// use auth context to check if there is a logged in user
 	const { authState } = useAuthContext();
-	const { isAuthenticated } = authState;
+	const { isAuthenticated, authLoading, authError } = authState;
+
+	if (authLoading) return <Loader>your data</Loader>;
+	if (authError)
+		() => {
+			handleError(authError.message);
+		};
 
 	return (
 		<header className="header">

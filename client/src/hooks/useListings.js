@@ -1,97 +1,54 @@
-import { useEffect, useMemo, useState } from "react";
-import { getListings } from "../services/apiListings";
+import { useQuery } from "@tanstack/react-query";
+import { useMemo } from "react";
 import { useAuthContext } from "../context/authContext";
+import { filterListings } from "../utils/filter";
+import { sortListings } from "../utils/sort";
+import { calculateReviewsAverage } from "../utils/calcAverage";
+import { getListings } from "../services/apiListings";
 
-const useListings = (filters, sortOption) => {
-	const [listings, setListings] = useState([]);
-	const [isLoading, setIsLoading] = useState(true);
+const useListings = (filters, sortOption, currentPage, itemsPerPage) => {
 	const { authState } = useAuthContext();
 
-	useEffect(() => {
-		const fetchData = async () => {
-			if (authState.loading) return;
-
-			try {
-				const response = await getListings();
-				setListings(response.data.data);
-			} catch (err) {
-				console.log(err.message);
-				toast.error("Failed to fetch listings.", {
-					className: "toast toast-error",
-				});
-			} finally {
-				setIsLoading(false);
-			}
-		};
-
-		fetchData();
-	}, [authState.loading]);
-
-	const calculateReviewsAverage = useMemo(
-		() => (reviews) => {
-			if (!reviews || reviews.length === 0) return 0;
-
-			const numberOfReviews = reviews.length;
-			const totalRating = reviews.reduce(
-				(sum, review) => sum + (review.rating || 0),
-				0
-			);
-			const averageRating = totalRating / numberOfReviews;
-
-			return Math.floor(averageRating * 10) / 10;
+	const { data, isLoading } = useQuery({
+		queryKey: ["listings"],
+		queryFn: async () => {
+			return getListings();
 		},
+		enabled: !authState.loading,
+		staleTime: 1000 * 60 * 5,
+		refetchOnWindowFocus: false,
+	});
+
+	const listings = data?.data?.data || [];
+
+	const memoizedCalculateReviewsAverage = useMemo(
+		() => calculateReviewsAverage,
 		[]
 	);
 
 	const filteredListings = useMemo(() => {
-		let filtered = [...listings];
+		let filtered = filterListings(listings, filters);
+		let sorted = sortListings(
+			filtered,
+			sortOption,
+			memoizedCalculateReviewsAverage
+		);
+		return sorted;
+	}, [filters, sortOption, listings, memoizedCalculateReviewsAverage]);
 
-		// Filter
-		if (filters.guestRange && filters.guestRange !== "all") {
-			if (filters.guestRange === "1-4") {
-				filtered = filtered.filter(
-					(listing) =>
-						listing.listingDetails.maxGuests >= 1 &&
-						listing.listingDetails.maxGuests <= 4
-				);
-			} else if (filters.guestRange === "5-15") {
-				filtered = filtered.filter(
-					(listing) =>
-						listing.listingDetails.maxGuests >= 5 &&
-						listing.listingDetails.maxGuests <= 15
-				);
-			} else if (filters.guestRange === "16+") {
-				filtered = filtered.filter(
-					(listing) => listing.listingDetails.maxGuests >= 16
-				);
-			}
-		}
+	const totalFilteredListings = filteredListings.length;
 
-		// Sort
-		if (sortOption === "popular") {
-			filtered.sort((a, b) => b.reviews.length - a.reviews.length);
-		} else if (sortOption === "priceAsc") {
-			filtered.sort((a, b) => a.pricePerNight - b.pricePerNight);
-		} else if (sortOption === "priceDesc") {
-			filtered.sort((a, b) => b.pricePerNight - a.pricePerNight);
-		} else if (sortOption === "ratingAsc") {
-			filtered.sort(
-				(a, b) =>
-					calculateReviewsAverage(a.reviews) -
-					calculateReviewsAverage(b.reviews)
-			);
-		} else if (sortOption === "ratingDesc") {
-			filtered.sort(
-				(a, b) =>
-					calculateReviewsAverage(b.reviews) -
-					calculateReviewsAverage(a.reviews)
-			);
-		}
+	const paginatedListings = useMemo(() => {
+		const startIndex = (currentPage - 1) * itemsPerPage;
+		const endIndex = startIndex + itemsPerPage;
+		return filteredListings.slice(startIndex, endIndex);
+	}, [filteredListings, currentPage, itemsPerPage]);
 
-		return filtered;
-	}, [filters, sortOption, listings, calculateReviewsAverage]);
-
-	return { filteredListings, isLoading };
+	return {
+		filteredListings: paginatedListings,
+		isLoading,
+		totalFilteredListings,
+	};
 };
 
 export default useListings;

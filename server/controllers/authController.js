@@ -150,9 +150,11 @@ const authController = {
 
 				// There is a logged-in user
 				res.locals.user = currentUser;
-				return res
-					.status(200)
-					.json({ loggedIn: true, user: currentUser });
+				return res.status(200).json({
+					loggedIn: true,
+					user: currentUser,
+					token: req.cookies.jwt,
+				});
 			} catch (err) {
 				return res.status(200).json({ loggedIn: false });
 			}

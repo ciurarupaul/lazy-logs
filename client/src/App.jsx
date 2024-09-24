@@ -1,3 +1,5 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ErrorBoundary } from "react-error-boundary";
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -13,56 +15,60 @@ import Wishlist from "./pages/Wishlist";
 import AccountLayout from "./ui/layout/AccountLayout";
 import AppLayout from "./ui/layout/AppLayout";
 
+const queryClient = new QueryClient();
+
 function App() {
 	return (
-		<AuthProvider>
-			<ErrorBoundary fallback={ErrorPage}>
-				<BrowserRouter>
-					<Routes>
-						<Route
-							path="/"
-							errorElement={<ErrorPage />}
-							element={<AppLayout />}
-						>
-							<Route path="/" errorElement={<ErrorPage />}>
-								<Route index element={<Listings />} />
+		<QueryClientProvider client={queryClient}>
+			<AuthProvider>
+				<ErrorBoundary fallback={<ErrorPage />}>
+					<BrowserRouter>
+						<Routes>
+							<Route
+								path="/"
+								errorElement={<ErrorPage />}
+								element={<AppLayout />}
+							>
+								<Route path="/" errorElement={<ErrorPage />}>
+									<Route index element={<Listings />} />
 
-								<Route
-									path="/listings"
-									element={<Listings />}
-								/>
-								<Route
-									path="/listings/:listingId"
-									element={<Listing />}
-								/>
-
-								<Route
-									path="users/:userId"
-									element={<AccountLayout />}
-								>
-									<Route index element={<Account />} />
 									<Route
-										path="bookings"
-										index
-										element={<Bookings />}
-									></Route>
-									<Route
-										path="wishlist"
-										element={<Wishlist />}
+										path="/listings"
+										element={<Listings />}
 									/>
+									<Route
+										path="/listings/:listingId"
+										element={<Listing />}
+									/>
+
+									<Route
+										path="users/:userId"
+										element={<AccountLayout />}
+									>
+										<Route index element={<Account />} />
+										<Route
+											path="bookings"
+											index
+											element={<Bookings />}
+										></Route>
+										<Route
+											path="wishlist"
+											element={<Wishlist />}
+										/>
+									</Route>
 								</Route>
 							</Route>
-						</Route>
 
-						<Route
-							path="/login"
-							errorElement={<ErrorPage />}
-							element={<Login />}
-						/>
+							<Route
+								path="/login"
+								errorElement={<ErrorPage />}
+								element={<Login />}
+							/>
 
-						<Route path="*" element={<PageNotFound />} />
-					</Routes>
-				</BrowserRouter>
+							<Route path="*" element={<PageNotFound />} />
+						</Routes>
+					</BrowserRouter>
+				</ErrorBoundary>
 
 				<Toaster
 					position="top-center"
@@ -77,8 +83,10 @@ function App() {
 						},
 					}}
 				/>
-			</ErrorBoundary>
-		</AuthProvider>
+
+				<ReactQueryDevtools initialIsOpen={true} />
+			</AuthProvider>
+		</QueryClientProvider>
 	);
 }
 

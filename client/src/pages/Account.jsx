@@ -1,4 +1,5 @@
-import { useEffect, useReducer, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { useReducer } from "react";
 import toast from "react-hot-toast";
 import { useAuthContext } from "../context/authContext";
 import { handleUpdateInfo, handleUpdatePassword } from "../hooks/useAccount";
@@ -36,27 +37,21 @@ function formReducer(state, action) {
 function Account() {
 	const [state, dispatch] = useReducer(formReducer, initialState);
 	const { authState } = useAuthContext();
-	const [isLoading, setIsLoading] = useState(true);
 
-	useEffect(() => {
-		const fetchUserData = async () => {
-			if (authState.loading) return;
-
-			try {
-				const userData = await getUserById(authState.user._id);
-				dispatch({ type: "SET_USER_DATA", userData });
-			} catch (err) {
-				console.log(err.message);
-				toast.error("Failed to fetch user data.", {
-					className: "toast toast-error",
-				});
-			} finally {
-				setIsLoading(false);
-			}
-		};
-
-		fetchUserData();
-	}, [authState.user]);
+	useQuery({
+		queryKey: ["userData", authState.user._id],
+		queryFn: () => getUserById(authState.user._id),
+		enabled: !!authState.user._id,
+		onSuccess: (data) => {
+			dispatch({ type: "SET_USER_DATA", userData: data });
+		},
+		onError: (err) => {
+			console.error(err.message);
+			toast.error("Failed to fetch user data.", {
+				className: "toast toast-error",
+			});
+		},
+	});
 
 	const handleChange = (e) => {
 		dispatch({
