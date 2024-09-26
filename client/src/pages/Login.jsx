@@ -39,7 +39,7 @@ function Login() {
 			});
 			navigate("/");
 		} catch (error) {
-			console.error("Error signing up:", error);
+			handleError(error, "Failed to fetch your data");
 		}
 	};
 

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { FlagIcon } from "react-flag-kit";
 import { AiFillStar } from "react-icons/ai";
 import { useParams } from "react-router-dom";
@@ -9,49 +9,26 @@ import PropertyMap from "../ui/components/listing-page/PropertyMap";
 import Carousel from "../ui/utils/Carousel";
 import { PageLoader as Loader } from "../ui/utils/Loader";
 import ReviewsCarousel from "../ui/utils/ReviewsCarousel";
-import { useAuthContext } from "../context/authContext";
-
-function calculateReviewsAverage(reviews) {
-	if (!reviews) return 0;
-
-	const numberOfReviews = reviews.length;
-	const totalRating = reviews.reduce((sum, review) => sum + review.rating, 0);
-	const averageRating = totalRating / numberOfReviews;
-
-	return Math.floor(averageRating * 10) / 10;
-}
+import { calculateReviewsAverage } from "../utils/calcAverage";
+import formatLabel from "../utils/formatLabel";
+import handleError from "../utils/handleError";
 
 function Listing() {
-	const [listing, setListing] = useState(null);
-	const [isLoading, setIsLoading] = useState(true);
 	const { listingId } = useParams();
-	const { authState } = useAuthContext();
+	const queryClient = useQueryClient();
 
-	function formatLabel(value, singular, plural) {
-		return value > 1 ? `${value} ${plural}` : `1 ${singular}`;
-	}
+	// Check for cached data first
+	const cachedListing = queryClient.getQueryData(["listing", listingId]);
 
-	useEffect(() => {
-		const fetchData = async () => {
-			if (authState.loading) return;
+	// If cached data is found, use it; otherwise, fetch from API
+	const { data: listing = cachedListing, isLoading } = useQuery({
+		queryKey: ["listing", listingId],
+		queryFn: () => getListing(listingId),
+		enabled: !cachedListing,
+		onError: (err) => handleError(err, "Failed to fetch listing"),
+	});
 
-			try {
-				const data = await getListing(listingId);
-				setListing(data);
-			} catch (err) {
-				console.log(err.message);
-				toast.error("Failed to fetch data.", {
-					className: "toast toast-error",
-				});
-			} finally {
-				setIsLoading(false);
-			}
-		};
-
-		fetchData();
-	}, [listing]);
-
-	if (isLoading || authState.loading) return <Loader>property data</Loader>;
+	if (isLoading) return <Loader>property data</Loader>;
 
 	if (!listing)
 		return <div className="page-container listing__grid">womp womp</div>;

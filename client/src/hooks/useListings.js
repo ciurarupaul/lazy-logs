@@ -1,25 +1,31 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useMemo } from "react";
-import { useAuthContext } from "../context/authContext";
+import { getListings } from "../services/apiListings";
+import { calculateReviewsAverage } from "../utils/calcAverage";
 import { filterListings } from "../utils/filter";
 import { sortListings } from "../utils/sort";
-import { calculateReviewsAverage } from "../utils/calcAverage";
-import { getListings } from "../services/apiListings";
 
 const useListings = (filters, sortOption, currentPage, itemsPerPage) => {
-	const { authState } = useAuthContext();
+	const queryClient = useQueryClient();
+	// maintains a cache for all the queries and their associated data. it keeps track of each query's state, including whether it is loading, erroring, or has data available
 
 	const { data, isLoading } = useQuery({
 		queryKey: ["listings"],
 		queryFn: async () => {
-			return getListings();
+			const response = await getListings();
+			return response.data.data;
 		},
-		enabled: !authState.loading,
 		staleTime: 1000 * 60 * 5,
 		refetchOnWindowFocus: false,
+		onSuccess: (data) => {
+			data.forEach((listing) => {
+				// cache each individual listings
+				queryClient.setQueryData(["listing", listing._id], listing);
+			});
+		},
 	});
 
-	const listings = data?.data?.data || [];
+	const listings = data || [];
 
 	const memoizedCalculateReviewsAverage = useMemo(
 		() => calculateReviewsAverage,
