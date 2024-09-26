@@ -26,4 +26,9 @@
 		);
 		animation: rotate 1.5s infinite linear;
 	}
+
+	&--only {
+		margin: auto;
+		margin-top: 20%;
+	}
 }

@@ -31,7 +31,7 @@ function Listings() {
 		setCurrentPage(1);
 	}, [filters, sortOption]);
 
-	if (isLoading) {
+	if (isLoading || !!authState.loading) {
 		return <Loader>properties</Loader>;
 	}
 

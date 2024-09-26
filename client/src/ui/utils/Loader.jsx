@@ -15,3 +15,12 @@ export function Loader({ children }) {
 		</div>
 	);
 }
+
+export function OnlyLoaderOnPage({ children }) {
+	return (
+		<div className="loader loader--only">
+			<div className="loader-spinner" />
+			<div className="loader-text"> {`Loading ${children}...`}</div>
+		</div>
+	);
+}

@@ -36,8 +36,8 @@ const bookingController = {
 
 	cancelBooking: catchAsync(async (req, res, next) => {
 		const bookingId = req.params.id;
-
 		const booking = await Booking.findById(bookingId);
+
 		if (!booking) {
 			return next(new AppError("No booking found with that ID", 404));
 		}

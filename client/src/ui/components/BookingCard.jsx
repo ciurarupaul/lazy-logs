@@ -1,12 +1,10 @@
 import { format, isAfter, isBefore } from "date-fns";
 import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
 import { IoCalendar } from "react-icons/io5";
 import { TbMoneybag } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
-import { cancelBooking } from "../../services/apiBookings";
 
-function BookingCard({ booking }) {
+function BookingCard({ booking, onCancel }) {
 	const [time, setTime] = useState("");
 	const today = new Date();
 	const navigate = useNavigate();
@@ -74,14 +72,11 @@ function BookingCard({ booking }) {
 					</button>
 
 					<>
-						{time === "past" ? null : time === "future" ? ( // MIGHT do this later // </button> // 	Leave a review // <button className="bookings__card-extra-btn">
+						{time === "past" ? null : time === "future" ? (
 							<button
 								className="bookings__card-extra-btn"
-								onClick={async () => {
-									cancelBooking(booking._id);
-									toast.success("Booking canceled!", {
-										className: "toast toast-success",
-									});
+								onClick={() => {
+									onCancel(booking._id);
 								}}
 							>
 								Cancel booking

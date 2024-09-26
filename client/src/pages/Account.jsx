@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { useReducer, useCallback, useMemo } from "react";
-import toast from "react-hot-toast";
+import { useCallback, useMemo, useReducer } from "react";
 import { useAuthContext } from "../context/authContext";
 import { handleUpdateInfo, handleUpdatePassword } from "../hooks/useAccount";
 import { getUserById } from "../services/apiUsers";
@@ -25,10 +24,11 @@ function formReducer(state, action) {
 		case "SET_FIELD":
 			return { ...state, [action.field]: action.value };
 		case "SET_USER_DATA":
+			console.log(action.userData);
 			return {
 				...state,
-				firstName: action.userData.firstName || "",
-				lastName: action.userData.lastName || "",
+				firstName: action.userData.name.split(" ")[0] || "",
+				lastName: action.userData.name.split(" ")[1] || "",
 				email: action.userData.email || "",
 				phone: action.userData.phone || "",
 			};
@@ -38,24 +38,29 @@ function formReducer(state, action) {
 }
 
 function Account() {
-	const [state, dispatch] = useReducer(formReducer, initialState);
 	const { authState } = useAuthContext();
+
+	const [state, dispatch] = useReducer(formReducer, {
+		...initialState,
+		firstName: authState.user?.name.split(" ")[0] || "",
+		lastName: authState.user?.name.split(" ")[1] || "",
+		email: authState.user?.email || "",
+		phone: authState.user?.phoneNumber || "",
+	});
 
 	const userId = useMemo(() => authState.user?._id, [authState.user?._id]);
 
-	const { isLoading } = useQuery(
-		["userData", userId],
-		() => getUserById(userId),
-		{
-			enabled: !!userId,
-			onSuccess: (data) => {
-				dispatch({ type: "SET_USER_DATA", userData: data });
-			},
-			onError: (err) => {
-				handleError(err, "Failed to fetch your data");
-			},
-		}
-	);
+	const { isLoading } = useQuery({
+		queryKey: ["userData", userId],
+		queryFn: () => getUserById(userId),
+		enabled: !!userId && !authState.loading,
+		onSuccess: (data) => {
+			dispatch({ type: "SET_USER_DATA", userData: data });
+		},
+		onError: (err) => {
+			handleError(err, "Failed to fetch your data");
+		},
+	});
 
 	const handleChange = useCallback((e) => {
 		dispatch({
@@ -79,7 +84,7 @@ function Account() {
 		handleUpdatePassword(state.currentPassword, state.newPassword);
 	}, [state.currentPassword, state.newPassword]);
 
-	if (isLoading || !authState.isAuthenticated || !userId) {
+	if (isLoading) {
 		return <Loader>Your account data is being loaded...</Loader>;
 	}
 

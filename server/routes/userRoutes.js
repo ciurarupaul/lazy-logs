@@ -21,7 +21,7 @@ router.patch("/resetPassword/:token", authController.resetPassword);
 router.get("/me", userController.getUserByEmail);
 
 // user must be logged in to interact with these
-// router.use(authController.protect);
+router.use(authController.protect);
 
 router.patch("/updateMyPassword", authController.updatePassword);
 router.patch(

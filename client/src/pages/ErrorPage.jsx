@@ -1,7 +1,7 @@
 function ErrorPage() {
 	return (
 		<>
-			<div>something went wrong. go back.</div>
+			<div>looks like something went wrong. please try again</div>
 			<h5>pretty please</h5>
 		</>
 	);

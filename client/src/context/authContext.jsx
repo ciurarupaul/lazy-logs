@@ -8,6 +8,7 @@ import {
 } from "../services/apiAuth";
 import { getUserByEmail } from "../services/apiUsers";
 import handleError from "../utils/handleError";
+import { OnlyLoaderOnPage as Loader } from "../ui/utils/Loader";
 
 const AuthContext = createContext();
 
@@ -16,7 +17,7 @@ const AuthProvider = ({ children }) => {
 		isAuthenticated: false,
 		user: null,
 		token: null,
-		loading: false,
+		loading: true,
 	});
 
 	const queryClient = useQueryClient();
@@ -169,7 +170,7 @@ const AuthProvider = ({ children }) => {
 				getUserQuery,
 			}}
 		>
-			{children}
+			{authState.loading ? <Loader>your data</Loader> : children}
 		</AuthContext.Provider>
 	);
 };
