@@ -1,9 +1,14 @@
+import { RiArrowGoBackFill } from "react-icons/ri";
+
 function ErrorPage() {
 	return (
-		<>
-			<div>looks like something went wrong. please try again</div>
-			<h5>pretty please</h5>
-		</>
+		<div className="error-page">
+			<div>Looks like something went wrong</div>
+
+			<button onClick={() => (window.location.href = "/")}>
+				Go back <RiArrowGoBackFill className="error-page-icon" />
+			</button>
+		</div>
 	);
 }
 

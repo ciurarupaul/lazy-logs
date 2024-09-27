@@ -47,17 +47,20 @@ function AppRoutes() {
 							path="/listings/:listingId"
 							element={<Listing />}
 						/>
+
 						<Route path="users/:userId" element={<AccountLayout />}>
 							<Route index element={<Account />} />
 							<Route path="bookings" element={<Bookings />} />
 							<Route path="wishlist" element={<Wishlist />} />
 						</Route>
 					</Route>
+
 					<Route
 						path="/login"
 						errorElement={<ErrorPage />}
 						element={<Login />}
 					/>
+
 					<Route path="*" element={<PageNotFound />} />
 				</Routes>
 			</BrowserRouter>
