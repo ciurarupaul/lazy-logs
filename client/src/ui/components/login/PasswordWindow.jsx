@@ -63,18 +63,6 @@ function PasswordPanel({
 			>
 				Continue
 			</button>
-			<div className="login__password-options">
-				<div className="login__password-options-rememberme">
-					<input type="checkbox" name="rememberMe" id="rememberMe" />
-					<label htmlFor="rememberMe">Remember me</label>
-				</div>
-				<button
-					className="login__password-options-forgotpassword"
-					onClick={handleForgotPassword}
-				>
-					Forgot password
-				</button>
-			</div>
 		</div>
 	);
 }

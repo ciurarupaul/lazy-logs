@@ -111,9 +111,14 @@ function Account() {
 				handleChange={handleChange}
 				handleUpdatePassword={debouncedUpdatePassword}
 			/>
-			<button className="delete-account" onClick={handleDeleteAccount}>
-				Delete Account
-			</button>
+			<div className="delete-account">
+				<button
+					className="delete-account-btn"
+					onClick={handleDeleteAccount}
+				>
+					Delete Account
+				</button>
+			</div>
 		</>
 	);
 }

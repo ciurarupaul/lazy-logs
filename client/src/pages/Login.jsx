@@ -33,11 +33,11 @@ function Login() {
 		};
 
 		try {
-			await signup(userData);
-			navigate("/");
 			toast.success("User created successfully!", {
 				className: "toast toast-success",
 			});
+			await signup(userData);
+			navigate("/");
 		} catch (error) {
 			handleError(error, "Failed to fetch your data");
 		}
@@ -59,10 +59,10 @@ function Login() {
 		const checkUserCredentials = async () => {
 			if (password.trim() !== "") {
 				try {
-					await login(email, password);
 					toast.success("Successfully logged in!", {
 						className: "toast toast-success",
 					});
+					await login(email, password);
 					navigate("/");
 				} catch (err) {
 					handleError(err, "Error logging user in");

@@ -24,3 +24,18 @@
 		margin-bottom: 0.5rem;
 	}
 }
+
+.delete-account {
+	@include mixins.flexEnd();
+
+	&-btn {
+		font-size: typography.$fontsize-medium;
+		padding: 1rem 3rem;
+		color: var(--red);
+		border: 1px solid var(--red);
+
+		&:hover {
+			background-color: var(--background);
+		}
+	}
+}

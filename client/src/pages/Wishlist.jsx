@@ -32,23 +32,28 @@ function Wishlist() {
 		.map((query) => query.data);
 
 	const allListings = [...cachedListings, ...fetchedListings];
+	console.log(allListings);
 
 	if (isLoading) {
 		return <Loader>Loading your wishlist...</Loader>;
 	}
 
-	if (allListings.length === 0) {
-		return <p>Looks like you don't have aynthing here yet</p>;
-	}
-
 	return (
-		<ul className="listings">
-			{allListings.map((listing) => (
-				<li key={listing._id} className="listings__cell">
-					<ListingCard listing={listing} />
-				</li>
-			))}
-		</ul>
+		<>
+			{!allListings ? (
+				<ul className="listings">
+					{allListings.map((listing) => (
+						<li key={listing._id} className="listings__cell">
+							<ListingCard listing={listing} />
+						</li>
+					))}
+				</ul>
+			) : (
+				<p className="empty-fallback">
+					Looks like you don't have anything here yet
+				</p>
+			)}
+		</>
 	);
 }
 

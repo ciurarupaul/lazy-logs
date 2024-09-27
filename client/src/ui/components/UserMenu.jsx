@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../context/authContext";
 import Menus from "../utils/Menus";
 import ThemeButton from "../utils/ThemeButton";
+import handleError from "../../utils/handleError";
 
 function UserMenu({ toggleTheme }) {
 	const { logout, authState } = useAuthContext();
@@ -12,13 +13,13 @@ function UserMenu({ toggleTheme }) {
 	// add success toast
 	const handleLogout = async () => {
 		try {
-			await logout();
-			navigate("/");
 			toast.success("Successfully logged out!", {
 				className: "toast toast-success",
 			});
+			await logout();
+			navigate("/");
 		} catch (err) {
-			console.error("Error logging out:", err);
+			handleError(err, "Error logging out");
 		}
 	};
 

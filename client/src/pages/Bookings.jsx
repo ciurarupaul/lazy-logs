@@ -79,7 +79,7 @@ function Bookings() {
 						</li>
 					))
 				) : (
-					<p>No bookings available</p>
+					<p className="empty-fallback">No bookings available</p>
 				)}
 			</ul>
 		</div>
