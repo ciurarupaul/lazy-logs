@@ -6,9 +6,8 @@ const apiClient = axios.create({
 	headers: {
 		"Content-Type": "application/json",
 	},
+	withCredentials: true, // send cookies with every request
 });
-
-axios.defaults.withCredentials = true; // send cookies with every request
 
 apiClient.interceptors.response.use(
 	(response) => response,

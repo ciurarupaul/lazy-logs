@@ -34,10 +34,10 @@ function Login() {
 
 		try {
 			await signup(userData);
-			toast.success("Successfully signed up!", {
+			navigate("/");
+			toast.success("User created successfully!", {
 				className: "toast toast-success",
 			});
-			navigate("/");
 		} catch (error) {
 			handleError(error, "Failed to fetch your data");
 		}

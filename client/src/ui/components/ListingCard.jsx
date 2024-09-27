@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { AiFillStar } from "react-icons/ai";
 import { PiHeartStraightFill } from "react-icons/pi";
 import { Link } from "react-router-dom";
+import { useAuthContext } from "../../context/authContext";
 import { useWishlistContext } from "../../context/wishlistContext";
 import { calculateReviewsAverage } from "../../utils/calcAverage";
 import findFirstFreeDate from "../../utils/findFirstFreeDate";
@@ -11,6 +12,7 @@ import Carousel from "../utils/Carousel";
 const ListingCard = ({ listing }) => {
 	const { wishlist, addToWishlist, removeFromWishlist } =
 		useWishlistContext();
+	const { authState } = useAuthContext();
 
 	const isInWishlist = useMemo(() => {
 		return wishlist.includes(listing._id);
@@ -40,14 +42,16 @@ const ListingCard = ({ listing }) => {
 			<div className="listing__photo">
 				<Carousel images={listing.photos} />
 
-				<PiHeartStraightFill
-					className={`listing__photo-heart ${
-						isStarred
-							? "listing__photo-heart--full"
-							: "listing__photo-heart--empty"
-					}`}
-					onClick={handleWishlistToggle}
-				/>
+				{authState.user ? (
+					<PiHeartStraightFill
+						className={`listing__photo-heart ${
+							isStarred
+								? "listing__photo-heart--full"
+								: "listing__photo-heart--empty"
+						}`}
+						onClick={handleWishlistToggle}
+					/>
+				) : null}
 			</div>
 
 			<div className="listing__details">

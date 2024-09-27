@@ -1,8 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import { useCallback, useMemo, useReducer } from "react";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/authContext";
 import { handleUpdateInfo, handleUpdatePassword } from "../hooks/useAccount";
-import { getUserById } from "../services/apiUsers";
+import { deleteUser, getUserById } from "../services/apiUsers";
 import NewPasswordForm from "../ui/components/account-page/NewPasswordForm";
 import UserInfoForm from "../ui/components/account-page/UserInfoForm";
 import { Loader } from "../ui/utils/Loader";
@@ -39,6 +41,7 @@ function formReducer(state, action) {
 
 function Account() {
 	const { authState } = useAuthContext();
+	const navigate = useNavigate();
 
 	const [state, dispatch] = useReducer(formReducer, {
 		...initialState,
@@ -70,6 +73,14 @@ function Account() {
 		});
 	}, []);
 
+	const handleDeleteAccount = () => {
+		deleteUser(userId);
+		navigate("/");
+		toast.success("Account deleted!", {
+			className: "toast toast-success",
+		});
+	};
+
 	/* 
 	useMemo: Memorizes (caches) the result of a function (or computation) and reuses it when its dependencies haven't changed.
 	
@@ -100,6 +111,9 @@ function Account() {
 				handleChange={handleChange}
 				handleUpdatePassword={debouncedUpdatePassword}
 			/>
+			<button className="delete-account" onClick={handleDeleteAccount}>
+				Delete Account
+			</button>
 		</>
 	);
 }

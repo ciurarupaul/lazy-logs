@@ -1,13 +1,8 @@
 import express from "express";
-import bookingRouter from "./bookingRoutes.js";
-import listingRouter from "./listingRoutes.js";
 import userController from "../controllers/userController.js";
 import authController from "../controllers/authController.js";
 
 const router = express.Router({ mergeParams: true });
-
-router.use("/:userId/bookings", bookingRouter);
-router.use("/:userId/listings", listingRouter);
 
 router.get("/isLoggedIn", authController.isLoggedIn);
 router.post("/signup", authController.signup);
@@ -41,5 +36,12 @@ router
 	.get(userController.getUserById)
 	.patch(userController.updateUser)
 	.delete(userController.deleteUser);
+
+router
+	.route("/wishlist")
+	.get(userController.fetchWishlist)
+	.post(userController.addToWishlist);
+
+router.route("/wishlist/:listingId").delete(userController.removeFromWishlist);
 
 export default router;

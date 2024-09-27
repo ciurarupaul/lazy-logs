@@ -28,3 +28,25 @@ export async function getUserById(id) {
 	const result = await apiClient.get(`/users/${id}`);
 	return result.data.data.document;
 }
+
+export async function deleteUser(id) {
+	await apiClient.delete(`/users/${id}`);
+}
+
+// Wishlist requests
+
+export async function getWishlist() {
+	console.log("tries to fetch wishlist");
+	const response = await apiClient.get("/users/wishlist");
+	console.log(response);
+	return response.data.data.wishlist;
+}
+
+export async function addToWishlist(listingId) {
+	const response = await apiClient.post("/users/wishlist", { listingId });
+	return response.data.data.wishlist;
+}
+
+export async function removeFromWishlist(listingId) {
+	await apiClient.delete(`/users/wishlist/${listingId}`);
+}

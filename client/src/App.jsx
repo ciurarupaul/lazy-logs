@@ -67,7 +67,7 @@ function AppRoutes() {
 				containerClassName="toaster"
 				toastOptions={{
 					success: {
-						duration: 3000,
+						duration: 5000,
 					},
 					error: {
 						duration: 5000,

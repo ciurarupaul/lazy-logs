@@ -23,11 +23,6 @@ const userSchema = new mongoose.Schema(
 		},
 		phoneNumber: {
 			type: String,
-			// validate: {
-			// 	validator: (v) =>
-			// 		validator.isMobilePhone(v, "any", { strictMode: false }),
-			// 	message: "Invalid phone number",
-			// },
 		},
 		photo: {
 			type: String,
@@ -50,6 +45,7 @@ const userSchema = new mongoose.Schema(
 			type: String,
 			trim: true,
 		},
+		wishlist: [{ type: mongoose.Schema.ObjectId, ref: "Listing" }],
 		listings: [{ type: mongoose.Schema.ObjectId, ref: "Listing" }],
 	},
 	{
