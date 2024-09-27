@@ -20,7 +20,7 @@ const useListings = (filters, sortOption, currentPage, itemsPerPage) => {
 		onSuccess: (data) => {
 			data.forEach((listing) => {
 				// cache each individual listings
-				queryClient.setQueryData(["listing", listing._id], listing);
+				queryClient.setQueryData(["listing", listing._id]);
 			});
 		},
 	});

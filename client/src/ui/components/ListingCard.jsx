@@ -1,66 +1,39 @@
-import { addDays, format, isAfter } from "date-fns";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { AiFillStar } from "react-icons/ai";
 import { PiHeartStraightFill } from "react-icons/pi";
 import { Link } from "react-router-dom";
+import { useWishlistContext } from "../../context/wishlistContext";
+import { calculateReviewsAverage } from "../../utils/calcAverage";
+import findFirstFreeDate from "../../utils/findFirstFreeDate";
+import formatLabel from "../../utils/formatLabel";
 import Carousel from "../utils/Carousel";
 
-function calculateReviewsAverage(reviews) {
-	if (!reviews) return 0;
+const ListingCard = ({ listing }) => {
+	const { wishlist, addToWishlist, removeFromWishlist } =
+		useWishlistContext();
 
-	const numberOfReviews = reviews.length;
-	const totalRating = reviews.reduce((sum, review) => sum + review.rating, 0);
-	const averageRating = totalRating / numberOfReviews;
+	const isInWishlist = useMemo(() => {
+		return wishlist.includes(listing._id);
+	}, [wishlist, listing._id]);
 
-	return Math.floor(averageRating * 10) / 10;
-}
+	const [isStarred, setIsStarred] = useState(isInWishlist);
 
-function formatLabel(value, singular, plural) {
-	return value > 1 ? `${value} ${plural}` : `1 ${singular}`;
-}
-
-function findFirstFreeDate(blockedDates) {
-	const sortedBlockedDates = blockedDates.sort(
-		(a, b) => new Date(a.startDate) - new Date(b.startDate)
-	);
-
-	const today = new Date();
-	const tomorrow = addDays(today, 1);
-
-	if (
-		sortedBlockedDates.length === 0 ||
-		isAfter(tomorrow, new Date(sortedBlockedDates[0].startDate))
-	) {
-		return "tomorrow";
-	}
-
-	for (let i = 0; i < sortedBlockedDates.length - 1; i++) {
-		const currentEndDate = new Date(sortedBlockedDates[i].endDate);
-		const nextStartDate = new Date(sortedBlockedDates[i + 1].startDate);
-
-		if (isAfter(nextStartDate, addDays(currentEndDate, 1))) {
-			const firstFreeDay = addDays(currentEndDate, 1);
-			if (isAfter(firstFreeDay, tomorrow)) {
-				return format(firstFreeDay, "dd.MM");
-			} else {
-				return "tomorrow";
-			}
+	useEffect(() => {
+		if (isStarred !== isInWishlist) {
+			setIsStarred(isInWishlist);
 		}
-	}
+	}, [isInWishlist, isStarred]);
 
-	const lastEndDate = new Date(
-		sortedBlockedDates[sortedBlockedDates.length - 1].endDate
-	);
-	const firstFreeDayAfterLastBlocked = addDays(lastEndDate, 1);
-	if (isAfter(firstFreeDayAfterLastBlocked, tomorrow)) {
-		return format(firstFreeDayAfterLastBlocked, "dd.MM");
-	} else {
-		return "tomorrow";
-	}
-}
-
-function ListingCard({ listing }) {
-	const [isStarred, setIsStarred] = useState(false);
+	const handleWishlistToggle = (event) => {
+		event.stopPropagation();
+		event.preventDefault();
+		if (isStarred) {
+			removeFromWishlist(listing._id);
+		} else {
+			addToWishlist(listing._id);
+		}
+		setIsStarred(!isStarred);
+	};
 
 	return (
 		<Link to={`listings/${listing._id}`} className="listing">
@@ -73,11 +46,7 @@ function ListingCard({ listing }) {
 							? "listing__photo-heart--full"
 							: "listing__photo-heart--empty"
 					}`}
-					onClick={(event) => {
-						event.stopPropagation();
-						event.preventDefault();
-						setIsStarred(!isStarred);
-					}}
+					onClick={handleWishlistToggle}
 				/>
 			</div>
 
@@ -143,6 +112,6 @@ function ListingCard({ listing }) {
 			</div>
 		</Link>
 	);
-}
+};
 
 export default ListingCard;

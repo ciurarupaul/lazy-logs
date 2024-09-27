@@ -6,6 +6,7 @@ import Filters from "../ui/components/listings-page/Filters";
 import Pagination from "../ui/components/listings-page/Pagination";
 import Sorting from "../ui/components/listings-page/Sorting";
 import { PageLoader as Loader } from "../ui/utils/Loader";
+import { useWishlistContext } from "../context/wishlistContext";
 
 const ITEMS_PER_PAGE = 12;
 const MemoizedListingCard = memo(ListingCard);
@@ -15,6 +16,8 @@ function Listings() {
 	const [sortOption, setSortOption] = useState("popular");
 	const [currentPage, setCurrentPage] = useState(1);
 	const { authState } = useAuthContext();
+	const { wishlist, addToWishlist, removeFromWishlist } =
+		useWishlistContext();
 
 	const handleSortChange = (event) => {
 		setSortOption(event.target.value);
@@ -37,34 +40,43 @@ function Listings() {
 
 	return (
 		<div className="page-container">
-			<div className="listings__header">
+			<header className="listings__header">
 				<Filters filters={filters} setFilters={setFilters} />
 				<Sorting
 					sortOption={sortOption}
 					handleSortChange={handleSortChange}
 				/>
-			</div>
+			</header>
 
-			<ul className="listings">
-				{filteredListings.length > 0 ? (
-					filteredListings.map((listing) => (
-						<li key={listing._id} className="listings__cell">
-							<MemoizedListingCard listing={listing} />
-						</li>
-					))
-				) : (
-					<p>No listings available</p>
-				)}
-			</ul>
+			<main>
+				<ul className="listings">
+					{filteredListings.length > 0 ? (
+						filteredListings.map((listing) => (
+							<li key={listing._id} className="listings__cell">
+								<MemoizedListingCard
+									listing={listing}
+									wishlist={wishlist}
+									addToWishlist={addToWishlist}
+									removeFromWishlist={removeFromWishlist}
+								/>
+							</li>
+						))
+					) : (
+						<p>No listings available</p>
+					)}
+				</ul>
+			</main>
 
-			{totalFilteredListings > ITEMS_PER_PAGE ? (
-				<Pagination
-					currentPage={currentPage}
-					setCurrentPage={setCurrentPage}
-					totalItems={totalFilteredListings}
-					itemsPerPage={ITEMS_PER_PAGE}
-				/>
-			) : null}
+			<footer>
+				{totalFilteredListings > ITEMS_PER_PAGE ? (
+					<Pagination
+						currentPage={currentPage}
+						setCurrentPage={setCurrentPage}
+						totalItems={totalFilteredListings}
+						itemsPerPage={ITEMS_PER_PAGE}
+					/>
+				) : null}
+			</footer>
 		</div>
 	);
 }

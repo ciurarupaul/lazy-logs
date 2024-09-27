@@ -3,7 +3,8 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { ErrorBoundary } from "react-error-boundary";
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { AuthProvider, useAuthContext } from "./context/authContext";
+import { AuthProvider } from "./context/authContext";
+import { WishlistProvider } from "./context/wishlistContext";
 import Account from "./pages/Account";
 import Bookings from "./pages/Bookings";
 import ErrorPage from "./pages/ErrorPage";
@@ -14,7 +15,6 @@ import PageNotFound from "./pages/PageNotFound";
 import Wishlist from "./pages/Wishlist";
 import AccountLayout from "./ui/layout/AccountLayout";
 import AppLayout from "./ui/layout/AppLayout";
-import { Loader } from "./ui/utils/Loader";
 
 const queryClient = new QueryClient();
 
@@ -22,7 +22,9 @@ function App() {
 	return (
 		<QueryClientProvider client={queryClient}>
 			<AuthProvider>
-				<AppRoutes />
+				<WishlistProvider>
+					<AppRoutes />
+				</WishlistProvider>
 			</AuthProvider>
 			<ReactQueryDevtools initialIsOpen={true} />
 		</QueryClientProvider>
@@ -30,12 +32,6 @@ function App() {
 }
 
 function AppRoutes() {
-	const { authState } = useAuthContext();
-
-	if (authState.loading) {
-		return <Loader>AUTH STATE</Loader>;
-	}
-
 	return (
 		<ErrorBoundary fallback={<ErrorPage />}>
 			<BrowserRouter>
