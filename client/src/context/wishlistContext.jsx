@@ -1,60 +1,10 @@
-import { createContext, useContext, useState, useEffect } from "react";
-
-const WishlistContext = createContext();
-
-const WishlistProvider = ({ children }) => {
-	const [wishlist, setWishlist] = useState(() => {
-		const savedWishlist = localStorage.getItem("wishlist");
-		return savedWishlist ? JSON.parse(savedWishlist) : [];
-	});
-
-	useEffect(() => {
-		localStorage.setItem("wishlist", JSON.stringify(wishlist));
-	}, [wishlist]);
-
-	const addToWishlist = (listingId) => {
-		setWishlist((prev) => {
-			if (!prev.includes(listingId)) {
-				return [...prev, listingId];
-			}
-			return prev;
-		});
-	};
-
-	const removeFromWishlist = (listingId) => {
-		setWishlist((prev) => prev.filter((id) => id !== listingId));
-	};
-
-	return (
-		<WishlistContext.Provider
-			value={{ wishlist, addToWishlist, removeFromWishlist }}
-		>
-			{children}
-		</WishlistContext.Provider>
-	);
-};
-
-function useWishlistContext() {
-	const context = useContext(WishlistContext);
-	if (context === undefined)
-		throw new Error(
-			"useWishlistContext must be used within a WishlistProvider!"
-		);
-	return context;
-}
-
-export { useWishlistContext, WishlistProvider };
-
-// will come back later to fix - fucking hate this, errors make no sense
-// for now, wishlist is saved to localstorage
-
-/*import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { createContext, useContext } from "react";
 import {
 	addToWishlist,
 	getWishlist,
 	removeFromWishlist,
-} from "../services/apiUsers";
+} from "../services/apiWishlist";
 import { useAuthContext } from "./authContext";
 import handleError from "../utils/handleError";
 import { Loader } from "../ui/utils/Loader";
@@ -97,12 +47,23 @@ const WishlistProvider = ({ children }) => {
 	});
 
 	const handleAddToWishlist = (listingId) => {
-		if (!authState.user) return;
+		if (!authState.user || wishlist.includes(listingId)) return;
+
+		// optimistic update
+		queryClient.setQueryData(["wishlist"], (oldWishlist) => {
+			return [...oldWishlist, listingId];
+		});
+
 		addToWishlistMutation.mutate(listingId);
 	};
 
 	const handleRemoveFromWishlist = (listingId) => {
 		if (!authState.user) return;
+
+		queryClient.setQueryData(["wishlist"], (oldWishlist) => {
+			return oldWishlist.filter((id) => id !== listingId);
+		});
+
 		removeFromWishlistMutation.mutate(listingId);
 	};
 
@@ -116,11 +77,7 @@ const WishlistProvider = ({ children }) => {
 				error,
 			}}
 		>
-			{isLoading ? (
-				<Loader message="Loading your wishlist..." />
-			) : (
-				children
-			)}
+			{isLoading ? <Loader>your wishlist</Loader> : children}
 		</WishlistContext.Provider>
 	);
 };
@@ -135,4 +92,3 @@ function useWishlistContext() {
 }
 
 export { useWishlistContext, WishlistProvider };
-*/

@@ -9,22 +9,11 @@ import findFirstFreeDate from "../../utils/findFirstFreeDate";
 import formatLabel from "../../utils/formatLabel";
 import Carousel from "../utils/Carousel";
 
-const ListingCard = ({ listing }) => {
+const ListingCard = ({ listing, isInWishlist }) => {
 	const { wishlist, addToWishlist, removeFromWishlist } =
 		useWishlistContext();
 	const { authState } = useAuthContext();
-
-	const isInWishlist = useMemo(() => {
-		return wishlist.includes(listing._id);
-	}, [wishlist, listing._id]);
-
 	const [isStarred, setIsStarred] = useState(isInWishlist);
-
-	useEffect(() => {
-		if (isStarred !== isInWishlist) {
-			setIsStarred(isInWishlist);
-		}
-	}, [isInWishlist, isStarred]);
 
 	const handleWishlistToggle = (event) => {
 		event.stopPropagation();
@@ -33,12 +22,13 @@ const ListingCard = ({ listing }) => {
 			removeFromWishlist(listing._id);
 		} else {
 			addToWishlist(listing._id);
+			console.log(listing._id, "wishlist mutated: ", wishlist);
 		}
 		setIsStarred(!isStarred);
 	};
 
 	return (
-		<Link to={`listings/${listing._id}`} className="listing">
+		<Link to={`/listings/${listing._id}`} className="listing">
 			<div className="listing__photo">
 				<Carousel images={listing.photos} />
 

@@ -1,8 +1,11 @@
+import { useQueries, useQueryClient } from "@tanstack/react-query";
+import { memo } from "react";
 import { useWishlistContext } from "../context/wishlistContext";
-import ListingCard from "../ui/components/ListingCard";
-import { useQueryClient, useQueries } from "@tanstack/react-query";
-import { Loader } from "../ui/utils/Loader";
 import { getListing } from "../services/apiListings";
+import ListingCard from "../ui/components/ListingCard";
+import { Loader } from "../ui/utils/Loader";
+
+const MemoizedListingCard = memo(ListingCard);
 
 function Wishlist() {
 	const { wishlist } = useWishlistContext();
@@ -32,7 +35,6 @@ function Wishlist() {
 		.map((query) => query.data);
 
 	const allListings = [...cachedListings, ...fetchedListings];
-	console.log(allListings);
 
 	if (isLoading) {
 		return <Loader>Loading your wishlist...</Loader>;
@@ -40,11 +42,16 @@ function Wishlist() {
 
 	return (
 		<>
-			{!allListings ? (
+			{allListings.length > 0 ? (
 				<ul className="listings">
 					{allListings.map((listing) => (
 						<li key={listing._id} className="listings__cell">
-							<ListingCard listing={listing} />
+							<MemoizedListingCard
+								listing={listing}
+								isInWishlist={() =>
+									wishlist.includes(listing._id)
+								}
+							/>
 						</li>
 					))}
 				</ul>

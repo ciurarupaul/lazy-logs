@@ -16,8 +16,7 @@ function Listings() {
 	const [sortOption, setSortOption] = useState("popular");
 	const [currentPage, setCurrentPage] = useState(1);
 	const { authState } = useAuthContext();
-	const { wishlist, addToWishlist, removeFromWishlist } =
-		useWishlistContext();
+	const { wishlist } = useWishlistContext();
 
 	const handleSortChange = (event) => {
 		setSortOption(event.target.value);
@@ -55,9 +54,9 @@ function Listings() {
 							<li key={listing._id} className="listings__cell">
 								<MemoizedListingCard
 									listing={listing}
-									wishlist={wishlist}
-									addToWishlist={addToWishlist}
-									removeFromWishlist={removeFromWishlist}
+									isInWishlist={() =>
+										wishlist.includes(listing._id)
+									}
 								/>
 							</li>
 						))

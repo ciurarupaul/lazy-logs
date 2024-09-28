@@ -98,53 +98,6 @@ const userController = {
 		});
 	}),
 
-	fetchWishlist: catchAsync(async (req, res, next) => {
-		const user = await User.findById(req.user._id).populate("wishlist");
-
-		res.status(200).json({
-			status: "success",
-			data: {
-				wishlist: user.wishlist,
-			},
-		});
-	}),
-
-	addToWishlist: catchAsync(async (req, res, next) => {
-		const { listingId } = req.body;
-
-		const user = await User.findById(req.user._id);
-
-		if (!user.wishlist.includes(listingId)) {
-			user.wishlist.push(listingId);
-			await user.save();
-		}
-
-		res.status(200).json({
-			status: "success",
-			data: {
-				wishlist: user.wishlist,
-			},
-		});
-	}),
-
-	removeFromWishlist: catchAsync(async (req, res, next) => {
-		const { listingId } = req.params;
-
-		const user = await User.findById(req.user._id);
-		user.wishlist = user.wishlist.filter(
-			(id) => id.toString() !== listingId
-		);
-
-		await user.save();
-
-		res.status(200).json({
-			status: "success",
-			data: {
-				wishlist: user.wishlist,
-			},
-		});
-	}),
-
 	getAllUsers: handlerFactory.getAll(User),
 	getUserById: handlerFactory.getOne(User),
 

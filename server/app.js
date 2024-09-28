@@ -7,6 +7,7 @@ import listingRouter from "./routes/listingRoutes.js";
 import reviewRouter from "./routes/reviewRoutes.js";
 import userRouter from "./routes/userRoutes.js";
 import AppError from "./utils/appError.js";
+import wishlistRouter from "./routes/wishlistRouter.js";
 import globalErrorHandler from "./controllers/errorController.js";
 
 const app = express();
@@ -37,6 +38,9 @@ app.use("/api/bookings", bookingRouter);
 app.use("/api/listings", listingRouter);
 app.use("/api/reviews", reviewRouter);
 app.use("/api/users", userRouter);
+app.use("/api/wishlist", wishlistRouter);
+
+// weird error, doesnt allow /api/users/wishlist, but is ok without users ??? returns server error 500
 
 // Handle undefined routes
 app.all("*", (req, res, next) => {

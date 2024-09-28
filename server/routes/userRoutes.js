@@ -37,11 +37,4 @@ router
 	.patch(userController.updateUser)
 	.delete(userController.deleteUser);
 
-router
-	.route("/wishlist")
-	.get(userController.fetchWishlist)
-	.post(userController.addToWishlist);
-
-router.route("/wishlist/:listingId").delete(userController.removeFromWishlist);
-
 export default router;
