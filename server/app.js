@@ -16,9 +16,9 @@ app.use(
 	cors({
 		// accept multiple origins
 		origin: [
+			"https://lazy-logs-server.vercel.app/",
 			"http://localhost:3000",
 			"http://localhost:5173",
-			process.env.DEPLOYED_URL,
 		],
 		methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
 		allowedHeaders: [

@@ -2,7 +2,9 @@ import axios from "axios";
 import { toast } from "react-hot-toast";
 
 const apiClient = axios.create({
-	baseURL: "http://localhost:3000/api" || "https://lazy-logs.vercel.app/",
+	baseURL:
+		"https://lazy-logs-server.vercel.app/api" ||
+		"http://localhost:3000/api",
 	headers: {
 		"Content-Type": "application/json",
 	},
