@@ -1,7 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
+import { cancelBooking, getBookingsForUser } from "../../api/apiBookings";
 import { useAuthContext } from "../context/authContext";
-import { cancelBooking, getBookingsForUser } from "../services/apiBookings";
 import BookingCard from "../ui/components/BookingCard";
 import { Loader } from "../ui/utils/Loader";
 import handleError from "../utils/handleError";

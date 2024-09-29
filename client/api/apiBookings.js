@@ -1,4 +1,4 @@
-import apiClient from "../utils/apiClient";
+import apiClient from "./apiClient";
 
 export async function getBookingsForUser(id) {
 	const response = await apiClient.get(`/bookings/user/${id}`);

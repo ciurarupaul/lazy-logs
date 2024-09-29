@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { FlagIcon } from "react-flag-kit";
 import { AiFillStar } from "react-icons/ai";
 import { useParams } from "react-router-dom";
-import { getListing } from "../services/apiListings";
+import { getListing } from "../../api/apiListings";
 import BookingSection from "../ui/components/listing-page/BookingSection";
 import PropertyDetails from "../ui/components/listing-page/PropertyDetails";
 import PropertyMap from "../ui/components/listing-page/PropertyMap";

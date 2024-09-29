@@ -4,7 +4,7 @@ import {
 	addToWishlist,
 	getWishlist,
 	removeFromWishlist,
-} from "../services/apiWishlist";
+} from "../../api/apiWishlist";
 import { useAuthContext } from "./authContext";
 import handleError from "../utils/handleError";
 import { Loader } from "../ui/utils/Loader";

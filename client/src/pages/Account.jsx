@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../context/authContext";
 import { handleUpdateInfo, handleUpdatePassword } from "../hooks/useAccount";
-import { deleteUser, getUserById } from "../services/apiUsers";
+import { deleteUser, getUserById } from "../../api/apiUsers";
 import NewPasswordForm from "../ui/components/account-page/NewPasswordForm";
 import UserInfoForm from "../ui/components/account-page/UserInfoForm";
 import { Loader } from "../ui/utils/Loader";

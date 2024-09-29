@@ -1,7 +1,7 @@
 import { useQueries, useQueryClient } from "@tanstack/react-query";
 import { memo } from "react";
 import { useWishlistContext } from "../context/wishlistContext";
-import { getListing } from "../services/apiListings";
+import { getListing } from "../../api/apiListings";
 import ListingCard from "../ui/components/ListingCard";
 import { Loader } from "../ui/utils/Loader";
 

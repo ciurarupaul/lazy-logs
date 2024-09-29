@@ -1,5 +1,5 @@
 import toast from "react-hot-toast";
-import { updateMyPassword, updateUser } from "../services/apiUsers";
+import { updateMyPassword, updateUser } from "../../api/apiUsers";
 
 export const handleUpdatePassword = async (currentPassword, newPassword) => {
 	await updateMyPassword(currentPassword, newPassword);

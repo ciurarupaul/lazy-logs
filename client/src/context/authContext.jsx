@@ -5,8 +5,8 @@ import {
 	loginUser,
 	logoutUser,
 	signUpUser,
-} from "../services/apiAuth";
-import { getUserByEmail } from "../services/apiUsers";
+} from "../../api/apiAuth";
+import { getUserByEmail } from "../../api/apiUsers";
 import handleError from "../utils/handleError";
 import { OnlyLoaderOnPage as Loader } from "../ui/utils/Loader";
 

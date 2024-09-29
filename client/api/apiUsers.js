@@ -1,4 +1,4 @@
-import apiClient from "../utils/apiClient";
+import apiClient from "./apiClient";
 
 // if more complex, should also include data validation here, especially if the requests are reused
 

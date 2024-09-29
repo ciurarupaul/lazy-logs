@@ -1,6 +1,6 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useMemo } from "react";
-import { getListings } from "../services/apiListings";
+import { getListings } from "../../api/apiListings";
 import { calculateReviewsAverage } from "../utils/calcAverage";
 import { filterListings } from "../utils/filter";
 import { sortListings } from "../utils/sort";

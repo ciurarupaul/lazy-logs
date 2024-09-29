@@ -12,7 +12,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../../context/authContext";
-import { createBooking } from "../../../services/apiBookings";
+import { createBooking } from "../../../../api/apiBookings";
 import BookingPrice from "./BookingPrice";
 import handleError from "../../../utils/handleError";
 
