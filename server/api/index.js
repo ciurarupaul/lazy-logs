@@ -65,7 +65,11 @@ const connectToDatabase = async () => {
 };
 
 // Vercel Serverless Function
-export default async function handler(req, res) {
-	await connectToDatabase();
-	app(req, res);
-}
+// export default async function handler(req, res) {
+// 	await connectToDatabase();
+// 	app(req, res);
+// }
+
+module.exports = (req, res) => {
+	res.status(200).json({ message: "Hello from Serverless Function!" });
+};
