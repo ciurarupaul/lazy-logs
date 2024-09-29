@@ -2,7 +2,7 @@
 	"name": "server",
 	"version": "1.0.0",
 	"description": "application back-end",
-	"main": "server.js",
+	"main": "api/index.js",
 	"scripts": {
 		"start": "nodemon server.js",
 		"seed": "node seed.js"

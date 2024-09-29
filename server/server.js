@@ -1,24 +1,36 @@
-import mongoose from "mongoose"; // ObjectDataModelling library for MongoDB and Node.js ; Helps with schema based data modelling
+import mongoose from "mongoose";
 import dotenv from "dotenv";
-// used to load environmental variables (from .env files)
-import app from "./api/index.js";
+import app from "./app.js";
 
 dotenv.config();
-
-// <--- connect to db ---> (after creating project + cluster on Atlas)
 
 const DB = process.env.DATABASE.replace(
 	"<password>",
 	process.env.DATABASE_PASSWORD
 );
 
-mongoose.connect(DB).then(() => {
-	console.log("DB connection successful!");
-});
+let isConnected;
 
-// <--- listen for changes --->
+export const connectToDatabase = async () => {
+	if (isConnected) {
+		return;
+	}
 
+	try {
+		await mongoose.connect(DB, {
+			useNewUrlParser: true,
+			useUnifiedTopology: true,
+		});
+		isConnected = true;
+		console.log("DB connection successful!");
+	} catch (error) {
+		console.error("DB connection error:", error);
+		throw new Error("Failed to connect to the database");
+	}
+};
+
+// Ensure the server listens for incoming requests
 const port = process.env.PORT || 3000;
-const server = app.listen(port, () => {
-	console.log(`App is running on port ${port}...`);
+app.listen(port, () => {
+	console.log(`Server is running on port ${port}`);
 });
