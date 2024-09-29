@@ -4,8 +4,8 @@ axios.defaults.withCredentials = true; // send cookies with every request
 
 const apiClient = axios.create({
 	baseURL:
-		"https://lazy-logs-server.vercel.app/api" ||
-		"http://localhost:3000/api",
+		"https://lazy-logs-server.vercel.app/api/users" ||
+		"http://localhost:3000/api/users",
 	headers: {
 		"Content-Type": "application/json",
 	},
