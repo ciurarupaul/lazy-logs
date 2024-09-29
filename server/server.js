@@ -1,9 +1,9 @@
 import mongoose from "mongoose"; // ObjectDataModelling library for MongoDB and Node.js ; Helps with schema based data modelling
 import dotenv from "dotenv";
 // used to load environmental variables (from .env files)
-import app from "./app.js";
+import app from "./api/index.js";
 
-dotenv.config({ path: "./config.env" });
+dotenv.config();
 
 // <--- connect to db ---> (after creating project + cluster on Atlas)
 

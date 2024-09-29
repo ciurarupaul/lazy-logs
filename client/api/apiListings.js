@@ -1,4 +1,4 @@
-import apiClient from "./apiClient";
+import apiClient from "./apiClient.js";
 
 export async function getListings(filters, sortOption, page, itemsPerPage) {
 	const response = await apiClient.get("/listings", {

@@ -2,13 +2,13 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import express from "express";
 
-import bookingRouter from "./routes/bookingRoutes.js";
-import listingRouter from "./routes/listingRoutes.js";
-import reviewRouter from "./routes/reviewRoutes.js";
-import userRouter from "./routes/userRoutes.js";
-import AppError from "./utils/appError.js";
-import wishlistRouter from "./routes/wishlistRouter.js";
-import globalErrorHandler from "./controllers/errorController.js";
+import bookingRouter from "../routes/bookingRoutes.js";
+import listingRouter from "../routes/listingRoutes.js";
+import reviewRouter from "../routes/reviewRoutes.js";
+import userRouter from "../routes/userRoutes.js";
+import AppError from "../utils/appError.js";
+import wishlistRouter from "../routes/wishlistRouter.js";
+import globalErrorHandler from "../controllers/errorController.js";
 
 const app = express();
 

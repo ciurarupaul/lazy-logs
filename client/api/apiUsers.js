@@ -1,4 +1,4 @@
-import apiClient from "./apiClient";
+import apiClient from "./apiClient.js";
 
 // if more complex, should also include data validation here, especially if the requests are reused
 
