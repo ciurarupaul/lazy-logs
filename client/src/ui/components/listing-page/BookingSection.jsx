@@ -14,6 +14,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../../context/authContext";
 import { createBooking } from "../../../services/apiBookings";
 import BookingPrice from "./BookingPrice";
+import handleError from "../../../utils/handleError";
+
 const getBlockedDates = (blockedDates) => {
 	let dates = [];
 	blockedDates.forEach((interval) => {
@@ -106,7 +108,7 @@ function BookingSection({ listing }) {
 				className: "toast toast-success",
 			});
 		} catch (err) {
-			// handle error
+			handleError(err, "Error booking listing");
 		}
 	};
 

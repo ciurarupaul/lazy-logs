@@ -1,4 +1,5 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useEffect } from "react";
 import { FlagIcon } from "react-flag-kit";
 import { AiFillStar } from "react-icons/ai";
 import { useParams } from "react-router-dom";
@@ -21,12 +22,22 @@ function Listing() {
 	const cachedListing = queryClient.getQueryData(["listing", listingId]);
 
 	// If cached data is found, use it; otherwise, fetch from API
-	const { data: listing = cachedListing, isLoading } = useQuery({
+	const {
+		data: listing = cachedListing,
+		isLoading,
+		refetch,
+	} = useQuery({
 		queryKey: ["listing", listingId],
 		queryFn: () => getListing(listingId),
 		enabled: !cachedListing,
 		onError: (err) => handleError(err, "Failed to fetch listing"),
 	});
+
+	useEffect(() => {
+		if (listing && listing.blockedDates) {
+			refetch();
+		}
+	}, [listing?.blockedDates, refetch]);
 
 	if (isLoading) return <Loader>property data</Loader>;
 
