@@ -11,10 +11,15 @@ import wishlistRouter from "./routes/wishlistRouter.js";
 import globalErrorHandler from "./controllers/errorController.js";
 
 const app = express();
+
 app.use(
 	cors({
 		// accept multiple origins
-		origin: ["http://localhost:3000", "http://localhost:5173"],
+		origin: [
+			"http://localhost:3000",
+			"http://localhost:5173",
+			process.env.DEPLOYED_URL,
+		],
 		methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
 		allowedHeaders: [
 			"Content-Type",
