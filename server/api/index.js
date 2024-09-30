@@ -16,11 +16,7 @@ const app = express();
 
 app.use(
 	cors({
-		origin: [
-			"https://lazy-logs.vercel.app/",
-			"https://lazy-logs-ciuraru-pauls-projects.vercel.app/",
-			"https://lazy-logs-mi1i0j2mz-ciuraru-pauls-projects.vercel.app/",
-		],
+		origin: "*",
 		methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
 		credentials: true,
 	})
