@@ -23,7 +23,7 @@ const WishlistProvider = ({ children }) => {
 	} = useQuery({
 		queryKey: ["wishlist"],
 		queryFn: getWishlist,
-		enabled: !!authState.user.token,
+		enabled: authState?.user !== null && authState?.user?.token !== null,
 		staleTime: 1000 * 60 * 5,
 		onError: (err) => handleError(err, "Error fetching your wishlist"),
 	});
