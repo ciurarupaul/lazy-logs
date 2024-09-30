@@ -1,5 +1,4 @@
 import axios from "axios";
-import { toast } from "react-hot-toast";
 
 const apiClient = axios.create({
 	baseURL:
@@ -48,10 +47,6 @@ apiClient.interceptors.response.use(
 					message = data?.message || "Unexpected error occurred.";
 			}
 		}
-
-		toast.error(message, {
-			className: "toast toast-error",
-		});
 
 		// Reject promise to propagate the error to catch blocks
 		return Promise.reject(error);

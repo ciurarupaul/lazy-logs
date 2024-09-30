@@ -7,7 +7,7 @@ import { handleUpdateInfo, handleUpdatePassword } from "../hooks/useAccount";
 import { deleteUser, getUserById } from "../../api/apiUsers";
 import NewPasswordForm from "../ui/components/account-page/NewPasswordForm";
 import UserInfoForm from "../ui/components/account-page/UserInfoForm";
-import { Loader } from "../ui/utils/Loader";
+import { PageLoader as Loader } from "../ui/utils/Loader";
 import handleError from "../utils/handleError";
 
 // Initial state for the form reducer
@@ -96,7 +96,7 @@ function Account() {
 	}, [state.currentPassword, state.newPassword]);
 
 	if (isLoading) {
-		return <Loader>Your account data is being loaded...</Loader>;
+		return <Loader>your account data</Loader>;
 	}
 
 	return (
