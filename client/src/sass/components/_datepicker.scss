@@ -1,6 +1,5 @@
 @use "../base/typography";
 @use "../abstracts/mixins";
-@import "~react-datepicker/dist/react-datepicker.css";
 
 .react-datepicker {
 	border: 1px solid var(--background-lines);

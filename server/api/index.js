@@ -14,6 +14,8 @@ import wishlistRouter from "./wishlistRouter.js";
 dotenv.config();
 const app = express();
 
+// HUGE bug here. wrote the urls with / at the end, and that caused the cors issues
+
 app.use(
 	cors({
 		origin: [

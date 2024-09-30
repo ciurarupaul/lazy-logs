@@ -15,6 +15,7 @@ import PageNotFound from "./pages/PageNotFound";
 import Wishlist from "./pages/Wishlist";
 import AccountLayout from "./ui/layout/AccountLayout";
 import AppLayout from "./ui/layout/AppLayout";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const queryClient = new QueryClient();
 
@@ -77,6 +78,7 @@ function AppRoutes() {
 					},
 				}}
 			/>
+			<SpeedInsights />
 		</ErrorBoundary>
 	);
 }
