@@ -15,11 +15,7 @@ const app = express();
 app.use(
 	cors({
 		// accept multiple origins
-		origin: [
-			"https://lazy-logs-server.vercel.app/",
-			"http://localhost:3000",
-			"http://localhost:5173",
-		],
+		origin: ["http://localhost:3000", "http://localhost:5173"],
 		methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
 		credentials: true,
 	})
