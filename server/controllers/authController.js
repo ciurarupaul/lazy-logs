@@ -18,9 +18,10 @@ const createSendToken = (user, statusCode, res) => {
 			Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
 		),
 		httpOnly: true,
+		sameSite: "None", // Allow cross-site usage -> HUGE BUG here
+		secure: true, // Cookie will only be sent over HTTPS
 	};
 
-	res.setHeader("X-JWT-Token", token);
 	res.cookie("jwt", token, cookieOptions);
 
 	// Remove password from output
