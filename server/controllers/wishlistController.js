@@ -28,7 +28,7 @@ const wishlistController = {
 		const listingObjectId = new mongoose.Types.ObjectId(listingId);
 
 		if (!mongoose.Types.ObjectId.isValid(listingId)) {
-			throw new AppError("Invalid listing ID");
+			new AppError("Invalid listing ID");
 		}
 
 		if (user.wishlist.some((id) => id.equals(listingObjectId))) {

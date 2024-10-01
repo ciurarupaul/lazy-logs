@@ -20,6 +20,7 @@ const createSendToken = (user, statusCode, res) => {
 		httpOnly: true,
 	};
 
+	res.setHeader("X-JWT-Token", token);
 	res.cookie("jwt", token, cookieOptions);
 
 	// Remove password from output
