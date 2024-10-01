@@ -16,6 +16,15 @@ const app = express();
 
 // HUGE bug here. wrote the urls with / at the end in the CORS config, and that caused a lot of issues, since the site wasn't allowed to make requests
 
+const allowedOrigins = ["https://lazy-logs.vercel.app"];
+
+app.use(
+	cors({
+		origin: allowedOrigins,
+		credentials: true,
+	})
+);
+
 // Middleware setup
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
