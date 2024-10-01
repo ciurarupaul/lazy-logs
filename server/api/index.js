@@ -16,17 +16,17 @@ const app = express();
 
 // HUGE bug here. wrote the urls with / at the end, and that caused the cors issues
 
-app.use(
-	cors({
-		origin: [
-			"https://lazy-logs.vercel.app",
-			"https://lazy-logs-ciuraru-pauls-projects.vercel.app",
-			"https://lazy-logs-mi1i0j2mz-ciuraru-pauls-projects.vercel.app",
-		],
-		methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
-		credentials: true,
-	})
-);
+// app.use(
+// 	cors({
+// 		origin: [
+// 			"https://lazy-logs.vercel.app",
+// 			"https://lazy-logs-ciuraru-pauls-projects.vercel.app",
+// 			"https://lazy-logs-mi1i0j2mz-ciuraru-pauls-projects.vercel.app",
+// 		],
+// 		methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+// 		credentials: true,
+// 	})
+// );
 
 app.use((req, res, next) => {
 	console.log(`Incoming request from origin: ${req.headers.origin}`);
