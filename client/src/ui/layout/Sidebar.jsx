@@ -1,19 +1,8 @@
 import { NavLink } from "react-router-dom";
 import { useAuthContext } from "../../context/authContext";
-import { useEffect, useState } from "react";
-import { Loader } from "../utils/Loader";
 
 function Sidebar() {
 	const { authState } = useAuthContext();
-	const [isLoading, setIsLoading] = useState(true);
-
-	useEffect(() => {
-		if (authState.user) {
-			setIsLoading(false);
-		}
-	}, [authState]);
-
-	if (isLoading) return <Loader>your data</Loader>;
 
 	return (
 		<aside className="sidebar">

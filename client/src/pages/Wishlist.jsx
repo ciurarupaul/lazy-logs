@@ -3,7 +3,7 @@ import { memo } from "react";
 import { useWishlistContext } from "../context/wishlistContext";
 import { getListing } from "../../api/apiListings";
 import ListingCard from "../ui/components/ListingCard";
-import { Loader } from "../ui/utils/Loader";
+import { SidebarPageLoader as Loader } from "../ui/utils/Loader";
 
 const MemoizedListingCard = memo(ListingCard);
 
@@ -57,7 +57,7 @@ function Wishlist() {
 				</ul>
 			) : (
 				<p className="empty-fallback">
-					Looks like you don't have anything here yet
+					Looks like you didn't like anything yet
 				</p>
 			)}
 		</>

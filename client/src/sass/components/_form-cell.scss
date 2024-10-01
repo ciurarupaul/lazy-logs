@@ -5,10 +5,10 @@
 	width: 100%;
 
 	input {
+		color: var(--primary);
 		width: 100%;
 		padding: 1rem 2rem;
 
-		color: var(--primary);
 		font-size: typography.$fontsize-medium;
 		font-weight: 500;
 		font-family: inherit;
@@ -34,8 +34,8 @@
 		top: 50%;
 		left: 2rem;
 		transform: translate(0, -50%);
+		color: var(--primary);
 
-		color: var(--primary-details);
 		font-weight: 400;
 		font-size: typography.$fontsize-small;
 		outline: none;

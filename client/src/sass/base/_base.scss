@@ -82,7 +82,7 @@ body {
 	display: grid;
 	grid-template-rows:
 		[header-start] 10rem [header-end page-start] 1fr
-		[page-end footer-start] 6rem [footer-end];
+		[page-end footer-start] 8rem [footer-end];
 	grid-template-columns:
 		1fr [page-start] repeat(
 			12,
@@ -93,11 +93,11 @@ body {
 }
 
 .account-grid-container {
-	min-height: calc(100vh - 10rem - 6rem);
+	min-height: calc(100vh - 10rem - 8rem);
 	max-height: fit-content;
 
 	display: grid;
-	grid-template-columns: [sidebar-start] minmax(min-content, 25%) [sidebar-end content-start] 1fr [content-end];
+	grid-template-columns: [sidebar-start] minmax(min-content, 20%) [sidebar-end content-start] 1fr [content-end];
 
 	grid-column: 2 / -2;
 }
@@ -114,7 +114,7 @@ body {
 }
 
 .user-page {
-	padding: 1rem 4rem;
+	margin: 4rem 6rem;
 }
 
 .empty-fallback {

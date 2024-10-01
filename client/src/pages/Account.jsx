@@ -7,7 +7,7 @@ import { handleUpdateInfo, handleUpdatePassword } from "../hooks/useAccount";
 import { deleteUser, getUserById } from "../../api/apiUsers";
 import NewPasswordForm from "../ui/components/account-page/NewPasswordForm";
 import UserInfoForm from "../ui/components/account-page/UserInfoForm";
-import { PageLoader as Loader } from "../ui/utils/Loader";
+import { SidebarPageLoader as Loader } from "../ui/utils/Loader";
 import handleError from "../utils/handleError";
 
 // Initial state for the form reducer

@@ -76,43 +76,45 @@ const SignUpWindow = ({ setActiveWindow, setEmail, onSubmitData }) => {
 				Looks like you don't have an account. <br /> Let's create one!
 			</p>
 
-			<FormCell
-				fieldname="name"
-				label="First and Last Name"
-				value={name}
-				onChange={(e) => setName(e.target.value)}
-				onSubmit={handleSubmit}
-				onKeyDown={(e) => handleKeyDown(e, phoneRef)}
-				validation={validateName}
-				autofocus={true}
-				ref={nameRef}
-				required
-			/>
+			<div className="login__signup-form">
+				<FormCell
+					fieldname="name"
+					label="First and Last Name"
+					value={name}
+					onChange={(e) => setName(e.target.value)}
+					onSubmit={handleSubmit}
+					onKeyDown={(e) => handleKeyDown(e, phoneRef)}
+					validation={validateName}
+					autofocus={true}
+					ref={nameRef}
+					required
+				/>
 
-			<FormCell
-				type="tel"
-				fieldname="phone"
-				label="Phone Number"
-				value={phone}
-				onChange={(e) => setPhone(e.target.value)}
-				onSubmit={handleSubmit}
-				onKeyDown={(e) => handleKeyDown(e, passwordRef)}
-				validation={validatePhone}
-				ref={phoneRef}
-				required
-			/>
+				<FormCell
+					type="tel"
+					fieldname="phone"
+					label="Phone Number"
+					value={phone}
+					onChange={(e) => setPhone(e.target.value)}
+					onSubmit={handleSubmit}
+					onKeyDown={(e) => handleKeyDown(e, passwordRef)}
+					validation={validatePhone}
+					ref={phoneRef}
+					required
+				/>
 
-			<FormCell
-				fieldname="password"
-				label="Password"
-				value={password}
-				onChange={(e) => setPassword(e.target.value)}
-				onSubmit={handleSubmit}
-				onKeyDown={(e) => handleKeyDown(e, null)}
-				validation={validatePassword}
-				ref={passwordRef}
-				required
-			/>
+				<FormCell
+					fieldname="password"
+					label="Password"
+					value={password}
+					onChange={(e) => setPassword(e.target.value)}
+					onSubmit={handleSubmit}
+					onKeyDown={(e) => handleKeyDown(e, null)}
+					validation={validatePassword}
+					ref={passwordRef}
+					required
+				/>
+			</div>
 
 			<button onClick={handleGoBack} className="login__password-back">
 				<HiOutlineChevronLeft className="login__password-back-icon" />
