@@ -1,24 +1,12 @@
-import dotenv from "dotenv";
 import express from "express";
-import mongoose from "mongoose";
 import listingController from "../controllers/listingController.js";
-dotenv.config();
 
-const app = express();
+const listingRouter = express.Router();
 
-const DB = process.env.DATABASE.replace(
-	"<password>",
-	process.env.DATABASE_PASSWORD
-);
-mongoose.connect(DB).then(() => {
-	console.log("DB connection successful!");
-});
+listingRouter.get("/", listingController.getAllListings);
+listingRouter.post("/", listingController.createListing);
 
-app.use(express.json());
+listingRouter.get("/:id", listingController.getListing);
+listingRouter.delete("/:id", listingController.deleteListing);
 
-app.get("/", listingController.getAllListings);
-app.post("/", listingController.createListing);
-app.get("/:id", listingController.getListing);
-app.delete("/:id", listingController.deleteListing);
-
-export default app;
+export default listingRouter;

@@ -1,48 +1,37 @@
-import dotenv from "dotenv";
 import express from "express";
-import mongoose from "mongoose";
 import userController from "../controllers/userController.js";
 import authController from "../controllers/authController.js";
 
-dotenv.config();
+const userRouter = express.Router();
 
-const app = express();
+userRouter.get("/isLoggedIn", authController.isLoggedIn);
+userRouter.post("/signup", authController.signup);
+userRouter.post("/login", authController.login);
+userRouter.get("/logout", authController.logout);
+userRouter.post("/forgotPassword", authController.forgotPassword);
+userRouter.patch("/resetPassword/:token", authController.resetPassword);
 
-const DB = process.env.DATABASE.replace(
-	"<password>",
-	process.env.DATABASE_PASSWORD
-);
-mongoose.connect(DB).then(() => {
-	console.log("DB connection successful!");
-});
+userRouter.get("/me", userController.getUserByEmail);
 
-app.use(express.json());
+userRouter.use(authController.protect);
 
-app.get("/isLoggedIn", authController.isLoggedIn);
-app.post("/signup", authController.signup);
-app.post("/login", authController.login);
-app.get("/logout", authController.logout);
-app.post("/forgotPassword", authController.forgotPassword);
-app.patch("/resetPassword/:token", authController.resetPassword);
-
-app.get("/me", userController.getUserByEmail);
-
-// protect below
-app.use(authController.protect);
-
-app.patch("/updateMyPassword", authController.updatePassword);
-app.patch(
+userRouter.patch("/updateMyPassword", authController.updatePassword);
+userRouter.patch(
 	"/updateMe",
 	userController.uploadUserPhoto,
 	userController.resizeUserPhoto,
 	userController.updateMe
 );
 
-app.route("/").get(userController.getAllUsers).post(userController.createUser);
+userRouter
+	.route("/")
+	.get(userController.getAllUsers)
+	.post(userController.createUser);
 
-app.route("/:id")
+userRouter
+	.route("/:id")
 	.get(userController.getUserById)
 	.patch(userController.updateUser)
 	.delete(userController.deleteUser);
 
-export default app;
+export default userRouter;

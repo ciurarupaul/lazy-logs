@@ -1,27 +1,13 @@
-import dotenv from "dotenv";
 import express from "express";
-import mongoose from "mongoose";
 import reviewController from "../controllers/reviewController.js";
 
-dotenv.config();
+const reviewRouter = express.Router();
 
-const app = express();
+reviewRouter.get("/", reviewController.getAllReviews);
+reviewRouter.post("/", reviewController.createReview);
 
-const DB = process.env.DATABASE.replace(
-	"<password>",
-	process.env.DATABASE_PASSWORD
-);
-mongoose.connect(DB).then(() => {
-	console.log("DB connection successful!");
-});
+reviewRouter.get("/:id", reviewController.getReview);
+reviewRouter.patch("/:id", reviewController.updateReview);
+reviewRouter.delete("/:id", reviewController.deleteReview);
 
-app.use(express.json());
-
-app.get("/", reviewController.getAllReviews);
-app.post("/", reviewController.createReview);
-
-app.get("/:id", reviewController.getReview);
-app.patch("/:id", reviewController.updateReview);
-app.delete("/:id", reviewController.deleteReview);
-
-export default app;
+export default reviewRouter;
