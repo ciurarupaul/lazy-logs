@@ -14,15 +14,7 @@ import wishlistRouter from "./wishlistRouter.js";
 dotenv.config();
 const app = express();
 
-// HUGE bug here. wrote the urls with / at the end, and that caused the cors issues
-
-app.use(
-	cors({
-		origin: "https://lazy-logs.vercel.app",
-		methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
-		credentials: true,
-	})
-);
+// HUGE bug here. wrote the urls with / at the end in the CORS config, and that caused a lot of issues, since the site wasn't allowed to make requests
 
 // Middleware setup
 app.use(express.json());
