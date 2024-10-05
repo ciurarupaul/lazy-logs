@@ -104,12 +104,12 @@ body {
 
 .page-container {
 	grid-column: page-start / page-end;
-	grid-row: page-start/page-end;
+	grid-row: page-start / page-end;
 }
 
 .page-container--center {
 	grid-column: page-start / page-end;
-	grid-row: page-start/page-end;
+	grid-row: page-start / page-end;
 	@include mixins.flexCenter;
 }
 
