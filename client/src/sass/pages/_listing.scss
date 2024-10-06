@@ -16,6 +16,11 @@
 		margin: 4rem;
 		padding: 0 4rem;
 
+		@include mixins.respond(tab-port) {
+			margin: 2rem;
+			padding: 0 2rem;
+		}
+
 		&-header {
 			grid-column: listing-start / listing-end;
 			grid-row: 1 / 2;
@@ -28,6 +33,16 @@
 
 			@include mixins.respond(desktop) {
 				grid-column: listing-start / listing-end;
+				grid-row: 1 / 2;
+
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+				grid-row: [carousel-start] 1fr [carousel-end description-start]
+					1fr [description-end];
+			}
+
+			@include mixins.respond(tab-port) {
+				grid-column: 1 / -1;
 				grid-row: 1 / 2;
 
 				display: grid;
@@ -66,7 +81,7 @@
 			width: 100%;
 
 			&-location {
-				width: max-content;
+				width: fit-content;
 				p {
 					font-size: typography.$fontsize-xlarge;
 					font-weight: 600;
@@ -201,7 +216,8 @@
 
 		&-grid {
 			display: flex;
-			justify-content: space-between;
+			flex-wrap: wrap;
+			gap: 3rem;
 		}
 
 		&__card {
@@ -239,6 +255,13 @@
 			height: max-content;
 			align-items: flex-start;
 			margin-top: 4rem;
+
+			@include mixins.respond(tab-port) {
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 3rem;
+			}
 		}
 
 		&-text {
@@ -261,8 +284,10 @@
 			flex-direction: column;
 			gap: 1rem;
 
-			min-width: max-content;
-			width: 36rem;
+			max-width: 50rem;
+			width: 50rem;
+			min-width: 30rem;
+
 			border: 1px solid var(--background-lines);
 			border-radius: 3px;
 			padding: 2rem 4rem;

@@ -84,10 +84,7 @@ body {
 		[header-start] 10rem [header-end page-start] 1fr
 		[page-end footer-start] 8rem [footer-end];
 	grid-template-columns:
-		1fr [page-start] repeat(
-			12,
-			[col-start] minmax(min-content, 15rem) [col-end]
-		)
+		1fr [page-start] repeat(12, [col-start] minmax(5rem, 15rem) [col-end])
 		[page-end]
 		1fr;
 }
@@ -100,6 +97,12 @@ body {
 	grid-template-columns: [sidebar-start] minmax(min-content, 20%) [sidebar-end content-start] 1fr [content-end];
 
 	grid-column: 2 / -2;
+
+	@include mixins.respond(tab-port) {
+		display: grid;
+		grid-template-rows: [sidebar-start] max-content [sidebar-end content-start] 1fr [content-end];
+		grid-template-columns: 1fr;
+	}
 }
 
 .page-container {

@@ -21,6 +21,10 @@
 
 		&-text {
 			margin-right: 1rem;
+
+			@include mixins.respond(phone) {
+				display: none;
+			}
 		}
 
 		svg {

@@ -20,6 +20,12 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+
+		@include mixins.respond(tab-port) {
+			flex-direction: column;
+			align-items: start;
+			gap: 3rem;
+		}
 	}
 
 	&__filters {
@@ -55,8 +61,13 @@
 		@include mixins.flexCenter();
 		font-size: typography.$fontsize-medium;
 		color: var(--primary);
-
 		gap: 2rem;
+
+		@include mixins.respond(tab-port) {
+			label {
+				display: contents;
+			}
+		}
 
 		&-select {
 			background-color: var(--background);
