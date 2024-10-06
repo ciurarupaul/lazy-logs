@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 import { cancelBooking, getBookingsForUser } from "../../api/apiBookings";
 import { useAuthContext } from "../context/authContext";
 import BookingCard from "../ui/components/BookingCard";
-import { Loader } from "../ui/utils/Loader";
+import { SidebarPageLoader as Loader } from "../ui/utils/Loader";
 import handleError from "../utils/handleError";
 
 function Bookings() {
@@ -64,7 +64,7 @@ function Bookings() {
 		cancelBookingMutate(bookingId);
 	};
 
-	if (bookingsLoading) return <Loader>Loading bookings...</Loader>;
+	if (bookingsLoading) return <Loader>bookings</Loader>;
 
 	return (
 		<div className="bookings">
@@ -79,7 +79,9 @@ function Bookings() {
 						</li>
 					))
 				) : (
-					<p className="empty-fallback">No bookings available</p>
+					<p className="empty-fallback">
+						Looks like you didn't book anything yet
+					</p>
 				)}
 			</ul>
 		</div>

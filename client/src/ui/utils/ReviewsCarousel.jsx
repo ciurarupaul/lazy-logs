@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import ReviewCard from "../components/listing-page/ReviewCard";
 
 function ReviewsCarousel({ reviews }) {
 	const [activeIndex, setActiveIndex] = useState(0);
+	const [visibleReviewsCount, setVisibleReviewsCount] = useState(3);
 
 	const nextSlide = () => {
 		setActiveIndex((prevIndex) =>
-			prevIndex < reviews.length - 3 ? prevIndex + 1 : prevIndex
+			prevIndex < reviews.length - visibleReviewsCount
+				? prevIndex + 1
+				: prevIndex
 		);
 	};
 
@@ -16,6 +19,25 @@ function ReviewsCarousel({ reviews }) {
 			prevIndex > 0 ? prevIndex - 1 : prevIndex
 		);
 	};
+
+	const handleResize = () => {
+		const width = window.innerWidth;
+		if (width < 1200) {
+			setVisibleReviewsCount(1);
+		} else if (width < 1500) {
+			setVisibleReviewsCount(2);
+		} else {
+			setVisibleReviewsCount(3);
+		}
+	};
+
+	useEffect(() => {
+		handleResize();
+
+		window.addEventListener("resize", handleResize);
+
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
 
 	return (
 		<div className="reviews-carousel">
@@ -33,12 +55,12 @@ function ReviewsCarousel({ reviews }) {
 			)}
 			<div className="reviews-carousel__content">
 				{reviews
-					.slice(activeIndex, activeIndex + 3)
+					.slice(activeIndex, activeIndex + visibleReviewsCount)
 					.map((review, index) => (
 						<ReviewCard review={review} key={index} />
 					))}
 			</div>
-			{activeIndex < reviews.length - 3 && (
+			{activeIndex < reviews.length - visibleReviewsCount && (
 				<button
 					onClick={(event) => {
 						event.stopPropagation();

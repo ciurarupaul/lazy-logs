@@ -4,7 +4,7 @@
 .listings {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
-	column-gap: 2rem;
+	column-gap: 4rem;
 	row-gap: 4rem;
 
 	list-style: none;
@@ -20,6 +20,12 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+
+		@include mixins.respond(tab-port) {
+			flex-direction: column;
+			align-items: start;
+			gap: 3rem;
+		}
 	}
 
 	&__filters {
@@ -54,16 +60,29 @@
 	&__sorting {
 		@include mixins.flexCenter();
 		font-size: typography.$fontsize-medium;
+		color: var(--primary);
 		gap: 2rem;
+
+		@include mixins.respond(tab-port) {
+			label {
+				display: contents;
+			}
+		}
 
 		&-select {
 			background-color: var(--background);
+
 			outline: none;
 			font-family: inherit;
-			font-size: typography.$fontsize-medium;
-			color: var(--primary);
 			padding: 1rem;
 			border-radius: 6px;
+			font-size: inherit;
+			color: inherit;
+
+			&-option {
+				font-size: inherit;
+				color: inherit;
+			}
 
 			&:hover {
 				cursor: pointer;
@@ -119,8 +138,7 @@
 .listing {
 	text-decoration: none;
 	overflow: hidden;
-	width: 100%;
-	max-width: 35rem;
+	min-width: 37rem;
 
 	&__photo {
 		position: relative;

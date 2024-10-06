@@ -6,15 +6,15 @@ import {
 	isWithinInterval,
 	parseISO,
 } from "date-fns";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuthContext } from "../../../context/authContext";
 import { createBooking } from "../../../../api/apiBookings";
-import BookingPrice from "./BookingPrice";
+import { useAuthContext } from "../../../context/authContext";
 import handleError from "../../../utils/handleError";
+import BookingPrice from "./BookingPrice";
 
 const getBlockedDates = (blockedDates) => {
 	let dates = [];
@@ -112,19 +112,38 @@ function BookingSection({ listing }) {
 		}
 	};
 
+	const [isLargeScreen, setIsLargeScreen] = useState(
+		window.innerWidth >= 1500
+	);
+
+	useEffect(() => {
+		const handleResize = () => {
+			if (window.innerWidth >= 1500 && !isLargeScreen) {
+				setIsLargeScreen(true);
+			} else if (window.innerWidth < 1500 && isLargeScreen) {
+				setIsLargeScreen(false);
+			}
+		};
+
+		window.addEventListener("resize", handleResize);
+
+		return () => window.removeEventListener("resize", handleResize);
+	}, [isLargeScreen]);
+
 	return (
 		<div className="listing__booking-container">
-			<div className="listing__booking-text">{renderText()}</div>
 			<DatePicker
 				selectsRange
 				startDate={startDate}
 				endDate={endDate}
 				onChange={handleDateSelection}
 				minDate={new Date()}
-				monthsShown={2}
+				monthsShown={isLargeScreen ? 2 : 1}
 				inline
 				filterDate={filteredDates}
 			/>
+
+			<div className="listing__booking-text">{renderText()}</div>
 		</div>
 	);
 }

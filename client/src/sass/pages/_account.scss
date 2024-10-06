@@ -5,9 +5,17 @@
 	&__grid {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
-		row-gap: 3rem;
-		column-gap: 2rem;
+		row-gap: 6rem;
+		column-gap: 4rem;
 		margin: 5rem 0;
+		position: relative;
+
+		@include mixins.respond(tab-port) {
+			display: flex;
+			flex-direction: column;
+			gap: 4rem;
+			margin-bottom: 12rem;
+		}
 
 		&-btn {
 			justify-self: end; // placing with grid properties
@@ -16,6 +24,13 @@
 			padding: 1.5rem 3rem;
 			font-size: typography.$fontsize-medium;
 			font-weight: 500;
+			margin-top: -2rem;
+
+			@include mixins.respond(tab-port) {
+				position: absolute;
+				bottom: -8rem;
+				right: 0;
+			}
 		}
 	}
 

@@ -7,7 +7,7 @@ import {
 } from "../../api/apiWishlist";
 import { useAuthContext } from "./authContext";
 import handleError from "../utils/handleError";
-import { Loader } from "../ui/utils/Loader";
+import { OnlyLoaderOnPage as Loader } from "../ui/utils/Loader";
 
 const WishlistContext = createContext();
 

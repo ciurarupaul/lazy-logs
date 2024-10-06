@@ -7,9 +7,9 @@ export function PageLoader({ children }) {
 	);
 }
 
-export function Loader({ children }) {
+export function SidebarPageLoader({ children }) {
 	return (
-		<div className="loader">
+		<div className="loader loader--side">
 			<div className="loader-spinner" />
 			<div className="loader-text"> {`Loading ${children}...`}</div>
 		</div>

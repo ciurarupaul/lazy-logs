@@ -55,65 +55,67 @@ function Listing() {
 
 				<div className="listing__presentation">
 					<div className="listing__presentation__details">
-						<div className="listing__presentation__details-location">
-							{listing.location.village ? (
-								<p>
-									<span>Located in</span>{" "}
-									{listing.location.village},{" "}
-									{listing.location.county}
-								</p>
-							) : (
-								<p>
-									<span>Located in</span>{" "}
-									{listing.location.city},{" "}
-									{listing.location.county}
-								</p>
-							)}
-						</div>
-
-						<div className="listing__presentation__details-capacity">
-							{formatLabel(
-								listing.listingDetails.maxGuests,
-								"guest",
-								"guests"
-							)}{" "}
-							&bull;{" "}
-							{formatLabel(
-								listing.listingDetails.rooms,
-								"room",
-								"rooms"
-							)}{" "}
-							&bull;{" "}
-							{formatLabel(
-								listing.listingDetails.beds,
-								"bed",
-								"beds"
-							)}{" "}
-							&bull;{" "}
-							{formatLabel(
-								listing.listingDetails.bathrooms,
-								"bathroom",
-								"bathrooms"
-							)}
-						</div>
-
-						<div className="listing__presentation__host">
-							<img
-								src={listing.host.photo}
-								alt="Profile picture of host"
-								className="listing__presentation__host-pfp"
-							/>
-							<div className="listing__presentation__host-text">
-								<p>Hosted by {listing.host.name}</p>
-								<FlagIcon
-									code={listing.host.countryCode}
-									className="listing__presentation__host-flag"
-								/>
+						<div>
+							<div className="listing__presentation__details-location">
+								{listing.location.village ? (
+									<p>
+										<span>Located in</span>{" "}
+										{listing.location.village},{" "}
+										{listing.location.county}
+									</p>
+								) : (
+									<p>
+										<span>Located in</span>{" "}
+										{listing.location.city},{" "}
+										{listing.location.county}
+									</p>
+								)}
 							</div>
-						</div>
 
-						<div className="listing__presentation__details-description">
-							{listing.description}
+							<div className="listing__presentation__details-capacity">
+								{formatLabel(
+									listing.listingDetails.maxGuests,
+									"guest",
+									"guests"
+								)}{" "}
+								&bull;{" "}
+								{formatLabel(
+									listing.listingDetails.rooms,
+									"room",
+									"rooms"
+								)}{" "}
+								&bull;{" "}
+								{formatLabel(
+									listing.listingDetails.beds,
+									"bed",
+									"beds"
+								)}{" "}
+								&bull;{" "}
+								{formatLabel(
+									listing.listingDetails.bathrooms,
+									"bathroom",
+									"bathrooms"
+								)}
+							</div>
+
+							<div className="listing__presentation__host">
+								<img
+									src={listing.host.photo}
+									alt="Profile picture of host"
+									className="listing__presentation__host-pfp"
+								/>
+								<div className="listing__presentation__host-text">
+									<p>Hosted by {listing.host.name}</p>
+									<FlagIcon
+										code={listing.host.countryCode}
+										className="listing__presentation__host-flag"
+									/>
+								</div>
+							</div>
+
+							<div className="listing__presentation__details-description">
+								{listing.description}
+							</div>
 						</div>
 
 						<div className="listing__presentation__amenities">

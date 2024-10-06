@@ -1,8 +1,10 @@
 import { format, isAfter, isBefore } from "date-fns";
 import { useEffect, useState } from "react";
+import { MdOutlineAttachMoney } from "react-icons/md";
 import { IoCalendar } from "react-icons/io5";
-import { TbMoneybag } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
+import { FaRegEye } from "react-icons/fa";
+import { MdCancel } from "react-icons/md";
 
 function BookingCard({ booking, onCancel }) {
 	const [time, setTime] = useState("");
@@ -32,6 +34,7 @@ function BookingCard({ booking, onCancel }) {
 				alt="property photo"
 				className="bookings__card-photo"
 			/>
+
 			<div className="bookings__card-content">
 				<div className="bookings__card-summary">
 					<div className="bookings__card-booking">
@@ -56,7 +59,7 @@ function BookingCard({ booking, onCancel }) {
 					</div>
 
 					<div className="bookings__card-pay">
-						<TbMoneybag className="bookings__card-pay-icon" />
+						<MdOutlineAttachMoney className="bookings__card-pay-icon" />
 						Pay at location: <p>{booking.totalPrice}&euro;</p>
 					</div>
 				</div>
@@ -68,18 +71,20 @@ function BookingCard({ booking, onCancel }) {
 							navigate(`/listings/${booking.listing._id}`);
 						}}
 					>
-						View property
+						<p>View property </p>
+						<FaRegEye className="bookings__card-icon" />
 					</button>
 
 					<>
 						{time === "past" ? null : time === "future" ? (
 							<button
-								className="bookings__card-extra-btn"
+								className="bookings__card-extra-btn bookings__card-extra-btn-see"
 								onClick={() => {
 									onCancel(booking._id);
 								}}
 							>
-								Cancel booking
+								<p>Cancel booking </p>
+								<MdCancel className="bookings__card-icon bookings__card-extra-btn-cancel" />
 							</button>
 						) : null}
 					</>

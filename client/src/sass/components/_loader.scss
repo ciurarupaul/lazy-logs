@@ -31,4 +31,10 @@
 		margin: auto;
 		margin-top: 20%;
 	}
+
+	&--side {
+		width: 100%;
+		height: 100%;
+		@include mixins.flexCenter();
+	}
 }
