@@ -31,3 +31,8 @@ body {
 .link {
 	text-decoration: none;
 }
+
+// made for keyboard navigation !!!
+:focus-visible {
+	outline: 2px solid var(--primary);
+}

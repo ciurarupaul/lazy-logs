@@ -10,8 +10,15 @@
 	list-style: none;
 	padding: 4rem 8rem;
 
+	&:has(> *:only-child) {
+		column-gap: 0;
+	}
+
 	&__cell {
-		@include mixins.flexStart;
+		align-self: center;
+		justify-self: center;
+		@include mixins.flexCenter;
+		max-width: 45rem;
 	}
 
 	&__header {

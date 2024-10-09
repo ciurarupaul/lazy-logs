@@ -209,7 +209,8 @@ function PropertyMap({ lat, lng }) {
 	};
 
 	return (
-		<APIProvider apiKey="AIzaSyDAXbqzad6bf7xrCcwwuFypFUVslA-pqms">
+		// interesting issue here. need the api key on the client-side, can't use dotenv or VITE_ with import.meta.env as it's visible therefore useless. only solution so far is to restrict access from google dev console and add a quota that once met blocks the requests, so worst case i get some bad ux...
+		<APIProvider apiKey="AIzaSyDv1a3JkmakOZZ4PvJ6gv0H03yLhKbPLkg">
 			<div className="listing__map-container">
 				<Map
 					defaultCenter={{ lat: lat, lng: lng }}
