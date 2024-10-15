@@ -68,13 +68,13 @@ function BookingSection({ listing }) {
 	const renderText = () => {
 		if (!isAuthenticated) {
 			return (
-				<>
+				<div className="listing__booking-text-login">
 					Please{" "}
 					<Link to="/login" className="listing__booking-text-link">
 						login
 					</Link>{" "}
 					to book this property
-				</>
+				</div>
 			);
 		} else if (!startDate || !endDate) {
 			return <>Please select the dates you want to book!</>;
