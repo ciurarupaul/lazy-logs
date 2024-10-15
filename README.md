@@ -7,6 +7,8 @@
 
 Hi, my name is Paul, and I’m an aspiring web developer. lazy-logs, my largest and most ambitious full-stack application to date, replicates key Airbnb functionalities, allowing users to book properties, browse listings across Romania, and manage their accounts. The design is welcoming and modern, with an user-friendly interface that ensures a great experience for potential customers.
 
+<img src='/client/public/lazylogs-landingpage.png' alt="screenshot of the website's landing page"/>
+
 ## Tech stack and tools
 
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" /> <img src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white" /> <img src="https://img.shields.io/badge/React_Query-FF4154?style=for-the-badge&logo=ReactQuery&logoColor=white" /> <img src="https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" /> <img src="https://img.shields.io/badge/Express%20js-000000?style=for-the-badge&logo=express&logoColor=white" /> <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" />
