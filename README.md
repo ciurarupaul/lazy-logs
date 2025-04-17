@@ -3,8 +3,6 @@
 
 # lazy-logs
 
-[Visit website](https://lazy-logs.vercel.app)
-
 Hi, my name is Paul, and I’m an aspiring web developer. lazy-logs, my largest and most ambitious full-stack application to date, replicates key Airbnb functionalities, allowing users to book properties, browse listings across Romania, and manage their accounts. The design is welcoming and modern, with an user-friendly interface that ensures a great experience for potential customers.
 
 <img src='/client/public/lazylogs-landingpage.png' alt="screenshot of the website's landing page"/>
